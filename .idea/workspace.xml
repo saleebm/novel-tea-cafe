@@ -20,39 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/studio/schemas/documents/weeklyEvents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/studio/schemas/plugs/eventDay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/studio/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/deskStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/deskStructure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/sanity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/StructureMenuWidget.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/StructureMenuWidget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/lib/structure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/props.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/widget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/resolvePreviewUrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/sanity.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/sanity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/navMenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/objects/cta.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/objects/cta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/plugs/bigCtaWithIllustration.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/plugs/bigCtaWithIllustration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/plugs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/plugs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/actions/HelloWorld.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/actions/workflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/actions/workflow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/components/previewIFrame.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/resolveDocumentBadges.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/resolveDocumentBadges.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/structure/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/structure/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/src/structure/landingPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/structure/landingPages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/dashboardConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/dashboardConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +132,8 @@
       <option name="presentableId" value="Default" />
       <updated>1594838094029</updated>
       <workItem from="1594838097999" duration="7740000" />
-      <workItem from="1594846004217" duration="2753000" />
+      <workItem from="1594846004217" duration="2951000" />
+      <workItem from="1594852114840" duration="45000" />
     </task>
     <servers />
   </component>
