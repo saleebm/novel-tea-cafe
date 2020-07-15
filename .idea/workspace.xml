@@ -20,8 +20,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/dashboardConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/dashboardConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lerna.json" beforeDir="false" afterPath="$PROJECT_DIR$/lerna.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/site/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.env.production" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/client-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gatsby-browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gatsby-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gatsby-node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gatsby-ssr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/CTALink.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/CTAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Figure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/InfoRows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/Latex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/MainImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/author-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/author-list.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview-grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview-grid.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview-list.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post-preview.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/blog-post.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/container.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/cta-columns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/cta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/general-article.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/general-article.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/graphql-error-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/header.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/hero.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/icon/hamburger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/icon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/layout.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/portableText.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/pricing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/seo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/serializers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/typography.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/wave.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/containers/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql-fragments/NavMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql-fragments/PageInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/graphql-fragments/SanityImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/images/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/lib/helpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/lib/image-url.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/404.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/blog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/blog.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/custom-media.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/custom-properties.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/styles/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/templates/blog-post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/templates/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/tailwind.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +130,7 @@
     <option name="directoryName" value="nmfi8sbq" />
   </component>
   <component name="ProjectId" id="1ejbkj5AjPt6PY5lbOtLEwcK9UO" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -133,7 +212,8 @@
       <updated>1594838094029</updated>
       <workItem from="1594838097999" duration="7740000" />
       <workItem from="1594846004217" duration="2951000" />
-      <workItem from="1594852114840" duration="45000" />
+      <workItem from="1594852114840" duration="301000" />
+      <workItem from="1594853658901" duration="100000" />
     </task>
     <servers />
   </component>
@@ -185,5 +265,9 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="661" y="355" width="734" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594844439510" />
+    <state x="625" y="271" key="search.everywhere.popup" timestamp="1594852409155">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594852409155" />
   </component>
 </project>

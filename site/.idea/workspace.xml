@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ktxspmfb" />
+  </component>
+  <component name="ProjectId" id="1ee8xLK9AY77QSTT8oDvNgIjT2y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/elements" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/svg" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/elements" />
+      <recent name="$PROJECT_DIR$/src/components/context" />
+      <recent name="$PROJECT_DIR$/src/utils/hooks" />
+      <recent name="$PROJECT_DIR$/static/assets/images/office" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="develop" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="develop" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.develop" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="runRustfmtOnSave" value="true" />
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="" />
+      <created>1594670944811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594670944811</updated>
+      <workItem from="1594670947195" duration="831000" />
+      <workItem from="1594671960568" duration="2456000" />
+      <workItem from="1594674483458" duration="673000" />
+      <workItem from="1594682653513" duration="643000" />
+      <workItem from="1594686906002" duration="2012000" />
+      <workItem from="1594689294163" duration="4890000" />
+      <workItem from="1594715696177" duration="4773000" />
+      <workItem from="1594852423126" duration="1108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="618" y="296" key="#Inspections" timestamp="1594695095846">
+      <screen x="49" y="25" width="1871" height="1175" />
+    </state>
+    <state x="618" y="296" key="#Inspections/49.25.1871.1175@49.25.1871.1175" timestamp="1594695095846" />
+    <state x="632" y="493" key="#Stylelint" timestamp="1594687792430">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="632" y="493" key="#Stylelint/0.0.1920.1200@0.0.1920.1200" timestamp="1594687792430" />
+    <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594717521443">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594717521443" />
+    <state width="273" height="1102" key="GridCell.Tab.0.bottom" timestamp="1594853601924">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="273" height="1102" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601924" />
+    <state width="273" height="1102" key="GridCell.Tab.0.center" timestamp="1594853601923">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="273" height="1102" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601923" />
+    <state width="273" height="1102" key="GridCell.Tab.0.left" timestamp="1594853601922">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="273" height="1102" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601922" />
+    <state width="273" height="1102" key="GridCell.Tab.0.right" timestamp="1594853601923">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="273" height="1102" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601923" />
+    <state x="469" y="236" key="SettingsEditor" timestamp="1594689371758">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1594689371758" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1594739459403">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1594739459403" />
+    <state width="500" height="445" key="SwitcherDM/49.25.1871.1175@49.25.1871.1175" timestamp="1594675002136" />
+    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594694798546">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594694798546" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1594739808476">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594739808476" />
+  </component>
+</project>
