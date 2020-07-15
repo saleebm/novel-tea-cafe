@@ -1,12 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdMenu } from 'react-icons/lib/md'
-import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/lib/go'
+import { GoHome, GoSettings, GoHourglass  } from 'react-icons/lib/go'
 import blog from './src/structure/blog'
-import landingPages from './src/structure/landingPages'
-import PreviewIFrame from './src/components/previewIFrame'
 
 const hiddenDocTypes = (listItem) =>
-  !['route', 'navigationMenu', 'post', 'page', 'siteSettings', 'author', 'category'].includes(
+  !['route', 'navigationMenu', 'post', 'page', 'siteSettings', 'author', 'category', 'weeklyEvents'].includes(
     listItem.getId()
   )
 
@@ -22,7 +19,7 @@ export default () =>
           S.document()
             .schemaType('siteSettings')
             .documentId('siteSettings')
-            .views([S.view.form(), PreviewIFrame()])
+            .views([S.view.form()])
         ),
       S.documentListItem()
         .title('Frontpage')
@@ -32,12 +29,21 @@ export default () =>
           S.document()
             .schemaType('page')
             .documentId('frontpage')
-            .views([S.view.form(), PreviewIFrame()])
+            .views([S.view.form()])
+        ),
+      S.documentListItem()
+        .title('Weekly Events')
+        .schemaType('weeklyEvents')
+        .icon(GoHourglass)
+        .child(
+          S.document()
+            .schemaType('weeklyEvents')
+            .documentId('weeklyEvents')
+            .views([S.view.form()])
         ),
       blog,
-      landingPages,
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

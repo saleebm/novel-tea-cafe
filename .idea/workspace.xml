@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/studio/schemas/documents/weeklyEvents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/studio/schemas/plugs/eventDay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/studio/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/deskStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/deskStructure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/sanity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/StructureMenuWidget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/StructureMenuWidget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/lib/structure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/props.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/plugins/dashboard-widget-structure-menu/src/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/resolvePreviewUrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/sanity.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/sanity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/navMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/objects/cta.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/objects/cta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/plugs/bigCtaWithIllustration.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/plugs/bigCtaWithIllustration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/plugs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/plugs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/actions/HelloWorld.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/actions/workflow.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/actions/workflow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/components/previewIFrame.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/resolveDocumentBadges.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/resolveDocumentBadges.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/structure/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/structure/blog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/src/structure/landingPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/src/structure/landingPages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="nmfi8sbq" />
+  </component>
+  <component name="ProjectId" id="1ejbkj5AjPt6PY5lbOtLEwcK9UO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/studio/schemas/documents" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="graphql-deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/studio/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="graphql-deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.graphql-deploy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="runRustfmtOnSave" value="true" />
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="" />
+      <created>1594838094029</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594838094029</updated>
+      <workItem from="1594838097999" duration="7740000" />
+      <workItem from="1594846004217" duration="2753000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="490" key="GridCell.Tab.0.bottom" timestamp="1594848689476">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="490" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1594848689476" />
+    <state width="1878" height="490" key="GridCell.Tab.0.center" timestamp="1594848689474">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="490" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1594848689474" />
+    <state width="1878" height="490" key="GridCell.Tab.0.left" timestamp="1594848689474">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="490" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1594848689474" />
+    <state width="1878" height="490" key="GridCell.Tab.0.right" timestamp="1594848689475">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="490" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1594848689475" />
+    <state x="469" y="236" key="SettingsEditor" timestamp="1594847323396">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1594847323396" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1594847551395">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1594847551395" />
+    <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1594848707996">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="337" key="Vcs.Push.Dialog.v2/0.0.1920.1200@0.0.1920.1200" timestamp="1594848707996" />
+    <state x="661" y="355" width="734" height="490" key="find.popup" timestamp="1594844439510">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="661" y="355" width="734" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594844439510" />
+  </component>
+</project>

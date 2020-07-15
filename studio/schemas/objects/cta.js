@@ -16,13 +16,6 @@ export default {
       type: 'string'
     },
     {
-      title: 'Landing page',
-      name: 'landingPageRoute',
-      type: 'reference',
-      fieldset: 'link',
-      to: [{type: 'route'}]
-    },
-    {
       title: 'Path',
       name: 'route',
       fieldset: 'link',
@@ -49,15 +42,11 @@ export default {
   preview: {
     select: {
       title: 'title',
-      landingPage: 'landingPageRoute.slug.current',
       route: 'route',
       link: 'link'
     },
-    prepare ({title, landingPage, route, link}) {
+    prepare ({title, route, link}) {
       let subtitle = 'Not set'
-      if (landingPage) {
-        subtitle = `Route: /${landingPage}`
-      }
       if (route) {
         subtitle = `Route: ${route}`
       }
