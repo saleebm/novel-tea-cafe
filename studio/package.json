@@ -28,6 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-icons": "^3.10.0",
     "react-instagram-embed": "^1.5.0",
     "react-player": "^1.15.2",
     "sanity-plugin-asset-source-thispersondoesnotexist": "0.0.1",

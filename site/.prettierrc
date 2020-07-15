@@ -1,0 +1,21 @@
+{
+  "proseWrap": "never",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "always",
+  "jsxSingleQuote": true,
+  "printWidth": 70,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "semi": false,
+  "quoteProps": "consistent",
+  "overrides": [
+    {
+      "files": ["*.css"],
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
+}

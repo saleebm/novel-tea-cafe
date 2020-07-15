@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 200;
+    src: url('./static/Jost-Light.ttf');
+    src: local(''),
+    url('./static/Jost-Light.ttf?') format('truetype')
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./static/Jost-Thin.ttf');
+    src: local(''),
+    url('./static/Jost-Thin.ttf?') format('truetype')
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./static/Jost-Regular.ttf');
+    src: local(''),
+    url('./static/Jost-Regular.ttf?') format('truetype')
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: bold;
+    src: url('./static/Jost-Bold.ttf');
+    src: local(''),
+    url('./static/jost-Bold.ttf?') format('truetype')
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./static/Jost-ExtraBold.ttf');
+    src: local(''),
+    url('./static/Jost-ExtraBold.ttf?') format('truetype')
+}
+
+/*noinspection ALL*/
+@font-face {
+    font-family: 'Jost';
+    font-weight: 100 900; /* valid for variable font */
+    font-style: oblique 0deg 10deg;
+    font-display: swap;
+    src: url('./Jost-VariableFont_wght.ttf') format('truetype');
+}

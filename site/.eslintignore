@@ -1,0 +1,3 @@
+*.scss
+*.css
+src/graphql/introspection/fragments.json

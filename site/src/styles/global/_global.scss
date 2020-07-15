@@ -1,0 +1,190 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend {
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  /* Load system fonts */
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  @supports (font-variation-settings: normal) {
+    font-family: 'Inter var', sans-serif;
+  }
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: red white;
+}
+
+body {
+  cursor: none;
+}
+* {
+  box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+  outline: unset;
+  // Apple iOS
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+ * firefox
+ */
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+}
+
+:root {
+  /* gets rid of ridiculous mouse box, but not the actual focus outline */
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/**
+ * Form elements render using OS defaults,
+ * so font-family inheritance must be specifically declared
+ */
+button,
+button span,
+input,
+optgroup,
+select,
+textarea,
+a {
+  &::-moz-focus-inner,
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+strong,
+b {
+  font-variation-settings: 'wght' 700;
+}
+
+// valid font-stretch
+//noinspection CssInvalidPropertyValue
+body {
+  font-family: 'Podkova', serif;
+  margin: unset !important;
+  font-variation-settings: 'wght' 400, 'GRAD' 72;
+  font-optical-sizing: auto;
+  font-kerning: normal;
+  font-variant-ligatures: contextual common-ligatures;
+  // https://rsms.me/inter/lab/
+  // stylistic alts give all the cool cv stuff
+  -webkit-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  -moz-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  -ms-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+
+  &::backdrop {
+    background-color: inherit;
+  }
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: fit-content;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  color: var(--copt-text-color, currentColor);
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0 12px #000 inset;
+}
+
