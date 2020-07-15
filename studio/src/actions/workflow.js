@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useMemo } from 'react'
-import { useDocumentOperation } from '@sanity/react-hooks'
 import { PublishAction } from 'part:@sanity/base/document-actions'
 import client from 'part:@sanity/base/client'
 import { icons } from '../structure/blog'
@@ -11,7 +11,7 @@ async function workflowStatus(draft) {
   return client.fetch('* [_id == $id][0]{_rev}', { id: draft._id }).then(doc => {
     console.log('draft', draft, doc)
     return client.fetch(
-      " *[_type == 'workflow.status' && draft == $id && revision == $revision] | order(_updatedAt desc)[0]",
+      ' *[_type == \'workflow.status\' && draft == $id && revision == $revision] | order(_updatedAt desc)[0]',
       {
         id: draft._id,
         revision: doc._rev
@@ -59,7 +59,7 @@ export function RejectAction({ id, type, published, draft, onComplete }) {
       content: (
         <>
           <h2>Reason</h2>
-          <input type="text" onChange={event => setReason(event.target.value)} />
+          <input type="text" onChange={event => setReason(event.target.value)}/>
           <button
             onClick={async () => {
               await createReviewStatus(draft, 'rejected', reason)
@@ -109,7 +109,9 @@ export function Approve({ id, type, published, draft, onComplete }) {
 
 export function RequestReview({ id, type, draft, onComplete }) {
   if (!draft) return null
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [status, setStatus] = React.useState(null)
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useMemo(async () => {
     const res = await workflowStatus(draft)
     setStatus(res)

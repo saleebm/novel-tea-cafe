@@ -1,3 +1,4 @@
+import {MdList} from 'react-icons/lib'
 export default {
   type: 'object',
   name: 'bigCtaWithIllustration',

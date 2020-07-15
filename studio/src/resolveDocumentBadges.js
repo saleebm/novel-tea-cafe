@@ -1,4 +1,4 @@
-import defaultResolve, { DraftStatusBadge } from 'part:@sanity/base/document-badges'
+import defaultResolve from 'part:@sanity/base/document-badges'
 import { WorkflowBadge } from './actions/workflow'
 
 export default function resolveDocumentBadges(props) {

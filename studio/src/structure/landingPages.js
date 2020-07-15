@@ -1,5 +1,4 @@
 import S from '@sanity/desk-tool/structure-builder'
-import PreviewIFrame from '../../src/components/previewIFrame'
 
 import { MdMenu } from 'react-icons/lib/md'
 
@@ -24,7 +23,7 @@ export default S.listItem()
                 S.document()
                   .documentId(documentId)
                   .schemaType('route')
-                  .views([S.view.form(), PreviewIFrame()])
+                  .views([S.view.form()])
               )
           ),
         S.listItem()

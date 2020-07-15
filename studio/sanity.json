@@ -14,7 +14,6 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
-    "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
     "dashboard-widget-netlify",
     "asset-source-thispersondoesnotexist",
@@ -23,8 +22,7 @@
     "@sanity/code-input",
     "@sanity/color-input",
     "mux-input",
-    "google-analytics",
-    "@sanity/production-preview"
+    "google-analytics"
   ],
   "parts": [
     {
@@ -37,11 +35,7 @@
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "dashboardConfig.js"
-    },
-    {
-      "implements": "part:@sanity/production-preview/resolve-production-url",
-      "path": "./resolvePreviewUrl.js"
+      "path": "./dashboardConfig.js"
     }
   ]
 }

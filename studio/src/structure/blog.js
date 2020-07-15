@@ -5,17 +5,15 @@ import {
   GoEye as ReviewIcon,
   GoCircleSlash as RejectedIcon,
   GoArchive as AllIcon,
-  GoPerson as AuthorIcon,
+  GoPerson as AuthorIcon
 } from 'react-icons/lib/go'
-
-import PreviewIFrame from '../../src/components/previewIFrame'
 
 export const icons = {
   BlogIcon,
   ApprovedIcon,
   ReviewIcon,
   RejectedIcon,
-  AllIcon,
+  AllIcon
 }
 
 const blog = S.listItem()
@@ -39,7 +37,7 @@ const blog = S.listItem()
                 S.document()
                   .documentId(documentId)
                   .schemaType('post')
-                  .views([S.view.form(), PreviewIFrame()])
+                  .views([S.view.form()])
               )
           ),
         S.documentTypeListItem('post').title('All posts').icon(AllIcon),
@@ -60,7 +58,7 @@ const blog = S.listItem()
                   )
                   .params({ catId })
               )
-        ),
+          ),
         S.divider(),
         S.documentTypeListItem('author').title('Authors').icon(AuthorIcon),
         S.documentTypeListItem('category').title('Categories')
