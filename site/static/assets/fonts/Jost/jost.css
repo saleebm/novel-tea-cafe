@@ -31,7 +31,7 @@
     font-weight: bold;
     src: url('./static/Jost-Bold.ttf');
     src: local(''),
-    url('./static/jost-Bold.ttf?') format('truetype')
+    url('./static/Jost-Bold.ttf?') format('truetype')
 }
 
 @font-face {

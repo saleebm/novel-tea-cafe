@@ -80,12 +80,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-graphql-codegen`,
-      options: {
-        fileName: `./src/graphql/gatsby-graphql.ts`,
-      },
-    },
     `gatsby-plugin-eslint`,
     `gatsby-plugin-offline`,
   ],
