@@ -7,24 +7,11 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /**
-   * A date string, such as 2007-12-03, compliant with the ISO 8601 standard for
-   * representation of dates and times using the Gregorian calendar.
-   */
+  /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any;
 };
-
-
-
-
-
-
-
-
-
-
 
 export type BooleanQueryOperatorInput = {
   eq?: Maybe<Scalars['Boolean']>;
@@ -6160,7 +6147,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___overlayDrafts'
   | 'pluginCreator___pluginOptions___stylesProvider___injectFirst'
   | 'pluginCreator___pluginOptions___implementation___info'
-  | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -6364,7 +6350,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___stylesProvider___injectFirst'
   | 'pluginOptions___implementation___info'
   | 'pluginOptions___useResolveUrlLoader___options___sourceMap'
-  | 'pluginOptions___fileName'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -6492,7 +6477,6 @@ export type SitePluginPluginOptions = {
   stylesProvider?: Maybe<SitePluginPluginOptionsStylesProvider>;
   implementation?: Maybe<SitePluginPluginOptionsImplementation>;
   useResolveUrlLoader?: Maybe<SitePluginPluginOptionsUseResolveUrlLoader>;
-  fileName?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -6511,7 +6495,6 @@ export type SitePluginPluginOptionsFilterInput = {
   stylesProvider?: Maybe<SitePluginPluginOptionsStylesProviderFilterInput>;
   implementation?: Maybe<SitePluginPluginOptionsImplementationFilterInput>;
   useResolveUrlLoader?: Maybe<SitePluginPluginOptionsUseResolveUrlLoaderFilterInput>;
-  fileName?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -6596,35 +6579,6 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, file?: Maybe<Pick<File, 'publicURL' | 'name'>> };
-
-export type Logo_ImgQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Logo_ImgQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { file?: Maybe<Pick<File, 'publicURL'>> };
-
-export type HomepageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type HomepageQuery = { sanityPage?: Maybe<{ hero?: Maybe<(
-      Pick<SanityHero, 'heading'>
-      & { tagline?: Maybe<Array<Maybe<(
-        Pick<SanityBlock, 'style' | 'list'>
-        & { children?: Maybe<Array<Maybe<Pick<SanitySpan, 'text' | 'marks'>>>> }
-      )>>>, illustration?: Maybe<{ image?: Maybe<{ asset?: Maybe<(
-            Pick<SanityImageAsset, 'url' | 'title' | 'size'>
-            & { fluid?: Maybe<GatsbySanityImageFluid_WithWebpFragment> }
-          )> }> }> }
-    )> }> };
-
 export type GatsbySanityImageFixedFragment = Pick<SanityImageFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
 
 export type GatsbySanityImageFixed_NoBase64Fragment = Pick<SanityImageFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
@@ -6690,3 +6644,37 @@ export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = Pick<ImageSharpSi
 export type GatsbyImageSharpSizes_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PagesQueryQuery = { allSitePage: { nodes: Array<Pick<SitePage, 'path'>> } };
+
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, file?: Maybe<Pick<File, 'publicURL' | 'name'>> };
+
+export type Logo_ImgQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Logo_ImgQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_2_Query = { file?: Maybe<Pick<File, 'publicURL'>> };
+
+export type HomepageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomepageQuery = { sanityPage?: Maybe<{ hero?: Maybe<(
+      Pick<SanityHero, 'heading'>
+      & { tagline?: Maybe<Array<Maybe<(
+        Pick<SanityBlock, 'style' | 'list'>
+        & { children?: Maybe<Array<Maybe<Pick<SanitySpan, 'text' | 'marks'>>>> }
+      )>>>, illustration?: Maybe<{ image?: Maybe<{ asset?: Maybe<(
+            Pick<SanityImageAsset, 'url' | 'title' | 'size'>
+            & { fluid?: Maybe<GatsbySanityImageFluid_WithWebpFragment> }
+          )> }> }> }
+    )> }> };
