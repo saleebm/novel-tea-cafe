@@ -1,3 +1,4 @@
+// todo get this from sanity
 export const commonColors = {
   primaryColor: '#8585b8',
   primaryColorLight: '#b5b5ff',

@@ -5,7 +5,7 @@
   "main": "package.json",
   "author": "Mina Saleeb <saleebmina@copt.dev>",
   "scripts": {
-    "dev": "sanity start",
+    "develop": "sanity start",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "build": "sanity build",
     "graphql-deploy": "sanity graphql deploy --playground",

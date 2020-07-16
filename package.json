@@ -1,16 +1,16 @@
 {
-  "private": true,
   "name": "sanity-gatsby-blog",
   "version": "1.0.2",
+  "private": true,
   "scripts": {
     "build": "lerna run build --parallel",
-    "dev": "lerna run dev --parallel",
-    "format": "lerna run format",
     "build-studio": "lerna bootstrap && (cd studio && npm run build)",
     "build-web": "lerna bootstrap && (cd studio && SANITY_AUTH_TOKEN=$SANITY_DEPLOY_STUDIO_TOKEN npm run graphql-deploy) && (cd site && npm run build)",
+    "dev": "lerna run develop --parallel",
+    "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
-    "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
+    "lint": "lerna run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

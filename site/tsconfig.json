@@ -51,11 +51,11 @@
         "@Containers/*": [
           "src/containers/*"
         ],
-        "@Lib": [
-          "src/lib"
+        "@Graphql": [
+          "src/graphql"
         ],
-        "@Lib/*": [
-          "src/lib/*"
+        "@Graphql/*": [
+          "src/graphql/*"
         ],
         "@Static/*": [
           "static/*"

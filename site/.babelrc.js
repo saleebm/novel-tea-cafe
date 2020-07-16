@@ -8,7 +8,7 @@ module.exports = {
           '@Components': './src/components',
           '@Config': './src/config',
           '@Containers': './src/containers',
-          '@Lib': './src/lib',
+          '@Graphql': './src/graphql',
           '@Services': './src/services',
           '@Static': './static',
           '@Styles': './src/styles',
