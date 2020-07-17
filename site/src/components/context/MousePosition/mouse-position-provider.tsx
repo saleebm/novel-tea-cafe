@@ -3,6 +3,7 @@ import React, {
   createContext,
   Dispatch,
   MouseEvent,
+  ReactHTMLElement,
   ReactNode,
   Reducer,
   RefObject,
@@ -26,7 +27,7 @@ export type ActiveAreaType =
 export type Cursor = Readonly<{
   pos: ReadonlyArray<number>
   activeArea: ActiveAreaType
-  activeContainer: RefObject<any> | null
+  activeContainer: any
   additionalProps: Readonly<{ [key: string]: any }>
 }>
 
@@ -34,17 +35,11 @@ export enum CursorActionTypes {
   setPos = 'SET_POS',
   setActiveArea = 'SET_ACTIVE_AREA',
   setAdditionalProps = 'SET_ADDITIONAL_PROPS',
-  setActiveContainer = 'SET_ACTIVE_CONTAINER',
 }
 
 interface SetActiveArea {
   type: CursorActionTypes.setActiveArea
   payload: ActiveAreaType
-}
-
-interface SetActiveContainer {
-  type: CursorActionTypes.setActiveContainer
-  payload: any
 }
 
 interface SetAdditionalProps {
@@ -57,23 +52,21 @@ interface SetPos {
   payload: Array<number>
 }
 
-export type CursorAction =
-  | SetActiveArea
-  | SetActiveContainer
-  | SetPos
-  | SetAdditionalProps
+export type CursorAction = SetActiveArea | SetPos | SetAdditionalProps
 
 const initialCursor: Cursor = {
   pos: [0, 0],
   activeArea: ActiveAreaTypes.notSet,
-  activeContainer: null,
+  activeContainer: false,
   additionalProps: {},
 }
 
 export const CursorContext: Context<{
   setCursor: Dispatch<CursorAction>
   cursor: Cursor
+  setActiveContainer: (el: any) => void
 }> = createContext({
+  setActiveContainer: (el) => {},
   setCursor: (_cursor) => {},
   cursor: initialCursor,
 })
@@ -91,13 +84,8 @@ const reducer: Reducer<Cursor, CursorAction> = (
       case CursorActionTypes.setActiveArea:
         draft.activeArea = action.payload as ActiveAreaType
         return draft
-      case CursorActionTypes.setActiveContainer:
-        if (draft.activeContainer?.current) {
-          draft.activeContainer.current = action.payload
-        }
-        return draft
       case CursorActionTypes.setAdditionalProps:
-        draft.additionalProps = action.payload
+        draft.additionalProps = action.payload as any
         return draft
       default:
         return draft
@@ -110,7 +98,11 @@ export function MousePositionProvider({
   children: ReactNode | ReactNode[]
 }) {
   const [cursor, setCursor] = useReducer(reducer, initialCursor)
-  const activeContainer = useRef(null)
+  const activeContainer = useRef(false)
+
+  const setActiveContainer = (el: any) => {
+    activeContainer.current = el
+  }
 
   useEventListener<MouseEvent>(
     'mousemove',
@@ -130,6 +122,7 @@ export function MousePositionProvider({
           activeContainer: activeContainer.current,
         },
         setCursor,
+        setActiveContainer,
       }}
     >
       {children}

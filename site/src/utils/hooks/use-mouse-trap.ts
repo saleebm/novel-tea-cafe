@@ -15,17 +15,16 @@ interface MouseEventInput {
  * will require using event listener on exported mouseenter and mouseleave events
  */
 export function useMouseTrap() {
-  const { cursor, setCursor } = useContext(CursorContext)
+  const { cursor, setCursor, setActiveContainer } = useContext(
+    CursorContext,
+  )
   const handleMouseEnter = useCallback(
     (
       { area, additionalProps = {} }: MouseEventInput,
       event: SyntheticEvent<any, Event>,
     ) => {
       // set the active container ref
-      setCursor({
-        type: CursorActionTypes.setActiveContainer,
-        payload: event.target,
-      })
+      setActiveContainer(event.target)
       // set the area type
       setCursor({
         type: CursorActionTypes.setActiveArea,
@@ -37,14 +36,11 @@ export function useMouseTrap() {
         payload: additionalProps,
       })
     },
-    [setCursor],
+    [setCursor, setActiveContainer],
   )
 
   const handleMouseLeave = useCallback(() => {
-    setCursor({
-      type: CursorActionTypes.setActiveContainer,
-      payload: null,
-    })
+    setActiveContainer(false)
     setCursor({
       type: CursorActionTypes.setActiveArea,
       payload: ActiveAreaTypes.notSet,
@@ -53,7 +49,7 @@ export function useMouseTrap() {
       type: CursorActionTypes.setAdditionalProps,
       payload: {},
     })
-  }, [setCursor])
+  }, [setCursor, setActiveContainer])
 
   return {
     activeArea: cursor.activeArea,

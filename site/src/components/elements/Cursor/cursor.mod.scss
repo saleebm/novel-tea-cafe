@@ -6,19 +6,25 @@
   // the outer wrap
   .cursorWrap {
     position: fixed;
-    display: block;
+    display: grid;
     pointer-events: none;
     mix-blend-mode: difference;
     z-index: 1200000;
+    overflow: visible;
+
+    > * {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
   }
 
   // the moving part
   .cursor {
     position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-flow: row nowrap;
     justify-content: center;
-    overflow: visible;
+    align-items: center;
   }
 }

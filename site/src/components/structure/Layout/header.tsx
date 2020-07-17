@@ -34,7 +34,11 @@ export function Header() {
     >
       <div className={styles.header_wrap}>
         <figure className={styles.logo_wrap}>
-          <GatsbyLink innerRef={mouseTrapRef} to={'/'}>
+          <GatsbyLink
+            className={styles.logo_link}
+            innerRef={mouseTrapRef}
+            to={'/'}
+          >
             {file?.childImageSharp?.fixed && (
               <MouseTrap
                 additionalProps={{}}
