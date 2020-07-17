@@ -10,6 +10,8 @@ import useEventListener from '@use-it/event-listener'
 import ThemeProvider from '@material-ui/styles/ThemeProvider'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { Container, CssBaseline, Theme } from '@material-ui/core'
+import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import { Header } from '@Components/structure/Layout/header'
 import { Cursor } from '@Components/elements/Cursor/cursor'
@@ -18,8 +20,6 @@ import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 import { createMaterialTheme } from '@Config/material-theme'
 import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
-import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
-import { graphql, useStaticQuery } from 'gatsby'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
