@@ -2,6 +2,7 @@ import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import styles from './cursor.mod.scss'
+import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 
 interface CursorProps {
   x: number
@@ -51,6 +52,12 @@ const Flower = styled.div<Flower>`
 export function Cursor({ x, y, mouseUp }: CursorProps) {
   const size = 42
   const dotSize = size / 7
+
+  const {
+    activeArea,
+    activeContainer,
+    additionalProps,
+  } = useMouseTrap()
 
   const controls = useAnimation()
 

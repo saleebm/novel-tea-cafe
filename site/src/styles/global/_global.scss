@@ -85,7 +85,35 @@ html {
 
 body {
   cursor: none;
+
+  font-family: 'Podkova', serif;
+  margin: unset !important;
+  font-variation-settings: 'wght' 400, 'GRAD' 72;
+  font-optical-sizing: auto;
+  font-kerning: normal;
+  font-variant-ligatures: contextual common-ligatures;
+  // https://rsms.me/inter/lab/
+  // stylistic alts give all the cool cv stuff
+  -webkit-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  -moz-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  -ms-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+  font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
+
+  &::backdrop {
+    background-color: inherit;
+  }
+
+  min-height: 100vh;
+  //noinspection CssInvalidPropertyValue
+  min-height: -webkit-fill-available;
+  //noinspection CssInvalidPropertyValue
+  min-height: -moz-available;
+  min-height: fit-content;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -137,35 +165,6 @@ a {
 strong,
 b {
   font-variation-settings: 'wght' 700;
-}
-
-// valid font-stretch
-//noinspection CssInvalidPropertyValue
-body {
-  font-family: 'Podkova', serif;
-  margin: unset !important;
-  font-variation-settings: 'wght' 400, 'GRAD' 72;
-  font-optical-sizing: auto;
-  font-kerning: normal;
-  font-variant-ligatures: contextual common-ligatures;
-  // https://rsms.me/inter/lab/
-  // stylistic alts give all the cool cv stuff
-  -webkit-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
-  -moz-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
-  -ms-font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
-  font-feature-settings: 'calt' 1, 'kern' 1, 'liga' 1;
-
-  &::backdrop {
-    background-color: inherit;
-  }
-
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  min-height: -moz-available;
-  min-height: fit-content;
-
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 ol,

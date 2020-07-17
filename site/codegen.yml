@@ -1,12 +1,14 @@
 overwrite: true
-schema: "localhost:8000/__graphql"
-documents: "./src/**/*.{ts,tsx}"
+schema: http://localhost:8000/___graphql
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby*/!(node_modules)/**/*.js
 generates:
-  src/generated/gatsby-graphql.tsx:
+  ./src/graphql/gatsby-graphql.ts:
     plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "typescript-react-apollo"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"
+      - typescript
+      - typescript-operations
+    config:
+      skipTypename: true
+      enumsAsTypes: true
+      exportFragmentSpreadSubTypes: true

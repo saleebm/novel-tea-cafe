@@ -5,34 +5,51 @@ import React, {
   MouseEvent,
   ReactNode,
   Reducer,
+  RefObject,
   useReducer,
+  useRef,
 } from 'react'
 import useEventListener from '@use-it/event-listener'
 import produce, { Draft } from 'immer'
 
-interface MouseTrap {
-  x: number
-  y: number
+export enum ActiveAreaTypes {
+  anchor = 'anchor',
+  image = 'image',
+  notSet = 'notSet',
 }
+
+export type ActiveAreaType =
+  | ActiveAreaTypes.anchor
+  | ActiveAreaTypes.image
+  | ActiveAreaTypes.notSet
+
 export type Cursor = Readonly<{
-  pos: Array<number>
-  mouseTraps: ReadonlyArray<MouseTrap>
+  pos: ReadonlyArray<number>
+  activeArea: ActiveAreaType
+  activeContainer: RefObject<any> | null
+  additionalProps: Readonly<{ [key: string]: any }>
 }>
 
-enum CursorActionTypes {
+export enum CursorActionTypes {
   setPos = 'SET_POS',
-  setMouseTraps = 'SET_MOUSE_TRAPS',
-  removeMouseTraps = 'REMOVE_MOUSE_TRAPS',
+  setActiveArea = 'SET_ACTIVE_AREA',
+  setAdditionalProps = 'SET_ADDITIONAL_PROPS',
+  setActiveContainer = 'SET_ACTIVE_CONTAINER',
 }
 
-interface SetMouseTrap {
-  type: CursorActionTypes.setMouseTraps
-  payload: MouseTrap
+interface SetActiveArea {
+  type: CursorActionTypes.setActiveArea
+  payload: ActiveAreaType
 }
 
-interface RemoveMouseTrap {
-  type: CursorActionTypes.removeMouseTraps
-  payload: MouseTrap
+interface SetActiveContainer {
+  type: CursorActionTypes.setActiveContainer
+  payload: any
+}
+
+interface SetAdditionalProps {
+  type: CursorActionTypes.setAdditionalProps
+  payload: Readonly<{ [key: string]: any }>
 }
 
 interface SetPos {
@@ -40,11 +57,17 @@ interface SetPos {
   payload: Array<number>
 }
 
-type CursorAction = SetMouseTrap | RemoveMouseTrap | SetPos
+export type CursorAction =
+  | SetActiveArea
+  | SetActiveContainer
+  | SetPos
+  | SetAdditionalProps
 
 const initialCursor: Cursor = {
   pos: [0, 0],
-  mouseTraps: [],
+  activeArea: ActiveAreaTypes.notSet,
+  activeContainer: null,
+  additionalProps: {},
 }
 
 export const CursorContext: Context<{
@@ -65,16 +88,18 @@ const reducer: Reducer<Cursor, CursorAction> = (
       case CursorActionTypes.setPos:
         draft.pos = action.payload as Array<number>
         return draft
-      case CursorActionTypes.setMouseTraps:
-        draft.mouseTraps.push(action.payload as MouseTrap)
+      case CursorActionTypes.setActiveArea:
+        draft.activeArea = action.payload as ActiveAreaType
         return draft
-      case CursorActionTypes.removeMouseTraps:
-        const optionalMouseTrap = draft.mouseTraps.indexOf(
-          action.payload as MouseTrap,
-        )
-        if (optionalMouseTrap) {
-          draft.mouseTraps.splice(optionalMouseTrap, 1)
+      case CursorActionTypes.setActiveContainer:
+        if (draft.activeContainer?.current) {
+          draft.activeContainer.current = action.payload
         }
+        return draft
+      case CursorActionTypes.setAdditionalProps:
+        draft.additionalProps = action.payload
+        return draft
+      default:
         return draft
     }
   })
@@ -85,6 +110,7 @@ export function MousePositionProvider({
   children: ReactNode | ReactNode[]
 }) {
   const [cursor, setCursor] = useReducer(reducer, initialCursor)
+  const activeContainer = useRef(null)
 
   useEventListener<MouseEvent>(
     'mousemove',
@@ -97,7 +123,15 @@ export function MousePositionProvider({
   )
 
   return (
-    <CursorContext.Provider value={{ cursor, setCursor }}>
+    <CursorContext.Provider
+      value={{
+        cursor: {
+          ...cursor,
+          activeContainer: activeContainer.current,
+        },
+        setCursor,
+      }}
+    >
       {children}
     </CursorContext.Provider>
   )

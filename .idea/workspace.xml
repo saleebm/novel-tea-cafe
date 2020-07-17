@@ -20,11 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/studio/plugins/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/codegen.yml" beforeDir="false" afterPath="$PROJECT_DIR$/site/codegen.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/static/assets/fonts/Jost/jost.css" beforeDir="false" afterPath="$PROJECT_DIR$/site/static/assets/fonts/Jost/jost.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -73,12 +84,15 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/site/node_modules/stylelint" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/site/node_modules/prettier" />
@@ -86,7 +100,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="configurable.stylesheets.stylelint" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/site/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -166,7 +180,8 @@
       <workItem from="1594846004217" duration="2951000" />
       <workItem from="1594852114840" duration="301000" />
       <workItem from="1594853658901" duration="292000" />
-      <workItem from="1594854114486" duration="11943000" />
+      <workItem from="1594854114486" duration="12015000" />
+      <workItem from="1594989532410" duration="6593000" />
     </task>
     <servers />
   </component>
@@ -185,6 +200,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/site" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="678" y="485" key="#Prettier" timestamp="1594858368514">
       <screen x="0" y="0" width="1920" height="1200" />
@@ -194,30 +214,30 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="938" height="447" key="GridCell.Tab.0.bottom" timestamp="1594868812030">
+    <state width="1878" height="188" key="GridCell.Tab.0.bottom" timestamp="1594995710701">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="447" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1594868812030" />
-    <state width="938" height="447" key="GridCell.Tab.0.center" timestamp="1594868812030">
+    <state width="1878" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1594995710701" />
+    <state width="1878" height="188" key="GridCell.Tab.0.center" timestamp="1594995710700">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="447" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1594868812030" />
-    <state width="938" height="447" key="GridCell.Tab.0.left" timestamp="1594868812029">
+    <state width="1878" height="188" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1594995710700" />
+    <state width="1878" height="188" key="GridCell.Tab.0.left" timestamp="1594995710700">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="447" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1594868812029" />
-    <state width="938" height="447" key="GridCell.Tab.0.right" timestamp="1594868812030">
+    <state width="1878" height="188" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1594995710700" />
+    <state width="1878" height="188" key="GridCell.Tab.0.right" timestamp="1594995710701">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="447" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1594868812030" />
-    <state x="469" y="236" key="SettingsEditor" timestamp="1594858559007">
+    <state width="1878" height="188" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1594995710701" />
+    <state x="469" y="236" key="SettingsEditor" timestamp="1594996378346">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1594858559007" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1594868882759">
+    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1594996378346" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1594995658321">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1594868882759" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1594995658321" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1594848707996">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -226,6 +246,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594868588939" />
+    <state x="100" y="100" width="754" height="1000" key="dock-window-1" timestamp="1594992323451">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="100" width="754" height="1000" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" timestamp="1594992323451" />
     <state x="661" y="355" width="734" height="490" key="find.popup" timestamp="1594864099194">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
