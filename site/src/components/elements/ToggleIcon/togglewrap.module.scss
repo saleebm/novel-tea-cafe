@@ -1,0 +1,55 @@
+/**
+ * The toggle wrap div
+ */
+.toggle_wrap {
+  font-weight: 600;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  height: 100%;
+  margin: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective-origin: center;
+  overflow: hidden;
+
+  span {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    grid-column: 1;
+    grid-row: 1;
+    filter: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: 100ms filter ease-out;
+    }
+
+    svg {
+      z-index: auto;
+      transform-style: preserve-3d;
+    }
+
+    &.closed:hover,
+    &.closed:focus {
+      filter: contrast(130%);
+    }
+
+    &.open:hover,
+    &.open:focus {
+      filter: brightness(130%);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover,
+      &:focus {
+        transition: 100ms filter;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ interface Seo {
 
 export function SEO({ description, title, image }: Seo) {
   const { site, file } = useStaticQuery(graphql`
-    query {
+    query SEO_DATA {
       site {
         siteMetadata {
           title
