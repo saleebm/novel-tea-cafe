@@ -20,15 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-debounced-callback.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/toggle-icon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/togglewrap.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/darkmode-toggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/graphql/fragments.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/static/assets/images/flowers/pink-on-greenish-bg.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/context/DarkMode/dark-mode-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/DarkMode/dark-mode-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/context/IntersectionObserver/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/IntersectionObserver/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/styles/global/__index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/__index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +55,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -74,7 +88,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/site/static/assets/images/flowers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/site/src/components/elements/ToggleIcon" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -99,13 +114,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/site/src/components/elements/ToggleIcon" />
       <recent name="$PROJECT_DIR$/site/static/assets/images/flowers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/studio/schemas/documents" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.develop">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="codegen" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/site/package.json" />
       <command value="run" />
@@ -148,9 +164,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.develop" />
-        <item itemvalue="npm.codegen" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.codegen" />
+        <item itemvalue="npm.develop" />
         <item itemvalue="npm.graphql-deploy" />
       </list>
     </recent_temporary>
@@ -176,7 +192,9 @@
       <workItem from="1594853658901" duration="292000" />
       <workItem from="1594854114486" duration="12015000" />
       <workItem from="1594989532410" duration="9014000" />
-      <workItem from="1594999546141" duration="10937000" />
+      <workItem from="1594999546141" duration="11082000" />
+      <workItem from="1595014633435" duration="8588000" />
+      <workItem from="1595094924325" duration="17455000" />
     </task>
     <servers />
   </component>
@@ -209,49 +227,53 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="1878" height="291" key="GridCell.Tab.0.bottom" timestamp="1595011117144">
+    <state width="1878" height="241" key="GridCell.Tab.0.bottom" timestamp="1595113213467">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595011117144" />
-    <state width="1878" height="291" key="GridCell.Tab.0.center" timestamp="1595011117143">
+    <state width="1878" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595113213467" />
+    <state width="1878" height="241" key="GridCell.Tab.0.center" timestamp="1595113213466">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="291" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595011117143" />
-    <state width="1878" height="291" key="GridCell.Tab.0.left" timestamp="1595011117142">
+    <state width="1878" height="241" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595113213466" />
+    <state width="1878" height="241" key="GridCell.Tab.0.left" timestamp="1595113213465">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="291" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595011117142" />
-    <state width="1878" height="291" key="GridCell.Tab.0.right" timestamp="1595011117143">
+    <state width="1878" height="241" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595113213465" />
+    <state width="1878" height="241" key="GridCell.Tab.0.right" timestamp="1595113213466">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="291" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595011117143" />
+    <state width="1878" height="241" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595113213466" />
     <state x="469" y="236" key="SettingsEditor" timestamp="1595009356587">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595009356587" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1595003144956">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595112983878">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595003144956" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595112983878" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1594848707996">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="560" y="337" key="Vcs.Push.Dialog.v2/0.0.1920.1200@0.0.1920.1200" timestamp="1594848707996" />
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595011005169">
+    <state x="842" y="448" key="cloudConfig.SelfSettingsDialog" timestamp="1595014928730">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595011005169" />
+    <state x="842" y="448" key="cloudConfig.SelfSettingsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595014928730" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595100126364">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595100126364" />
     <state x="100" y="100" width="754" height="1000" key="dock-window-1" timestamp="1594992323451">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="754" height="1000" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" timestamp="1594992323451" />
-    <state x="661" y="355" width="734" height="490" key="find.popup" timestamp="1594864099194">
+    <state x="661" y="355" width="734" height="490" key="find.popup" timestamp="1595103860446">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="661" y="355" width="734" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594864099194" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595006414701">
+    <state x="661" y="355" width="734" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595103860446" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595112134413">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595006414701" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595112134413" />
   </component>
 </project>

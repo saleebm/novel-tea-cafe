@@ -4,14 +4,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import GatsbyLink from 'gatsby-link'
 import { Container } from '@material-ui/core'
 
-import styles from './header.mod.scss'
-import { Logo_ImgQuery } from '@Graphql/gatsby-graphql'
+import { Logo_Img_In_HeaderQuery } from '@Graphql/gatsby-graphql'
 import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
 import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
+import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
+import styles from './header.mod.scss'
 
 export function Header() {
-  const { file } = useStaticQuery<Logo_ImgQuery>(graphql`
-    query LOGO_IMG {
+  const { file } = useStaticQuery<Logo_Img_In_HeaderQuery>(graphql`
+    query LOGO_IMG_IN_HEADER {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fixed(quality: 100, height: 100) {
@@ -54,6 +55,9 @@ export function Header() {
             )}
           </GatsbyLink>
         </figure>
+        <div className={styles.darkmode_area}>
+          <DarkmodeToggle />
+        </div>
       </div>
     </Container>
   )

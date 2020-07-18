@@ -16,3 +16,10 @@
 .logo_link {
   cursor: none;
 }
+
+.darkmode_area {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 1rem auto;
+}

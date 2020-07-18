@@ -51,6 +51,7 @@ export const DarkModeContextProvider = ({
     const setMode = (mode: boolean) => {
       cookieService.setItem(themeKeyLocalStorage, String(mode), {
         sameSite: 'lax',
+        maxAge: 2 * 60 * 60 * 1000, // 3 hours
       })
       toggleThemeMode({ isDarkMode: mode })
     }

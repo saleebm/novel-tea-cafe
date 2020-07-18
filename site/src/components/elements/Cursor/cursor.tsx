@@ -1,10 +1,9 @@
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation, useCycle } from 'framer-motion'
 import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 import styled from 'styled-components'
 import styles from './cursor.mod.scss'
 import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
-import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 
 interface CursorProps {
   x: number
@@ -18,9 +17,14 @@ interface FlowerProps {
   animationDuration: number
 }
 
-const Flower = styled.div<FlowerProps>`
+const Flower = styled(motion.div)<FlowerProps>`
   height: ${(props) => props.size}px;
   width: ${(props) => props.size}px;
+
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 128, 0, 0.9);
 
   * {
     box-sizing: border-box;
@@ -32,16 +36,15 @@ const Flower = styled.div<FlowerProps>`
   }
 
   .smaller-dot {
-    background-color: rgba(0, 255, 0, 1);
+    background-image: radial-gradient(rgba(0, 255, 0, 0.74), #15861a);
     height: 100%;
     width: 100%;
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(0, 128, 0, 0.72);
   }
   .bigger-dot {
-    background-color: rgba(0, 255, 0, 1);
+    background-image: radial-gradient(
+      #6498e6,
+      rgba(88, 94, 165, 0.68)
+    );
     height: 100%;
     width: 100%;
     padding: 10%;
@@ -57,6 +60,8 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
   const DOT_SIZE = SIZE / 7
 
   const controls = useAnimation()
+
+  const controlFlowerPower = useAnimation()
 
   const {
     activeArea,
@@ -118,20 +123,16 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
 
   const [debouncedAnimateBoundingBox] = useDebouncedCallback(
     async (box: DOMRect) => {
-      await controls.start((i) => ({
-        filter: 'opacity(0.1)',
-        scaleX: i * (Math.max(100, box.width) / 3),
-        scaleY: i * (Math.max(100, box.height) / 3),
-      }))
+      await controlFlowerPower.start({
+        boxShadow: `${box.x}px ${box.y} 1px green`,
+        scale: 2,
+      })
     },
     420,
   )
 
   useEffect(() => {
-    if (activeArea === ActiveAreaTypes.notSet) {
-      //  reset back to default controls
-      controls.start(RESET_CONTROLS)
-    } else if (
+    if (
       activeContainer &&
       typeof activeContainer === 'object' &&
       'getBoundingClientRect' in activeContainer &&
@@ -139,14 +140,13 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     ) {
       const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
       debouncedAnimateBoundingBox(boundingBox2D)
+    } else {
+      controlFlowerPower.start({
+        boxShadow: '0 0 1px green',
+        scale: 1,
+      })
     }
-  }, [
-    activeArea,
-    activeContainer,
-    RESET_CONTROLS,
-    controls,
-    debouncedAnimateBoundingBox,
-  ])
+  }, [activeArea, activeContainer, debouncedAnimateBoundingBox])
 
   useEffect(() => {
     controls.start(RESET_CONTROLS).then(async () => {
@@ -159,12 +159,12 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     <div className={styles.cursorWrap}>
       <motion.div
         initial={{
-          y: 0,
-          x: 0,
+          translateY: y - SIZE / 2,
+          translateX: x - SIZE / 2,
         }}
         animate={{
-          y: y - SIZE / 2,
-          x: x - SIZE / 2,
+          translateY: y - SIZE / 2,
+          translateX: x - SIZE / 2,
         }}
         transition={{
           type: 'spring',
@@ -176,6 +176,15 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           dotSize={DOT_SIZE}
           animationDuration={1000}
           className={styles.cursor}
+          animate={controlFlowerPower}
+          initial={{
+            boxShadow: '0 0 1px green',
+            scale: 1,
+          }}
+          exit={{
+            boxShadow: '0 0 1px green',
+            scale: 1,
+          }}
         >
           <div className='dots-container'>
             <motion.div

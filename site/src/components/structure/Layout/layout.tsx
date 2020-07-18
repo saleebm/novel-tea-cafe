@@ -76,7 +76,7 @@ export function Layout({ children }: Layout) {
     [isDarkMode],
   )
   const { file } = useStaticQuery(graphql`
-    query {
+    query LOGO_IMG {
       file(relativePath: { eq: "logo.png" }) {
         publicURL
       }

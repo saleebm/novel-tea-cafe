@@ -1,4 +1,10 @@
-import { createContext, FC, useEffect, useRef, useState } from 'react'
+import React, {
+  createContext,
+  FC,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { useIntersectionObserver } from '@Utils/hooks/use-intersection-observer'
 
 export const IntersectionContext = createContext({ inView: true })
