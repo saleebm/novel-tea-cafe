@@ -18,7 +18,6 @@ export function DarkmodeToggle() {
     <MouseTrap additionalProps={{}} area={ActiveAreaTypes.anchor}>
       <CSSTransition
         in={isDarkMode}
-        mountOnEnter
         classNames={'switch'}
         onClick={setDarkMode}
         timeout={0}

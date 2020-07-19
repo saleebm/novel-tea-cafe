@@ -20,6 +20,7 @@ import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 import { createMaterialTheme } from '@Config/material-theme'
 import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
+import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -141,6 +142,7 @@ export function Layout({ children }: Layout) {
           <GlobalStyles />
           <CssBaseline />
         </Container>
+        <BackToTop />
       </div>
     </ThemeProvider>
   )

@@ -120,33 +120,29 @@ export const createMaterialTheme = (isDarkMode: boolean) =>
       typography: {
         ...typography,
         button: {
-          'fontFamily': "'Podkova', serif",
-          'fontSize': '1rem',
-          'lineHeight': 1,
-          'letterSpacing': '-0.013em',
-          'fontVariationSettings': '"wght" 400, "CONT" 0, "SALT" 1',
-          '--fa-primary-color': isDarkMode
-            ? commonColors.primaryColorLight
-            : commonColors.primaryColorDark,
-          '--fa-secondary-color': isDarkMode
-            ? grey['300']
-            : grey['A400'],
-          '& svg path': {
-            transition: '200ms fill',
-          },
-          '&:hover, &:focus': {
-            '--fa-primary-color': isDarkMode
-              ? commonColors.paperWhite
-              : commonColors.paperBlack,
-            '--fa-secondary-color': isDarkMode
-              ? grey['300']
-              : grey['A400'],
-          },
+          fontFamily: "'Podkova', serif",
+          fontSize: '1rem',
+          lineHeight: 1,
+          letterSpacing: '-0.013em',
+          fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
         },
       },
       breakpoints: {
         /* adjusting small to 650 from 600 */
         values: { xs: 0, sm: 650, md: 960, lg: 1280, xl: 1920 },
+      },
+      mixins: {
+        visuallyHidden: {
+          clip: 'rect(1px, 1px, 1px, 1px) !important',
+          visibility: 'hidden',
+          position: 'absolute',
+          insetBlockStart: 0,
+          overflow: 'hidden !important',
+          height: '1px',
+          width: '1px',
+          padding: 0,
+          margin: 0,
+        },
       },
     }),
   )

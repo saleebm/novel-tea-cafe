@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Icon } from '@material-ui/core'
 import classes from 'clsx'
-import styles from './togglewrap.module.scss'
+import styles from './togglewrap.mod.scss'
 
 interface ToggleIcon {
   isToggled: boolean
