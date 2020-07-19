@@ -1,4 +1,4 @@
-import { motion, useAnimation, useCycle } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 import styled from 'styled-components'
@@ -146,7 +146,12 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
         scale: 1,
       })
     }
-  }, [activeArea, activeContainer, debouncedAnimateBoundingBox])
+  }, [
+    activeArea,
+    activeContainer,
+    debouncedAnimateBoundingBox,
+    controlFlowerPower,
+  ])
 
   useEffect(() => {
     controls.start(RESET_CONTROLS).then(async () => {

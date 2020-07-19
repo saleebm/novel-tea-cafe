@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Container, Grid, Paper, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import GatsbyImage, { FixedObject, FluidObject } from 'gatsby-image'
+import GatsbyImage, { FluidObject } from 'gatsby-image'
 import {
   AnimatedInView,
   AnimatedIOView,

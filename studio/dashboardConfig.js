@@ -18,7 +18,7 @@ export default {
                 },
                 {
                   buildHookId: '',
-                  title: 'Blog Website',
+                  title: 'Website',
                   name: '',
                   apiId: ''
                 }

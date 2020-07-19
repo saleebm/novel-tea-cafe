@@ -11,7 +11,9 @@ import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 import route from './documents/route'
 import weeklyEvents from "./documents/weeklyEvents";
-
+import menuItem from './documents/menuItem'
+import menuItemPriceOption from './objects/menuItemPriceOption'
+import menuItemCategory from './documents/menuItemCategory'
 import experiment from './objects/experiment'
 import simpleBlockContent from './objects/simpleBlockContent'
 
@@ -49,6 +51,9 @@ export default createSchema({
       cta,
       weeklyEvents,
       siteSettings,
+      menuItemPriceOption,
+      menuItemCategory,
+      menuItem,
       post,
       page,
       category,
