@@ -1,7 +1,6 @@
 // Create a theme instance.
 // todo mui v5
 import { unstable_createMuiStrictModeTheme } from '@material-ui/core/styles'
-import { grey } from '@material-ui/core/colors'
 import responsiveFontSizes from '@material-ui/core/styles/responsiveFontSizes'
 import { TypographyOptions } from '@material-ui/core/styles/createTypography'
 import { commonColors } from './common-colors'
