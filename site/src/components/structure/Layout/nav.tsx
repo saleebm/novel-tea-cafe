@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import { fade, makeStyles } from '@material-ui/core/styles'
-import { AnimatePresence, motion, Variants } from 'framer-motion'
+import { Backdrop, MenuItem } from '@material-ui/core'
+import { motion, Variants } from 'framer-motion'
 import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
 import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
-import { Backdrop } from '@material-ui/core'
+import { ROUTES } from '@Config/routes'
+import GatsbyLink from 'gatsby-link'
+import {
+  AnimatedInPlainViewParent,
+  AnimatedInViewChildDiv,
+} from '@Components/elements/InView/in-view'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -21,12 +27,19 @@ const useStyles = makeStyles((theme) => ({
   navigation: {
     width: '100%',
     height: '100%',
-    minHeight: '100vh',
-    minWidth: '100vw',
-    position: 'fixed',
-    top: 0,
-    left: 0,
+    position: 'relative',
     backgroundColor: fade(theme.palette.background.paper, 0.9),
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'space-evenly',
+    padding: theme.spacing(3),
+  },
+  menuItems: {
+    fontSize: '7vw',
+    fontVariant: 'petite-caps',
+    marginTop: theme.spacing(3),
   },
 }))
 
@@ -34,17 +47,14 @@ const navigationVariants: Variants = {
   hidden: {
     scaleY: 0,
     scaleX: 1,
-    translateY: '-100vh',
   },
   open: {
     scaleY: 1,
     scaleX: 1,
-    translateY: 0,
   },
   close: {
     scaleY: 0,
     scaleX: 0,
-    translateY: '100vh',
   },
 }
 
@@ -65,19 +75,32 @@ export function Nav() {
         onToggleClicked={() => setNavOpen((prevState) => !prevState)}
       />
       <div className={classes.navigationWrap}>
-        <AnimatePresence exitBeforeEnter>
-          {navOpen && (
-            <motion.nav
-              initial={'hidden'}
-              animate={'open'}
-              exit={'close'}
-              variants={navigationVariants}
-              className={classes.navigation}
-            >
+        <Backdrop unmountOnExit mountOnEnter open={navOpen}>
+          <motion.nav
+            initial={'hidden'}
+            animate={'open'}
+            exit={'close'}
+            variants={navigationVariants}
+            className={classes.navigation}
+          >
+            <AnimatedInPlainViewParent>
+              {ROUTES.map((route) => (
+                <AnimatedInViewChildDiv key={route.path}>
+                  <MenuItem
+                    aria-label={route.name}
+                    to={route.path}
+                    component={GatsbyLink}
+                    className={classes.menuItems}
+                    onClick={() => setNavOpen(false)}
+                  >
+                    {route.name}
+                  </MenuItem>
+                </AnimatedInViewChildDiv>
+              ))}
               <DarkmodeToggle />
-            </motion.nav>
-          )}
-        </AnimatePresence>
+            </AnimatedInPlainViewParent>
+          </motion.nav>
+        </Backdrop>
       </div>
     </div>
   )

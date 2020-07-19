@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   tagLine: {
     fontSize: '3vw',
     lineHeight: 2,
-    textAlign: 'right',
+    textAlign: 'left',
   },
   pageContainer: {
     display: 'flex',
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     objectFit: 'contain',
+    transform: 'skew(-12deg)',
   },
   weeklyEventsSection: {
     width: '100%',
@@ -49,10 +50,22 @@ const useStyles = makeStyles((theme) => ({
 
 function IndexPage({ data }: Index) {
   const classes = useStyles()
-  const { sanityPage } = data
+  const { sanityPage, sanitySiteSettings } = data
   return (
     <>
-      <SEO title={'Herbal Mixology'} image={[]} />
+      <SEO
+        title={sanityPage?.hero?.heading ?? 'Herbal Mixology'}
+        description={sanitySiteSettings?.openGraph?.description ?? ''}
+        image={[
+          {
+            url:
+              sanitySiteSettings?.openGraph?.image?.asset?.url ?? '',
+            alt: sanitySiteSettings?.openGraph?.image?.alt ?? '',
+            height: 500,
+            width: 500,
+          },
+        ]}
+      />
       <Container
         maxWidth={false}
         disableGutters
@@ -142,7 +155,7 @@ export const query = graphql`
           alt
           asset {
             url
-            fixed {
+            fixed(width: 500, height: 500) {
               ...GatsbySanityImageFixed
             }
           }

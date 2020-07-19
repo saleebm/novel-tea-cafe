@@ -20,32 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/site/.graphqlconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.mod.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menu-toggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menutoggle.mod.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/config/routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/models/types/material-ui.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-effect-once.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-ref-state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-unmount.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-window-scroll.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/toggle-icon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/toggle-icon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/togglewrap.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/ToggleIcon/togglewrap.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/darkmode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/darkmode-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/material-theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/site/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menu-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menu-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +75,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
@@ -128,7 +115,7 @@
       <recent name="$PROJECT_DIR$/studio/schemas/documents" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.codegen">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="codegen" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/site/package.json" />
       <command value="run" />
@@ -171,9 +158,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.codegen" />
-        <item itemvalue="npm.develop" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.develop" />
+        <item itemvalue="npm.codegen" />
         <item itemvalue="npm.graphql-deploy" />
       </list>
     </recent_temporary>
@@ -204,7 +191,7 @@
       <workItem from="1595094924325" duration="17487000" />
       <workItem from="1595113832170" duration="519000" />
       <workItem from="1595114612015" duration="4598000" />
-      <workItem from="1595187861812" duration="463000" />
+      <workItem from="1595187861812" duration="4786000" />
     </task>
     <servers />
   </component>
@@ -237,30 +224,30 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="938" height="184" key="GridCell.Tab.0.bottom" timestamp="1595188182838">
+    <state width="1878" height="156" key="GridCell.Tab.0.bottom" timestamp="1595193383332">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595188182838" />
-    <state width="938" height="184" key="GridCell.Tab.0.center" timestamp="1595188182837">
+    <state width="1878" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595193383332" />
+    <state width="1878" height="156" key="GridCell.Tab.0.center" timestamp="1595193383331">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="184" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595188182837" />
-    <state width="938" height="184" key="GridCell.Tab.0.left" timestamp="1595188182837">
+    <state width="1878" height="156" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595193383331" />
+    <state width="1878" height="156" key="GridCell.Tab.0.left" timestamp="1595193383330">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="184" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595188182837" />
-    <state width="938" height="184" key="GridCell.Tab.0.right" timestamp="1595188182838">
+    <state width="1878" height="156" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595193383330" />
+    <state width="1878" height="156" key="GridCell.Tab.0.right" timestamp="1595193383332">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="938" height="184" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595188182838" />
+    <state width="1878" height="156" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595193383332" />
     <state x="469" y="236" key="SettingsEditor" timestamp="1595188336765">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595188336765" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1595119263134">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595193619127">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595119263134" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595193619127" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1594848707996">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

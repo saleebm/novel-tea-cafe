@@ -1,8 +1,10 @@
-export const ROUTES = Object.freeze({
-  home: {
+export const ROUTES = Object.freeze([
+  {
     path: '/',
+    name: 'Front Page',
   },
-  weeklyEvents: {
+  {
     path: '/weekly-events',
+    name: 'Weekly Events',
   },
-})
+])

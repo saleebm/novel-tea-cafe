@@ -48,12 +48,8 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
   return (
     <>
       <SEO title={'Weekly Events'} />
-      <Container
-        maxWidth={false}
-        disableGutters
-        className={classes.pageContainer}
-      >
-        <Grid container>
+      <Container maxWidth={'xl'} className={classes.pageContainer}>
+        <Grid container spacing={7}>
           <Grid className={classes.weeklyEventsSection} item xs={12}>
             <WeeklyEvents
               allSanityWeeklyEvents={data.allSanityWeeklyEvents}
