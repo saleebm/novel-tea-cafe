@@ -8,11 +8,10 @@ import {
   AnimatedInViewChildDiv,
 } from '@Components/elements/InView/in-view'
 import { SEO } from '@Components/elements/SEO/seo'
-import { HomepageAndWeeklyEventsQuery } from '@Graphql/gatsby-graphql'
-import { WeeklyEvents } from '@Components/views/WeeklyEvents/weekly-events'
+import { HomepageQuery } from '@Graphql/gatsby-graphql'
 
 interface Index {
-  data: HomepageAndWeeklyEventsQuery
+  data: HomepageQuery
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +52,7 @@ function IndexPage({ data }: Index) {
   const { sanityPage } = data
   return (
     <>
-      <SEO title={'Herbal Mixology'} />
+      <SEO title={'Herbal Mixology'} image={[]} />
       <Container
         maxWidth={false}
         disableGutters
@@ -117,47 +116,13 @@ function IndexPage({ data }: Index) {
             </AnimatedInPlainViewParent>
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid className={classes.weeklyEventsSection} item xs={12}>
-            <WeeklyEvents
-              allSanityWeeklyEvents={data.allSanityWeeklyEvents}
-            />
-          </Grid>
-        </Grid>
       </Container>
     </>
   )
 }
 
 export const query = graphql`
-  query homepageAndWeeklyEvents {
-    allSanityWeeklyEvents {
-      edges {
-        node {
-          monday {
-            ...DAY
-          }
-          tuesday {
-            ...DAY
-          }
-          wednesday {
-            ...DAY
-          }
-          thursday {
-            ...DAY
-          }
-          friday {
-            ...DAY
-          }
-          saturday {
-            ...DAY
-          }
-          sunday {
-            ...DAY
-          }
-        }
-      }
-    }
+  query homepage {
     sanityPage(title: { eq: "Frontpage" }) {
       hero {
         heading
@@ -166,6 +131,21 @@ export const query = graphql`
         }
         illustration {
           ...FLUID_IMAGE
+        }
+      }
+    }
+    sanitySiteSettings {
+      openGraph {
+        title
+        description
+        image {
+          alt
+          asset {
+            url
+            fixed {
+              ...GatsbySanityImageFixed
+            }
+          }
         }
       }
     }

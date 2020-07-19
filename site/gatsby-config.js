@@ -80,7 +80,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-eslint`,
     `gatsby-plugin-offline`,
   ],
 }

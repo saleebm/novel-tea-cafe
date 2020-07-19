@@ -1,0 +1,81 @@
+/**
+    MENU TOGGLE
+    */
+.mainMenuTriggerWrapper {
+  flex: 1;
+  z-index: 12000000;
+  position: relative;
+  display: grid;
+  align-self: flex-start;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transform-origin: center;
+  border: none !important;
+  outline: none !important;
+  background-blend-mode: difference;
+  mix-blend-mode: hard-light;
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mainMenuTrigger {
+      transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .text {
+      transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-name: float-in;
+      animation-duration: 200ms;
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-delay: inherit;
+    }
+  }
+
+  // button
+  .mainMenuTrigger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 0.7;
+    border: none !important;
+    outline: none !important;
+    background: unset;
+    mix-blend-mode: inherit;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    // the three spans
+    .span {
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      width: 45px;
+      height: 3px;
+      margin-top: -2px;
+      transform-origin: center;
+      opacity: inherit;
+      border: 1px;
+      outline: none !important;
+      transform-style: preserve-3d;
+
+      &:first-child {
+        transform: translateY(-5px);
+      }
+
+      &:nth-child(2) {
+        width: 23px;
+      }
+    }
+    &:hover,
+    :focus {
+      opacity: 1;
+
+      .span {
+        filter: brightness(130%) contrast(120%);
+      }
+    }
+  }
+}

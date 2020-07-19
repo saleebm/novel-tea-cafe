@@ -6679,10 +6679,15 @@ export type DayFragment = (
   & { tagline?: Maybe<Array<Maybe<TaglineFragment>>>, illustration?: Maybe<Fluid_ImageFragment> }
 );
 
-export type HomepageAndWeeklyEventsQueryVariables = Exact<{ [key: string]: never; }>;
+export type HomepageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomepageAndWeeklyEventsQuery = { allSanityWeeklyEvents: { edges: Array<{ node: { monday?: Maybe<DayFragment>, tuesday?: Maybe<DayFragment>, wednesday?: Maybe<DayFragment>, thursday?: Maybe<DayFragment>, friday?: Maybe<DayFragment>, saturday?: Maybe<DayFragment>, sunday?: Maybe<DayFragment> } }> }, sanityPage?: Maybe<{ hero?: Maybe<(
+export type HomepageQuery = { sanityPage?: Maybe<{ hero?: Maybe<(
       Pick<SanityHero, 'heading'>
       & { tagline?: Maybe<Array<Maybe<TaglineFragment>>>, illustration?: Maybe<Fluid_ImageFragment> }
-    )> }> };
+    )> }>, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type WeeklyEventsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type WeeklyEventsQuery = { allSanityWeeklyEvents: { edges: Array<{ node: { monday?: Maybe<DayFragment>, tuesday?: Maybe<DayFragment>, wednesday?: Maybe<DayFragment>, thursday?: Maybe<DayFragment>, friday?: Maybe<DayFragment>, saturday?: Maybe<DayFragment>, sunday?: Maybe<DayFragment> } }> } };
