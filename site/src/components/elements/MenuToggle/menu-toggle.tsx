@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Box, Button } from '@material-ui/core'
 
 import styles from './menutoggle.mod.scss'
+import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
+import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 
 interface ToggleIcon {
   isToggled: boolean
@@ -82,24 +84,29 @@ export const MenuToggle = ({
       title={isToggled ? 'close menu' : 'open menu'}
       aria-label={isToggled ? 'close menu' : 'open menu'}
     >
-      <Button
-        aria-label={'menu button'}
-        variant={'text'}
-        title={isToggled ? 'close menu' : 'open menu'}
-        onClick={onToggleClicked}
-        className={classNames(classes.button, styles.mainMenuTrigger)}
-      >
-        <MenuBarMotion
-          component={'span'}
-          variants={spanOne}
-          className={classNames(styles.span, classes.root)}
-        />
-        <MenuBarMotion
-          component={'span'}
-          variants={spanTwo}
-          className={classNames(styles.span, classes.root)}
-        />
-      </Button>
+      <MouseTrap area={ActiveAreaTypes.anchor} additionalProps={{}}>
+        <Button
+          aria-label={'menu button'}
+          variant={'text'}
+          title={isToggled ? 'close menu' : 'open menu'}
+          onClick={onToggleClicked}
+          className={classNames(
+            classes.button,
+            styles.mainMenuTrigger,
+          )}
+        >
+          <MenuBarMotion
+            component={'span'}
+            variants={spanOne}
+            className={classNames(styles.span, classes.root)}
+          />
+          <MenuBarMotion
+            component={'span'}
+            variants={spanTwo}
+            className={classNames(styles.span, classes.root)}
+          />
+        </Button>
+      </MouseTrap>
     </motion.div>
   )
 }

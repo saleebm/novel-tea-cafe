@@ -27,7 +27,7 @@ export interface WeeklyEvents {
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(7),
+    marginTop: theme.spacing(1),
     width: '100%',
     display: 'flex',
     flexFlow: 'row wrap',
@@ -36,22 +36,29 @@ const useStyles = makeStyles((theme) => ({
   },
   weeklyTitleWrap: {
     width: '100%',
-    margin: `${theme.spacing(3)}px auto`,
+    margin: `${theme.spacing(1)}px auto`,
     fontSize: '7vw',
     paddingLeft: '3vw',
   },
   daysContainer: {
-    width: '100vw',
+    width: '100%',
   },
   dayWrap: {
     'position': 'relative',
     'transformOrigin': 'center',
     'width': '100%',
     '&:nth-child(2n)': {
+      // the daypaper
       '& article': {
-        alignSelf: 'flex-end',
-        borderBottomRightRadius: '3px',
-        borderTopRightRadius: '3px',
+        'alignSelf': 'flex-end',
+        'borderBottomRightRadius': '7px',
+        'borderTopRightRadius': '7px',
+        'borderTopLeftRadius': '0 !important',
+        'borderBottomLeftRadius': '0 !important',
+        'transform': 'skew(-12deg) !important',
+        '& > div': {
+          transform: 'skew(12deg) !important',
+        },
       },
     },
   },
@@ -63,20 +70,27 @@ const useStyles = makeStyles((theme) => ({
   dayPaper: {
     maxWidth: '1280px',
     width: '100%',
-    paddingLeft: theme.spacing(3),
-    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
     border: '10px solid',
     borderImageSource: `linear-gradient(60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
-    borderImageSlice: 1,
-    borderImageRepeat: 'round repeat',
+    borderImageSlice: '42 69',
+    borderImageRepeat: 'round',
+    transform: 'skew(12deg)',
+    borderTopLeftRadius: '7px',
+    borderBottomLeftRadius: '7px',
+  },
+  paperContent: {
+    transform: 'skew(-12deg)',
   },
   taglineText: {
     textAlign: 'center',
   },
   figureWrap: {
     margin: 0,
-    padding: 0,
+    padding: '0 50px',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   imgContainer: {
     display: 'block',
@@ -151,7 +165,6 @@ export function WeeklyEvents({
       className={classes.container}
       component={'section'}
       maxWidth={false}
-      disableGutters
     >
       <Typography className={classes.weeklyTitleWrap} variant={'h1'}>
         Weekly Events
@@ -164,7 +177,7 @@ export function WeeklyEvents({
             key={day.dayName}
             xs={12}
           >
-            <AnimatedInView
+            <div
               className={classes.dayAnimationContainer}
               key={day.dayName}
             >
@@ -174,70 +187,75 @@ export function WeeklyEvents({
                 elevation={8}
                 className={classes.dayPaper}
               >
-                <AnimatedIOView
-                  className={classes.taglineText}
-                  delayOrder={1}
-                >
-                  <Typography variant={'h2'}>
-                    {day.heading}
-                  </Typography>
-                </AnimatedIOView>
-                <Grid
-                  container
-                  component={'figure'}
-                  className={classes.figureWrap}
-                  spacing={0}
-                >
-                  <Grid item xs={12} md={6}>
-                    {day.illustration?.image?.asset?.fluid && (
-                      <AnimatedIOView
-                        delayOrder={2}
-                        className={classes.imgContainer}
-                      >
-                        <GatsbyImage
-                          imgStyle={{
-                            objectFit: 'contain !important',
-                            height: '500px',
-                            maxHeight: '500px',
-                            width: 'auto',
-                            filter: `contrast(1.2) sepia(1) invert(${
-                              isDarkMode ? 1 : 0
-                            }) brightness(${isDarkMode ? 0.9 : 1.1})`,
-                          }}
-                          fluid={
-                            day.illustration.image.asset
-                              .fluid as FluidObject
-                          }
-                        />
-                      </AnimatedIOView>
-                    )}
-                  </Grid>
-                  <Grid
-                    className={classes.taglineFigureCaption}
-                    item
-                    xs={12}
-                    md={6}
-                    component={'figcaption'}
+                <AnimatedInView className={classes.paperContent}>
+                  <AnimatedIOView
+                    className={classes.taglineText}
+                    delayOrder={1}
                   >
-                    <AnimatedIOView delayOrder={3}>
-                      {day.tagline?.map(
-                        (tags, index) =>
-                          tags &&
-                          Array.isArray(tags.children) &&
-                          tags.children.map((child) => (
-                            <Typography
-                              variant={'h3'}
-                              key={`${index}`}
-                            >
-                              {child?.text}
-                            </Typography>
-                          )),
+                    <Typography variant={'h2'}>
+                      {day.heading}
+                    </Typography>
+                  </AnimatedIOView>
+                  <Grid
+                    container
+                    component={'figure'}
+                    className={classes.figureWrap}
+                    spacing={0}
+                  >
+                    <Grid item xs={12} md={6}>
+                      {day.illustration?.image?.asset?.fluid && (
+                        <AnimatedIOView
+                          delayOrder={2}
+                          disableScale
+                          className={classes.imgContainer}
+                        >
+                          <GatsbyImage
+                            imgStyle={{
+                              objectFit: 'contain !important',
+                              height: '500px',
+                              maxHeight: '500px',
+                              width: 'auto',
+                              filter: `contrast(1.2) sepia(1) invert(${
+                                isDarkMode ? 1 : 0
+                              }) brightness(${
+                                isDarkMode ? 0.9 : 1.1
+                              })`,
+                            }}
+                            fluid={
+                              day.illustration.image.asset
+                                .fluid as FluidObject
+                            }
+                          />
+                        </AnimatedIOView>
                       )}
-                    </AnimatedIOView>
+                    </Grid>
+                    <Grid
+                      className={classes.taglineFigureCaption}
+                      item
+                      xs={12}
+                      md={6}
+                      component={'figcaption'}
+                    >
+                      <AnimatedIOView disableScale delayOrder={3}>
+                        {day.tagline?.map(
+                          (tags, index) =>
+                            tags &&
+                            Array.isArray(tags.children) &&
+                            tags.children.map((child) => (
+                              <Typography
+                                variant={'h3'}
+                                key={`${index}`}
+                              >
+                                {child?.text}
+                              </Typography>
+                            )),
+                        )}
+                      </AnimatedIOView>
+                    </Grid>
                   </Grid>
-                </Grid>
+                </AnimatedInView>
               </Paper>
-            </AnimatedInView>
+            </div>
           </Grid>
         ))}
       </Grid>

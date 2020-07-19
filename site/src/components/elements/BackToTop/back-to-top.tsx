@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { ArrowDropUp } from '@material-ui/icons'
-import { Button } from '@material-ui/core'
+import { IconButton as Button } from '@material-ui/core'
 import { motion, Variants } from 'framer-motion'
 import clsx from 'clsx'
 import { useWindowScroll } from '@Utils/hooks/use-window-scroll'
@@ -23,9 +23,15 @@ const MotionButton = motion.custom(Button)
 
 const useStyles = makeStyles((theme: Theme) => ({
   anchor: {
-    position: 'fixed',
-    transition: theme.transitions.create(
-      ['transform, backgroundColor'],
+    'position': 'fixed',
+    'backgroundColor': theme.palette.text.primary,
+    'color': theme.palette.background.default,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.text.secondary,
+      color: theme.palette.background.paper,
+    },
+    'transition': theme.transitions.create(
+      ['transform', 'backgroundColor', 'color'],
       {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -56,7 +62,7 @@ export const BackToTop = () => {
       role={'navigation'}
       title={'Back To Top'}
     >
-      <ArrowDropUp fontSize={'large'} />
+      <ArrowDropUp elevation={5} fontSize={'large'} />
     </MotionButton>
   )
 }
