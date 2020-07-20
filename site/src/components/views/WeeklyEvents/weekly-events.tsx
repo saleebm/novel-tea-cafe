@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   weeklyTitleWrap: {
     width: '100%',
     margin: `${theme.spacing(1)}px auto`,
-    fontSize: '7vw',
+    fontSize: '7vmax',
     paddingLeft: '3vw',
   },
   daysContainer: {
@@ -85,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
   },
   taglineText: {
     textAlign: 'center',
+    fontSize: '3vmax',
   },
   figureWrap: {
     margin: 0,
@@ -189,6 +190,7 @@ export function WeeklyEvents({
               >
                 <AnimatedInView className={classes.paperContent}>
                   <AnimatedIOView
+                    disableScale
                     className={classes.taglineText}
                     delayOrder={1}
                   >

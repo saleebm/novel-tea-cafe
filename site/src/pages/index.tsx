@@ -16,18 +16,27 @@ interface Index {
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontSize: '7vw',
+    fontSize: '7vmax',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(3),
+    },
   },
   subTitle: {
     width: '100%',
-    fontSize: '5vw',
+    fontSize: '5vmax',
     zIndex: 1,
     whiteSpace: 'pre-wrap',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(3),
+    },
   },
   tagLine: {
-    fontSize: '3vw',
+    fontSize: '3vmax',
     lineHeight: 2,
     textAlign: 'left',
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    },
   },
   pageContainer: {
     display: 'flex',
@@ -38,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
   firstSection: {
     maxWidth: theme.breakpoints.width('lg'),
     height: '100%',
+  },
+  figureArea: {
+    padding: `0 ${theme.spacing(5)}px`,
+    position: 'relative',
   },
   image: {
     objectFit: 'contain',
@@ -97,7 +110,7 @@ function IndexPage({ data }: Index) {
           <Grid item xs={12} md={7}>
             <AnimatedInPlainViewParent key={'home-hero-image'}>
               <AnimatedInViewChildDiv>
-                <figure>
+                <figure className={classes.figureArea}>
                   {sanityPage?.hero?.illustration?.image?.asset
                     ?.fluid && (
                     <GatsbyImage
