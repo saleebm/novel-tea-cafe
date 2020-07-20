@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { fade, makeStyles } from '@material-ui/core/styles'
-import { Backdrop, MenuItem } from '@material-ui/core'
+import {
+  Backdrop,
+  MenuItem,
+  Modal,
+  Typography,
+  Fade,
+} from '@material-ui/core'
 import { motion, Variants } from 'framer-motion'
 import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
 import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
@@ -34,29 +40,36 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'space-evenly',
-    padding: theme.spacing(3),
+    paddingRight: theme.spacing(5),
+    paddingLeft: theme.spacing(5),
+  },
+  menuItemWrap: {
+    maxWidth: '1200px',
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    textAlign: 'left',
+    height: '100%',
+    overflowY: 'auto',
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
+  },
+  menuTitle: {
+    fontSize: '7vmax',
   },
   menuItems: {
-    fontSize: '7vw',
+    fontSize: '5vmax',
     fontVariant: 'petite-caps',
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
+  },
+  darkModeArea: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }))
-
-const navigationVariants: Variants = {
-  hidden: {
-    scaleY: 0,
-    scaleX: 1,
-  },
-  open: {
-    scaleY: 1,
-    scaleX: 1,
-  },
-  close: {
-    scaleY: 0,
-    scaleX: 0,
-  },
-}
 
 export function Nav() {
   const classes = useStyles()
@@ -75,32 +88,47 @@ export function Nav() {
         onToggleClicked={() => setNavOpen((prevState) => !prevState)}
       />
       <div className={classes.navigationWrap}>
-        <Backdrop unmountOnExit mountOnEnter open={navOpen}>
-          <motion.nav
-            initial={'hidden'}
-            animate={'open'}
-            exit={'close'}
-            variants={navigationVariants}
-            className={classes.navigation}
-          >
-            <AnimatedInPlainViewParent>
-              {ROUTES.map((route) => (
-                <AnimatedInViewChildDiv key={route.path}>
-                  <MenuItem
-                    aria-label={route.name}
-                    to={route.path}
-                    component={GatsbyLink}
-                    className={classes.menuItems}
-                    onClick={() => setNavOpen(false)}
-                  >
-                    {route.name}
-                  </MenuItem>
+        <Modal
+          aria-labelledby={'navigation-title'}
+          onBackdropClick={() => setNavOpen(false)}
+          open={navOpen}
+          BackdropComponent={Backdrop}
+        >
+          <Fade in={navOpen}>
+            <motion.nav
+              animate={navOpen ? 'show' : 'hidden'}
+              className={classes.navigation}
+            >
+              <div className={classes.menuItemWrap}>
+                <Typography
+                  className={classes.menuTitle}
+                  id={'navigation-title'}
+                  variant={'h1'}
+                >
+                  Menu
+                </Typography>
+                {ROUTES.map((route) => (
+                  <AnimatedInViewChildDiv key={route.path}>
+                    <MenuItem
+                      aria-label={route.name}
+                      to={route.path}
+                      component={GatsbyLink}
+                      className={classes.menuItems}
+                      onClick={() => setNavOpen(false)}
+                    >
+                      {route.name}
+                    </MenuItem>
+                  </AnimatedInViewChildDiv>
+                ))}
+                <AnimatedInViewChildDiv
+                  className={classes.darkModeArea}
+                >
+                  <DarkmodeToggle />
                 </AnimatedInViewChildDiv>
-              ))}
-              <DarkmodeToggle />
-            </AnimatedInPlainViewParent>
-          </motion.nav>
-        </Backdrop>
+              </div>
+            </motion.nav>
+          </Fade>
+        </Modal>
       </div>
     </div>
   )
