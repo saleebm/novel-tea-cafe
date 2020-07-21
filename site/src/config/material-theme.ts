@@ -8,8 +8,8 @@ import { commonColors } from './common-colors'
 const typography: TypographyOptions = {
   h1: {
     fontSize: '4.72rem',
-    letterSpacing: '-0.037em',
-    fontFamily: "'Jost', serif",
+    letterSpacing: '-0.042em',
+    fontFamily: "'Jost Variable'",
     textTransform: 'initial',
     fontVariant: 'small-caps',
     fontVariationSettings:
@@ -18,8 +18,8 @@ const typography: TypographyOptions = {
   h2: {
     fontSize: '4.2rem',
     fontWeight: 300,
-    letterSpacing: '-0.03em',
-    fontFamily: "'Jost', serif",
+    letterSpacing: '-0.032em',
+    fontFamily: "'Podkova Variable'",
     textTransform: 'initial',
     fontVariant: 'petite-caps',
     fontVariationSettings: '"wght" 300, "CONT" 0, "MIDL" 0, "SALT" 1',
@@ -27,7 +27,7 @@ const typography: TypographyOptions = {
   h3: {
     fontSize: '3.75rem',
     letterSpacing: '-0.023em',
-    fontFamily: "'Jost', serif",
+    fontFamily: "'Podkova Variable'",
     textTransform: 'initial',
     fontVariant: 'small-caps',
     fontVariationSettings: '"wght" 400, "CONT" 500, "MIDL" 0',
@@ -37,27 +37,27 @@ const typography: TypographyOptions = {
     fontSize: '1.5rem',
     letterSpacing: '-0.019em',
     textTransform: 'initial',
-    fontFamily: "'Jost', serif",
+    fontFamily: "'Jost Variable'",
     fontVariationSettings:
       '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1',
   },
   h5: {
     fontSize: '1.35rem',
     letterSpacing: '-0.018em',
-    fontFamily: "'Jost', serif",
+    fontFamily: "'Podkova Variable'",
     fontVariationSettings:
       '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1',
   },
   h6: {
     fontSize: '1.15rem',
     letterSpacing: '-0.021em',
-    fontFamily: "'Jost', serif",
+    fontFamily: "'Podkova Variable'",
     fontVariationSettings:
       '"wght" 400, "CONT" 250, "MIDL" 0, "SALT" 1',
     lineHeight: 1.4,
   },
   body1: {
-    fontFamily: "'Podkova', serif",
+    fontFamily: "'Podkova Variable'",
     fontSize: '1rem',
     letterSpacing: '-0.018em',
     lineHeight: 1.23,
@@ -65,21 +65,21 @@ const typography: TypographyOptions = {
     fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
   },
   body2: {
-    fontFamily: "'Podkova', serif",
+    fontFamily: "'Podkova Variable'",
     fontSize: '0.95rem',
     letterSpacing: 0,
     fontVariationSettings: '"wght" 400, "CONT" 500, "SALT" 1',
     lineHeight: 1.1,
   },
   subtitle1: {
-    fontFamily: "'Jost', serif",
+    fontFamily: "'Podkova Variable'",
     fontSize: '1.025rem',
     letterSpacing: '-0.042em',
     lineHeight: 1.3,
     fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
   },
   subtitle2: {
-    fontFamily: "'Podkova', serif",
+    fontFamily: "'Podkova Variable'",
     fontSize: '1rem',
     letterSpacing: '-0.004em',
     lineHeight: 1.1,
@@ -119,7 +119,7 @@ export const createMaterialTheme = (isDarkMode: boolean) =>
       typography: {
         ...typography,
         button: {
-          fontFamily: "'Podkova', serif",
+          fontFamily: "'Podkova Variable'",
           fontSize: '1rem',
           lineHeight: 1,
           letterSpacing: '-0.013em',

@@ -25,12 +25,12 @@ export function MouseTrap({
   useEventListener(
     'mouseenter',
     mouseenter({ area, additionalProps }),
-    ref && ref.current,
+    (ref && ref.current) || undefined,
   )
   useEventListener(
     'mouseleave',
     mouseleave({ area, additionalProps }),
-    ref && ref.current,
+    (ref && ref.current) || undefined,
   )
 
   return (

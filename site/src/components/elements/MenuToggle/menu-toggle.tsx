@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {
   motion,
   Transition,
@@ -76,37 +76,40 @@ export const MenuToggle = ({
     },
   }
 
-  return (
-    <motion.div
-      initial={'close'}
-      animate={isToggled ? 'close' : 'open'}
-      className={styles.mainMenuTriggerWrapper}
-      title={isToggled ? 'close menu' : 'open menu'}
-      aria-label={isToggled ? 'close menu' : 'open menu'}
-    >
-      <MouseTrap area={ActiveAreaTypes.anchor} additionalProps={{}}>
-        <Button
-          aria-label={'menu button'}
-          variant={'text'}
-          title={isToggled ? 'close menu' : 'open menu'}
-          onClick={onToggleClicked}
-          className={classNames(
-            classes.button,
-            styles.mainMenuTrigger,
-          )}
-        >
-          <MenuBarMotion
-            component={'span'}
-            variants={spanOne}
-            className={classNames(styles.span, classes.root)}
-          />
-          <MenuBarMotion
-            component={'span'}
-            variants={spanTwo}
-            className={classNames(styles.span, classes.root)}
-          />
-        </Button>
-      </MouseTrap>
-    </motion.div>
+  return useMemo(
+    () => (
+      <motion.div
+        initial={'close'}
+        animate={isToggled ? 'close' : 'open'}
+        className={styles.mainMenuTriggerWrapper}
+        title={isToggled ? 'close menu' : 'open menu'}
+        aria-label={isToggled ? 'close menu' : 'open menu'}
+      >
+        <MouseTrap area={ActiveAreaTypes.anchor} additionalProps={{}}>
+          <Button
+            aria-label={'menu button'}
+            variant={'text'}
+            title={isToggled ? 'close menu' : 'open menu'}
+            onClick={onToggleClicked}
+            className={classNames(
+              classes.button,
+              styles.mainMenuTrigger,
+            )}
+          >
+            <MenuBarMotion
+              component={'span'}
+              variants={spanOne}
+              className={classNames(styles.span, classes.root)}
+            />
+            <MenuBarMotion
+              component={'span'}
+              variants={spanTwo}
+              className={classNames(styles.span, classes.root)}
+            />
+          </Button>
+        </MouseTrap>
+      </motion.div>
+    ),
+    [isToggled, classes, onToggleClicked, spanOne, spanTwo],
   )
 }

@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(3),
     },
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
   },
   subTitle: {
     width: '100%',
@@ -29,11 +34,20 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(3),
     },
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
   },
   tagLine: {
-    fontSize: '3vmax',
-    lineHeight: 2,
+    fontSize: '3.5vmax',
+    fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     textAlign: 'left',
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
     },
@@ -121,23 +135,25 @@ function IndexPage({ data }: Index) {
                       }
                     />
                   )}
+                  <figcaption>
+                    <AnimatedInViewChildDiv>
+                      {sanityPage?.hero?.tagline?.map(
+                        (tags, index) =>
+                          tags &&
+                          Array.isArray(tags.children) &&
+                          tags.children.map((child) => (
+                            <Typography
+                              className={classes.tagLine}
+                              variant={'subtitle1'}
+                              key={`${index}`}
+                            >
+                              {child?.text}
+                            </Typography>
+                          )),
+                      )}
+                    </AnimatedInViewChildDiv>
+                  </figcaption>
                 </figure>
-              </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv>
-                {sanityPage?.hero?.tagline?.map(
-                  (tags, index) =>
-                    tags &&
-                    Array.isArray(tags.children) &&
-                    tags.children.map((child) => (
-                      <Typography
-                        className={classes.tagLine}
-                        variant={'subtitle1'}
-                        key={`${index}`}
-                      >
-                        {child?.text}
-                      </Typography>
-                    )),
-                )}
               </AnimatedInViewChildDiv>
             </AnimatedInPlainViewParent>
           </Grid>
