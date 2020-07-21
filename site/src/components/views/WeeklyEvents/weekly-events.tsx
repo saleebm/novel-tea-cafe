@@ -198,7 +198,7 @@ export function WeeklyEvents({
                   className={classes.dayPaper}
                 >
                   <AnimatedInView className={classes.paperContent}>
-                    <AnimatedIOView disableScale delayOrder={1}>
+                    <AnimatedIOView disableScale>
                       <Typography
                         className={classes.taglineText}
                         variant={'h2'}
@@ -215,7 +215,6 @@ export function WeeklyEvents({
                       <Grid item xs={12} md={6}>
                         {day.illustration?.image?.asset?.fluid && (
                           <AnimatedIOView
-                            delayOrder={2}
                             disableScale
                             className={classes.imgContainer}
                           >
@@ -246,7 +245,7 @@ export function WeeklyEvents({
                         md={6}
                         component={'figcaption'}
                       >
-                        <AnimatedIOView disableScale delayOrder={3}>
+                        <AnimatedIOView disableScale>
                           {day.tagline?.map(
                             (tags, index) =>
                               tags &&

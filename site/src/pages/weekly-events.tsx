@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container, Grid } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { SEO } from '@Components/elements/SEO/seo'
 import { WeeklyEventsQuery } from '@Graphql/gatsby-graphql'
@@ -11,35 +11,11 @@ interface WeeklyEventsPage {
 }
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    fontSize: '7vw',
-  },
-  subTitle: {
-    width: '100%',
-    fontSize: '5vw',
-    zIndex: 1,
-    whiteSpace: 'pre-wrap',
-  },
-  tagLine: {
-    fontSize: '3vw',
-    lineHeight: 2,
-    textAlign: 'right',
-  },
   pageContainer: {
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  firstSection: {
-    maxWidth: theme.breakpoints.width('lg'),
-    height: '100%',
-  },
-  image: {
-    objectFit: 'contain',
-  },
-  weeklyEventsSection: {
-    width: '100%',
   },
 }))
 
@@ -49,13 +25,9 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
     <>
       <SEO title={'Weekly Events'} />
       <Container maxWidth={'xl'} className={classes.pageContainer}>
-        <Grid container spacing={7}>
-          <Grid className={classes.weeklyEventsSection} item xs={12}>
-            <WeeklyEvents
-              allSanityWeeklyEvents={data.allSanityWeeklyEvents}
-            />
-          </Grid>
-        </Grid>
+        <WeeklyEvents
+          allSanityWeeklyEvents={data.allSanityWeeklyEvents}
+        />
       </Container>
     </>
   )
