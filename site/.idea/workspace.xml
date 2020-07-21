@@ -11,12 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.graphqlconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.graphqlconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/site.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/elements/MenuToggle/menu-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/MenuToggle/menu-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/elements/MouseTrap/mouse-trap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/MouseTrap/mouse-trap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/elements/SEO/seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/SEO/seo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/darkmode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/darkmode-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/material-theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global/_darkmode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global/_darkmode.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/fonts/Jost/jost.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/fonts/Jost/jost.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/fonts/Podkova/podkava.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/fonts/Podkova/podkava.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,11 +46,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -46,7 +63,7 @@
     <option name="directoryName" value="ktxspmfb" />
   </component>
   <component name="ProjectId" id="1ee8xLK9AY77QSTT8oDvNgIjT2y" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -58,8 +75,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/gatsby-transformer-sharp/src/fragments.js" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/elements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -74,9 +92,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
@@ -132,6 +150,9 @@
       <workItem from="1594689294163" duration="4890000" />
       <workItem from="1594715696177" duration="4773000" />
       <workItem from="1594852423126" duration="1108000" />
+      <workItem from="1595252527838" duration="3725000" />
+      <workItem from="1595283740372" duration="440000" />
+      <workItem from="1595352535761" duration="896000" />
     </task>
     <servers />
   </component>
@@ -163,38 +184,42 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594717521443" />
-    <state width="273" height="1102" key="GridCell.Tab.0.bottom" timestamp="1594853601924">
+    <state width="268" height="1102" key="GridCell.Tab.0.bottom" timestamp="1595353586889">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="273" height="1102" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601924" />
-    <state width="273" height="1102" key="GridCell.Tab.0.center" timestamp="1594853601923">
+    <state width="268" height="1102" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595353586889" />
+    <state width="268" height="1102" key="GridCell.Tab.0.center" timestamp="1595353586888">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="273" height="1102" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601923" />
-    <state width="273" height="1102" key="GridCell.Tab.0.left" timestamp="1594853601922">
+    <state width="268" height="1102" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595353586888" />
+    <state width="268" height="1102" key="GridCell.Tab.0.left" timestamp="1595353586888">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="273" height="1102" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601922" />
-    <state width="273" height="1102" key="GridCell.Tab.0.right" timestamp="1594853601923">
+    <state width="268" height="1102" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595353586888" />
+    <state width="268" height="1102" key="GridCell.Tab.0.right" timestamp="1595353586888">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="273" height="1102" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1594853601923" />
-    <state x="469" y="236" key="SettingsEditor" timestamp="1594689371758">
+    <state width="268" height="1102" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595353586888" />
+    <state x="750" y="123" key="SettingsEditor" timestamp="1595256325018">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1594689371758" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1594739459403">
+    <state x="750" y="123" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595256325018" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595353089074">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1594739459403" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595353089074" />
     <state width="500" height="445" key="SwitcherDM/49.25.1871.1175@49.25.1871.1175" timestamp="1594675002136" />
     <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594694798546">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594694798546" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1594739808476">
+    <state x="661" y="355" width="597" height="518" key="find.popup" timestamp="1595353052234">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1594739808476" />
+    <state x="661" y="355" width="597" height="518" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595353052234" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595353091821">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595353091821" />
   </component>
 </project>

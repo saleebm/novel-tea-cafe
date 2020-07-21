@@ -21,6 +21,21 @@ export default {
       name: 'secondaryColor',
       title: 'Secondary brand color',
       description: 'Used to generate the secondary accent color for websites, press materials, etc'
-    }
+    },
+    {
+      title: 'Facebook Page',
+      name: 'facebookPage',
+      type: 'string',
+    },
+    {
+      title: 'Instagram',
+      name: 'instagramPage',
+      type: 'string',
+    },
+    {
+      title: 'Twitter',
+      name: 'twitterPage',
+      type: 'string',
+    },
   ]
 }
