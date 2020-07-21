@@ -70,7 +70,7 @@ export const AnimatedIOView: FC<
   }
 > = ({
   children,
-  duration = 0.4,
+  duration = 0.15,
   delayOrder = 0,
   disableScale = false,
   ...rest
@@ -81,8 +81,8 @@ export const AnimatedIOView: FC<
     () => ({
       duration,
       delay:
-        Math.min(delayOrder, 0.7) /
-        Math.min(Children.count(children) || 1, 5),
+        Math.min(delayOrder, 0.15) /
+        Math.min(Children.count(children) || 1, 3),
       ease: easeInOut,
     }),
     [duration, delayOrder, children],
@@ -91,11 +91,13 @@ export const AnimatedIOView: FC<
   const variants = {
     hidden: {
       scale: disableScale ? 1 : 0,
+      rotateX: '-70deg',
       opacity: 0,
       transition,
     },
     show: {
       scale: 1,
+      rotateX: '0deg',
       opacity: 1,
       transition,
     },

@@ -21,28 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.graphqlconfig" beforeDir="false" afterPath="$PROJECT_DIR$/site/.graphqlconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.idea/site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/site.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/site/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menu-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/MenuToggle/menu-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/MouseTrap/mouse-trap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/MouseTrap/mouse-trap.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/darkmode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/darkmode-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/InView/in-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/InView/in-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/material-theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/static/assets/fonts/Jost/jost.css" beforeDir="false" afterPath="$PROJECT_DIR$/site/static/assets/fonts/Jost/jost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/static/assets/fonts/Podkova/podkava.css" beforeDir="false" afterPath="$PROJECT_DIR$/site/static/assets/fonts/Podkova/podkava.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +112,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/site/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="codegen" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/site/package.json" />
       <command value="run" />
@@ -171,6 +165,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.develop" />
         <item itemvalue="npm.codegen" />
         <item itemvalue="npm.graphql-deploy" />
@@ -207,7 +202,7 @@
       <workItem from="1595196926111" duration="2677000" />
       <workItem from="1595228004102" duration="2178000" />
       <workItem from="1595353598821" duration="150000" />
-      <workItem from="1595358978367" duration="558000" />
+      <workItem from="1595358978367" duration="2329000" />
     </task>
     <servers />
   </component>
@@ -236,34 +231,38 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="678" y="485" key="#Prettier/0.0.1920.1200@0.0.1920.1200" timestamp="1594858368514" />
+    <state x="755" y="382" key="#Web_Browsers" timestamp="1595360580954">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="755" y="382" key="#Web_Browsers/0.0.1920.1200@0.0.1920.1200" timestamp="1595360580954" />
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594857948501">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom" timestamp="1595230150988">
+    <state width="1878" height="452" key="GridCell.Tab.0.bottom" timestamp="1595361501946">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595230150988" />
-    <state width="1878" height="231" key="GridCell.Tab.0.center" timestamp="1595230150987">
+    <state width="1878" height="452" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595361501946" />
+    <state width="1878" height="452" key="GridCell.Tab.0.center" timestamp="1595361501945">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595230150987" />
-    <state width="1878" height="231" key="GridCell.Tab.0.left" timestamp="1595230150987">
+    <state width="1878" height="452" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595361501945" />
+    <state width="1878" height="452" key="GridCell.Tab.0.left" timestamp="1595361501944">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595230150987" />
-    <state width="1878" height="231" key="GridCell.Tab.0.right" timestamp="1595230150987">
+    <state width="1878" height="452" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595361501944" />
+    <state width="1878" height="452" key="GridCell.Tab.0.right" timestamp="1595361501946">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595230150987" />
+    <state width="1878" height="452" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595361501946" />
     <state x="469" y="236" key="SettingsEditor" timestamp="1595188336765">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595188336765" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1595359214739">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595362082087">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595359214739" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595362082087" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1594848707996">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -288,10 +287,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="661" y="355" width="734" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595359261765" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595199379172">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595361293582">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595199379172" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595361293582" />
     <state x="658" y="290" width="670" height="662" key="search.everywhere.popup/49.25.1871.1175@49.25.1871.1175" timestamp="1595118262504" />
   </component>
 </project>

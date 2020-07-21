@@ -17,10 +17,10 @@ import { Header } from '@Components/structure/Layout/header'
 import { Cursor } from '@Components/elements/Cursor/cursor'
 import { useCursorPosition } from '@Utils/hooks/use-cursor-pos'
 import { useDarkMode } from '@Utils/hooks/use-dark-mode'
+import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 import { createMaterialTheme } from '@Config/material-theme'
 import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
-import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
