@@ -3,7 +3,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 import styled from 'styled-components'
 import styles from './cursor.mod.scss'
-import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
+// import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
 interface CursorProps {
   x: number
@@ -21,10 +21,11 @@ const Flower = styled(motion.div)<FlowerProps>`
   height: ${(props) => props.size}px;
   width: ${(props) => props.size}px;
 
-  border-radius: 50%;
+  border-radius: 49%;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(0, 128, 0, 0.9);
+  border-color: green;
+  will-change: box-shadow;
 
   * {
     box-sizing: border-box;
@@ -36,22 +37,21 @@ const Flower = styled(motion.div)<FlowerProps>`
   }
 
   .smaller-dot {
-    background-image: radial-gradient(rgba(0, 255, 0, 0.74), #15861a);
+    background-color: #15861a;
     height: 100%;
     width: 100%;
+    will-change: transform, box-shadow;
   }
   .bigger-dot {
-    background-image: radial-gradient(
-      #6498e6,
-      rgba(88, 94, 165, 0.68)
-    );
+    background-color: #6498e6;
     height: 100%;
     width: 100%;
     padding: 10%;
-    border-radius: 50%;
+    border-radius: 49%;
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(0, 128, 0, 0.72);
+    border-color: rgb(0, 128, 0);
+    will-change: transform, box-shadow;
   }
 `
 
@@ -67,7 +67,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     activeArea,
     activeContainer,
     // todo perhaps for text
-    additionalProps,
+    // additionalProps,
   } = useMouseTrap()
 
   const INITIAL_BOX_SHADOW = `0px 0px 0px rgba(0, 255, 0, 1),
@@ -104,9 +104,6 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     (i: number) => ({
       boxShadow: INITIAL_BOX_SHADOW,
       rotate: `${i * 360}deg`,
-      scaleX: 1.13,
-      scaleY: 1.13,
-      filter: 'opacity(1)',
     }),
     [INITIAL_BOX_SHADOW],
   )
@@ -115,21 +112,18 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     (i: number) => ({
       rotate: `${i * 180}deg`,
       boxShadow: i === 0 ? SMALL_DOTS_SHADOW : BIG_DOTS_SHADOW,
-      scaleX: 1,
-      scaleY: 1,
     }),
     [BIG_DOTS_SHADOW, SMALL_DOTS_SHADOW],
   )
 
-  const [debouncedAnimateBoundingBox] = useDebouncedCallback(
-    async (box: DOMRect) => {
-      await controlFlowerPower.start({
-        boxShadow: `${box.x}px ${box.y} 1px green`,
-        scale: 2,
-      })
-    },
-    420,
-  )
+  // const [debouncedAnimateBoundingBox] = useDebouncedCallback(
+  //   async (box: DOMRect) => {
+  //     await controlFlowerPower.start({
+  //       scale: 1,
+  //     })
+  //   },
+  //   420,
+  // )
 
   useEffect(() => {
     if (
@@ -138,20 +132,26 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
       'getBoundingClientRect' in activeContainer &&
       typeof activeContainer.getBoundingClientRect === 'function'
     ) {
-      const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
-      debouncedAnimateBoundingBox(boundingBox2D)
+      // const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
+      controlFlowerPower
+        .start({
+          scale: 1.33,
+        })
+        .then(async () => {
+          await controlFlowerPower.start({
+            scale: 1.5,
+          })
+          return async () =>
+            await controlFlowerPower.start({
+              scale: 1,
+            })
+        })
     } else {
       controlFlowerPower.start({
-        boxShadow: '0 0 1px green',
         scale: 1,
       })
     }
-  }, [
-    activeArea,
-    activeContainer,
-    debouncedAnimateBoundingBox,
-    controlFlowerPower,
-  ])
+  }, [activeArea, activeContainer, controlFlowerPower])
 
   useEffect(() => {
     controls.start(RESET_CONTROLS).then(async () => {
@@ -184,11 +184,9 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           animate={controlFlowerPower}
           initial={{
             boxShadow: '0 0 1px green',
-            scale: 1,
           }}
           exit={{
             boxShadow: '0 0 1px green',
-            scale: 1,
           }}
         >
           <div className='dots-container'>

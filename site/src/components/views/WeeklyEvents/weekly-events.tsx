@@ -1,7 +1,19 @@
 import React, { useMemo } from 'react'
-import { Container, Grid, Paper, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
+import {
+  Backdrop,
+  Container,
+  Grid,
+  Paper,
+  SvgIcon,
+  Typography,
+} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import TodayIcon from '@material-ui/icons/Today'
+import ViewDayIcon from '@material-ui/icons/ViewDay'
+import SpeedDial from '@material-ui/lab/SpeedDial'
+import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon'
+import SpeedDialAction from '@material-ui/lab/SpeedDialAction'
 import {
   AnimatedInView,
   AnimatedIOView,
@@ -55,9 +67,9 @@ const useStyles = makeStyles((theme) => ({
         'borderTopRightRadius': '7px',
         'borderTopLeftRadius': '0 !important',
         'borderBottomLeftRadius': '0 !important',
-        'transform': 'skew(-12deg) !important',
+        'transform': 'skew(-9deg) !important',
         '& > div': {
-          transform: 'skew(12deg) !important',
+          transform: 'skew(9deg) !important',
         },
       },
     },
@@ -76,16 +88,16 @@ const useStyles = makeStyles((theme) => ({
     borderImageSource: `linear-gradient(60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
     borderImageSlice: '42 69',
     borderImageRepeat: 'round',
-    transform: 'skew(12deg)',
+    transform: 'skew(9deg)',
     borderTopLeftRadius: '7px',
     borderBottomLeftRadius: '7px',
   },
   paperContent: {
-    transform: 'skew(-12deg)',
+    transform: 'skew(-9deg)',
   },
   taglineText: {
     textAlign: 'center',
-    fontSize: '3vmax',
+    fontSize: '2.5vmax',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -94,15 +106,16 @@ const useStyles = makeStyles((theme) => ({
   },
   figureWrap: {
     margin: 0,
-    padding: '0 50px',
+    padding: '0 30px',
     alignItems: 'center',
     justifyContent: 'center',
   },
   imgContainer: {
     display: 'block',
     width: '100%',
-    maxHeight: '500px',
+    maxHeight: '300px',
     margin: '0 auto',
+    overflow: 'hidden',
     [theme.breakpoints.down('md')]: {
       'textAlign': 'center',
       '& picture': {
@@ -133,6 +146,19 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
     },
   },
+  speedDial: {
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    left: theme.spacing(2),
+  },
+  speedDialIcon: {
+    height: '50px',
+    width: '50px',
+    overflow: 'hidden',
+  },
+  toolTip: {
+    fontSize: '2rem',
+  },
 }))
 
 export function WeeklyEvents({
@@ -148,7 +174,8 @@ export function WeeklyEvents({
     null
 
   const days = useMemo(() => {
-    const cherryPie = []
+    const weeklyEventData = []
+    const weeklyEventSmallImgs = []
     if (typeof week === 'object') {
       for (const day in week) {
         if (
@@ -156,15 +183,36 @@ export function WeeklyEvents({
           week.hasOwnProperty(day) &&
           (week as { [key: string]: any })[day]
         ) {
-          cherryPie.push({
+          weeklyEventSmallImgs.push({
+            img: (week as any)[day].illustration.image.asset.fixed,
+            dayName: day,
+          })
+          weeklyEventData.push({
             ...(week as { [key: string]: any })[day],
             dayName: day,
           })
         }
       }
     }
-    return cherryPie
+    return { weeklyEventData, weeklyEventSmallImgs }
   }, [week])
+
+  const [open, setOpen] = React.useState(false)
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const handleDayClick = (dayName: string) => {
+    const day = document.getElementById(dayName)
+    if (day)
+      day.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setOpen(false)
+  }
 
   return useMemo(
     () => (
@@ -179,97 +227,144 @@ export function WeeklyEvents({
         >
           Weekly Events
         </Typography>
-        <Grid spacing={7} container className={classes.daysContainer}>
-          {days.map((day: DayFragment & { dayName: string }) => (
-            <Grid
-              className={classes.dayWrap}
-              item
-              key={day.dayName}
-              xs={12}
-            >
-              <div
-                className={classes.dayAnimationContainer}
+        <Grid spacing={3} container className={classes.daysContainer}>
+          {days.weeklyEventData.map(
+            (day: DayFragment & { dayName: string }) => (
+              <Grid
+                id={day.dayName}
+                className={classes.dayWrap}
+                item
                 key={day.dayName}
+                xs={12}
               >
-                <Paper
-                  variant={'elevation'}
-                  component={'article'}
-                  elevation={8}
-                  className={classes.dayPaper}
+                <div
+                  className={classes.dayAnimationContainer}
+                  key={day.dayName}
                 >
-                  <AnimatedInView className={classes.paperContent}>
-                    <AnimatedIOView disableScale>
-                      <Typography
-                        className={classes.taglineText}
-                        variant={'h2'}
-                      >
-                        {day.heading}
-                      </Typography>
-                    </AnimatedIOView>
-                    <Grid
-                      container
-                      component={'figure'}
-                      className={classes.figureWrap}
-                      spacing={0}
-                    >
-                      <Grid item xs={12} md={6}>
-                        {day.illustration?.image?.asset?.fluid && (
-                          <AnimatedIOView
-                            disableScale
-                            className={classes.imgContainer}
-                          >
-                            <GatsbyImage
-                              imgStyle={{
-                                objectFit: 'contain !important',
-                                height: '500px',
-                                maxHeight: '500px',
-                                width: 'auto',
-                                filter: `contrast(1.2) sepia(1) invert(${
-                                  isDarkMode ? 1 : 0
-                                }) brightness(${
-                                  isDarkMode ? 0.9 : 1.1
-                                })`,
-                              }}
-                              fluid={
-                                day.illustration.image.asset
-                                  .fluid as FluidObject
-                              }
-                            />
-                          </AnimatedIOView>
-                        )}
-                      </Grid>
+                  <Paper
+                    variant={'elevation'}
+                    component={'article'}
+                    elevation={3}
+                    className={classes.dayPaper}
+                  >
+                    <AnimatedInView className={classes.paperContent}>
+                      <AnimatedIOView disableScale>
+                        <Typography
+                          className={classes.taglineText}
+                          variant={'h2'}
+                        >
+                          {day.heading}
+                        </Typography>
+                      </AnimatedIOView>
                       <Grid
-                        className={classes.taglineFigureCaption}
-                        item
-                        xs={12}
-                        md={6}
-                        component={'figcaption'}
+                        container
+                        component={'figure'}
+                        className={classes.figureWrap}
+                        spacing={0}
                       >
-                        <AnimatedIOView disableScale>
-                          {day.tagline?.map(
-                            (tags, index) =>
-                              tags &&
-                              Array.isArray(tags.children) &&
-                              tags.children.map((child) => (
-                                <Typography
-                                  variant={'h3'}
-                                  key={`${index}`}
-                                >
-                                  {child?.text}
-                                </Typography>
-                              )),
+                        <Grid item xs={12} md={6}>
+                          {day.illustration?.image?.asset?.fluid && (
+                            <AnimatedIOView
+                              disableScale
+                              className={classes.imgContainer}
+                            >
+                              <GatsbyImage
+                                imgStyle={{
+                                  objectFit: 'contain !important',
+                                  height: '300px',
+                                  maxHeight: '300px',
+                                  width: 'auto',
+                                  filter: `contrast(1.2) sepia(1) invert(${
+                                    isDarkMode ? 1 : 0
+                                  }) brightness(${
+                                    isDarkMode ? 0.9 : 1.1
+                                  })`,
+                                }}
+                                fluid={
+                                  day.illustration.image.asset
+                                    .fluid as FluidObject
+                                }
+                              />
+                            </AnimatedIOView>
                           )}
-                        </AnimatedIOView>
+                        </Grid>
+                        <Grid
+                          className={classes.taglineFigureCaption}
+                          item
+                          xs={12}
+                          md={6}
+                          component={'figcaption'}
+                        >
+                          <AnimatedIOView disableScale>
+                            {day.tagline?.map(
+                              (tags, index) =>
+                                tags &&
+                                Array.isArray(tags.children) &&
+                                tags.children.map((child) => (
+                                  <Typography
+                                    variant={'h3'}
+                                    key={`${index}`}
+                                  >
+                                    {child?.text}
+                                  </Typography>
+                                )),
+                            )}
+                          </AnimatedIOView>
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </AnimatedInView>
-                </Paper>
-              </div>
-            </Grid>
-          ))}
+                    </AnimatedInView>
+                  </Paper>
+                </div>
+              </Grid>
+            ),
+          )}
         </Grid>
+        <SpeedDial
+          ariaLabel={'SpeedDial openIcon'}
+          className={classes.speedDial}
+          icon={
+            <SpeedDialIcon
+              icon={<ViewDayIcon />}
+              openIcon={<TodayIcon />}
+            />
+          }
+          onClose={handleClose}
+          onOpen={handleOpen}
+          open={open}
+          FabProps={{
+            size: 'large',
+          }}
+        >
+          {days.weeklyEventSmallImgs.map((action) => (
+            <SpeedDialAction
+              key={action.dayName}
+              icon={
+                <GatsbyImage
+                  loading={'eager'}
+                  fadeIn={false}
+                  fixed={action.img}
+                  imgStyle={{
+                    objectFit: 'contain !important',
+                    filter: `contrast(1.2) sepia(1) invert(${
+                      isDarkMode ? 1 : 0
+                    }) brightness(${isDarkMode ? 0.9 : 1.1})`,
+                  }}
+                />
+              }
+              tooltipTitle={action.dayName}
+              onClick={() => handleDayClick(action.dayName)}
+              title={action.dayName}
+              className={classes.speedDialIcon}
+              TooltipClasses={{
+                tooltip: classes.toolTip,
+              }}
+              interactive
+            />
+          ))}
+        </SpeedDial>
+        <Backdrop open={open} />
       </Container>
     ),
-    [classes, days, isDarkMode],
+    [open, classes, days, isDarkMode],
   )
 }

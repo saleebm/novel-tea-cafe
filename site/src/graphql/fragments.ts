@@ -21,6 +21,16 @@ export const query = graphql`
     }
   }
 
+  fragment SMALL_FIXED_IMAGE on SanityIllustration {
+    image {
+      asset {
+        fixed(width: 50) {
+          ...GatsbySanityImageFixed
+        }
+      }
+    }
+  }
+
   fragment TAGLINE on SanityBlock {
     style
     list
@@ -37,6 +47,7 @@ export const query = graphql`
     }
     illustration {
       ...FLUID_IMAGE
+      ...SMALL_FIXED_IMAGE
     }
   }
 `
