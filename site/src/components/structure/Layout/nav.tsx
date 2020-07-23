@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(3),
   },
   menuTitle: {
-    fontSize: '7vmax',
+    fontSize: '5.7vmax',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',

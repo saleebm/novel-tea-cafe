@@ -10,14 +10,14 @@ interface WeeklyEventsPage {
   data: WeeklyEventsQuery
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   pageContainer: {
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
   },
-}))
+})
 
 function WeeklyEventsPage({ data }: WeeklyEventsPage) {
   const classes = useStyles()
