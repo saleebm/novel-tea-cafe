@@ -488,9 +488,9 @@ type Query {
   sanityPage(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHero: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, hero: SanityHeroFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityPage
   sanityPost(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawAuthors: JSONQueryOperatorInput, _rawBody: JSONQueryOperatorInput, _rawCategories: JSONQueryOperatorInput, _rawExcerpt: JSONQueryOperatorInput, _rawMainImage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, authors: SanityAuthorReferenceFilterListInput, body: SanityBlockFilterListInput, categories: SanityCategoryFilterListInput, children: NodeFilterListInput, excerpt: SanityBlockFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isPublished: BooleanQueryOperatorInput, mainImage: SanityMainImageFilterInput, parent: NodeFilterInput, publishedAt: DateQueryOperatorInput, slug: SanitySlugFilterInput, title: StringQueryOperatorInput): SanityPost
   sanityRoute(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, campaign: StringQueryOperatorInput, children: NodeFilterListInput, disallowRobots: BooleanQueryOperatorInput, id: StringQueryOperatorInput, includeInSitemap: BooleanQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, page: SanityPageFilterInput, parent: NodeFilterInput, slug: SanitySlugFilterInput, useSiteTitle: BooleanQueryOperatorInput): SanityRoute
-  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput): SanitySiteSettings
+  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
   sanityWeeklyEvents(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawFriday: JSONQueryOperatorInput, _rawMonday: JSONQueryOperatorInput, _rawSaturday: JSONQueryOperatorInput, _rawSunday: JSONQueryOperatorInput, _rawThursday: JSONQueryOperatorInput, _rawTuesday: JSONQueryOperatorInput, _rawWednesday: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, friday: SanityEventDayFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, monday: SanityEventDayFilterInput, parent: NodeFilterInput, saturday: SanityEventDayFilterInput, sunday: SanityEventDayFilterInput, thursday: SanityEventDayFilterInput, tuesday: SanityEventDayFilterInput, wednesday: SanityEventDayFilterInput): SanityWeeklyEvents
-  site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
+  site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
   sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
   sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
@@ -1458,12 +1458,15 @@ type SanitySiteSettings implements Node & SanityDocument {
     locale: String
   ): Date
   children: [Node!]!
+  facebookPage: String
   id: ID!
+  instagramPage: String
   internal: Internal!
   openGraph: SanityOpenGraph
   parent: Node
   primaryColor: SanityColor
   secondaryColor: SanityColor
+  twitterPage: String
 }
 
 type SanitySiteSettingsConnection {
@@ -1623,16 +1626,7 @@ type Site implements Node {
   parent: Node
   pathPrefix: String
   polyfill: Boolean
-  port(
-    "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-    difference: String,
-    "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-    formatString: String,
-    "Returns a string generated with Moment.js' `fromNow` function"
-    fromNow: Boolean,
-    "Configures the locale Moment.js will use to format the date."
-    locale: String
-  ): Date
+  port: Int
   siteMetadata: SiteSiteMetadata
 }
 
@@ -4105,7 +4099,9 @@ enum SanitySiteSettingsFieldsEnum {
   children___parent___internal___type
   children___parent___parent___children
   children___parent___parent___id
+  facebookPage
   id
+  instagramPage
   internal___content
   internal___contentDigest
   internal___description
@@ -4247,6 +4243,7 @@ enum SanitySiteSettingsFieldsEnum {
   secondaryColor___rgb___b
   secondaryColor___rgb___g
   secondaryColor___rgb___r
+  twitterPage
 }
 
 enum SanityWeeklyEventsFieldsEnum {
@@ -5832,12 +5829,15 @@ input SanitySiteSettingsFilterInput {
   _type: StringQueryOperatorInput
   _updatedAt: DateQueryOperatorInput
   children: NodeFilterListInput
+  facebookPage: StringQueryOperatorInput
   id: StringQueryOperatorInput
+  instagramPage: StringQueryOperatorInput
   internal: InternalFilterInput
   openGraph: SanityOpenGraphFilterInput
   parent: NodeFilterInput
   primaryColor: SanityColorFilterInput
   secondaryColor: SanityColorFilterInput
+  twitterPage: StringQueryOperatorInput
 }
 
 input SanitySiteSettingsSortInput {
@@ -5916,7 +5916,7 @@ input SiteFilterInput {
   parent: NodeFilterInput
   pathPrefix: StringQueryOperatorInput
   polyfill: BooleanQueryOperatorInput
-  port: DateQueryOperatorInput
+  port: IntQueryOperatorInput
   siteMetadata: SiteSiteMetadataFilterInput
 }
 

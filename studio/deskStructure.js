@@ -5,8 +5,6 @@ import menu from './src/structure/menu'
 
 const hiddenDocTypes = (listItem) =>
   ![
-    'route',
-    'navigationMenu',
     'post',
     'page',
     'siteSettings',

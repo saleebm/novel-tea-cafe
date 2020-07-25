@@ -2,7 +2,6 @@ import React, {
   Context,
   createContext,
   Dispatch,
-  MouseEvent,
   ReactNode,
   Reducer,
   useReducer,
@@ -64,7 +63,7 @@ export const CursorContext: Context<{
   cursor: Cursor
   setActiveContainer: (el: any) => void
 }> = createContext({
-  setActiveContainer: (el) => {},
+  setActiveContainer: (_el) => {},
   setCursor: (_cursor) => {},
   cursor: initialCursor,
 })
@@ -102,7 +101,7 @@ export function MousePositionProvider({
     activeContainer.current = el
   }
 
-  useEventListener<MouseEvent>(
+  useEventListener(
     'mousemove',
     ({ clientX, clientY }: { clientX: number; clientY: number }) => {
       setCursor({

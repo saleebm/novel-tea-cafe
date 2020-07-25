@@ -2,21 +2,17 @@ import React, { useMemo, useState } from 'react'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import {
   Backdrop,
+  Grid,
   MenuItem,
   Modal,
   Typography,
-  Fade,
-  Grid,
 } from '@material-ui/core'
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
 import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
 import { ROUTES } from '@Config/routes'
 import GatsbyLink from 'gatsby-link'
-import {
-  AnimatedInPlainViewParent,
-  AnimatedInViewChildDiv,
-} from '@Components/elements/InView/in-view'
+import { AnimatedInViewChildDiv } from '@Components/elements/InView/in-view'
 import { FixedObject } from 'gatsby-image'
 import { Logo } from '@Components/structure/Layout/logo'
 
@@ -181,6 +177,6 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
         </div>
       </div>
     ),
-    [classes, navOpen, setNavOpen],
+    [classes, navOpen, setNavOpen, logoSrc],
   )
 }

@@ -9,7 +9,6 @@ import category from './documents/category'
 import post from './documents/post'
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
-import route from './documents/route'
 import weeklyEvents from "./documents/weeklyEvents";
 import menuItem from './documents/menuItem'
 import menuItemPriceOption from './objects/menuItemPriceOption'
@@ -45,7 +44,6 @@ export default createSchema({
       variation,
       openGraph,
       experiment,
-      route,
       link,
       simpleBlockContent,
       cta,

@@ -21,8 +21,7 @@
     "asset-source-unsplash",
     "@sanity/code-input",
     "@sanity/color-input",
-    "mux-input",
-    "google-analytics"
+    "mux-input"
   ],
   "parts": [
     {
