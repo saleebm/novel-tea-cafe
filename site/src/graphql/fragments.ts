@@ -50,4 +50,23 @@ export const query = graphql`
       ...SMALL_FIXED_IMAGE
     }
   }
+
+  fragment MENU_ITEM_EDGE on SanityMenuItemEdge {
+    node {
+      name
+      slug {
+        current
+      }
+      description
+      id
+      menuItemPriceOption {
+        price
+        variant
+      }
+      menuItemCategory {
+        title
+        description
+      }
+    }
+  }
 `

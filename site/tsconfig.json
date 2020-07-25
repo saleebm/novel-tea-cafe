@@ -1,93 +1,47 @@
 {
-    "compilerOptions": {
-      "target": "ES2018",
-      "rootDir": ".",
-      "module": "ESNext",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "sourceMap": true,
-      "strict": true,
-      "esModuleInterop": true,
-      "noImplicitAny": true,
-      "strictFunctionTypes": true,
-      "alwaysStrict": true,
-      "noUnusedParameters": false,
-      "noImplicitReturns": true,
-      "strictNullChecks": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve",
-      "allowSyntheticDefaultImports": true,
-      "noImplicitThis": true,
-      "typeRoots": [
-        "./src/models/*/**.d.ts",
-        "./node_modules/@types"
-      ],
-      "baseUrl": ".",
-      "paths": {
-        "@Components/*": [
-          "src/components/*"
-        ],
-        "@Components": [
-          "src/components"
-        ],
-        "@Config": [
-          "src/config"
-        ],
-        "@Config/*": [
-          "src/config/*"
-        ],
-        "@Containers": [
-          "src/containers"
-        ],
-        "@Containers/*": [
-          "src/containers/*"
-        ],
-        "@Graphql": [
-          "src/graphql"
-        ],
-        "@Graphql/*": [
-          "src/graphql/*"
-        ],
-        "@Static/*": [
-          "static/*"
-        ],
-        "@Services": [
-          "src/services"
-        ],
-        "@Services/*": [
-          "src/services/*"
-        ],
-        "@Styles/*": [
-          "src/styles/*"
-        ],
-        "@Types": [
-          "src/models"
-        ],
-        "@Types/*": [
-          "src/models/*"
-        ],
-        "@Utils": [
-          "src/utils"
-        ],
-        "@Utils/*": [
-          "src/utils/*"
-        ]
-      }
-    },
-    "include": [
-      "**/*.ts",
-      "**/*.tsx"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
-  }
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "checkJs": false,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "lib": ["dom", "es2015", "es2017", "es2020"],
+    "isolatedModules": false,
+    "noUnusedLocals": false,
+    "baseUrl": "./",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["node_modules/@types/", "src/typings/"],
+    "resolveJsonModule": true,
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@Components": ["src/components"],
+      "@Config": ["src/config"],
+      "@Config/*": ["src/config/*"],
+      "@Graphql": ["src/graphql"],
+      "@Graphql/*": ["src/graphql/*"],
+      "@Services": ["src/services"],
+      "@Services/*": ["src/services/*"],
+      "@Styles/*": ["src/styles/*"],
+      "@Types": ["src/models"],
+      "@Types/*": ["src/models/*"],
+      "@Utils": ["src/utils"],
+      "@Utils/*": ["src/utils/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*", "global.d.ts"]
+}

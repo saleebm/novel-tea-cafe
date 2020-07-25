@@ -5,7 +5,6 @@ import {
   Container,
   Grid,
   Paper,
-  SvgIcon,
   Typography,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'

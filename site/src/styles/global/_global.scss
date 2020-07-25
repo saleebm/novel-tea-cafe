@@ -75,8 +75,8 @@ html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
-  //noinspection Stylelint
   @supports (font-variation-settings: normal) {
+    //noinspection Stylelint
     font-family: 'Podkova Variable';
   }
   max-width: 100%;

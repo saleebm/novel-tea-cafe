@@ -1,4 +1,4 @@
-import { SyntheticEvent, useCallback, useContext } from 'react'
+import { useCallback, useContext } from 'react'
 import {
   ActiveAreaType,
   ActiveAreaTypes,
@@ -21,7 +21,7 @@ export function useMouseTrap() {
   const handleMouseEnter = useCallback(
     (
       { area, additionalProps = {} }: MouseEventInput,
-      event: SyntheticEvent<any, Event>,
+      event: MouseEvent,
     ) => {
       // set the active container ref
       setActiveContainer(event.target)
@@ -55,11 +55,9 @@ export function useMouseTrap() {
     activeArea: cursor.activeArea,
     activeContainer: cursor.activeContainer,
     additionalProps: cursor.additionalProps,
-    mouseenter: (area: MouseEventInput) => (
-      e: SyntheticEvent<any, Event>,
-    ) => handleMouseEnter(area, e),
-    mouseleave: (_area?: MouseEventInput) => (
-      _e: SyntheticEvent<any, Event>,
-    ) => handleMouseLeave(),
+    mouseenter: (area: MouseEventInput) => (e: MouseEvent) =>
+      handleMouseEnter(area, e),
+    mouseleave: (_area?: MouseEventInput) => (_e: MouseEvent) =>
+      handleMouseLeave(),
   }
 }
