@@ -1,4 +1,10 @@
 .menupricewrap {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  margin-right: 0.42rem;
+  margin-top: 0.69rem;
+}
+
+.chip {
+  flex-direction: row-reverse;
 }

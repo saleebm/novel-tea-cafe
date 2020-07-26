@@ -3,6 +3,7 @@ import { graphql, PageProps } from 'gatsby'
 import { Container } from '@material-ui/core'
 import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { Menu } from '@Components/views/Menu/menu'
+import { GatsbySeo } from 'gatsby-plugin-next-seo'
 
 interface MenuPage extends PageProps {
   data: Menu_PageQuery
@@ -10,9 +11,12 @@ interface MenuPage extends PageProps {
 
 function MenuPage({ data }: MenuPage) {
   return (
-    <Container maxWidth={'xl'}>
-      <Menu menu={data} />
-    </Container>
+    <>
+      <GatsbySeo title={'Menu'} />
+      <Container maxWidth={'xl'}>
+        <Menu menu={data} />
+      </Container>
+    </>
   )
 }
 

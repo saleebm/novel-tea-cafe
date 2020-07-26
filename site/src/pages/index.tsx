@@ -1,7 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container, Grid, Typography } from '@material-ui/core'
+import {
+  Button,
+  Container,
+  Grid,
+  Typography,
+} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import GatsbyLink from 'gatsby-link'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
 import {
   AnimatedInPlainViewParent,
@@ -19,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '7vmax',
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(3),
+      textAlign: 'center',
     },
     wordWrap: 'normal',
     overflowWrap: 'normal',
@@ -33,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(3),
+      textAlign: 'center',
     },
     wordWrap: 'normal',
     overflowWrap: 'normal',
@@ -62,6 +70,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: theme.breakpoints.width('lg'),
     height: '100%',
   },
+  firstSectionWrap: {
+    position: 'relative',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'stretch',
+    alignContent: 'space-evenly',
+  },
   figureArea: {
     padding: `0 ${theme.spacing(5)}px`,
     position: 'relative',
@@ -72,6 +89,10 @@ const useStyles = makeStyles((theme) => ({
   },
   weeklyEventsSection: {
     width: '100%',
+  },
+  ctaButton: {
+    fontSize: '2rem',
+    marginTop: theme.spacing(3),
   },
 }))
 
@@ -101,11 +122,14 @@ function IndexPage({ data }: Index) {
         <Grid
           className={classes.firstSection}
           container
-          spacing={5}
+          spacing={0}
           component={'section'}
         >
           <Grid item xs={12} md={5}>
-            <AnimatedInPlainViewParent key={'home-title'}>
+            <AnimatedInPlainViewParent
+              className={classes.firstSectionWrap}
+              key={'home-title'}
+            >
               <AnimatedInViewChildDiv>
                 <Typography className={classes.title} variant={'h1'}>
                   NovelTea
@@ -118,6 +142,18 @@ function IndexPage({ data }: Index) {
                 >
                   {sanityPage?.hero?.heading}
                 </Typography>
+              </AnimatedInViewChildDiv>
+              <AnimatedInViewChildDiv>
+                <Button
+                  fullWidth
+                  size={'large'}
+                  to={'/menu'}
+                  component={GatsbyLink}
+                  className={classes.ctaButton}
+                  variant={'text'}
+                >
+                  View Menu
+                </Button>
               </AnimatedInViewChildDiv>
             </AnimatedInPlainViewParent>
           </Grid>

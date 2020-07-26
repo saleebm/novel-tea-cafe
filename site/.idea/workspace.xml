@@ -11,39 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/views/Menu/menu-panel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Menu/menu.mod.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Menu/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Menu/price-tag.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/methods/format-currency-output.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/methods/format-money.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/MousePosition/mouse-position-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/MousePosition/mouse-position-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/fragments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/fragments.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/gatsby-graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/hooks/use-mouse-trap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/hooks/use-mouse-trap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/config/google-analytics-plugin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/dashboardConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/dashboardConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/deskStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/deskStructure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/sanity.json" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/sanity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/schemas/documents/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu-panel.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu-price-chip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Menu/menu.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowTypeScript 3.9.7.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/gatsby-transformer-sharp/src/fragments.js" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -106,7 +81,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints.JSON" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -165,7 +141,9 @@
       <workItem from="1595283740372" duration="440000" />
       <workItem from="1595352535761" duration="896000" />
       <workItem from="1595703793544" duration="2629000" />
-      <workItem from="1595706995416" duration="203000" />
+      <workItem from="1595706995416" duration="433000" />
+      <workItem from="1595712530042" duration="1482000" />
+      <workItem from="1595716146446" duration="10560000" />
     </task>
     <servers />
   </component>
@@ -197,42 +175,50 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594717521443" />
-    <state width="457" height="1102" key="GridCell.Tab.0.bottom" timestamp="1595706431149">
+    <state width="386" height="1102" key="GridCell.Tab.0.bottom" timestamp="1595727384056">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="457" height="1102" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595706431149" />
-    <state width="457" height="1102" key="GridCell.Tab.0.center" timestamp="1595706431148">
+    <state width="386" height="1102" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595727384056" />
+    <state width="386" height="1102" key="GridCell.Tab.0.center" timestamp="1595727384055">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="457" height="1102" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595706431148" />
-    <state width="457" height="1102" key="GridCell.Tab.0.left" timestamp="1595706431148">
+    <state width="386" height="1102" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595727384055" />
+    <state width="386" height="1102" key="GridCell.Tab.0.left" timestamp="1595727384054">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="457" height="1102" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595706431148" />
-    <state width="457" height="1102" key="GridCell.Tab.0.right" timestamp="1595706431149">
+    <state width="386" height="1102" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595727384054" />
+    <state width="386" height="1102" key="GridCell.Tab.0.right" timestamp="1595727384056">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="457" height="1102" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595706431149" />
-    <state x="750" y="123" key="SettingsEditor" timestamp="1595706251447">
+    <state width="386" height="1102" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595727384056" />
+    <state x="750" y="123" key="SettingsEditor" timestamp="1595716324324">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="750" y="123" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595706251447" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1595707182625">
+    <state x="750" y="123" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595716324324" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595727893092">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595707182625" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595727893092" />
     <state width="500" height="445" key="SwitcherDM/49.25.1871.1175@49.25.1871.1175" timestamp="1594675002136" />
-    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1594694798546">
+    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595725667211">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594694798546" />
-    <state x="661" y="355" width="597" height="518" key="find.popup" timestamp="1595706173229">
+    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595725667211" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1595725667212">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="661" y="355" width="597" height="518" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595706173229" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595706247463">
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595725667212" />
+    <state x="751" y="518" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595712608215">
+      <screen x="49" y="25" width="1871" height="1175" />
+    </state>
+    <state x="751" y="518" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/49.25.1871.1175@49.25.1871.1175" timestamp="1595712608215" />
+    <state x="661" y="355" width="597" height="518" key="find.popup" timestamp="1595723876209">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595706247463" />
+    <state x="661" y="355" width="597" height="518" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595723876209" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595727996944">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595727996944" />
   </component>
 </project>
