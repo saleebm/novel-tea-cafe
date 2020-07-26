@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Divider, Grid } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core'
 import clsx from 'clsx'
 
 import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
+      paddingBottom: theme.spacing(7),
     },
+    margin: `${theme.spacing(4)}px 0`,
   },
   root: {
     position: 'relative',
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   menuColumn: {
-    margin: `${theme.spacing(5)}px auto`,
+    padding: `${theme.spacing(1)}px 0`,
   },
   menuWrap: {
     display: 'grid',
@@ -60,8 +62,8 @@ export function Menu({ menu }: Menu) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Container maxWidth={'lg'}>
-        <Grid className={classes.rootTabs} container spacing={3}>
+      <Container disableGutters maxWidth={'lg'}>
+        <Grid className={classes.rootTabs} container spacing={0}>
           <Grid
             className={clsx(classes.menuWrap, classes.menuColumn)}
             item
@@ -72,42 +74,43 @@ export function Menu({ menu }: Menu) {
               id={MenuPageKeys.kavaKava}
               pageTitle={'Kava Kava'}
               edges={menu.kavaKava.edges}
+              index={0}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.kratom}
               pageTitle={'Kratom'}
               edges={menu.kratom.edges}
+              index={1}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.addIns}
-              pageTitle={'Add Ins'}
+              pageTitle={'Add-ins: Make it Stronger'}
               edges={menu.addIns.edges}
+              index={2}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.herbalTea}
-              pageTitle={'Custom Herbal Tea'}
+              pageTitle={'Herbal Tea'}
               edges={menu.herbalTea.edges}
+              index={3}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.coffee}
-              pageTitle={'Coffee'}
+              pageTitle={'Coffee & Cold Brew'}
               edges={menu.coffee.edges}
+              index={4}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.superfoods}
-              pageTitle={'SuperFoods'}
+              pageTitle={'Superfoods'}
               edges={menu.superfoods.edges}
+              index={5}
             />
-            <Divider variant={'inset'} orientation={'horizontal'} />
             <MenuSection
               id={MenuPageKeys.bulk}
               pageTitle={'Bulk Kratom and Kava'}
               edges={menu.bulk.edges}
+              index={6}
             />
           </Grid>
           <Grid className={classes.menuColumn} item xs={12} md={4}>

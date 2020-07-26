@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    textAlign: 'center',
   },
   menuItemWrap: {
     display: 'flex',
@@ -127,7 +128,7 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                     container
                     spacing={0}
                   >
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} md={6}>
                       {logoSrc && (
                         <Logo
                           onClick={() => setNavOpen(false)}
@@ -135,8 +136,9 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                         />
                       )}
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} md={6}>
                       <Typography
+                        align={'center'}
                         className={classes.menuTitle}
                         id={'navigation-title'}
                         variant={'h1'}
@@ -155,6 +157,7 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                   {ROUTES.map((route) => (
                     <AnimatedInViewChildDiv key={route.path}>
                       <MenuItem
+                        alignItems={'center'}
                         aria-label={route.name}
                         to={route.path}
                         component={GatsbyLink}
