@@ -1,20 +1,11 @@
-import React, { useState } from 'react'
-import {
-  AppBar,
-  Card,
-  Container,
-  Grid,
-  Paper,
-  Tab,
-  Typography,
-} from '@material-ui/core'
-import TabContext from '@material-ui/lab/TabContext'
-import TabList from '@material-ui/lab/TabList'
+import React from 'react'
+import { Container, Divider, Grid } from '@material-ui/core'
+import clsx from 'clsx'
 
 import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { makeStyles } from '@material-ui/core/styles'
-import { MenuPanel } from '@Components/views/Menu/menu-panel'
-import { MenuPriceChip } from '@Components/views/Menu/menu-price-chip'
+import { MenuSection } from '@Components/views/Menu/menu-section'
+import { MenuNav } from '@Components/views/Menu/menu-nav'
 
 interface Menu {
   menu: Menu_PageQuery
@@ -23,26 +14,39 @@ interface Menu {
 const useStyles = makeStyles((theme) => ({
   rootTabs: {
     position: 'relative',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+    },
   },
   root: {
     position: 'relative',
-    display: 'grid',
-    grid: '1fr / 1fr',
-    rowGap: '50px',
     height: '100%',
     minHeight: 'fit-content',
   },
   gridList: {
     position: 'relative',
   },
+  menuColumn: {
+    margin: `${theme.spacing(5)}px auto`,
+  },
+  menuWrap: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: 'auto',
+    rowGap: `${theme.spacing(4)}px`,
+    height: '100%',
+    padding: 0,
+    position: 'relative',
+  },
+  menuSectionWrap: {
+    position: 'relative',
+  },
+  navSection: {
+    position: 'relative',
+  },
 }))
 
-enum TabLinks {
-  kavaKava = 'kavaKava',
-  kratom = 'kratom',
-}
-
-enum MenuPageKeys {
+export enum MenuPageKeys {
   bulk = 'bulk',
   addIns = 'addIns',
   coffee = 'coffee',
@@ -54,96 +58,63 @@ enum MenuPageKeys {
 
 export function Menu({ menu }: Menu) {
   const classes = useStyles()
-  const [tabContext, setTabContext] = useState<
-    TabLinks.kavaKava | TabLinks.kratom
-  >(TabLinks.kavaKava)
-
-  const handleChange = (
-    event: React.ChangeEvent<{}>,
-    newValue: string,
-  ) => {
-    setTabContext(newValue as TabLinks)
-  }
-
   return (
     <div className={classes.root}>
       <Container maxWidth={'lg'}>
-        <TabContext value={tabContext}>
-          <Grid className={classes.rootTabs} container spacing={3}>
-            <Grid item xs={12} md={8}>
-              <Paper component={'section'} variant={'outlined'}>
-                <MenuPanel
-                  value={TabLinks.kavaKava}
-                  menuItem={menu.kavaKava.edges}
-                />
-                <MenuPanel
-                  value={TabLinks.kratom}
-                  menuItem={menu.kratom.edges}
-                />
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <AppBar
-                position={'sticky'}
-                component={'aside'}
-                variant={'elevation'}
-              >
-                <TabList
-                  onChange={handleChange}
-                  aria-label={'simple tabs menu'}
-                  orientation={'vertical'}
-                  variant={'fullWidth'}
-                >
-                  <Tab
-                    value={TabLinks.kavaKava}
-                    label={'Kava Kava'}
-                  />
-                  <Tab value={TabLinks.kratom} label={'Kratom'} />
-                </TabList>
-              </AppBar>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid container spacing={0}>
-                {menu.addIns.edges.map((addIn) => (
-                  <Card key={addIn.node.id}>
-                    <Typography variant={'h1'}>
-                      {addIn.node.name}
-                    </Typography>
-                    <Typography variant={'subtitle1'}>
-                      {addIn.node.description}
-                    </Typography>
-                    {addIn.node.menuItemPriceOption?.map(
-                      (option, index) => (
-                        <Grid
-                          key={option?.variant ?? index}
-                          item
-                          xs={12}
-                          md={6}
-                        >
-                          <MenuPriceChip
-                            size={'medium'}
-                            label={option?.variant}
-                            color={
-                              index % 2 === 0
-                                ? 'primary'
-                                : 'secondary'
-                            }
-                            price={option?.price ?? undefined}
-                          />
-                        </Grid>
-                      ),
-                    )}
-                  </Card>
-                ))}
-              </Grid>
-            </Grid>
+        <Grid className={classes.rootTabs} container spacing={3}>
+          <Grid
+            className={clsx(classes.menuWrap, classes.menuColumn)}
+            item
+            xs={12}
+            md={8}
+          >
+            <MenuSection
+              id={MenuPageKeys.kavaKava}
+              pageTitle={'Kava Kava'}
+              edges={menu.kavaKava.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.kratom}
+              pageTitle={'Kratom'}
+              edges={menu.kratom.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.addIns}
+              pageTitle={'Add Ins'}
+              edges={menu.addIns.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.herbalTea}
+              pageTitle={'Custom Herbal Tea'}
+              edges={menu.herbalTea.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.coffee}
+              pageTitle={'Coffee'}
+              edges={menu.coffee.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.superfoods}
+              pageTitle={'SuperFoods'}
+              edges={menu.superfoods.edges}
+            />
+            <Divider variant={'inset'} orientation={'horizontal'} />
+            <MenuSection
+              id={MenuPageKeys.bulk}
+              pageTitle={'Bulk Kratom and Kava'}
+              edges={menu.bulk.edges}
+            />
           </Grid>
-        </TabContext>
+          <Grid className={classes.menuColumn} item xs={12} md={4}>
+            <MenuNav />
+          </Grid>
+        </Grid>
       </Container>
-      <Grid container>
-        <Grid item xs={12}></Grid>
-        <Grid item xs={12}></Grid>
-      </Grid>
     </div>
   )
 }
