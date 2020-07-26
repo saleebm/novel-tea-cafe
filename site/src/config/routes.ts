@@ -1,14 +1,14 @@
 export const ROUTES = Object.freeze([
   {
     path: '/',
-    name: 'Front Page',
-  },
-  {
-    path: '/weekly-events',
-    name: 'Weekly Events',
+    name: 'Front',
   },
   {
     path: '/menu',
     name: 'Menu',
+  },
+  {
+    path: '/weekly-events',
+    name: 'Weekly Events',
   },
 ])

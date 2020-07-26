@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper } from '@material-ui/core'
+import { Divider, Paper } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 
 import { MenuTitle } from '@Components/views/Menu/menu-title'
@@ -10,24 +10,39 @@ interface MenuSection {
   id: string
   pageTitle: string
   edges: Menu_Item_EdgeFragment[]
+  index: number
 }
 
 const useStyles = makeStyles((theme) => ({
   menuPanelDupe: {
-    padding: theme.spacing(3),
+    paddingTop: theme.spacing(1),
   },
 }))
 
-export function MenuSection({ id, edges, pageTitle }: MenuSection) {
+export function MenuSection({
+  id,
+  edges,
+  pageTitle,
+  index,
+}: MenuSection) {
   const classes = useStyles()
   return (
-    <Paper component={'section'} variant={'elevation'} elevation={7}>
-      <div className={classes.menuPanelDupe}>
-        <MenuTitle id={id} pageTitle={pageTitle} />
+    <>
+      <Paper
+        id={`auto-tabpanel-${index}`}
+        aria-labelledby={`auto-tab-${index}`}
+        component={'section'}
+        variant={'elevation'}
+        elevation={7}
+        role='tabpanel'
+        className={classes.menuPanelDupe}
+      >
+        <MenuTitle align={'center'} id={id} pageTitle={pageTitle} />
         {edges.map((addIn) => (
           <MenuItem key={addIn.node.id} theRealMenuItem={addIn} />
         ))}
-      </div>
-    </Paper>
+      </Paper>
+      <Divider variant={'inset'} orientation={'horizontal'} />
+    </>
   )
 }

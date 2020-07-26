@@ -28,9 +28,6 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flex: '0 1 auto',
     alignSelf: 'flex-start',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
   },
   cardPrice: {
     flex: '1 1 auto',
@@ -38,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
   },
 }))
 
@@ -62,6 +56,8 @@ export function MenuItem({
           className={classes.title}
           color='textSecondary'
           gutterBottom
+          variant={'h3'}
+          component={'h2'}
         >
           {theRealMenuItem.node.name}
         </Typography>
