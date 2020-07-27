@@ -24,7 +24,7 @@ export const IntersectionObserver: FC<{
     intersectionRef,
     {
       threshold: threshold,
-      once: true,
+      once: reset,
     },
   )
 

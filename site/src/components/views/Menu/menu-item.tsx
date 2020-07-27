@@ -4,12 +4,21 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardProps,
   Typography,
 } from '@material-ui/core'
 import { MenuPriceChip } from '@Components/views/Menu/menu-price-chip'
 import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
+import {
+  AnimatedInPlainViewParent,
+  AnimatedInViewChildDiv,
+} from '@Components/elements/InView/in-view'
 
-const useStyles = makeStyles((theme) => ({
+interface MenuItem extends CardProps {
+  theRealMenuItem: Menu_Item_EdgeFragment
+}
+
+const useStyles = makeStyles((_theme) => ({
   root: {
     position: 'relative',
     display: 'flex',
@@ -38,46 +47,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export function MenuItem({
-  theRealMenuItem,
-}: {
-  theRealMenuItem: Menu_Item_EdgeFragment
-}) {
+export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
   const classes = useStyles()
   return (
-    <Card
-      key={theRealMenuItem.node.id}
-      className={classes.root}
-      variant={'elevation'}
-      elevation={0}
-    >
-      <CardContent className={classes.cardContent}>
-        <Typography
-          className={classes.title}
-          color='textSecondary'
-          gutterBottom
-          variant={'h3'}
-          component={'h2'}
+    <AnimatedInPlainViewParent>
+      <AnimatedInViewChildDiv>
+        <Card
+          key={theRealMenuItem.node.id}
+          className={classes.root}
+          variant={'elevation'}
+          elevation={0}
+          {...rest}
         >
-          {theRealMenuItem.node.name}
-        </Typography>
-        <Typography variant={'h5'} component={'p'}>
-          {theRealMenuItem.node.description}
-        </Typography>
-      </CardContent>
-      <CardActions className={classes.cardPrice}>
-        {theRealMenuItem.node.menuItemPriceOption?.map(
-          (option, index) => (
-            <MenuPriceChip
-              size={'medium'}
-              key={option?.variant ?? index}
-              label={option?.variant}
-              color={'secondary'}
-              price={option?.price ?? undefined}
-            />
-          ),
-        )}
-      </CardActions>
-    </Card>
+          <CardContent className={classes.cardContent}>
+            <Typography
+              className={classes.title}
+              color='textSecondary'
+              gutterBottom
+              variant={'h3'}
+              component={'h2'}
+            >
+              {theRealMenuItem.node.name}
+            </Typography>
+            <Typography variant={'h5'} component={'p'}>
+              {theRealMenuItem.node.description}
+            </Typography>
+          </CardContent>
+          <CardActions className={classes.cardPrice}>
+            {theRealMenuItem.node.menuItemPriceOption?.map(
+              (option, index) => (
+                <MenuPriceChip
+                  size={'medium'}
+                  key={option?.variant ?? index}
+                  label={option?.variant}
+                  color={'secondary'}
+                  price={option?.price ?? undefined}
+                />
+              ),
+            )}
+          </CardActions>
+        </Card>
+      </AnimatedInViewChildDiv>
+    </AnimatedInPlainViewParent>
   )
 }
