@@ -6,6 +6,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import { MenuSection } from '@Components/views/Menu/menu-section'
 import { MenuNav } from '@Components/views/Menu/menu-nav'
 import { MenuNavContextProvider } from '@Components/context/MenuNav/menu-nav-context'
+import {
+  AnimatedInPlainViewParent,
+  AnimatedInViewChildDiv,
+} from '@Components/elements/InView/in-view'
 
 interface Menu {
   menu: Menu_PageQuery
@@ -115,7 +119,11 @@ export function Menu({ menu }: Menu) {
               />
             </Grid>
             <Grid className={classes.menuColumn} item xs={12} md={4}>
-              <MenuNav />
+              <AnimatedInPlainViewParent>
+                <AnimatedInViewChildDiv>
+                  <MenuNav />
+                </AnimatedInViewChildDiv>
+              </AnimatedInPlainViewParent>
             </Grid>
           </Grid>
         </MenuNavContextProvider>

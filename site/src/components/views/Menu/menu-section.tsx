@@ -5,7 +5,6 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { navigate } from 'gatsby'
 import { Divider, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -18,6 +17,7 @@ import {
   AnimatedInView,
   AnimatedIOView,
 } from '@Components/elements/InView/in-view'
+import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
 interface MenuSection {
   id: string
@@ -50,13 +50,14 @@ export function MenuSection({
     },
   )
 
+  const [setInViewDebounced] = useDebouncedCallback(
+    (intersecting: boolean) => setInView(intersecting),
+    300,
+  )
+
   useEffect(() => {
-    if (intersection) {
-      return setInView(intersection)
-    } else {
-      return setInView(false)
-    }
-  }, [intersection, setInView])
+    setInViewDebounced(intersection)
+  }, [intersection, setInViewDebounced])
 
   useEffect(() => {
     if (inView) {
