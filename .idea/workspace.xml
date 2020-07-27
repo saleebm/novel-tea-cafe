@@ -20,32 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-panel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu.mod.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/components/views/Menu/price-tag.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/pages/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/methods/format-currency-output.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/src/utils/methods/format-money.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/components/context/MenuNav/menu-nav-context.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/site/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/graphql/fragments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/fragments.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/config/google-analytics-plugin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/dashboardConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/dashboardConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/deskStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/deskStructure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/sanity.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/sanity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/studio/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/context/IntersectionObserver/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/IntersectionObserver/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +77,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/studio/schemas/documents" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/site/src/components/context" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -107,6 +96,7 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/site/node_modules/stylelint" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v14.6.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/site/node_modules/prettier" />
@@ -114,20 +104,20 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/site/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/studio/schemas/objects" />
-      <recent name="$PROJECT_DIR$/studio/schemas/documents" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/site/src/components/context" />
       <recent name="$PROJECT_DIR$/studio/schemas/documents" />
       <recent name="$PROJECT_DIR$/site/src/models/types" />
       <recent name="$PROJECT_DIR$/site/src/components/elements" />
       <recent name="$PROJECT_DIR$/site/src/utils/hooks" />
-      <recent name="$PROJECT_DIR$/site/src/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/studio/schemas/objects" />
+      <recent name="$PROJECT_DIR$/studio/schemas/documents" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -229,6 +219,7 @@
       <workItem from="1595696349689" duration="1165000" />
       <workItem from="1595698633237" duration="1010000" />
       <workItem from="1595703265418" duration="506000" />
+      <workItem from="1595875659865" duration="5290000" />
     </task>
     <servers />
   </component>
@@ -265,6 +256,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="678" y="485" key="#Prettier/0.0.1920.1200@0.0.1920.1200" timestamp="1594858368514" />
+    <state x="768" y="445" key="#Usage_Scope" timestamp="1595875691068">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="768" y="445" key="#Usage_Scope/0.0.1920.1200@0.0.1920.1200" timestamp="1595875691068" />
     <state x="755" y="382" key="#Web_Browsers" timestamp="1595360580954">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -273,30 +268,30 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="1878" height="187" key="GridCell.Tab.0.bottom" timestamp="1595699646524">
+    <state width="1878" height="184" key="GridCell.Tab.0.bottom" timestamp="1595877002765">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595699646524" />
-    <state width="1878" height="187" key="GridCell.Tab.0.center" timestamp="1595699646523">
+    <state width="1878" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595877002765" />
+    <state width="1878" height="184" key="GridCell.Tab.0.center" timestamp="1595877002764">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="187" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595699646523" />
-    <state width="1878" height="187" key="GridCell.Tab.0.left" timestamp="1595699646523">
+    <state width="1878" height="184" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595877002764" />
+    <state width="1878" height="184" key="GridCell.Tab.0.left" timestamp="1595877002764">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="187" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595699646523" />
-    <state width="1878" height="187" key="GridCell.Tab.0.right" timestamp="1595699646524">
+    <state width="1878" height="184" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595877002764" />
+    <state width="1878" height="184" key="GridCell.Tab.0.right" timestamp="1595877002765">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="187" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595699646524" />
-    <state x="469" y="236" key="SettingsEditor" timestamp="1595544881842">
+    <state width="1878" height="184" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595877002765" />
+    <state x="469" y="236" key="SettingsEditor" timestamp="1595876528637">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595544881842" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1595703732103">
+    <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595876528637" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1595880121569">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595703732103" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595880121569" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1595546494563">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -309,22 +304,22 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595197085707" />
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595100126364">
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595880365876">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595100126364" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595880365876" />
     <state x="100" y="100" width="754" height="1000" key="dock-window-1" timestamp="1594992323451">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="754" height="1000" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" timestamp="1594992323451" />
-    <state x="602" y="355" width="1318" height="490" key="find.popup" timestamp="1595553339328">
+    <state x="602" y="355" width="1318" height="490" key="find.popup" timestamp="1595881192288">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595553339328" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595545092697">
+    <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881192288" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1595880752954">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595545092697" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595880752954" />
     <state x="658" y="290" width="670" height="662" key="search.everywhere.popup/49.25.1871.1175@49.25.1871.1175" timestamp="1595118262504" />
   </component>
 </project>

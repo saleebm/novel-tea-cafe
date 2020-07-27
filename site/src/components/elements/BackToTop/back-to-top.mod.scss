@@ -1,5 +1,5 @@
 .anchor {
-  bottom: 10%;
+  bottom: 2%;
   right: 1%;
   cursor: pointer;
   z-index: 3000000;
@@ -16,5 +16,9 @@
     svg {
       filter: saturate(30);
     }
+  }
+
+  @media screen and (width < 900) {
+    bottom: 10%;
   }
 }
