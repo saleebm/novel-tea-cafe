@@ -52,7 +52,6 @@ export function MenuNav() {
   const getIfSelected = useCallback(
     (tabName: string, index: number) =>
       typeof window !== 'undefined' &&
-      !!window.location.hash &&
       window.location.hash === `#${tabName}`
         ? true
         : menuLocation === index,

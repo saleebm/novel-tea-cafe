@@ -50,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
   navSection: {
     position: 'relative',
   },
+  menuNavWrap: {
+    height: '100%',
+    width: '100%',
+    minHeight: '100%',
+    position: 'relative',
+  },
 }))
 
 export enum MenuPageKeys {
@@ -119,8 +125,12 @@ export function Menu({ menu }: Menu) {
               />
             </Grid>
             <Grid className={classes.menuColumn} item xs={12} md={4}>
-              <AnimatedInPlainViewParent>
-                <AnimatedInViewChildDiv>
+              <AnimatedInPlainViewParent
+                className={classes.menuNavWrap}
+              >
+                <AnimatedInViewChildDiv
+                  className={classes.menuNavWrap}
+                >
                   <MenuNav />
                 </AnimatedInViewChildDiv>
               </AnimatedInPlainViewParent>
