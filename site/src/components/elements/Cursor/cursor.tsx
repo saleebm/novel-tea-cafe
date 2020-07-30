@@ -3,6 +3,8 @@ import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 import styled from 'styled-components'
 import styles from './cursor.mod.scss'
+import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
+
 // import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
 interface CursorProps {
@@ -65,7 +67,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
 
   const {
     activeArea,
-    activeContainer,
+    // activeContainer,
     // todo perhaps for text
     // additionalProps,
   } = useMouseTrap()
@@ -116,42 +118,24 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
     [BIG_DOTS_SHADOW, SMALL_DOTS_SHADOW],
   )
 
-  // const [debouncedAnimateBoundingBox] = useDebouncedCallback(
-  //   async (box: DOMRect) => {
-  //     await controlFlowerPower.start({
-  //       scale: 1,
-  //     })
-  //   },
-  //   420,
-  // )
-
   useEffect(() => {
-    if (
-      activeContainer &&
-      typeof activeContainer === 'object' &&
-      'getBoundingClientRect' in activeContainer &&
-      typeof activeContainer.getBoundingClientRect === 'function'
-    ) {
+    if (activeArea !== ActiveAreaTypes.notSet) {
       // const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
       controlFlowerPower
         .start({
           scale: 1.33,
         })
-        .then(async () => {
-          await controlFlowerPower.start({
-            scale: 1.5,
-          })
-          return async () =>
-            await controlFlowerPower.start({
-              scale: 1,
-            })
-        })
+        .then(() =>
+          controlFlowerPower.start({
+            scale: 1.25,
+          }),
+        )
     } else {
       controlFlowerPower.start({
         scale: 1,
       })
     }
-  }, [activeArea, activeContainer, controlFlowerPower])
+  }, [activeArea, controlFlowerPower])
 
   useEffect(() => {
     controls.start(RESET_CONTROLS).then(async () => {
@@ -173,7 +157,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
         }}
         transition={{
           type: 'spring',
-          damping: 50,
+          damping: 20,
         }}
       >
         <Flower
@@ -183,10 +167,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           className={styles.cursor}
           animate={controlFlowerPower}
           initial={{
-            boxShadow: '0 0 1px green',
-          }}
-          exit={{
-            boxShadow: '0 0 1px green',
+            scale: 1,
           }}
         >
           <div className='dots-container'>
@@ -202,7 +183,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
               <motion.div
                 transition={{
                   type: 'spring',
-                  mass: 0.5,
+                  mass: 0.25,
                 }}
                 custom={0}
                 animate={controls}

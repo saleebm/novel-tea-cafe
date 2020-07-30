@@ -21,6 +21,7 @@ import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 import { createMaterialTheme } from '@Config/material-theme'
 import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
+import { Footer } from '@Components/structure/Layout/footer'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -138,7 +139,17 @@ export function Layout({ children }: Layout) {
         >
           <Cursor x={x} y={y} mouseUp={isCursorDown} />
           <Header />
-          <main id={'herb-main'}>{children}</main>
+          <main
+            style={{
+              minHeight: '75vh',
+              height: '100%',
+              position: 'relative',
+            }}
+            id={'herb-main'}
+          >
+            {children}
+          </main>
+          <Footer />
           <GlobalStyles />
           <CssBaseline />
         </Container>

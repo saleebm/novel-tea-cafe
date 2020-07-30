@@ -76,8 +76,18 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'stretch',
-    justifyContent: 'stretch',
-    alignContent: 'space-evenly',
+    justifyContent: 'center',
+    alignContent: 'space-around',
+    flex: '1 1 auto',
+  },
+  firstSectionItem: {
+    position: 'relative',
+    flex: '0 1 fit-content',
+    width: '100%',
+    display: 'inline-flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   figureArea: {
     padding: `0 ${theme.spacing(5)}px`,
@@ -130,12 +140,16 @@ function IndexPage({ data }: Index) {
               className={classes.firstSectionWrap}
               key={'home-title'}
             >
-              <AnimatedInViewChildDiv>
+              <AnimatedInViewChildDiv
+                className={classes.firstSectionItem}
+              >
                 <Typography className={classes.title} variant={'h1'}>
                   NovelTea
                 </Typography>
               </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv>
+              <AnimatedInViewChildDiv
+                className={classes.firstSectionItem}
+              >
                 <Typography
                   className={classes.subTitle}
                   variant={'h2'}
@@ -143,7 +157,9 @@ function IndexPage({ data }: Index) {
                   {sanityPage?.hero?.heading}
                 </Typography>
               </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv>
+              <AnimatedInViewChildDiv
+                className={classes.firstSectionItem}
+              >
                 <Button
                   fullWidth
                   size={'large'}

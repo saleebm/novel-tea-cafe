@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
         'borderTopLeftRadius': '0 !important',
         'borderBottomLeftRadius': '0 !important',
         'transform': 'skew(-9deg) !important',
+        'borderImageSource': `linear-gradient(-60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
         '& > div': {
           transform: 'skew(9deg) !important',
         },
@@ -85,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(5),
     border: '10px solid',
     borderImageSource: `linear-gradient(60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
-    borderImageSlice: '42 69',
+    borderImageSlice: '33 12',
     borderImageRepeat: 'round',
     transform: 'skew(9deg)',
     borderTopLeftRadius: '7px',

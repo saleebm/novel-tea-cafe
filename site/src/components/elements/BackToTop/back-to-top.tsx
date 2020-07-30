@@ -63,7 +63,7 @@ export const BackToTop = () => {
         role={'navigation'}
         title={'Back To Top'}
       >
-        <ArrowDropUp elevation={5} fontSize={'small'} />
+        <ArrowDropUp elevation={5} fontSize={'large'} />
       </MotionButton>
     ),
     [scrollbarState.y, anchor],

@@ -8,13 +8,16 @@ import {
   Typography,
 } from '@material-ui/core'
 import { motion } from 'framer-motion'
-import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
-import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
-import { ROUTES } from '@Config/routes'
-import GatsbyLink from 'gatsby-link'
-import { AnimatedInViewChildDiv } from '@Components/elements/InView/in-view'
 import { FixedObject } from 'gatsby-image'
+import { Link } from 'gatsby'
+
+import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
+import { ROUTES } from '@Config/routes'
+import { AnimatedInViewChildDiv } from '@Components/elements/InView/in-view'
 import { Logo } from '@Components/structure/Layout/logo'
+import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
+import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
+import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -33,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     position: 'relative',
-    backgroundColor: fade(theme.palette.background.paper, 0.9),
+    backgroundColor: fade(
+      theme.palette.primary[theme.palette.type],
+      0.9,
+    ),
     display: 'flex',
     flexFlow: 'column',
     alignItems: 'center',
@@ -156,16 +162,21 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                 >
                   {ROUTES.map((route) => (
                     <AnimatedInViewChildDiv key={route.path}>
-                      <MenuItem
-                        alignItems={'center'}
-                        aria-label={route.name}
-                        to={route.path}
-                        component={GatsbyLink}
-                        className={classes.menuItems}
-                        onClick={() => setNavOpen(false)}
+                      <MouseTrap
+                        area={ActiveAreaTypes.anchor}
+                        additionalProps={{}}
                       >
-                        {route.name}
-                      </MenuItem>
+                        <MenuItem
+                          alignItems={'center'}
+                          aria-label={route.name}
+                          to={route.path}
+                          component={Link}
+                          className={classes.menuItems}
+                          onClick={() => setNavOpen(false)}
+                        >
+                          {route.name}
+                        </MenuItem>
+                      </MouseTrap>
                     </AnimatedInViewChildDiv>
                   ))}
                   <AnimatedInViewChildDiv
