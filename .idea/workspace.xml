@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/site/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,7 @@
       <workItem from="1595884262985" duration="389000" />
       <workItem from="1596936050218" duration="2111000" />
       <workItem from="1596941786570" duration="16000" />
-      <workItem from="1596967344642" duration="849000" />
+      <workItem from="1596967344642" duration="1761000" />
     </task>
     <servers />
   </component>
@@ -318,10 +316,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881837394" />
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1596968058337">
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1596968586039">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596968058337" />
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1596968586039" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881578643" />
     <state x="658" y="290" width="670" height="662" key="search.everywhere.popup/49.25.1871.1175@49.25.1871.1175" timestamp="1595118262504" />
   </component>
