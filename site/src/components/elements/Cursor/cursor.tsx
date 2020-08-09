@@ -39,6 +39,7 @@ const Flower = styled(motion.div)<FlowerProps>`
   }
 
   .smaller-dot {
+    border-radius: 49%;
     background-color: #15861a;
     height: 100%;
     width: 100%;

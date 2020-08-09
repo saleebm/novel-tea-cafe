@@ -45,8 +45,9 @@ export function MenuSection({
   const { intersecting: intersection } = useIntersectionObserver(
     intersectionRef,
     {
-      threshold: 0.12,
+      threshold: [0.05],
       once: false,
+      rootMargin: '-50px 0px -55%',
     },
   )
 
@@ -76,13 +77,9 @@ export function MenuSection({
           elevation={7}
           role={'tabpanel'}
           className={classes.menuPanelDupe}
+          innerRef={intersectionRef}
         >
-          <MenuTitle
-            innerRef={intersectionRef}
-            align={'center'}
-            id={id}
-            pageTitle={pageTitle}
-          />
+          <MenuTitle align={'center'} id={id} pageTitle={pageTitle} />
           {edges.map((addIn) => (
             <AnimatedInView key={addIn.node.id}>
               <AnimatedIOView>
