@@ -1809,18 +1809,22 @@ type SitePluginPluginOptions {
   center: String
   dataset: String
   defaultQuality: Int
+  format: String
   implementation: SitePluginPluginOptionsImplementation
   key: String
+  markers: [SitePluginPluginOptionsMarkers]
   name: String
+  nickname: String
   openGraph: SitePluginPluginOptionsOpenGraph
   options: SitePluginPluginOptionsOptions
   overlayDrafts: Boolean
   path: String
   pathCheck: Boolean
   projectId: String
+  scale: Int
   stages: [String]
   stripMetadata: Boolean
-  style: [SitePluginPluginOptionsStyle]
+  styles: [SitePluginPluginOptionsStyles]
   stylesProvider: SitePluginPluginOptionsStylesProvider
   titleTemplate: String
   useMozJpeg: Boolean
@@ -1831,6 +1835,12 @@ type SitePluginPluginOptions {
 
 type SitePluginPluginOptionsImplementation {
   info: String
+}
+
+type SitePluginPluginOptionsMarkers {
+  color: String
+  location: String
+  size: String
 }
 
 type SitePluginPluginOptionsOpenGraph {
@@ -1845,19 +1855,21 @@ type SitePluginPluginOptionsOptions {
   failOnError: Boolean
 }
 
-type SitePluginPluginOptionsStyle {
-  elementType: String
-  featureType: String
-  stylers: [SitePluginPluginOptionsStyleStylers]
-}
-
-type SitePluginPluginOptionsStyleStylers {
-  color: String
-  visibility: String
+type SitePluginPluginOptionsStyles {
+  element: String
+  feature: String
+  rules: [SitePluginPluginOptionsStylesRules]
 }
 
 type SitePluginPluginOptionsStylesProvider {
   injectFirst: Boolean
+}
+
+type SitePluginPluginOptionsStylesRules {
+  color: String
+  hue: String
+  visibility: String
+  weight: Float
 }
 
 type SitePluginPluginOptionsUseResolveUrlLoader {
@@ -4949,9 +4961,15 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___center
   pluginCreator___pluginOptions___dataset
   pluginCreator___pluginOptions___defaultQuality
+  pluginCreator___pluginOptions___format
   pluginCreator___pluginOptions___implementation___info
   pluginCreator___pluginOptions___key
+  pluginCreator___pluginOptions___markers
+  pluginCreator___pluginOptions___markers___color
+  pluginCreator___pluginOptions___markers___location
+  pluginCreator___pluginOptions___markers___size
   pluginCreator___pluginOptions___name
+  pluginCreator___pluginOptions___nickname
   pluginCreator___pluginOptions___openGraph___locale
   pluginCreator___pluginOptions___openGraph___site_name
   pluginCreator___pluginOptions___openGraph___type
@@ -4962,13 +4980,14 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___pluginOptions___projectId
+  pluginCreator___pluginOptions___scale
   pluginCreator___pluginOptions___stages
   pluginCreator___pluginOptions___stripMetadata
-  pluginCreator___pluginOptions___style
-  pluginCreator___pluginOptions___style___elementType
-  pluginCreator___pluginOptions___style___featureType
-  pluginCreator___pluginOptions___style___stylers
+  pluginCreator___pluginOptions___styles
   pluginCreator___pluginOptions___stylesProvider___injectFirst
+  pluginCreator___pluginOptions___styles___element
+  pluginCreator___pluginOptions___styles___feature
+  pluginCreator___pluginOptions___styles___rules
   pluginCreator___pluginOptions___titleTemplate
   pluginCreator___pluginOptions___useMozJpeg
   pluginCreator___pluginOptions___watchMode
@@ -5087,9 +5106,15 @@ enum SitePluginFieldsEnum {
   pluginOptions___center
   pluginOptions___dataset
   pluginOptions___defaultQuality
+  pluginOptions___format
   pluginOptions___implementation___info
   pluginOptions___key
+  pluginOptions___markers
+  pluginOptions___markers___color
+  pluginOptions___markers___location
+  pluginOptions___markers___size
   pluginOptions___name
+  pluginOptions___nickname
   pluginOptions___openGraph___locale
   pluginOptions___openGraph___site_name
   pluginOptions___openGraph___type
@@ -5100,15 +5125,18 @@ enum SitePluginFieldsEnum {
   pluginOptions___path
   pluginOptions___pathCheck
   pluginOptions___projectId
+  pluginOptions___scale
   pluginOptions___stages
   pluginOptions___stripMetadata
-  pluginOptions___style
-  pluginOptions___style___elementType
-  pluginOptions___style___featureType
-  pluginOptions___style___stylers
-  pluginOptions___style___stylers___color
-  pluginOptions___style___stylers___visibility
+  pluginOptions___styles
   pluginOptions___stylesProvider___injectFirst
+  pluginOptions___styles___element
+  pluginOptions___styles___feature
+  pluginOptions___styles___rules
+  pluginOptions___styles___rules___color
+  pluginOptions___styles___rules___hue
+  pluginOptions___styles___rules___visibility
+  pluginOptions___styles___rules___weight
   pluginOptions___titleTemplate
   pluginOptions___useMozJpeg
   pluginOptions___useResolveUrlLoader___options___sourceMap
@@ -6320,18 +6348,22 @@ input SitePluginPluginOptionsFilterInput {
   center: StringQueryOperatorInput
   dataset: StringQueryOperatorInput
   defaultQuality: IntQueryOperatorInput
+  format: StringQueryOperatorInput
   implementation: SitePluginPluginOptionsImplementationFilterInput
   key: StringQueryOperatorInput
+  markers: SitePluginPluginOptionsMarkersFilterListInput
   name: StringQueryOperatorInput
+  nickname: StringQueryOperatorInput
   openGraph: SitePluginPluginOptionsOpenGraphFilterInput
   options: SitePluginPluginOptionsOptionsFilterInput
   overlayDrafts: BooleanQueryOperatorInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
   projectId: StringQueryOperatorInput
+  scale: IntQueryOperatorInput
   stages: StringQueryOperatorInput
   stripMetadata: BooleanQueryOperatorInput
-  style: SitePluginPluginOptionsStyleFilterListInput
+  styles: SitePluginPluginOptionsStylesFilterListInput
   stylesProvider: SitePluginPluginOptionsStylesProviderFilterInput
   titleTemplate: StringQueryOperatorInput
   useMozJpeg: BooleanQueryOperatorInput
@@ -6342,6 +6374,16 @@ input SitePluginPluginOptionsFilterInput {
 
 input SitePluginPluginOptionsImplementationFilterInput {
   info: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsMarkersFilterInput {
+  color: StringQueryOperatorInput
+  location: StringQueryOperatorInput
+  size: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsMarkersFilterListInput {
+  elemMatch: SitePluginPluginOptionsMarkersFilterInput
 }
 
 input SitePluginPluginOptionsOpenGraphFilterInput {
@@ -6356,27 +6398,29 @@ input SitePluginPluginOptionsOptionsFilterInput {
   failOnError: BooleanQueryOperatorInput
 }
 
-input SitePluginPluginOptionsStyleFilterInput {
-  elementType: StringQueryOperatorInput
-  featureType: StringQueryOperatorInput
-  stylers: SitePluginPluginOptionsStyleStylersFilterListInput
+input SitePluginPluginOptionsStylesFilterInput {
+  element: StringQueryOperatorInput
+  feature: StringQueryOperatorInput
+  rules: SitePluginPluginOptionsStylesRulesFilterListInput
 }
 
-input SitePluginPluginOptionsStyleFilterListInput {
-  elemMatch: SitePluginPluginOptionsStyleFilterInput
-}
-
-input SitePluginPluginOptionsStyleStylersFilterInput {
-  color: StringQueryOperatorInput
-  visibility: StringQueryOperatorInput
-}
-
-input SitePluginPluginOptionsStyleStylersFilterListInput {
-  elemMatch: SitePluginPluginOptionsStyleStylersFilterInput
+input SitePluginPluginOptionsStylesFilterListInput {
+  elemMatch: SitePluginPluginOptionsStylesFilterInput
 }
 
 input SitePluginPluginOptionsStylesProviderFilterInput {
   injectFirst: BooleanQueryOperatorInput
+}
+
+input SitePluginPluginOptionsStylesRulesFilterInput {
+  color: StringQueryOperatorInput
+  hue: StringQueryOperatorInput
+  visibility: StringQueryOperatorInput
+  weight: FloatQueryOperatorInput
+}
+
+input SitePluginPluginOptionsStylesRulesFilterListInput {
+  elemMatch: SitePluginPluginOptionsStylesRulesFilterInput
 }
 
 input SitePluginPluginOptionsUseResolveUrlLoaderFilterInput {

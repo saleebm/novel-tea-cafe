@@ -11,7 +11,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
-    title: `Novel Tea Cafe`,
+    title: `NovelTea Cafe`,
     description: `Join me for fresh kava and kratom tea, fresh brewed kombucha, and daily social events. What could be better? Answer: Nothing!`,
     author: `@minasa1eeb`,
   },
@@ -98,7 +98,7 @@ module.exports = {
       resolve: `gatsby-source-googlemaps-static`,
       options: {
         key: `AIzaSyDv6odPp-2SPWgD4-ulP8uRa6J7uBvOTMw`,
-        center: `28.633095,-81.3229957`,
+        center: `NovelTea, Lake Howell Lane, Maitland, FL`,
         zoom: 14,
         scale: 2,
         format: 'png',
