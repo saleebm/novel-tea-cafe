@@ -40,7 +40,7 @@ const useClasses = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    width: '100%',
+    maxWidth: '70px',
   },
 }))
 
@@ -100,12 +100,19 @@ export function Footer() {
               container
               spacing={0}
               alignItems={'baseline'}
-              justify={'center'}
+              justify={'flex-end'}
             >
               {facebookIcon?.childImageSharp?.fixed &&
                 socialLinks?.facebookPage && (
-                  <Grid item xs={4}>
-                    <AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={4}
+                    className={classes.socialIconWrap}
+                    sm={3}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.socialIconWrap}
+                    >
                       <a
                         className={classes.socialIconWrap}
                         href={socialLinks.facebookPage}
@@ -126,8 +133,15 @@ export function Footer() {
                 )}
               {twitterIcon?.childImageSharp?.fixed &&
                 socialLinks?.twitterPage && (
-                  <Grid item xs={4}>
-                    <AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={4}
+                    className={classes.socialIconWrap}
+                    sm={3}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.socialIconWrap}
+                    >
                       <a
                         href={socialLinks.twitterPage}
                         className={classes.socialIconWrap}
@@ -148,8 +162,15 @@ export function Footer() {
                 )}
               {instagramIcon?.childImageSharp?.fixed &&
                 socialLinks?.instagramPage && (
-                  <Grid item xs={4}>
-                    <AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={4}
+                    className={classes.socialIconWrap}
+                    sm={3}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.socialIconWrap}
+                    >
                       <a
                         className={classes.socialIconWrap}
                         href={socialLinks.instagramPage}
