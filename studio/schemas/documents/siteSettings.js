@@ -11,6 +11,11 @@ export default {
       type: 'openGraph'
     },
     {
+      title: 'Address',
+      name: 'address',
+      type: 'string',
+    },
+    {
       type: 'color',
       name: 'primaryColor',
       title: 'Primary brand color',
