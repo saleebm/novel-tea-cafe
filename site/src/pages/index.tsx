@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   figureArea: {
-    padding: `0 ${theme.spacing(5)}px`,
+    padding: `0 ${theme.spacing(7)}px`,
     position: 'relative',
   },
   image: {
@@ -132,7 +132,7 @@ function IndexPage({ data }: Index) {
         <Grid
           className={classes.firstSection}
           container
-          spacing={0}
+          spacing={3}
           component={'section'}
         >
           <Grid item xs={12} md={5}>
@@ -140,53 +140,71 @@ function IndexPage({ data }: Index) {
               className={classes.firstSectionWrap}
               key={'home-title'}
             >
-              <AnimatedInViewChildDiv
-                className={classes.firstSectionItem}
-              >
-                <Typography className={classes.title} variant={'h1'}>
-                  {sanityPage?.hero?.label}
-                </Typography>
-              </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv
-                className={classes.firstSectionItem}
-              >
-                <Typography
-                  className={classes.subTitle}
-                  variant={'h2'}
-                >
-                  {sanityPage?.hero?.heading}
-                </Typography>
-              </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv
-                className={classes.firstSectionItem}
-              >
-                <Button
-                  size={'large'}
-                  to={`${sanityPage?.hero?.cta?.route}`}
-                  component={GatsbyLink}
-                  className={classes.ctaButton}
-                  variant={'outlined'}
-                >
-                  {sanityPage?.hero?.cta?.title}
-                </Button>
-              </AnimatedInViewChildDiv>
+              <Grid container spacing={5}>
+                <Grid item xs={12}>
+                  <AnimatedInViewChildDiv
+                    className={classes.firstSectionItem}
+                  >
+                    <Typography
+                      className={classes.title}
+                      variant={'h1'}
+                    >
+                      {sanityPage?.hero?.label}
+                    </Typography>
+                  </AnimatedInViewChildDiv>
+                  <Grid item xs={12}>
+                    <AnimatedInViewChildDiv
+                      className={classes.firstSectionItem}
+                    >
+                      <Typography
+                        className={classes.subTitle}
+                        variant={'h2'}
+                      >
+                        {sanityPage?.hero?.heading}
+                      </Typography>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <AnimatedInViewChildDiv
+                      className={classes.firstSectionItem}
+                    >
+                      <Button
+                        size={'large'}
+                        to={`${sanityPage?.hero?.cta?.route}`}
+                        component={GatsbyLink}
+                        className={classes.ctaButton}
+                        variant={'outlined'}
+                      >
+                        {sanityPage?.hero?.cta?.title}
+                      </Button>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                </Grid>
+              </Grid>
             </AnimatedInPlainViewParent>
           </Grid>
           <Grid item xs={12} md={7}>
             <AnimatedInPlainViewParent key={'home-hero-image'}>
               <AnimatedInViewChildDiv>
-                <figure className={classes.figureArea}>
-                  {sanityPage?.hero?.illustration?.image?.asset
-                    ?.fluid && (
-                    <GatsbyImage
-                      className={classes.image}
-                      fluid={
-                        sanityPage?.hero?.illustration?.image?.asset
-                          .fluid as FluidObject
-                      }
-                    />
-                  )}
-                  <figcaption>
+                <Grid
+                  container
+                  component={'figure'}
+                  spacing={7}
+                  className={classes.figureArea}
+                >
+                  <Grid item xs={12}>
+                    {sanityPage?.hero?.illustration?.image?.asset
+                      ?.fluid && (
+                      <GatsbyImage
+                        className={classes.image}
+                        fluid={
+                          sanityPage?.hero?.illustration?.image?.asset
+                            .fluid as FluidObject
+                        }
+                      />
+                    )}
+                  </Grid>
+                  <Grid item xs={12}>
                     <AnimatedInViewChildDiv>
                       {sanityPage?.hero?.tagline?.map(
                         (tags, index) =>
@@ -203,8 +221,8 @@ function IndexPage({ data }: Index) {
                           )),
                       )}
                     </AnimatedInViewChildDiv>
-                  </figcaption>
-                </figure>
+                  </Grid>
+                </Grid>
               </AnimatedInViewChildDiv>
             </AnimatedInPlainViewParent>
           </Grid>

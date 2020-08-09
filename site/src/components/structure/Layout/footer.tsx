@@ -15,13 +15,12 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
     height: 'min-content',
     minHeight: '100%',
-    paddingBottom: theme.spacing(5),
+    padding: `${theme.spacing(5)}px 0 ${theme.spacing(10)}px`,
   },
   socialArea: {
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'baseline',
-    maxWidth: '300px',
   },
   socialIcon: {
     'willChange': 'filter, transform',
@@ -89,7 +88,11 @@ export function Footer() {
   `)
 
   return (
-    <Container maxWidth={'xl'} component={'footer'}>
+    <Container
+      className={classes.footerWrap}
+      maxWidth={'xl'}
+      component={'footer'}
+    >
       <Grid container spacing={3} justify={'flex-end'}>
         <Grid item xs={12}>
           <Divider variant={'inset'} />
