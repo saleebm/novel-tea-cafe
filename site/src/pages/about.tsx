@@ -21,7 +21,27 @@ interface AboutPage {
 
 const useClasses = makeStyles((theme) => ({
   bodyText: {
-    maxWidth: '18ch',
+    maxWidth: '42ch',
+    width: '100%',
+    lineHeight: 1.42,
+    textAlign: 'center',
+  },
+  fullAndCenter: {
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  figureArea: {
+    position: 'relative',
+  },
+  figureImageWrap: {
+    padding: `0 ${theme.spacing(7)}px`,
+    display: 'inline-block',
+    position: 'relative',
   },
 }))
 
@@ -32,25 +52,29 @@ function AboutPage({ data }: AboutPage) {
       <>
         <SEO title={'About'} />
         <Container>
-          <Grid container>
+          <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
               <AnimatedInPlainViewParent key={'main-about-text'}>
-                <Grid
-                  justify={'center'}
-                  alignItems={'center'}
-                  container
-                  spacing={7}
-                  component={'section'}
-                >
+                <Grid container spacing={3} component={'section'}>
                   <Grid item xs={12}>
                     <AnimatedInViewChildDiv>
-                      <Typography gutterBottom variant={'h1'}>
+                      <Typography
+                        gutterBottom
+                        align={'center'}
+                        variant={'h1'}
+                      >
                         {data.sanitySiteSettings?.openGraph?.title}
                       </Typography>
                     </AnimatedInViewChildDiv>
                   </Grid>
-                  <Grid item xs={12}>
-                    <AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.fullAndCenter}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.fullAndCenter}
+                    >
                       <Typography
                         gutterBottom
                         variant={'h4'}
@@ -70,7 +94,11 @@ function AboutPage({ data }: AboutPage) {
             <Grid item xs={12} md={6} component={'section'}>
               <AnimatedInPlainViewParent key={'main-about-maps'}>
                 <Grid container component={'figure'} spacing={4}>
-                  <Grid component={'span'} item xs={12}>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.figureImageWrap}
+                  >
                     <AnimatedInViewChildDiv>
                       {data.staticMap?.childFile?.childImageSharp
                         ?.fluid && (
@@ -78,11 +106,10 @@ function AboutPage({ data }: AboutPage) {
                           rel={'noopener noreferrer'}
                           target={'_blank'}
                           href={`${data.staticMap?.mapUrl}`}
-                          style={{
-                            display: 'inline-block',
-                          }}
+                          className={classes.fullAndCenter}
                         >
                           <GatsbyImage
+                            className={classes.fullAndCenter}
                             Tag={'span'}
                             fluid={
                               data.staticMap.childFile.childImageSharp
@@ -93,8 +120,15 @@ function AboutPage({ data }: AboutPage) {
                       )}
                     </AnimatedInViewChildDiv>
                   </Grid>
-                  <Grid item xs={12} component={'figcaption'}>
-                    <AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={12}
+                    component={'figcaption'}
+                    className={classes.fullAndCenter}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.fullAndCenter}
+                    >
                       <Button
                         href={`${data.staticMap?.mapUrl}`}
                         rel={'noopener noreferrer'}
