@@ -52,7 +52,7 @@ export function MenuSection({
 
   const [setInViewDebounced] = useDebouncedCallback(
     (intersecting: boolean) => setInView(intersecting),
-    300,
+    200,
   )
 
   useEffect(() => {
