@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
     wordBreak: 'keep-all',
     hyphens: 'auto',
     textAlign: 'center',
+    borderRadius: '12px',
   },
   menuItemWrap: {
     display: 'flex',

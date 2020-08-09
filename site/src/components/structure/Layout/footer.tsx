@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Social_Site_LinksQuery } from '@Graphql/gatsby-graphql'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Divider, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import GatsbyImage from 'gatsby-image'
 import {
@@ -21,6 +21,7 @@ const useClasses = makeStyles((theme) => ({
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'baseline',
+    maxWidth: '300px',
   },
   socialIcon: {
     'willChange': 'filter, transform',
@@ -33,6 +34,13 @@ const useClasses = makeStyles((theme) => ({
   socialIconWrap: {
     position: 'relative',
     flex: 1,
+    padding: 0,
+    margin: 0,
+    display: 'inline-flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '100%',
   },
 }))
 
@@ -54,7 +62,7 @@ export function Footer() {
         relativePath: { eq: "branding/f_logo_RGB-Blue_1024.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 100) {
+          fixed(fit: CONTAIN, width: 50) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -63,7 +71,7 @@ export function Footer() {
         relativePath: { eq: "branding/Twitter_Logo_Blue.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 100) {
+          fixed(fit: CONTAIN, width: 50) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -72,7 +80,7 @@ export function Footer() {
         relativePath: { eq: "branding/IG_Glyph_Fill.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 100) {
+          fixed(fit: CONTAIN, width: 50) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -82,14 +90,17 @@ export function Footer() {
 
   return (
     <Container maxWidth={'xl'} component={'footer'}>
-      <Grid container>
+      <Grid container spacing={3} justify={'flex-end'}>
+        <Grid item xs={12}>
+          <Divider variant={'inset'} />
+        </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <AnimatedInPlainViewParent className={classes.socialArea}>
             <Grid
               container
-              spacing={4}
+              spacing={0}
               alignItems={'baseline'}
-              justify={'space-around'}
+              justify={'center'}
             >
               {facebookIcon?.childImageSharp?.fixed &&
                 socialLinks?.facebookPage && (
