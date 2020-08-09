@@ -45,7 +45,7 @@ export function MenuSection({
   const { intersecting: intersection } = useIntersectionObserver(
     intersectionRef,
     {
-      threshold: 0,
+      threshold: 0.12,
       once: false,
     },
   )

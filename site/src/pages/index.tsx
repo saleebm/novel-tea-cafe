@@ -144,7 +144,7 @@ function IndexPage({ data }: Index) {
                 className={classes.firstSectionItem}
               >
                 <Typography className={classes.title} variant={'h1'}>
-                  NovelTea
+                  {sanityPage?.hero?.label}
                 </Typography>
               </AnimatedInViewChildDiv>
               <AnimatedInViewChildDiv
@@ -163,12 +163,12 @@ function IndexPage({ data }: Index) {
                 <Button
                   fullWidth
                   size={'large'}
-                  to={'/menu'}
+                  to={`${sanityPage?.hero?.cta?.route}`}
                   component={GatsbyLink}
                   className={classes.ctaButton}
                   variant={'text'}
                 >
-                  View Menu
+                  {sanityPage?.hero?.cta?.title}
                 </Button>
               </AnimatedInViewChildDiv>
             </AnimatedInPlainViewParent>
@@ -225,6 +225,13 @@ export const query = graphql`
         }
         illustration {
           ...FLUID_IMAGE
+        }
+        label
+        cta {
+          link
+          title
+          kind
+          route
         }
       }
     }
