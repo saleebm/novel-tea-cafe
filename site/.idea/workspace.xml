@@ -11,20 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/elements/Cursor/cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/Cursor/cursor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/gatsby-graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../studio/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +76,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v14.6.0/bin/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -167,7 +158,8 @@
       <workItem from="1595712530042" duration="1482000" />
       <workItem from="1595716146446" duration="10680000" />
       <workItem from="1595732909572" duration="3494000" />
-      <workItem from="1596062888905" duration="6253000" />
+      <workItem from="1596062888905" duration="6298000" />
+      <workItem from="1596935635210" duration="365000" />
     </task>
     <servers />
   </component>
@@ -199,22 +191,22 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594717521443" />
-    <state width="1878" height="222" key="GridCell.Tab.0.bottom" timestamp="1596072407668">
+    <state width="1878" height="222" key="GridCell.Tab.0.bottom" timestamp="1596073198298">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1596072407668" />
-    <state width="1878" height="222" key="GridCell.Tab.0.center" timestamp="1596072407667">
+    <state width="1878" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198298" />
+    <state width="1878" height="222" key="GridCell.Tab.0.center" timestamp="1596073198297">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1596072407667" />
-    <state width="1878" height="222" key="GridCell.Tab.0.left" timestamp="1596072407667">
+    <state width="1878" height="222" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
+    <state width="1878" height="222" key="GridCell.Tab.0.left" timestamp="1596073198297">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1596072407667" />
-    <state width="1878" height="222" key="GridCell.Tab.0.right" timestamp="1596072407668">
+    <state width="1878" height="222" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
+    <state width="1878" height="222" key="GridCell.Tab.0.right" timestamp="1596073198297">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1596072407668" />
+    <state width="1878" height="222" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
     <state x="750" y="123" key="SettingsEditor" timestamp="1596063370416">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
