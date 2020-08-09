@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { GoHome, GoHourglass, GoSettings } from 'react-icons/lib/go'
+import { GoHome, GoHourglass, GoSettings, GoPaintcan } from 'react-icons/lib/go'
 import blog from './src/structure/blog'
 import menu from './src/structure/menu'
 
@@ -25,7 +25,7 @@ export default () =>
         .title('Site settings')
         .icon(GoSettings)
         .child(
-          S.document().schemaType('siteSettings').documentId('siteSettings').views([S.view.form()]),
+          S.document().schemaType('siteSettings').documentId('siteSettings').views([S.view.form()])
         ),
       S.documentListItem()
         .title('Frontpage')
@@ -37,7 +37,7 @@ export default () =>
         .schemaType('weeklyEvents')
         .icon(GoHourglass)
         .child(
-          S.document().schemaType('weeklyEvents').documentId('weeklyEvents').views([S.view.form()]),
+          S.document().schemaType('weeklyEvents').documentId('weeklyEvents').views([S.view.form()])
         ),
       menu,
       blog,

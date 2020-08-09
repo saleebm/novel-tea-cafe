@@ -218,6 +218,7 @@ type File implements Node {
   ext: String!
   extension: String!
   gid: Int!
+  hash: String
   id: ID!
   ino: Float!
   internal: Internal!
@@ -476,8 +477,9 @@ type Query {
   allSiteBuildMetadata(filter: SiteBuildMetadataFilterInput, limit: Int, skip: Int, sort: SiteBuildMetadataSortInput): SiteBuildMetadataConnection!
   allSitePage(filter: SitePageFilterInput, limit: Int, skip: Int, sort: SitePageSortInput): SitePageConnection!
   allSitePlugin(filter: SitePluginFilterInput, limit: Int, skip: Int, sort: SitePluginSortInput): SitePluginConnection!
+  allStaticMap(filter: StaticMapFilterInput, limit: Int, skip: Int, sort: StaticMapSortInput): StaticMapConnection!
   directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
-  file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
+  file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, hash: StringQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
   imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
   sanityAuthor(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawBio: JSONQueryOperatorInput, _rawImage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, bio: SanityBlockFilterListInput, children: NodeFilterListInput, id: StringQueryOperatorInput, image: SanityMainImageFilterInput, internal: InternalFilterInput, name: StringQueryOperatorInput, parent: NodeFilterInput, slug: SanitySlugFilterInput): SanityAuthor
   sanityCategory(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityCategory
@@ -494,6 +496,7 @@ type Query {
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
   sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
   sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
+  staticMap(absolutePath: StringQueryOperatorInput, center: StringQueryOperatorInput, childFile: FileFilterInput, children: NodeFilterListInput, hash: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, mapUrl: StringQueryOperatorInput, nickname: StringQueryOperatorInput, parent: NodeFilterInput): StaticMap
 }
 
 type SanityAssetSourceData {
@@ -1803,21 +1806,27 @@ type SitePluginPackageJsonPeerDependencies {
 }
 
 type SitePluginPluginOptions {
+  center: String
   dataset: String
   defaultQuality: Int
   implementation: SitePluginPluginOptionsImplementation
+  key: String
   name: String
   openGraph: SitePluginPluginOptionsOpenGraph
+  options: SitePluginPluginOptionsOptions
   overlayDrafts: Boolean
   path: String
   pathCheck: Boolean
   projectId: String
+  stages: [String]
   stripMetadata: Boolean
+  style: [SitePluginPluginOptionsStyle]
   stylesProvider: SitePluginPluginOptionsStylesProvider
   titleTemplate: String
   useMozJpeg: Boolean
   useResolveUrlLoader: SitePluginPluginOptionsUseResolveUrlLoader
   watchMode: Boolean
+  zoom: Int
 }
 
 type SitePluginPluginOptionsImplementation {
@@ -1829,6 +1838,22 @@ type SitePluginPluginOptionsOpenGraph {
   site_name: String
   type: String
   url: String
+}
+
+type SitePluginPluginOptionsOptions {
+  emitWarning: Boolean
+  failOnError: Boolean
+}
+
+type SitePluginPluginOptionsStyle {
+  elementType: String
+  featureType: String
+  stylers: [SitePluginPluginOptionsStyleStylers]
+}
+
+type SitePluginPluginOptionsStyleStylers {
+  color: String
+  visibility: String
 }
 
 type SitePluginPluginOptionsStylesProvider {
@@ -1847,6 +1872,43 @@ type SiteSiteMetadata {
   author: String
   description: String
   title: String
+}
+
+type StaticMap implements Node {
+  absolutePath: String
+  center: String
+  childFile: File
+  children: [Node!]!
+  hash: String
+  id: ID!
+  internal: Internal!
+  mapUrl: String
+  nickname: String
+  parent: Node
+}
+
+type StaticMapConnection {
+  distinct(field: StaticMapFieldsEnum!): [String!]!
+  edges: [StaticMapEdge!]!
+  group(field: StaticMapFieldsEnum!, limit: Int, skip: Int): [StaticMapGroupConnection!]!
+  nodes: [StaticMap!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type StaticMapEdge {
+  next: StaticMap
+  node: StaticMap!
+  previous: StaticMap
+}
+
+type StaticMapGroupConnection {
+  edges: [StaticMapEdge!]!
+  field: String!
+  fieldValue: String
+  nodes: [StaticMap!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
 }
 
 enum DirectoryFieldsEnum {
@@ -2120,6 +2182,7 @@ enum FileFieldsEnum {
   ext
   extension
   gid
+  hash
   id
   ino
   internal___content
@@ -4883,23 +4946,33 @@ enum SitePageFieldsEnum {
   pluginCreator___parent___parent___children
   pluginCreator___parent___parent___id
   pluginCreator___pluginFilepath
+  pluginCreator___pluginOptions___center
   pluginCreator___pluginOptions___dataset
   pluginCreator___pluginOptions___defaultQuality
   pluginCreator___pluginOptions___implementation___info
+  pluginCreator___pluginOptions___key
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___openGraph___locale
   pluginCreator___pluginOptions___openGraph___site_name
   pluginCreator___pluginOptions___openGraph___type
   pluginCreator___pluginOptions___openGraph___url
+  pluginCreator___pluginOptions___options___emitWarning
+  pluginCreator___pluginOptions___options___failOnError
   pluginCreator___pluginOptions___overlayDrafts
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___pluginOptions___projectId
+  pluginCreator___pluginOptions___stages
   pluginCreator___pluginOptions___stripMetadata
+  pluginCreator___pluginOptions___style
+  pluginCreator___pluginOptions___style___elementType
+  pluginCreator___pluginOptions___style___featureType
+  pluginCreator___pluginOptions___style___stylers
   pluginCreator___pluginOptions___stylesProvider___injectFirst
   pluginCreator___pluginOptions___titleTemplate
   pluginCreator___pluginOptions___useMozJpeg
   pluginCreator___pluginOptions___watchMode
+  pluginCreator___pluginOptions___zoom
   pluginCreator___resolve
   pluginCreator___ssrAPIs
   pluginCreator___version
@@ -5011,24 +5084,36 @@ enum SitePluginFieldsEnum {
   parent___parent___parent___children
   parent___parent___parent___id
   pluginFilepath
+  pluginOptions___center
   pluginOptions___dataset
   pluginOptions___defaultQuality
   pluginOptions___implementation___info
+  pluginOptions___key
   pluginOptions___name
   pluginOptions___openGraph___locale
   pluginOptions___openGraph___site_name
   pluginOptions___openGraph___type
   pluginOptions___openGraph___url
+  pluginOptions___options___emitWarning
+  pluginOptions___options___failOnError
   pluginOptions___overlayDrafts
   pluginOptions___path
   pluginOptions___pathCheck
   pluginOptions___projectId
+  pluginOptions___stages
   pluginOptions___stripMetadata
+  pluginOptions___style
+  pluginOptions___style___elementType
+  pluginOptions___style___featureType
+  pluginOptions___style___stylers
+  pluginOptions___style___stylers___color
+  pluginOptions___style___stylers___visibility
   pluginOptions___stylesProvider___injectFirst
   pluginOptions___titleTemplate
   pluginOptions___useMozJpeg
   pluginOptions___useResolveUrlLoader___options___sourceMap
   pluginOptions___watchMode
+  pluginOptions___zoom
   resolve
   ssrAPIs
   version
@@ -5037,6 +5122,240 @@ enum SitePluginFieldsEnum {
 enum SortOrderEnum {
   ASC
   DESC
+}
+
+enum StaticMapFieldsEnum {
+  absolutePath
+  center
+  childFile___absolutePath
+  childFile___accessTime
+  childFile___atime
+  childFile___atimeMs
+  childFile___base
+  childFile___birthTime
+  childFile___birthtime
+  childFile___birthtimeMs
+  childFile___blksize
+  childFile___blocks
+  childFile___changeTime
+  childFile___childImageSharp___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___children___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___children___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fixed___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___fieldOwners @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___ignoreType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___mediaType @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___owner @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___internal___type @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___original___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___original___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___original___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___parent___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___parent___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resize___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___height @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___resolutions___width @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___aspectRatio @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___base64 @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___originalImg @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___originalName @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___presentationHeight @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___presentationWidth @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___sizes @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___src @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___srcSet @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___childImageSharp___sizes___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
+  childFile___children
+  childFile___children___children
+  childFile___children___children___children
+  childFile___children___children___id
+  childFile___children___id
+  childFile___children___internal___content
+  childFile___children___internal___contentDigest
+  childFile___children___internal___description
+  childFile___children___internal___fieldOwners
+  childFile___children___internal___ignoreType
+  childFile___children___internal___mediaType
+  childFile___children___internal___owner
+  childFile___children___internal___type
+  childFile___children___parent___children
+  childFile___children___parent___id
+  childFile___ctime
+  childFile___ctimeMs
+  childFile___dev
+  childFile___dir
+  childFile___ext
+  childFile___extension
+  childFile___gid
+  childFile___hash
+  childFile___id
+  childFile___ino
+  childFile___internal___content
+  childFile___internal___contentDigest
+  childFile___internal___description
+  childFile___internal___fieldOwners
+  childFile___internal___ignoreType
+  childFile___internal___mediaType
+  childFile___internal___owner
+  childFile___internal___type
+  childFile___mode
+  childFile___modifiedTime
+  childFile___mtime
+  childFile___mtimeMs
+  childFile___name
+  childFile___nlink
+  childFile___parent___children
+  childFile___parent___children___children
+  childFile___parent___children___id
+  childFile___parent___id
+  childFile___parent___internal___content
+  childFile___parent___internal___contentDigest
+  childFile___parent___internal___description
+  childFile___parent___internal___fieldOwners
+  childFile___parent___internal___ignoreType
+  childFile___parent___internal___mediaType
+  childFile___parent___internal___owner
+  childFile___parent___internal___type
+  childFile___parent___parent___children
+  childFile___parent___parent___id
+  childFile___prettySize
+  childFile___publicURL
+  childFile___rdev
+  childFile___relativeDirectory
+  childFile___relativePath
+  childFile___root
+  childFile___size
+  childFile___sourceInstanceName
+  childFile___uid
+  children
+  children___children
+  children___children___children
+  children___children___children___children
+  children___children___children___id
+  children___children___id
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___children___parent___children
+  children___children___parent___id
+  children___id
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  children___parent___children
+  children___parent___children___children
+  children___parent___children___id
+  children___parent___id
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___parent___parent___children
+  children___parent___parent___id
+  hash
+  id
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+  mapUrl
+  nickname
+  parent___children
+  parent___children___children
+  parent___children___children___children
+  parent___children___children___id
+  parent___children___id
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___children___parent___children
+  parent___children___parent___id
+  parent___id
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  parent___parent___children
+  parent___parent___children___children
+  parent___parent___children___id
+  parent___parent___id
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___parent___parent___children
+  parent___parent___parent___id
 }
 
 input BooleanQueryOperatorInput {
@@ -5129,6 +5448,7 @@ input FileFilterInput {
   ext: StringQueryOperatorInput
   extension: StringQueryOperatorInput
   gid: IntQueryOperatorInput
+  hash: StringQueryOperatorInput
   id: StringQueryOperatorInput
   ino: FloatQueryOperatorInput
   internal: InternalFilterInput
@@ -5997,21 +6317,27 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 }
 
 input SitePluginPluginOptionsFilterInput {
+  center: StringQueryOperatorInput
   dataset: StringQueryOperatorInput
   defaultQuality: IntQueryOperatorInput
   implementation: SitePluginPluginOptionsImplementationFilterInput
+  key: StringQueryOperatorInput
   name: StringQueryOperatorInput
   openGraph: SitePluginPluginOptionsOpenGraphFilterInput
+  options: SitePluginPluginOptionsOptionsFilterInput
   overlayDrafts: BooleanQueryOperatorInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
   projectId: StringQueryOperatorInput
+  stages: StringQueryOperatorInput
   stripMetadata: BooleanQueryOperatorInput
+  style: SitePluginPluginOptionsStyleFilterListInput
   stylesProvider: SitePluginPluginOptionsStylesProviderFilterInput
   titleTemplate: StringQueryOperatorInput
   useMozJpeg: BooleanQueryOperatorInput
   useResolveUrlLoader: SitePluginPluginOptionsUseResolveUrlLoaderFilterInput
   watchMode: BooleanQueryOperatorInput
+  zoom: IntQueryOperatorInput
 }
 
 input SitePluginPluginOptionsImplementationFilterInput {
@@ -6023,6 +6349,30 @@ input SitePluginPluginOptionsOpenGraphFilterInput {
   site_name: StringQueryOperatorInput
   type: StringQueryOperatorInput
   url: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsOptionsFilterInput {
+  emitWarning: BooleanQueryOperatorInput
+  failOnError: BooleanQueryOperatorInput
+}
+
+input SitePluginPluginOptionsStyleFilterInput {
+  elementType: StringQueryOperatorInput
+  featureType: StringQueryOperatorInput
+  stylers: SitePluginPluginOptionsStyleStylersFilterListInput
+}
+
+input SitePluginPluginOptionsStyleFilterListInput {
+  elemMatch: SitePluginPluginOptionsStyleFilterInput
+}
+
+input SitePluginPluginOptionsStyleStylersFilterInput {
+  color: StringQueryOperatorInput
+  visibility: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsStyleStylersFilterListInput {
+  elemMatch: SitePluginPluginOptionsStyleStylersFilterInput
 }
 
 input SitePluginPluginOptionsStylesProviderFilterInput {
@@ -6050,6 +6400,24 @@ input SiteSiteMetadataFilterInput {
 
 input SiteSortInput {
   fields: [SiteFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
+}
+
+input StaticMapFilterInput {
+  absolutePath: StringQueryOperatorInput
+  center: StringQueryOperatorInput
+  childFile: FileFilterInput
+  children: NodeFilterListInput
+  hash: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  mapUrl: StringQueryOperatorInput
+  nickname: StringQueryOperatorInput
+  parent: NodeFilterInput
+}
+
+input StaticMapSortInput {
+  fields: [StaticMapFieldsEnum]
   order: [SortOrderEnum] = [ASC]
 }
 
