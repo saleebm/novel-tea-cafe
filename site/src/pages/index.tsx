@@ -161,12 +161,11 @@ function IndexPage({ data }: Index) {
                 className={classes.firstSectionItem}
               >
                 <Button
-                  fullWidth
                   size={'large'}
                   to={`${sanityPage?.hero?.cta?.route}`}
                   component={GatsbyLink}
                   className={classes.ctaButton}
-                  variant={'text'}
+                  variant={'outlined'}
                 >
                   {sanityPage?.hero?.cta?.title}
                 </Button>
