@@ -1,4 +1,5 @@
 const autoprefixer = require(`autoprefixer`)
+const MAPS_STYLE = require('./maps.config.js')
 // Load variables from `.env` as soon as possible
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
@@ -90,6 +91,26 @@ module.exports = {
           emitWarning: true,
           failOnError: false,
         },
+      },
+    },
+
+    {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: `AIzaSyDv6odPp-2SPWgD4-ulP8uRa6J7uBvOTMw`,
+        center: `28.633095,-81.3229957`,
+        zoom: 14,
+        scale: 2,
+        format: 'png',
+        nickname: 'here',
+        styles: MAPS_STYLE,
+        markers: [
+          {
+            size: 'mid',
+            color: '98EE90',
+            location: `28.633095,-81.3229957`,
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`,
