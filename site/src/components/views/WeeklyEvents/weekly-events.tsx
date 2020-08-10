@@ -13,6 +13,7 @@ import ViewDayIcon from '@material-ui/icons/ViewDay'
 import SpeedDial from '@material-ui/lab/SpeedDial'
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon'
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction'
+import AudiotrackIcon from '@material-ui/icons/Audiotrack'
 import {
   AnimatedInPlainViewParent,
   AnimatedInView,
@@ -181,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
   happyHourDeetWrap: {
     width: '100%',
     display: 'flex',
-    flexFlow: 'column',
+    flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -197,10 +198,19 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     maxWidth: '18ch',
     textAlign: 'left',
+    paddingInline: `${theme.spacing(3)}px`,
+    color: theme.palette.text.primary,
+    display: 'inline-flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   happyHourGridItem: {
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
+  },
+  happyHourIcon: {
+    marginRight: theme.spacing(1.5),
   },
 }))
 
@@ -315,14 +325,23 @@ export function WeeklyEvents({
                           (tags, index) =>
                             tags &&
                             Array.isArray(tags.children) &&
-                            tags.children.map((child) => (
+                            tags.children.map((child, index) => (
                               <Typography
                                 className={classes.happyHour}
                                 variant={'subtitle2'}
                                 component={'p'}
                                 key={`${index}`}
                               >
-                                {child?.text}
+                                <AudiotrackIcon
+                                  fontSize={'large'}
+                                  className={classes.happyHourIcon}
+                                  color={
+                                    index % 2 === 0
+                                      ? 'secondary'
+                                      : 'primary'
+                                  }
+                                />
+                                <span>{child?.text}</span>
                               </Typography>
                             )),
                         )}
