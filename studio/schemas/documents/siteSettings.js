@@ -16,6 +16,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Happy Hour Special',
+      name: 'happyHour',
+      type: 'excerptPortableText',
+    },
+    {
       type: 'color',
       name: 'primaryColor',
       title: 'Primary brand color',

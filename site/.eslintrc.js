@@ -12,6 +12,7 @@ module.exports = {
     'react',
     'react-hooks',
     'prettier',
+    'material-ui',
   ],
 
   env: {
