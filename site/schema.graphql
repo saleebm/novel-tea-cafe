@@ -470,7 +470,6 @@ type Query {
   allSanityMenuItemCategory(filter: SanityMenuItemCategoryFilterInput, limit: Int, skip: Int, sort: SanityMenuItemCategorySortInput): SanityMenuItemCategoryConnection!
   allSanityPage(filter: SanityPageFilterInput, limit: Int, skip: Int, sort: SanityPageSortInput): SanityPageConnection!
   allSanityPost(filter: SanityPostFilterInput, limit: Int, skip: Int, sort: SanityPostSortInput): SanityPostConnection!
-  allSanityRoute(filter: SanityRouteFilterInput, limit: Int, skip: Int, sort: SanityRouteSortInput): SanityRouteConnection!
   allSanitySiteSettings(filter: SanitySiteSettingsFilterInput, limit: Int, skip: Int, sort: SanitySiteSettingsSortInput): SanitySiteSettingsConnection!
   allSanityWeeklyEvents(filter: SanityWeeklyEventsFilterInput, limit: Int, skip: Int, sort: SanityWeeklyEventsSortInput): SanityWeeklyEventsConnection!
   allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: SiteSortInput): SiteConnection!
@@ -489,8 +488,7 @@ type Query {
   sanityMenuItemCategory(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityMenuItemCategory
   sanityPage(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHero: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, hero: SanityHeroFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityPage
   sanityPost(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawAuthors: JSONQueryOperatorInput, _rawBody: JSONQueryOperatorInput, _rawCategories: JSONQueryOperatorInput, _rawExcerpt: JSONQueryOperatorInput, _rawMainImage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, authors: SanityAuthorReferenceFilterListInput, body: SanityBlockFilterListInput, categories: SanityCategoryFilterListInput, children: NodeFilterListInput, excerpt: SanityBlockFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isPublished: BooleanQueryOperatorInput, mainImage: SanityMainImageFilterInput, parent: NodeFilterInput, publishedAt: DateQueryOperatorInput, slug: SanitySlugFilterInput, title: StringQueryOperatorInput): SanityPost
-  sanityRoute(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, campaign: StringQueryOperatorInput, children: NodeFilterListInput, disallowRobots: BooleanQueryOperatorInput, id: StringQueryOperatorInput, includeInSitemap: BooleanQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, page: SanityPageFilterInput, parent: NodeFilterInput, slug: SanitySlugFilterInput, useSiteTitle: BooleanQueryOperatorInput): SanityRoute
-  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
+  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, address: StringQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
   sanityWeeklyEvents(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawFriday: JSONQueryOperatorInput, _rawMonday: JSONQueryOperatorInput, _rawSaturday: JSONQueryOperatorInput, _rawSunday: JSONQueryOperatorInput, _rawThursday: JSONQueryOperatorInput, _rawTuesday: JSONQueryOperatorInput, _rawWednesday: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, friday: SanityEventDayFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, monday: SanityEventDayFilterInput, parent: NodeFilterInput, saturday: SanityEventDayFilterInput, sunday: SanityEventDayFilterInput, thursday: SanityEventDayFilterInput, tuesday: SanityEventDayFilterInput, wednesday: SanityEventDayFilterInput): SanityWeeklyEvents
   site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
@@ -699,6 +697,7 @@ type SanityEventDay {
   _rawIllustration(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawTagline(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _type: String
+  details: String
   disabled: Boolean
   heading: String
   illustration: SanityIllustration
@@ -1367,71 +1366,6 @@ type SanityRgbaColor {
   r: Float
 }
 
-type SanityRoute implements Node & SanityDocument {
-  _createdAt(
-    "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-    difference: String,
-    "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-    formatString: String,
-    "Returns a string generated with Moment.js' `fromNow` function"
-    fromNow: Boolean,
-    "Configures the locale Moment.js will use to format the date."
-    locale: String
-  ): Date
-  _id: String
-  _key: String
-  _rawOpenGraph(resolveReferences: SanityResolveReferencesConfiguration): JSON
-  _rawPage(resolveReferences: SanityResolveReferencesConfiguration): JSON
-  _rawSlug(resolveReferences: SanityResolveReferencesConfiguration): JSON
-  _rev: String
-  _type: String
-  _updatedAt(
-    "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
-    difference: String,
-    "Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens."
-    formatString: String,
-    "Returns a string generated with Moment.js' `fromNow` function"
-    fromNow: Boolean,
-    "Configures the locale Moment.js will use to format the date."
-    locale: String
-  ): Date
-  campaign: String
-  children: [Node!]!
-  disallowRobots: Boolean
-  id: ID!
-  includeInSitemap: Boolean
-  internal: Internal!
-  openGraph: SanityOpenGraph
-  page: SanityPage
-  parent: Node
-  slug: SanitySlug
-  useSiteTitle: Boolean
-}
-
-type SanityRouteConnection {
-  distinct(field: SanityRouteFieldsEnum!): [String!]!
-  edges: [SanityRouteEdge!]!
-  group(field: SanityRouteFieldsEnum!, limit: Int, skip: Int): [SanityRouteGroupConnection!]!
-  nodes: [SanityRoute!]!
-  pageInfo: PageInfo!
-  totalCount: Int!
-}
-
-type SanityRouteEdge {
-  next: SanityRoute
-  node: SanityRoute!
-  previous: SanityRoute
-}
-
-type SanityRouteGroupConnection {
-  edges: [SanityRouteEdge!]!
-  field: String!
-  fieldValue: String
-  nodes: [SanityRoute!]!
-  pageInfo: PageInfo!
-  totalCount: Int!
-}
-
 type SanitySiteSettings implements Node & SanityDocument {
   _createdAt(
     "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
@@ -1460,6 +1394,7 @@ type SanitySiteSettings implements Node & SanityDocument {
     "Configures the locale Moment.js will use to format the date."
     locale: String
   ): Date
+  address: String
   children: [Node!]!
   facebookPage: String
   id: ID!
@@ -3904,227 +3839,6 @@ enum SanityPostFieldsEnum {
   title
 }
 
-enum SanityRouteFieldsEnum {
-  _createdAt
-  _id
-  _key
-  _rawOpenGraph
-  _rawPage
-  _rawSlug
-  _rev
-  _type
-  _updatedAt
-  campaign
-  children
-  children___children
-  children___children___children
-  children___children___children___children
-  children___children___children___id
-  children___children___id
-  children___children___internal___content
-  children___children___internal___contentDigest
-  children___children___internal___description
-  children___children___internal___fieldOwners
-  children___children___internal___ignoreType
-  children___children___internal___mediaType
-  children___children___internal___owner
-  children___children___internal___type
-  children___children___parent___children
-  children___children___parent___id
-  children___id
-  children___internal___content
-  children___internal___contentDigest
-  children___internal___description
-  children___internal___fieldOwners
-  children___internal___ignoreType
-  children___internal___mediaType
-  children___internal___owner
-  children___internal___type
-  children___parent___children
-  children___parent___children___children
-  children___parent___children___id
-  children___parent___id
-  children___parent___internal___content
-  children___parent___internal___contentDigest
-  children___parent___internal___description
-  children___parent___internal___fieldOwners
-  children___parent___internal___ignoreType
-  children___parent___internal___mediaType
-  children___parent___internal___owner
-  children___parent___internal___type
-  children___parent___parent___children
-  children___parent___parent___id
-  disallowRobots
-  id
-  includeInSitemap
-  internal___content
-  internal___contentDigest
-  internal___description
-  internal___fieldOwners
-  internal___ignoreType
-  internal___mediaType
-  internal___owner
-  internal___type
-  openGraph____key
-  openGraph____rawImage
-  openGraph____type
-  openGraph___description
-  openGraph___image____key
-  openGraph___image____rawAsset
-  openGraph___image____rawCrop
-  openGraph___image____rawHotspot
-  openGraph___image____type
-  openGraph___image___alt
-  openGraph___image___asset____createdAt
-  openGraph___image___asset____id
-  openGraph___image___asset____key
-  openGraph___image___asset____rawMetadata
-  openGraph___image___asset____rawSource
-  openGraph___image___asset____rev
-  openGraph___image___asset____type
-  openGraph___image___asset____updatedAt
-  openGraph___image___asset___assetId
-  openGraph___image___asset___children @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-  openGraph___image___asset___description
-  openGraph___image___asset___extension
-  openGraph___image___asset___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-  openGraph___image___asset___label
-  openGraph___image___asset___mimeType
-  openGraph___image___asset___originalFilename
-  openGraph___image___asset___path
-  openGraph___image___asset___sha1hash
-  openGraph___image___asset___size
-  openGraph___image___asset___title
-  openGraph___image___asset___url
-  openGraph___image___caption
-  openGraph___image___crop____key
-  openGraph___image___crop____type
-  openGraph___image___crop___bottom
-  openGraph___image___crop___left
-  openGraph___image___crop___right
-  openGraph___image___crop___top
-  openGraph___image___hotspot____key
-  openGraph___image___hotspot____type
-  openGraph___image___hotspot___height
-  openGraph___image___hotspot___width
-  openGraph___image___hotspot___x
-  openGraph___image___hotspot___y
-  openGraph___title
-  page____createdAt
-  page____id
-  page____key
-  page____rawHero
-  page____rev
-  page____type
-  page____updatedAt
-  page___children
-  page___children___children
-  page___children___children___children
-  page___children___children___id
-  page___children___id
-  page___children___internal___content
-  page___children___internal___contentDigest
-  page___children___internal___description
-  page___children___internal___fieldOwners
-  page___children___internal___ignoreType
-  page___children___internal___mediaType
-  page___children___internal___owner
-  page___children___internal___type
-  page___children___parent___children
-  page___children___parent___id
-  page___hero____key
-  page___hero____rawCta
-  page___hero____rawIllustration
-  page___hero____rawTagline
-  page___hero____type
-  page___hero___cta____key
-  page___hero___cta____type
-  page___hero___cta___kind
-  page___hero___cta___link
-  page___hero___cta___route
-  page___hero___cta___title
-  page___hero___disabled
-  page___hero___heading
-  page___hero___illustration____key
-  page___hero___illustration____rawImage
-  page___hero___illustration____type
-  page___hero___illustration___disabled
-  page___hero___label
-  page___hero___tagline
-  page___hero___tagline____key
-  page___hero___tagline____rawChildren
-  page___hero___tagline____type
-  page___hero___tagline___children
-  page___hero___tagline___list
-  page___hero___tagline___style
-  page___id
-  page___internal___content
-  page___internal___contentDigest
-  page___internal___description
-  page___internal___fieldOwners
-  page___internal___ignoreType
-  page___internal___mediaType
-  page___internal___owner
-  page___internal___type
-  page___parent___children
-  page___parent___children___children
-  page___parent___children___id
-  page___parent___id
-  page___parent___internal___content
-  page___parent___internal___contentDigest
-  page___parent___internal___description
-  page___parent___internal___fieldOwners
-  page___parent___internal___ignoreType
-  page___parent___internal___mediaType
-  page___parent___internal___owner
-  page___parent___internal___type
-  page___parent___parent___children
-  page___parent___parent___id
-  page___title
-  parent___children
-  parent___children___children
-  parent___children___children___children
-  parent___children___children___id
-  parent___children___id
-  parent___children___internal___content
-  parent___children___internal___contentDigest
-  parent___children___internal___description
-  parent___children___internal___fieldOwners
-  parent___children___internal___ignoreType
-  parent___children___internal___mediaType
-  parent___children___internal___owner
-  parent___children___internal___type
-  parent___children___parent___children
-  parent___children___parent___id
-  parent___id
-  parent___internal___content
-  parent___internal___contentDigest
-  parent___internal___description
-  parent___internal___fieldOwners
-  parent___internal___ignoreType
-  parent___internal___mediaType
-  parent___internal___owner
-  parent___internal___type
-  parent___parent___children
-  parent___parent___children___children
-  parent___parent___children___id
-  parent___parent___id
-  parent___parent___internal___content
-  parent___parent___internal___contentDigest
-  parent___parent___internal___description
-  parent___parent___internal___fieldOwners
-  parent___parent___internal___ignoreType
-  parent___parent___internal___mediaType
-  parent___parent___internal___owner
-  parent___parent___internal___type
-  parent___parent___parent___children
-  parent___parent___parent___id
-  slug____key
-  slug____type
-  slug___current
-  useSiteTitle
-}
-
 enum SanitySiteSettingsFieldsEnum {
   _createdAt
   _id
@@ -4135,6 +3849,7 @@ enum SanitySiteSettingsFieldsEnum {
   _rev
   _type
   _updatedAt
+  address
   children
   children___children
   children___children___children
@@ -4378,6 +4093,7 @@ enum SanityWeeklyEventsFieldsEnum {
   friday____rawIllustration
   friday____rawTagline
   friday____type
+  friday___details
   friday___disabled
   friday___heading
   friday___illustration____key
@@ -4415,6 +4131,7 @@ enum SanityWeeklyEventsFieldsEnum {
   monday____rawIllustration
   monday____rawTagline
   monday____type
+  monday___details
   monday___disabled
   monday___heading
   monday___illustration____key
@@ -4481,6 +4198,7 @@ enum SanityWeeklyEventsFieldsEnum {
   saturday____rawIllustration
   saturday____rawTagline
   saturday____type
+  saturday___details
   saturday___disabled
   saturday___heading
   saturday___illustration____key
@@ -4509,6 +4227,7 @@ enum SanityWeeklyEventsFieldsEnum {
   sunday____rawIllustration
   sunday____rawTagline
   sunday____type
+  sunday___details
   sunday___disabled
   sunday___heading
   sunday___illustration____key
@@ -4537,6 +4256,7 @@ enum SanityWeeklyEventsFieldsEnum {
   thursday____rawIllustration
   thursday____rawTagline
   thursday____type
+  thursday___details
   thursday___disabled
   thursday___heading
   thursday___illustration____key
@@ -4565,6 +4285,7 @@ enum SanityWeeklyEventsFieldsEnum {
   tuesday____rawIllustration
   tuesday____rawTagline
   tuesday____type
+  tuesday___details
   tuesday___disabled
   tuesday___heading
   tuesday___illustration____key
@@ -4593,6 +4314,7 @@ enum SanityWeeklyEventsFieldsEnum {
   wednesday____rawIllustration
   wednesday____rawTagline
   wednesday____type
+  wednesday___details
   wednesday___disabled
   wednesday___heading
   wednesday___illustration____key
@@ -5765,6 +5487,7 @@ input SanityEventDayFilterInput {
   _rawIllustration: JSONQueryOperatorInput
   _rawTagline: JSONQueryOperatorInput
   _type: StringQueryOperatorInput
+  details: StringQueryOperatorInput
   disabled: BooleanQueryOperatorInput
   heading: StringQueryOperatorInput
   illustration: SanityIllustrationFilterInput
@@ -6138,34 +5861,6 @@ input SanityRgbaColorFilterInput {
   r: FloatQueryOperatorInput
 }
 
-input SanityRouteFilterInput {
-  _createdAt: DateQueryOperatorInput
-  _id: StringQueryOperatorInput
-  _key: StringQueryOperatorInput
-  _rawOpenGraph: JSONQueryOperatorInput
-  _rawPage: JSONQueryOperatorInput
-  _rawSlug: JSONQueryOperatorInput
-  _rev: StringQueryOperatorInput
-  _type: StringQueryOperatorInput
-  _updatedAt: DateQueryOperatorInput
-  campaign: StringQueryOperatorInput
-  children: NodeFilterListInput
-  disallowRobots: BooleanQueryOperatorInput
-  id: StringQueryOperatorInput
-  includeInSitemap: BooleanQueryOperatorInput
-  internal: InternalFilterInput
-  openGraph: SanityOpenGraphFilterInput
-  page: SanityPageFilterInput
-  parent: NodeFilterInput
-  slug: SanitySlugFilterInput
-  useSiteTitle: BooleanQueryOperatorInput
-}
-
-input SanityRouteSortInput {
-  fields: [SanityRouteFieldsEnum]
-  order: [SortOrderEnum] = [ASC]
-}
-
 input SanitySiteSettingsFilterInput {
   _createdAt: DateQueryOperatorInput
   _id: StringQueryOperatorInput
@@ -6176,6 +5871,7 @@ input SanitySiteSettingsFilterInput {
   _rev: StringQueryOperatorInput
   _type: StringQueryOperatorInput
   _updatedAt: DateQueryOperatorInput
+  address: StringQueryOperatorInput
   children: NodeFilterListInput
   facebookPage: StringQueryOperatorInput
   id: StringQueryOperatorInput
