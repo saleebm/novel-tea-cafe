@@ -25,10 +25,6 @@
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/WeeklyEvents/weekly-events.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/graphql/gatsby-graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/weekly-events.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +220,8 @@
       <workItem from="1596991518332" duration="2619000" />
       <workItem from="1597000994468" duration="8082000" />
       <workItem from="1597088505748" duration="5044000" />
-      <workItem from="1597097821962" duration="2501000" />
+      <workItem from="1597097821962" duration="2732000" />
+      <workItem from="1597100908769" duration="728000" />
     </task>
     <servers />
   </component>
@@ -371,15 +368,15 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="754" height="1000" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" timestamp="1594992323451" />
-    <state x="526" y="311" width="1154" height="490" key="find.popup" timestamp="1597007968720">
+    <state x="526" y="311" width="1154" height="490" key="find.popup" timestamp="1597101511314">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="526" y="311" width="1154" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597007968720" />
+    <state x="526" y="311" width="1154" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597101511314" />
     <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881837394" />
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1597100364900">
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1597100917221">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597100364900" />
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597100917221" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881578643" />
     <state x="658" y="290" width="670" height="662" key="search.everywhere.popup/49.25.1871.1175@49.25.1871.1175" timestamp="1595118262504" />
   </component>
