@@ -13,20 +13,13 @@ export default {
       type: 'simpleBlockContent'
     },
     {
+      name: 'details',
+      type: 'string',
+      title: 'Heading'
+    },
+    {
       name: 'illustration',
       type: 'illustration'
     }
   ],
-  preview: {
-    select: {
-      title: 'heading',
-      subtitle: 'label',
-      disabled: 'disabled'
-    },
-    prepare({ title, disabled }) {
-      return {
-        title: `Event of Day: ${disabled ? 'DISABLED' : title}`
-      }
-    }
-  }
 }

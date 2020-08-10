@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio/schemas/plugs/eventDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/plugs/eventDay.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +218,8 @@
       <workItem from="1596941786570" duration="16000" />
       <workItem from="1596967344642" duration="1915000" />
       <workItem from="1596991518332" duration="2619000" />
-      <workItem from="1597000994468" duration="8040000" />
+      <workItem from="1597000994468" duration="8082000" />
+      <workItem from="1597088505748" duration="73000" />
     </task>
     <servers />
   </component>
@@ -268,25 +269,25 @@
     </state>
     <state x="602" y="355" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1597007485330" />
     <state x="688" y="406" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1594857948501" />
-    <state width="1638" height="161" key="GridCell.Tab.0.bottom" timestamp="1597009918591">
+    <state width="1638" height="161" key="GridCell.Tab.0.bottom" timestamp="1597010063754">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="161" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597009918591" />
+    <state width="1638" height="161" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597010063754" />
     <state width="1878" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595882086366" />
-    <state width="1638" height="161" key="GridCell.Tab.0.center" timestamp="1597009918590">
+    <state width="1638" height="161" key="GridCell.Tab.0.center" timestamp="1597010063753">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="161" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597009918590" />
+    <state width="1638" height="161" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597010063753" />
     <state width="1878" height="184" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595882086365" />
-    <state width="1638" height="161" key="GridCell.Tab.0.left" timestamp="1597009918590">
+    <state width="1638" height="161" key="GridCell.Tab.0.left" timestamp="1597010063753">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="161" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597009918590" />
+    <state width="1638" height="161" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597010063753" />
     <state width="1878" height="184" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595882086364" />
-    <state width="1638" height="161" key="GridCell.Tab.0.right" timestamp="1597009918591">
+    <state width="1638" height="161" key="GridCell.Tab.0.right" timestamp="1597010063754">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="161" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597009918591" />
+    <state width="1638" height="161" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597010063754" />
     <state width="1878" height="184" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595882086366" />
     <state width="1638" height="364" key="GridCell.Tab.1.bottom" timestamp="1597004705305">
       <screen x="0" y="0" width="1680" height="1050" />
