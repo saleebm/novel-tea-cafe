@@ -14,7 +14,9 @@ import SpeedDial from '@material-ui/lab/SpeedDial'
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon'
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction'
 import {
+  AnimatedInPlainViewParent,
   AnimatedInView,
+  AnimatedInViewChildDiv,
   AnimatedIOView,
 } from '@Components/elements/InView/in-view'
 import {
@@ -52,14 +54,24 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  pageTitle: {
+    width: '100%',
+    margin: `${theme.spacing(1)}px auto`,
+    textAlign: 'left',
+    paddingLeft: '3vw',
+  },
   weeklyTitleWrap: {
     width: '100%',
     margin: `${theme.spacing(1)}px auto`,
     fontSize: '7vmax',
-    paddingLeft: '3vw',
+    textAlign: 'center',
   },
   daysContainer: {
     width: '100%',
+  },
+  fullWidthBlock: {
+    width: '100%',
+    display: 'block',
   },
   dayWrap: {
     'position': 'relative',
@@ -166,15 +178,29 @@ const useStyles = makeStyles((theme) => ({
   toolTip: {
     fontSize: '2rem',
   },
+  happyHourDeetWrap: {
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   happyHour: {
     fontSize: '2.7vmax',
+    lineHeight: 1.6,
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
-    textAlign: 'left',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    width: '100%',
+    maxWidth: '18ch',
+    textAlign: 'left',
+  },
+  happyHourGridItem: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   },
 }))
 
@@ -239,139 +265,183 @@ export function WeeklyEvents({
         component={'section'}
         maxWidth={false}
       >
-        <Typography
-          className={classes.weeklyTitleWrap}
-          variant={'h1'}
-        >
-          Specials
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
+        <AnimatedInPlainViewParent className={classes.fullWidthBlock}>
+          <AnimatedInViewChildDiv>
             <Typography
-              className={classes.weeklyTitleWrap}
-              variant={'h2'}
+              color={'primary'}
+              className={classes.pageTitle}
+              variant={'h1'}
             >
-              Happy Hour
+              Specials
             </Typography>
-          </Grid>
+          </AnimatedInViewChildDiv>
+        </AnimatedInPlainViewParent>
+        <Grid container spacing={6}>
           <Grid item xs={12}>
-            {sanitySiteSettings?.happyHour &&
-              Array.isArray(sanitySiteSettings.happyHour) &&
-              sanitySiteSettings.happyHour.map(
-                (tags, index) =>
-                  tags &&
-                  Array.isArray(tags.children) &&
-                  tags.children.map((child) => (
-                    <Typography
-                      className={classes.happyHour}
-                      variant={'subtitle2'}
-                      key={`${index}`}
-                    >
-                      {child?.text}
-                    </Typography>
-                  )),
-              )}
-          </Grid>
-        </Grid>
-        <Grid spacing={3} container className={classes.daysContainer}>
-          <Grid item xs={12}>
-            <Typography
-              className={classes.weeklyTitleWrap}
-              variant={'h2'}
-            >
-              Weekly Events
-            </Typography>
-          </Grid>
-          {days.weeklyEventData.map(
-            (day: DayFragment & { dayName: string }) => (
-              <Grid
-                id={day.dayName}
-                className={classes.dayWrap}
-                item
-                key={day.dayName}
-                xs={12}
-              >
-                <div
-                  className={classes.dayAnimationContainer}
-                  key={day.dayName}
+            <AnimatedInPlainViewParent>
+              <AnimatedInViewChildDiv>
+                <Typography
+                  className={classes.weeklyTitleWrap}
+                  variant={'h2'}
+                  color={'textSecondary'}
                 >
-                  <Paper
-                    variant={'elevation'}
-                    component={'article'}
-                    elevation={3}
-                    className={classes.dayPaper}
+                  Happy Hour
+                </Typography>
+              </AnimatedInViewChildDiv>
+              <Paper
+                variant={'elevation'}
+                component={'article'}
+                elevation={3}
+                className={classes.dayPaper}
+              >
+                <Grid
+                  container
+                  spacing={1}
+                  className={classes.paperContent}
+                  alignItems={'center'}
+                  justify={'center'}
+                >
+                  <Grid
+                    className={classes.happyHourGridItem}
+                    item
+                    xs={12}
                   >
-                    <AnimatedInView className={classes.paperContent}>
-                      <AnimatedIOView disableScale>
-                        <Typography
-                          className={classes.taglineText}
-                          variant={'h2'}
-                        >
-                          {day.heading}
-                        </Typography>
-                      </AnimatedIOView>
-                      <Grid
-                        container
-                        component={'figure'}
-                        className={classes.figureWrap}
-                        spacing={0}
+                    <AnimatedInViewChildDiv
+                      className={classes.happyHourDeetWrap}
+                    >
+                      {sanitySiteSettings?.happyHour &&
+                        Array.isArray(sanitySiteSettings.happyHour) &&
+                        sanitySiteSettings.happyHour.map(
+                          (tags, index) =>
+                            tags &&
+                            Array.isArray(tags.children) &&
+                            tags.children.map((child) => (
+                              <Typography
+                                className={classes.happyHour}
+                                variant={'subtitle2'}
+                                component={'p'}
+                                key={`${index}`}
+                              >
+                                {child?.text}
+                              </Typography>
+                            )),
+                        )}
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                </Grid>
+              </Paper>
+            </AnimatedInPlainViewParent>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid
+              spacing={3}
+              container
+              className={classes.daysContainer}
+            >
+              <Grid item xs={12}>
+                <Typography
+                  className={classes.weeklyTitleWrap}
+                  variant={'h2'}
+                  color={'textSecondary'}
+                >
+                  Weekly Events
+                </Typography>
+              </Grid>
+              {days.weeklyEventData.map(
+                (day: DayFragment & { dayName: string }) => (
+                  <Grid
+                    id={day.dayName}
+                    className={classes.dayWrap}
+                    item
+                    key={day.dayName}
+                    xs={12}
+                  >
+                    <div
+                      className={classes.dayAnimationContainer}
+                      key={day.dayName}
+                    >
+                      <Paper
+                        variant={'elevation'}
+                        component={'article'}
+                        elevation={3}
+                        className={classes.dayPaper}
                       >
-                        <Grid item xs={12} md={6}>
-                          {day.illustration?.image?.asset?.fluid && (
-                            <AnimatedIOView
-                              disableScale
-                              className={classes.imgContainer}
-                            >
-                              <GatsbyImage
-                                imgStyle={{
-                                  objectFit: 'contain !important',
-                                  height: '300px',
-                                  maxHeight: '300px',
-                                  width: 'auto',
-                                  filter: `contrast(1.2) sepia(1) invert(${
-                                    isDarkMode ? 1 : 0
-                                  }) brightness(${
-                                    isDarkMode ? 0.9 : 1.1
-                                  })`,
-                                }}
-                                fluid={
-                                  day.illustration.image.asset
-                                    .fluid as FluidObject
-                                }
-                              />
-                            </AnimatedIOView>
-                          )}
-                        </Grid>
-                        <Grid
-                          className={classes.taglineFigureCaption}
-                          item
-                          xs={12}
-                          md={6}
-                          component={'figcaption'}
+                        <AnimatedInView
+                          className={classes.paperContent}
                         >
                           <AnimatedIOView disableScale>
-                            {day.tagline?.map(
-                              (tags, index) =>
-                                tags &&
-                                Array.isArray(tags.children) &&
-                                tags.children.map((child) => (
-                                  <Typography
-                                    variant={'h3'}
-                                    key={`${index}`}
-                                  >
-                                    {child?.text}
-                                  </Typography>
-                                )),
-                            )}
+                            <Typography
+                              className={classes.taglineText}
+                              variant={'h2'}
+                            >
+                              {day.heading}
+                            </Typography>
                           </AnimatedIOView>
-                        </Grid>
-                      </Grid>
-                    </AnimatedInView>
-                  </Paper>
-                </div>
-              </Grid>
-            ),
-          )}
+                          <Grid
+                            container
+                            component={'figure'}
+                            className={classes.figureWrap}
+                            spacing={0}
+                          >
+                            <Grid item xs={12} md={6}>
+                              {day.illustration?.image?.asset
+                                ?.fluid && (
+                                <AnimatedIOView
+                                  disableScale
+                                  className={classes.imgContainer}
+                                >
+                                  <GatsbyImage
+                                    imgStyle={{
+                                      objectFit: 'contain !important',
+                                      height: '300px',
+                                      maxHeight: '300px',
+                                      width: 'auto',
+                                      filter: `contrast(1.2) sepia(1) invert(${
+                                        isDarkMode ? 1 : 0
+                                      }) brightness(${
+                                        isDarkMode ? 0.9 : 1.1
+                                      })`,
+                                    }}
+                                    fluid={
+                                      day.illustration.image.asset
+                                        .fluid as FluidObject
+                                    }
+                                  />
+                                </AnimatedIOView>
+                              )}
+                            </Grid>
+                            <Grid
+                              className={classes.taglineFigureCaption}
+                              item
+                              xs={12}
+                              md={6}
+                              component={'figcaption'}
+                            >
+                              <AnimatedIOView disableScale>
+                                {day.tagline?.map(
+                                  (tags, index) =>
+                                    tags &&
+                                    Array.isArray(tags.children) &&
+                                    tags.children.map((child) => (
+                                      <Typography
+                                        variant={'h3'}
+                                        key={`${index}`}
+                                      >
+                                        {child?.text}
+                                      </Typography>
+                                    )),
+                                )}
+                              </AnimatedIOView>
+                            </Grid>
+                          </Grid>
+                        </AnimatedInView>
+                      </Paper>
+                    </div>
+                  </Grid>
+                ),
+              )}
+            </Grid>
+          </Grid>
         </Grid>
         <SpeedDial
           ariaLabel={'SpeedDial openIcon'}
