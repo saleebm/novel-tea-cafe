@@ -11,3 +11,5 @@
 5. call to action on weekly events page, perhaps clickable items
 
     - expand to show details
+
+6. Happy hour details somewhere
