@@ -6,20 +6,21 @@ export default {
     {
       name: 'heading',
       type: 'string',
-      title: 'Heading'
-    },
-    {
-      name: 'tagline',
-      type: 'simpleBlockContent'
+      title: 'Heading',
     },
     {
       name: 'details',
       type: 'string',
-      title: 'Heading'
+      title: 'Details',
+      description: "What's the special??",
+    },
+    {
+      name: 'tagline',
+      type: 'simpleBlockContent',
     },
     {
       name: 'illustration',
-      type: 'illustration'
-    }
+      type: 'illustration',
+    },
   ],
 }
