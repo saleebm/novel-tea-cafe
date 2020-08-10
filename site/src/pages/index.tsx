@@ -48,14 +48,15 @@ const useStyles = makeStyles((theme) => ({
     hyphens: 'auto',
   },
   tagLine: {
-    fontSize: '3.5vmax',
+    width: '100%',
+    fontSize: '3.6vmax',
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
-    textAlign: 'left',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    textAlign: 'left',
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
     },
@@ -90,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   figureArea: {
-    padding: `0 ${theme.spacing(7)}px`,
+    padding: `0 ${theme.spacing(5)}px`,
     position: 'relative',
   },
   image: {
@@ -135,6 +136,15 @@ function IndexPage({ data }: Index) {
           spacing={3}
           component={'section'}
         >
+          <Grid item xs={12}>
+            <AnimatedInViewChildDiv
+              className={classes.firstSectionItem}
+            >
+              <Typography className={classes.title} variant={'h1'}>
+                {sanityPage?.hero?.label}
+              </Typography>
+            </AnimatedInViewChildDiv>
+          </Grid>
           <Grid item xs={12} md={5}>
             <AnimatedInPlainViewParent
               className={classes.firstSectionWrap}
@@ -145,40 +155,48 @@ function IndexPage({ data }: Index) {
                   <AnimatedInViewChildDiv
                     className={classes.firstSectionItem}
                   >
+                    {sanityPage?.hero?.tagline?.map(
+                      (tags, index) =>
+                        tags &&
+                        Array.isArray(tags.children) &&
+                        tags.children.map((child) => (
+                          <Typography
+                            className={classes.tagLine}
+                            variant={'h2'}
+                            key={`${index}`}
+                          >
+                            {child?.text}
+                          </Typography>
+                        )),
+                    )}
+                  </AnimatedInViewChildDiv>
+                </Grid>
+                <Grid item xs={12}>
+                  <AnimatedInViewChildDiv
+                    className={classes.firstSectionItem}
+                  >
                     <Typography
-                      className={classes.title}
-                      variant={'h1'}
+                      className={classes.subTitle}
+                      variant={'h2'}
                     >
-                      {sanityPage?.hero?.label}
+                      {sanityPage?.hero?.heading}
                     </Typography>
                   </AnimatedInViewChildDiv>
-                  <Grid item xs={12}>
-                    <AnimatedInViewChildDiv
-                      className={classes.firstSectionItem}
+                </Grid>
+                <Grid item xs={12}>
+                  <AnimatedInViewChildDiv
+                    className={classes.firstSectionItem}
+                  >
+                    <Button
+                      size={'large'}
+                      to={`${sanityPage?.hero?.cta?.route}`}
+                      component={GatsbyLink}
+                      className={classes.ctaButton}
+                      variant={'outlined'}
                     >
-                      <Typography
-                        className={classes.subTitle}
-                        variant={'h2'}
-                      >
-                        {sanityPage?.hero?.heading}
-                      </Typography>
-                    </AnimatedInViewChildDiv>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <AnimatedInViewChildDiv
-                      className={classes.firstSectionItem}
-                    >
-                      <Button
-                        size={'large'}
-                        to={`${sanityPage?.hero?.cta?.route}`}
-                        component={GatsbyLink}
-                        className={classes.ctaButton}
-                        variant={'outlined'}
-                      >
-                        {sanityPage?.hero?.cta?.title}
-                      </Button>
-                    </AnimatedInViewChildDiv>
-                  </Grid>
+                      {sanityPage?.hero?.cta?.title}
+                    </Button>
+                  </AnimatedInViewChildDiv>
                 </Grid>
               </Grid>
             </AnimatedInPlainViewParent>
@@ -203,24 +221,6 @@ function IndexPage({ data }: Index) {
                         }
                       />
                     )}
-                  </Grid>
-                  <Grid item xs={12}>
-                    <AnimatedInViewChildDiv>
-                      {sanityPage?.hero?.tagline?.map(
-                        (tags, index) =>
-                          tags &&
-                          Array.isArray(tags.children) &&
-                          tags.children.map((child) => (
-                            <Typography
-                              className={classes.tagLine}
-                              variant={'subtitle1'}
-                              key={`${index}`}
-                            >
-                              {child?.text}
-                            </Typography>
-                          )),
-                      )}
-                    </AnimatedInViewChildDiv>
                   </Grid>
                 </Grid>
               </AnimatedInViewChildDiv>
@@ -253,6 +253,9 @@ export const query = graphql`
       }
     }
     sanitySiteSettings {
+      happyHour {
+        ...TAGLINE
+      }
       openGraph {
         title
         description
