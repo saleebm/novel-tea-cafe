@@ -1332,8 +1332,6 @@ export type Query = {
   allSanityPage: SanityPageConnection
   sanityPost?: Maybe<SanityPost>
   allSanityPost: SanityPostConnection
-  sanityRoute?: Maybe<SanityRoute>
-  allSanityRoute: SanityRouteConnection
   sanityFileAsset?: Maybe<SanityFileAsset>
   allSanityFileAsset: SanityFileAssetConnection
   sanityImageAsset?: Maybe<SanityImageAsset>
@@ -1453,14 +1451,14 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   matchPath?: Maybe<StringQueryOperatorInput>
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
 }
 
 export type QueryAllSitePageArgs = {
@@ -1671,36 +1669,6 @@ export type QueryAllSanityPostArgs = {
   limit?: Maybe<Scalars['Int']>
 }
 
-export type QuerySanityRouteArgs = {
-  _id?: Maybe<StringQueryOperatorInput>
-  _type?: Maybe<StringQueryOperatorInput>
-  _createdAt?: Maybe<DateQueryOperatorInput>
-  _updatedAt?: Maybe<DateQueryOperatorInput>
-  _rev?: Maybe<StringQueryOperatorInput>
-  _key?: Maybe<StringQueryOperatorInput>
-  page?: Maybe<SanityPageFilterInput>
-  slug?: Maybe<SanitySlugFilterInput>
-  useSiteTitle?: Maybe<BooleanQueryOperatorInput>
-  openGraph?: Maybe<SanityOpenGraphFilterInput>
-  includeInSitemap?: Maybe<BooleanQueryOperatorInput>
-  disallowRobots?: Maybe<BooleanQueryOperatorInput>
-  campaign?: Maybe<StringQueryOperatorInput>
-  _rawPage?: Maybe<JsonQueryOperatorInput>
-  _rawSlug?: Maybe<JsonQueryOperatorInput>
-  _rawOpenGraph?: Maybe<JsonQueryOperatorInput>
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-}
-
-export type QueryAllSanityRouteArgs = {
-  filter?: Maybe<SanityRouteFilterInput>
-  sort?: Maybe<SanityRouteSortInput>
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-}
-
 export type QuerySanityFileAssetArgs = {
   _id?: Maybe<StringQueryOperatorInput>
   _type?: Maybe<StringQueryOperatorInput>
@@ -1780,12 +1748,15 @@ export type QuerySanitySiteSettingsArgs = {
   _rev?: Maybe<StringQueryOperatorInput>
   _key?: Maybe<StringQueryOperatorInput>
   openGraph?: Maybe<SanityOpenGraphFilterInput>
+  address?: Maybe<StringQueryOperatorInput>
   primaryColor?: Maybe<SanityColorFilterInput>
   secondaryColor?: Maybe<SanityColorFilterInput>
   facebookPage?: Maybe<StringQueryOperatorInput>
   instagramPage?: Maybe<StringQueryOperatorInput>
   twitterPage?: Maybe<StringQueryOperatorInput>
+  happyHour?: Maybe<SanityBlockFilterListInput>
   _rawOpenGraph?: Maybe<JsonQueryOperatorInput>
+  _rawHappyHour?: Maybe<JsonQueryOperatorInput>
   _rawPrimaryColor?: Maybe<JsonQueryOperatorInput>
   _rawSecondaryColor?: Maybe<JsonQueryOperatorInput>
   id?: Maybe<StringQueryOperatorInput>
@@ -2564,6 +2535,7 @@ export type SanityEventDay = {
   _type?: Maybe<Scalars['String']>
   disabled?: Maybe<Scalars['Boolean']>
   heading?: Maybe<Scalars['String']>
+  details?: Maybe<Scalars['String']>
   illustration?: Maybe<SanityIllustration>
   tagline?: Maybe<Array<Maybe<SanityBlock>>>
   _rawTagline?: Maybe<Scalars['JSON']>
@@ -2583,6 +2555,7 @@ export type SanityEventDayFilterInput = {
   _type?: Maybe<StringQueryOperatorInput>
   disabled?: Maybe<BooleanQueryOperatorInput>
   heading?: Maybe<StringQueryOperatorInput>
+  details?: Maybe<StringQueryOperatorInput>
   illustration?: Maybe<SanityIllustrationFilterInput>
   tagline?: Maybe<SanityBlockFilterListInput>
   _rawTagline?: Maybe<JsonQueryOperatorInput>
@@ -4993,338 +4966,6 @@ export type SanityRgbaColorFilterInput = {
   a?: Maybe<FloatQueryOperatorInput>
 }
 
-export type SanityRoute = SanityDocument &
-  Node & {
-    _id?: Maybe<Scalars['String']>
-    _type?: Maybe<Scalars['String']>
-    _createdAt?: Maybe<Scalars['Date']>
-    _updatedAt?: Maybe<Scalars['Date']>
-    _rev?: Maybe<Scalars['String']>
-    _key?: Maybe<Scalars['String']>
-    page?: Maybe<SanityPage>
-    slug?: Maybe<SanitySlug>
-    useSiteTitle?: Maybe<Scalars['Boolean']>
-    openGraph?: Maybe<SanityOpenGraph>
-    includeInSitemap?: Maybe<Scalars['Boolean']>
-    disallowRobots?: Maybe<Scalars['Boolean']>
-    campaign?: Maybe<Scalars['String']>
-    _rawPage?: Maybe<Scalars['JSON']>
-    _rawSlug?: Maybe<Scalars['JSON']>
-    _rawOpenGraph?: Maybe<Scalars['JSON']>
-    id: Scalars['ID']
-    parent?: Maybe<Node>
-    children: Array<Node>
-    internal: Internal
-  }
-
-export type SanityRoute_CreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type SanityRoute_UpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>
-  fromNow?: Maybe<Scalars['Boolean']>
-  difference?: Maybe<Scalars['String']>
-  locale?: Maybe<Scalars['String']>
-}
-
-export type SanityRoute_RawPageArgs = {
-  resolveReferences?: Maybe<SanityResolveReferencesConfiguration>
-}
-
-export type SanityRoute_RawSlugArgs = {
-  resolveReferences?: Maybe<SanityResolveReferencesConfiguration>
-}
-
-export type SanityRoute_RawOpenGraphArgs = {
-  resolveReferences?: Maybe<SanityResolveReferencesConfiguration>
-}
-
-export type SanityRouteConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SanityRouteEdge>
-  nodes: Array<SanityRoute>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  group: Array<SanityRouteGroupConnection>
-}
-
-export type SanityRouteConnectionDistinctArgs = {
-  field: SanityRouteFieldsEnum
-}
-
-export type SanityRouteConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>
-  limit?: Maybe<Scalars['Int']>
-  field: SanityRouteFieldsEnum
-}
-
-export type SanityRouteEdge = {
-  next?: Maybe<SanityRoute>
-  node: SanityRoute
-  previous?: Maybe<SanityRoute>
-}
-
-export type SanityRouteFieldsEnum =
-  | '_id'
-  | '_type'
-  | '_createdAt'
-  | '_updatedAt'
-  | '_rev'
-  | '_key'
-  | 'page____id'
-  | 'page____type'
-  | 'page____createdAt'
-  | 'page____updatedAt'
-  | 'page____rev'
-  | 'page____key'
-  | 'page___title'
-  | 'page___hero____key'
-  | 'page___hero____type'
-  | 'page___hero___disabled'
-  | 'page___hero___label'
-  | 'page___hero___heading'
-  | 'page___hero___illustration____key'
-  | 'page___hero___illustration____type'
-  | 'page___hero___illustration___disabled'
-  | 'page___hero___illustration____rawImage'
-  | 'page___hero___cta____key'
-  | 'page___hero___cta____type'
-  | 'page___hero___cta___title'
-  | 'page___hero___cta___route'
-  | 'page___hero___cta___link'
-  | 'page___hero___cta___kind'
-  | 'page___hero___tagline'
-  | 'page___hero___tagline____key'
-  | 'page___hero___tagline____type'
-  | 'page___hero___tagline___children'
-  | 'page___hero___tagline___style'
-  | 'page___hero___tagline___list'
-  | 'page___hero___tagline____rawChildren'
-  | 'page___hero____rawTagline'
-  | 'page___hero____rawIllustration'
-  | 'page___hero____rawCta'
-  | 'page____rawHero'
-  | 'page___id'
-  | 'page___parent___id'
-  | 'page___parent___parent___id'
-  | 'page___parent___parent___children'
-  | 'page___parent___children'
-  | 'page___parent___children___id'
-  | 'page___parent___children___children'
-  | 'page___parent___internal___content'
-  | 'page___parent___internal___contentDigest'
-  | 'page___parent___internal___description'
-  | 'page___parent___internal___fieldOwners'
-  | 'page___parent___internal___ignoreType'
-  | 'page___parent___internal___mediaType'
-  | 'page___parent___internal___owner'
-  | 'page___parent___internal___type'
-  | 'page___children'
-  | 'page___children___id'
-  | 'page___children___parent___id'
-  | 'page___children___parent___children'
-  | 'page___children___children'
-  | 'page___children___children___id'
-  | 'page___children___children___children'
-  | 'page___children___internal___content'
-  | 'page___children___internal___contentDigest'
-  | 'page___children___internal___description'
-  | 'page___children___internal___fieldOwners'
-  | 'page___children___internal___ignoreType'
-  | 'page___children___internal___mediaType'
-  | 'page___children___internal___owner'
-  | 'page___children___internal___type'
-  | 'page___internal___content'
-  | 'page___internal___contentDigest'
-  | 'page___internal___description'
-  | 'page___internal___fieldOwners'
-  | 'page___internal___ignoreType'
-  | 'page___internal___mediaType'
-  | 'page___internal___owner'
-  | 'page___internal___type'
-  | 'slug____key'
-  | 'slug____type'
-  | 'slug___current'
-  | 'useSiteTitle'
-  | 'openGraph____key'
-  | 'openGraph____type'
-  | 'openGraph___title'
-  | 'openGraph___description'
-  | 'openGraph___image____key'
-  | 'openGraph___image____type'
-  | 'openGraph___image___caption'
-  | 'openGraph___image___alt'
-  | 'openGraph___image___asset____id'
-  | 'openGraph___image___asset____type'
-  | 'openGraph___image___asset____createdAt'
-  | 'openGraph___image___asset____updatedAt'
-  | 'openGraph___image___asset____rev'
-  | 'openGraph___image___asset____key'
-  | 'openGraph___image___asset___originalFilename'
-  | 'openGraph___image___asset___label'
-  | 'openGraph___image___asset___title'
-  | 'openGraph___image___asset___description'
-  | 'openGraph___image___asset___sha1hash'
-  | 'openGraph___image___asset___extension'
-  | 'openGraph___image___asset___mimeType'
-  | 'openGraph___image___asset___size'
-  | 'openGraph___image___asset___assetId'
-  | 'openGraph___image___asset___path'
-  | 'openGraph___image___asset___url'
-  | 'openGraph___image___asset____rawMetadata'
-  | 'openGraph___image___asset____rawSource'
-  | 'openGraph___image___asset___id'
-  | 'openGraph___image___asset___children'
-  | 'openGraph___image___hotspot____key'
-  | 'openGraph___image___hotspot____type'
-  | 'openGraph___image___hotspot___x'
-  | 'openGraph___image___hotspot___y'
-  | 'openGraph___image___hotspot___height'
-  | 'openGraph___image___hotspot___width'
-  | 'openGraph___image___crop____key'
-  | 'openGraph___image___crop____type'
-  | 'openGraph___image___crop___top'
-  | 'openGraph___image___crop___bottom'
-  | 'openGraph___image___crop___left'
-  | 'openGraph___image___crop___right'
-  | 'openGraph___image____rawAsset'
-  | 'openGraph___image____rawHotspot'
-  | 'openGraph___image____rawCrop'
-  | 'openGraph____rawImage'
-  | 'includeInSitemap'
-  | 'disallowRobots'
-  | 'campaign'
-  | '_rawPage'
-  | '_rawSlug'
-  | '_rawOpenGraph'
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-
-export type SanityRouteFilterInput = {
-  _id?: Maybe<StringQueryOperatorInput>
-  _type?: Maybe<StringQueryOperatorInput>
-  _createdAt?: Maybe<DateQueryOperatorInput>
-  _updatedAt?: Maybe<DateQueryOperatorInput>
-  _rev?: Maybe<StringQueryOperatorInput>
-  _key?: Maybe<StringQueryOperatorInput>
-  page?: Maybe<SanityPageFilterInput>
-  slug?: Maybe<SanitySlugFilterInput>
-  useSiteTitle?: Maybe<BooleanQueryOperatorInput>
-  openGraph?: Maybe<SanityOpenGraphFilterInput>
-  includeInSitemap?: Maybe<BooleanQueryOperatorInput>
-  disallowRobots?: Maybe<BooleanQueryOperatorInput>
-  campaign?: Maybe<StringQueryOperatorInput>
-  _rawPage?: Maybe<JsonQueryOperatorInput>
-  _rawSlug?: Maybe<JsonQueryOperatorInput>
-  _rawOpenGraph?: Maybe<JsonQueryOperatorInput>
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
-}
-
-export type SanityRouteGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SanityRouteEdge>
-  nodes: Array<SanityRoute>
-  pageInfo: PageInfo
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
-
-export type SanityRouteSortInput = {
-  fields?: Maybe<Array<Maybe<SanityRouteFieldsEnum>>>
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>
-}
-
 export type SanitySiteSettings = SanityDocument &
   Node & {
     _id?: Maybe<Scalars['String']>
@@ -5334,12 +4975,15 @@ export type SanitySiteSettings = SanityDocument &
     _rev?: Maybe<Scalars['String']>
     _key?: Maybe<Scalars['String']>
     openGraph?: Maybe<SanityOpenGraph>
+    address?: Maybe<Scalars['String']>
     primaryColor?: Maybe<SanityColor>
     secondaryColor?: Maybe<SanityColor>
     facebookPage?: Maybe<Scalars['String']>
     instagramPage?: Maybe<Scalars['String']>
     twitterPage?: Maybe<Scalars['String']>
+    happyHour?: Maybe<Array<Maybe<SanityBlock>>>
     _rawOpenGraph?: Maybe<Scalars['JSON']>
+    _rawHappyHour?: Maybe<Scalars['JSON']>
     _rawPrimaryColor?: Maybe<Scalars['JSON']>
     _rawSecondaryColor?: Maybe<Scalars['JSON']>
     id: Scalars['ID']
@@ -5363,6 +5007,10 @@ export type SanitySiteSettings_UpdatedAtArgs = {
 }
 
 export type SanitySiteSettings_RawOpenGraphArgs = {
+  resolveReferences?: Maybe<SanityResolveReferencesConfiguration>
+}
+
+export type SanitySiteSettings_RawHappyHourArgs = {
   resolveReferences?: Maybe<SanityResolveReferencesConfiguration>
 }
 
@@ -5451,6 +5099,7 @@ export type SanitySiteSettingsFieldsEnum =
   | 'openGraph___image____rawHotspot'
   | 'openGraph___image____rawCrop'
   | 'openGraph____rawImage'
+  | 'address'
   | 'primaryColor____key'
   | 'primaryColor____type'
   | 'primaryColor___hex'
@@ -5504,7 +5153,19 @@ export type SanitySiteSettingsFieldsEnum =
   | 'facebookPage'
   | 'instagramPage'
   | 'twitterPage'
+  | 'happyHour'
+  | 'happyHour____key'
+  | 'happyHour____type'
+  | 'happyHour___children'
+  | 'happyHour___children____key'
+  | 'happyHour___children____type'
+  | 'happyHour___children___marks'
+  | 'happyHour___children___text'
+  | 'happyHour___style'
+  | 'happyHour___list'
+  | 'happyHour____rawChildren'
   | '_rawOpenGraph'
+  | '_rawHappyHour'
   | '_rawPrimaryColor'
   | '_rawSecondaryColor'
   | 'id'
@@ -5602,12 +5263,15 @@ export type SanitySiteSettingsFilterInput = {
   _rev?: Maybe<StringQueryOperatorInput>
   _key?: Maybe<StringQueryOperatorInput>
   openGraph?: Maybe<SanityOpenGraphFilterInput>
+  address?: Maybe<StringQueryOperatorInput>
   primaryColor?: Maybe<SanityColorFilterInput>
   secondaryColor?: Maybe<SanityColorFilterInput>
   facebookPage?: Maybe<StringQueryOperatorInput>
   instagramPage?: Maybe<StringQueryOperatorInput>
   twitterPage?: Maybe<StringQueryOperatorInput>
+  happyHour?: Maybe<SanityBlockFilterListInput>
   _rawOpenGraph?: Maybe<JsonQueryOperatorInput>
+  _rawHappyHour?: Maybe<JsonQueryOperatorInput>
   _rawPrimaryColor?: Maybe<JsonQueryOperatorInput>
   _rawSecondaryColor?: Maybe<JsonQueryOperatorInput>
   id?: Maybe<StringQueryOperatorInput>
@@ -5811,6 +5475,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'monday____type'
   | 'monday___disabled'
   | 'monday___heading'
+  | 'monday___details'
   | 'monday___illustration____key'
   | 'monday___illustration____type'
   | 'monday___illustration___disabled'
@@ -5839,6 +5504,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'tuesday____type'
   | 'tuesday___disabled'
   | 'tuesday___heading'
+  | 'tuesday___details'
   | 'tuesday___illustration____key'
   | 'tuesday___illustration____type'
   | 'tuesday___illustration___disabled'
@@ -5867,6 +5533,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'wednesday____type'
   | 'wednesday___disabled'
   | 'wednesday___heading'
+  | 'wednesday___details'
   | 'wednesday___illustration____key'
   | 'wednesday___illustration____type'
   | 'wednesday___illustration___disabled'
@@ -5895,6 +5562,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'thursday____type'
   | 'thursday___disabled'
   | 'thursday___heading'
+  | 'thursday___details'
   | 'thursday___illustration____key'
   | 'thursday___illustration____type'
   | 'thursday___illustration___disabled'
@@ -5923,6 +5591,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'friday____type'
   | 'friday___disabled'
   | 'friday___heading'
+  | 'friday___details'
   | 'friday___illustration____key'
   | 'friday___illustration____type'
   | 'friday___illustration___disabled'
@@ -5951,6 +5620,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'saturday____type'
   | 'saturday___disabled'
   | 'saturday___heading'
+  | 'saturday___details'
   | 'saturday___illustration____key'
   | 'saturday___illustration____type'
   | 'saturday___illustration___disabled'
@@ -5979,6 +5649,7 @@ export type SanityWeeklyEventsFieldsEnum =
   | 'sunday____type'
   | 'sunday___disabled'
   | 'sunday___heading'
+  | 'sunday___details'
   | 'sunday___illustration____key'
   | 'sunday___illustration____type'
   | 'sunday___illustration___disabled'
@@ -6458,14 +6129,14 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String']
   componentChunkName: Scalars['String']
   matchPath?: Maybe<Scalars['String']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>
   pluginCreator?: Maybe<SitePlugin>
   pluginCreatorId?: Maybe<Scalars['String']>
   componentPath?: Maybe<Scalars['String']>
+  id: Scalars['ID']
+  parent?: Maybe<Node>
+  children: Array<Node>
+  internal: Internal
 }
 
 export type SitePageConnection = {
@@ -6499,6 +6170,103 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'isCreatedByStatefulCreatePages'
+  | 'pluginCreator___id'
+  | 'pluginCreator___parent___id'
+  | 'pluginCreator___parent___parent___id'
+  | 'pluginCreator___parent___parent___children'
+  | 'pluginCreator___parent___children'
+  | 'pluginCreator___parent___children___id'
+  | 'pluginCreator___parent___children___children'
+  | 'pluginCreator___parent___internal___content'
+  | 'pluginCreator___parent___internal___contentDigest'
+  | 'pluginCreator___parent___internal___description'
+  | 'pluginCreator___parent___internal___fieldOwners'
+  | 'pluginCreator___parent___internal___ignoreType'
+  | 'pluginCreator___parent___internal___mediaType'
+  | 'pluginCreator___parent___internal___owner'
+  | 'pluginCreator___parent___internal___type'
+  | 'pluginCreator___children'
+  | 'pluginCreator___children___id'
+  | 'pluginCreator___children___parent___id'
+  | 'pluginCreator___children___parent___children'
+  | 'pluginCreator___children___children'
+  | 'pluginCreator___children___children___id'
+  | 'pluginCreator___children___children___children'
+  | 'pluginCreator___children___internal___content'
+  | 'pluginCreator___children___internal___contentDigest'
+  | 'pluginCreator___children___internal___description'
+  | 'pluginCreator___children___internal___fieldOwners'
+  | 'pluginCreator___children___internal___ignoreType'
+  | 'pluginCreator___children___internal___mediaType'
+  | 'pluginCreator___children___internal___owner'
+  | 'pluginCreator___children___internal___type'
+  | 'pluginCreator___internal___content'
+  | 'pluginCreator___internal___contentDigest'
+  | 'pluginCreator___internal___description'
+  | 'pluginCreator___internal___fieldOwners'
+  | 'pluginCreator___internal___ignoreType'
+  | 'pluginCreator___internal___mediaType'
+  | 'pluginCreator___internal___owner'
+  | 'pluginCreator___internal___type'
+  | 'pluginCreator___resolve'
+  | 'pluginCreator___name'
+  | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___openGraph___type'
+  | 'pluginCreator___pluginOptions___openGraph___locale'
+  | 'pluginCreator___pluginOptions___openGraph___url'
+  | 'pluginCreator___pluginOptions___openGraph___site_name'
+  | 'pluginCreator___pluginOptions___titleTemplate'
+  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___useMozJpeg'
+  | 'pluginCreator___pluginOptions___stripMetadata'
+  | 'pluginCreator___pluginOptions___defaultQuality'
+  | 'pluginCreator___pluginOptions___projectId'
+  | 'pluginCreator___pluginOptions___dataset'
+  | 'pluginCreator___pluginOptions___watchMode'
+  | 'pluginCreator___pluginOptions___overlayDrafts'
+  | 'pluginCreator___pluginOptions___stylesProvider___injectFirst'
+  | 'pluginCreator___pluginOptions___implementation___info'
+  | 'pluginCreator___pluginOptions___stages'
+  | 'pluginCreator___pluginOptions___options___emitWarning'
+  | 'pluginCreator___pluginOptions___options___failOnError'
+  | 'pluginCreator___pluginOptions___key'
+  | 'pluginCreator___pluginOptions___center'
+  | 'pluginCreator___pluginOptions___zoom'
+  | 'pluginCreator___pluginOptions___scale'
+  | 'pluginCreator___pluginOptions___format'
+  | 'pluginCreator___pluginOptions___nickname'
+  | 'pluginCreator___pluginOptions___styles'
+  | 'pluginCreator___pluginOptions___styles___feature'
+  | 'pluginCreator___pluginOptions___styles___element'
+  | 'pluginCreator___pluginOptions___styles___rules'
+  | 'pluginCreator___pluginOptions___markers'
+  | 'pluginCreator___pluginOptions___markers___size'
+  | 'pluginCreator___pluginOptions___markers___color'
+  | 'pluginCreator___pluginOptions___markers___location'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
+  | 'pluginCreator___ssrAPIs'
+  | 'pluginCreator___pluginFilepath'
+  | 'pluginCreator___packageJson___name'
+  | 'pluginCreator___packageJson___description'
+  | 'pluginCreator___packageJson___version'
+  | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___license'
+  | 'pluginCreator___packageJson___dependencies'
+  | 'pluginCreator___packageJson___dependencies___name'
+  | 'pluginCreator___packageJson___dependencies___version'
+  | 'pluginCreator___packageJson___devDependencies'
+  | 'pluginCreator___packageJson___devDependencies___name'
+  | 'pluginCreator___packageJson___devDependencies___version'
+  | 'pluginCreator___packageJson___peerDependencies'
+  | 'pluginCreator___packageJson___peerDependencies___name'
+  | 'pluginCreator___packageJson___peerDependencies___version'
+  | 'pluginCreator___packageJson___keywords'
+  | 'pluginCreatorId'
+  | 'componentPath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -6585,102 +6353,6 @@ export type SitePageFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'isCreatedByStatefulCreatePages'
-  | 'pluginCreator___id'
-  | 'pluginCreator___parent___id'
-  | 'pluginCreator___parent___parent___id'
-  | 'pluginCreator___parent___parent___children'
-  | 'pluginCreator___parent___children'
-  | 'pluginCreator___parent___children___id'
-  | 'pluginCreator___parent___children___children'
-  | 'pluginCreator___parent___internal___content'
-  | 'pluginCreator___parent___internal___contentDigest'
-  | 'pluginCreator___parent___internal___description'
-  | 'pluginCreator___parent___internal___fieldOwners'
-  | 'pluginCreator___parent___internal___ignoreType'
-  | 'pluginCreator___parent___internal___mediaType'
-  | 'pluginCreator___parent___internal___owner'
-  | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___children'
-  | 'pluginCreator___children___id'
-  | 'pluginCreator___children___parent___id'
-  | 'pluginCreator___children___parent___children'
-  | 'pluginCreator___children___children'
-  | 'pluginCreator___children___children___id'
-  | 'pluginCreator___children___children___children'
-  | 'pluginCreator___children___internal___content'
-  | 'pluginCreator___children___internal___contentDigest'
-  | 'pluginCreator___children___internal___description'
-  | 'pluginCreator___children___internal___fieldOwners'
-  | 'pluginCreator___children___internal___ignoreType'
-  | 'pluginCreator___children___internal___mediaType'
-  | 'pluginCreator___children___internal___owner'
-  | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___internal___content'
-  | 'pluginCreator___internal___contentDigest'
-  | 'pluginCreator___internal___description'
-  | 'pluginCreator___internal___fieldOwners'
-  | 'pluginCreator___internal___ignoreType'
-  | 'pluginCreator___internal___mediaType'
-  | 'pluginCreator___internal___owner'
-  | 'pluginCreator___internal___type'
-  | 'pluginCreator___resolve'
-  | 'pluginCreator___name'
-  | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___openGraph___type'
-  | 'pluginCreator___pluginOptions___openGraph___locale'
-  | 'pluginCreator___pluginOptions___openGraph___url'
-  | 'pluginCreator___pluginOptions___openGraph___site_name'
-  | 'pluginCreator___pluginOptions___titleTemplate'
-  | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___useMozJpeg'
-  | 'pluginCreator___pluginOptions___stripMetadata'
-  | 'pluginCreator___pluginOptions___defaultQuality'
-  | 'pluginCreator___pluginOptions___key'
-  | 'pluginCreator___pluginOptions___center'
-  | 'pluginCreator___pluginOptions___styles'
-  | 'pluginCreator___pluginOptions___styles___feature'
-  | 'pluginCreator___pluginOptions___styles___element'
-  | 'pluginCreator___pluginOptions___styles___rules'
-  | 'pluginCreator___pluginOptions___scale'
-  | 'pluginCreator___pluginOptions___format'
-  | 'pluginCreator___pluginOptions___nickname'
-  | 'pluginCreator___pluginOptions___markers'
-  | 'pluginCreator___pluginOptions___markers___size'
-  | 'pluginCreator___pluginOptions___markers___color'
-  | 'pluginCreator___pluginOptions___markers___location'
-  | 'pluginCreator___pluginOptions___projectId'
-  | 'pluginCreator___pluginOptions___dataset'
-  | 'pluginCreator___pluginOptions___watchMode'
-  | 'pluginCreator___pluginOptions___overlayDrafts'
-  | 'pluginCreator___pluginOptions___stylesProvider___injectFirst'
-  | 'pluginCreator___pluginOptions___implementation___info'
-  | 'pluginCreator___pluginOptions___stages'
-  | 'pluginCreator___pluginOptions___options___emitWarning'
-  | 'pluginCreator___pluginOptions___options___failOnError'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___nodeAPIs'
-  | 'pluginCreator___browserAPIs'
-  | 'pluginCreator___ssrAPIs'
-  | 'pluginCreator___pluginFilepath'
-  | 'pluginCreator___packageJson___name'
-  | 'pluginCreator___packageJson___description'
-  | 'pluginCreator___packageJson___version'
-  | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___license'
-  | 'pluginCreator___packageJson___dependencies'
-  | 'pluginCreator___packageJson___dependencies___name'
-  | 'pluginCreator___packageJson___dependencies___version'
-  | 'pluginCreator___packageJson___devDependencies'
-  | 'pluginCreator___packageJson___devDependencies___name'
-  | 'pluginCreator___packageJson___devDependencies___version'
-  | 'pluginCreator___packageJson___peerDependencies'
-  | 'pluginCreator___packageJson___peerDependencies___name'
-  | 'pluginCreator___packageJson___peerDependencies___version'
-  | 'pluginCreator___packageJson___keywords'
-  | 'pluginCreatorId'
-  | 'componentPath'
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>
@@ -6688,14 +6360,14 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   matchPath?: Maybe<StringQueryOperatorInput>
-  id?: Maybe<StringQueryOperatorInput>
-  parent?: Maybe<NodeFilterInput>
-  children?: Maybe<NodeFilterListInput>
-  internal?: Maybe<InternalFilterInput>
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
   componentPath?: Maybe<StringQueryOperatorInput>
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
 }
 
 export type SitePageGroupConnection = {
@@ -6853,23 +6525,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___useMozJpeg'
   | 'pluginOptions___stripMetadata'
   | 'pluginOptions___defaultQuality'
-  | 'pluginOptions___key'
-  | 'pluginOptions___center'
-  | 'pluginOptions___styles'
-  | 'pluginOptions___styles___feature'
-  | 'pluginOptions___styles___element'
-  | 'pluginOptions___styles___rules'
-  | 'pluginOptions___styles___rules___visibility'
-  | 'pluginOptions___styles___rules___hue'
-  | 'pluginOptions___styles___rules___weight'
-  | 'pluginOptions___styles___rules___color'
-  | 'pluginOptions___scale'
-  | 'pluginOptions___format'
-  | 'pluginOptions___nickname'
-  | 'pluginOptions___markers'
-  | 'pluginOptions___markers___size'
-  | 'pluginOptions___markers___color'
-  | 'pluginOptions___markers___location'
   | 'pluginOptions___projectId'
   | 'pluginOptions___dataset'
   | 'pluginOptions___watchMode'
@@ -6880,6 +6535,24 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___stages'
   | 'pluginOptions___options___emitWarning'
   | 'pluginOptions___options___failOnError'
+  | 'pluginOptions___key'
+  | 'pluginOptions___center'
+  | 'pluginOptions___zoom'
+  | 'pluginOptions___scale'
+  | 'pluginOptions___format'
+  | 'pluginOptions___nickname'
+  | 'pluginOptions___styles'
+  | 'pluginOptions___styles___feature'
+  | 'pluginOptions___styles___element'
+  | 'pluginOptions___styles___rules'
+  | 'pluginOptions___styles___rules___visibility'
+  | 'pluginOptions___styles___rules___hue'
+  | 'pluginOptions___styles___rules___weight'
+  | 'pluginOptions___styles___rules___color'
+  | 'pluginOptions___markers'
+  | 'pluginOptions___markers___size'
+  | 'pluginOptions___markers___color'
+  | 'pluginOptions___markers___location'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -7012,13 +6685,6 @@ export type SitePluginPluginOptions = {
   useMozJpeg?: Maybe<Scalars['Boolean']>
   stripMetadata?: Maybe<Scalars['Boolean']>
   defaultQuality?: Maybe<Scalars['Int']>
-  key?: Maybe<Scalars['String']>
-  center?: Maybe<Scalars['String']>
-  styles?: Maybe<Array<Maybe<SitePluginPluginOptionsStyles>>>
-  scale?: Maybe<Scalars['Int']>
-  format?: Maybe<Scalars['String']>
-  nickname?: Maybe<Scalars['String']>
-  markers?: Maybe<Array<Maybe<SitePluginPluginOptionsMarkers>>>
   projectId?: Maybe<Scalars['String']>
   dataset?: Maybe<Scalars['String']>
   watchMode?: Maybe<Scalars['Boolean']>
@@ -7030,6 +6696,14 @@ export type SitePluginPluginOptions = {
   >
   stages?: Maybe<Array<Maybe<Scalars['String']>>>
   options?: Maybe<SitePluginPluginOptionsOptions>
+  key?: Maybe<Scalars['String']>
+  center?: Maybe<Scalars['String']>
+  zoom?: Maybe<Scalars['Int']>
+  scale?: Maybe<Scalars['Int']>
+  format?: Maybe<Scalars['String']>
+  nickname?: Maybe<Scalars['String']>
+  styles?: Maybe<Array<Maybe<SitePluginPluginOptionsStyles>>>
+  markers?: Maybe<Array<Maybe<SitePluginPluginOptionsMarkers>>>
   pathCheck?: Maybe<Scalars['Boolean']>
 }
 
@@ -7041,13 +6715,6 @@ export type SitePluginPluginOptionsFilterInput = {
   useMozJpeg?: Maybe<BooleanQueryOperatorInput>
   stripMetadata?: Maybe<BooleanQueryOperatorInput>
   defaultQuality?: Maybe<IntQueryOperatorInput>
-  key?: Maybe<StringQueryOperatorInput>
-  center?: Maybe<StringQueryOperatorInput>
-  styles?: Maybe<SitePluginPluginOptionsStylesFilterListInput>
-  scale?: Maybe<IntQueryOperatorInput>
-  format?: Maybe<StringQueryOperatorInput>
-  nickname?: Maybe<StringQueryOperatorInput>
-  markers?: Maybe<SitePluginPluginOptionsMarkersFilterListInput>
   projectId?: Maybe<StringQueryOperatorInput>
   dataset?: Maybe<StringQueryOperatorInput>
   watchMode?: Maybe<BooleanQueryOperatorInput>
@@ -7063,6 +6730,14 @@ export type SitePluginPluginOptionsFilterInput = {
   >
   stages?: Maybe<StringQueryOperatorInput>
   options?: Maybe<SitePluginPluginOptionsOptionsFilterInput>
+  key?: Maybe<StringQueryOperatorInput>
+  center?: Maybe<StringQueryOperatorInput>
+  zoom?: Maybe<IntQueryOperatorInput>
+  scale?: Maybe<IntQueryOperatorInput>
+  format?: Maybe<StringQueryOperatorInput>
+  nickname?: Maybe<StringQueryOperatorInput>
+  styles?: Maybe<SitePluginPluginOptionsStylesFilterListInput>
+  markers?: Maybe<SitePluginPluginOptionsMarkersFilterListInput>
   pathCheck?: Maybe<BooleanQueryOperatorInput>
 }
 
@@ -7845,7 +7520,10 @@ export type TaglineFragment = Pick<SanityBlock, 'style' | 'list'> & {
   children?: Maybe<Array<Maybe<Pick<SanitySpan, 'text' | 'marks'>>>>
 }
 
-export type DayFragment = Pick<SanityEventDay, 'heading'> & {
+export type DayFragment = Pick<
+  SanityEventDay,
+  'heading' | 'details'
+> & {
   tagline?: Maybe<Array<Maybe<TaglineFragment>>>
   illustration?: Maybe<
     Fluid_ImageFragment & Small_Fixed_ImageFragment
@@ -7914,6 +7592,7 @@ export type HomepageQuery = {
     >
   }>
   sanitySiteSettings?: Maybe<{
+    happyHour?: Maybe<Array<Maybe<TaglineFragment>>>
     openGraph?: Maybe<
       Pick<SanityOpenGraph, 'title' | 'description'> & {
         image?: Maybe<
@@ -7955,6 +7634,9 @@ export type WeeklyEventsQueryVariables = Exact<{
 }>
 
 export type WeeklyEventsQuery = {
+  sanitySiteSettings?: Maybe<{
+    happyHour?: Maybe<Array<Maybe<TaglineFragment>>>
+  }>
   allSanityWeeklyEvents: {
     edges: Array<{
       node: {

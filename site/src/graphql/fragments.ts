@@ -49,6 +49,7 @@ export const query = graphql`
       ...FLUID_IMAGE
       ...SMALL_FIXED_IMAGE
     }
+    details
   }
 
   fragment MENU_ITEM_EDGE on SanityMenuItemEdge {

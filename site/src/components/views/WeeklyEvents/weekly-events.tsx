@@ -17,10 +17,17 @@ import {
   AnimatedInView,
   AnimatedIOView,
 } from '@Components/elements/InView/in-view'
-import { DayFragment, Maybe } from '@Graphql/gatsby-graphql'
+import {
+  DayFragment,
+  Maybe,
+  TaglineFragment,
+} from '@Graphql/gatsby-graphql'
 import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 
 export interface WeeklyEvents {
+  sanitySiteSettings?: Maybe<{
+    happyHour?: Maybe<Array<Maybe<TaglineFragment>>>
+  }>
   allSanityWeeklyEvents: {
     edges: Array<{
       node: {
@@ -159,10 +166,21 @@ const useStyles = makeStyles((theme) => ({
   toolTip: {
     fontSize: '2rem',
   },
+  happyHour: {
+    fontSize: '2.7vmax',
+    fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
+    textAlign: 'left',
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
+  },
 }))
 
 export function WeeklyEvents({
   allSanityWeeklyEvents,
+  sanitySiteSettings,
 }: WeeklyEvents) {
   const {
     themeMode: { isDarkMode },
@@ -225,9 +243,45 @@ export function WeeklyEvents({
           className={classes.weeklyTitleWrap}
           variant={'h1'}
         >
-          Weekly Events
+          Specials
         </Typography>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Typography
+              className={classes.weeklyTitleWrap}
+              variant={'h2'}
+            >
+              Happy Hour
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            {sanitySiteSettings?.happyHour &&
+              Array.isArray(sanitySiteSettings.happyHour) &&
+              sanitySiteSettings.happyHour.map(
+                (tags, index) =>
+                  tags &&
+                  Array.isArray(tags.children) &&
+                  tags.children.map((child) => (
+                    <Typography
+                      className={classes.happyHour}
+                      variant={'subtitle2'}
+                      key={`${index}`}
+                    >
+                      {child?.text}
+                    </Typography>
+                  )),
+              )}
+          </Grid>
+        </Grid>
         <Grid spacing={3} container className={classes.daysContainer}>
+          <Grid item xs={12}>
+            <Typography
+              className={classes.weeklyTitleWrap}
+              variant={'h2'}
+            >
+              Weekly Events
+            </Typography>
+          </Grid>
           {days.weeklyEventData.map(
             (day: DayFragment & { dayName: string }) => (
               <Grid
@@ -365,6 +419,6 @@ export function WeeklyEvents({
         <Backdrop open={open} />
       </Container>
     ),
-    [open, classes, days, isDarkMode],
+    [open, classes, days, isDarkMode, sanitySiteSettings?.happyHour],
   )
 }

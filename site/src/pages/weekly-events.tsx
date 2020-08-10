@@ -27,6 +27,7 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
       <Container maxWidth={'xl'} className={classes.pageContainer}>
         <WeeklyEvents
           allSanityWeeklyEvents={data.allSanityWeeklyEvents}
+          sanitySiteSettings={data.sanitySiteSettings}
         />
       </Container>
     </>
@@ -35,6 +36,11 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
 
 export const query = graphql`
   query weeklyEvents {
+    sanitySiteSettings {
+      happyHour {
+        ...TAGLINE
+      }
+    }
     allSanityWeeklyEvents {
       edges {
         node {

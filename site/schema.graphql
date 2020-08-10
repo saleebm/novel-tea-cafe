@@ -488,7 +488,7 @@ type Query {
   sanityMenuItemCategory(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityMenuItemCategory
   sanityPage(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHero: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, hero: SanityHeroFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityPage
   sanityPost(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawAuthors: JSONQueryOperatorInput, _rawBody: JSONQueryOperatorInput, _rawCategories: JSONQueryOperatorInput, _rawExcerpt: JSONQueryOperatorInput, _rawMainImage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, authors: SanityAuthorReferenceFilterListInput, body: SanityBlockFilterListInput, categories: SanityCategoryFilterListInput, children: NodeFilterListInput, excerpt: SanityBlockFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isPublished: BooleanQueryOperatorInput, mainImage: SanityMainImageFilterInput, parent: NodeFilterInput, publishedAt: DateQueryOperatorInput, slug: SanitySlugFilterInput, title: StringQueryOperatorInput): SanityPost
-  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, address: StringQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
+  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHappyHour: JSONQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, address: StringQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, happyHour: SanityBlockFilterListInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
   sanityWeeklyEvents(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawFriday: JSONQueryOperatorInput, _rawMonday: JSONQueryOperatorInput, _rawSaturday: JSONQueryOperatorInput, _rawSunday: JSONQueryOperatorInput, _rawThursday: JSONQueryOperatorInput, _rawTuesday: JSONQueryOperatorInput, _rawWednesday: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, friday: SanityEventDayFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, monday: SanityEventDayFilterInput, parent: NodeFilterInput, saturday: SanityEventDayFilterInput, sunday: SanityEventDayFilterInput, thursday: SanityEventDayFilterInput, tuesday: SanityEventDayFilterInput, wednesday: SanityEventDayFilterInput): SanityWeeklyEvents
   site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
@@ -1379,6 +1379,7 @@ type SanitySiteSettings implements Node & SanityDocument {
   ): Date
   _id: String
   _key: String
+  _rawHappyHour(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawOpenGraph(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawPrimaryColor(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawSecondaryColor(resolveReferences: SanityResolveReferencesConfiguration): JSON
@@ -1397,6 +1398,7 @@ type SanitySiteSettings implements Node & SanityDocument {
   address: String
   children: [Node!]!
   facebookPage: String
+  happyHour: [SanityBlock]
   id: ID!
   instagramPage: String
   internal: Internal!
@@ -3843,6 +3845,7 @@ enum SanitySiteSettingsFieldsEnum {
   _createdAt
   _id
   _key
+  _rawHappyHour
   _rawOpenGraph
   _rawPrimaryColor
   _rawSecondaryColor
@@ -3890,6 +3893,17 @@ enum SanitySiteSettingsFieldsEnum {
   children___parent___parent___children
   children___parent___parent___id
   facebookPage
+  happyHour
+  happyHour____key
+  happyHour____rawChildren
+  happyHour____type
+  happyHour___children
+  happyHour___children____key
+  happyHour___children____type
+  happyHour___children___marks
+  happyHour___children___text
+  happyHour___list
+  happyHour___style
   id
   instagramPage
   internal___content
@@ -5865,6 +5879,7 @@ input SanitySiteSettingsFilterInput {
   _createdAt: DateQueryOperatorInput
   _id: StringQueryOperatorInput
   _key: StringQueryOperatorInput
+  _rawHappyHour: JSONQueryOperatorInput
   _rawOpenGraph: JSONQueryOperatorInput
   _rawPrimaryColor: JSONQueryOperatorInput
   _rawSecondaryColor: JSONQueryOperatorInput
@@ -5874,6 +5889,7 @@ input SanitySiteSettingsFilterInput {
   address: StringQueryOperatorInput
   children: NodeFilterListInput
   facebookPage: StringQueryOperatorInput
+  happyHour: SanityBlockFilterListInput
   id: StringQueryOperatorInput
   instagramPage: StringQueryOperatorInput
   internal: InternalFilterInput
