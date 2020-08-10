@@ -24,7 +24,12 @@ const useClasses = makeStyles((theme) => ({
     maxWidth: '42ch',
     width: '100%',
     lineHeight: 1.42,
-    textAlign: 'center',
+    fontSize: '2.5rem',
+  },
+  fullBlock: {
+    width: '100%',
+    position: 'relative',
+    display: 'block',
   },
   fullAndCenter: {
     height: '100%',
@@ -38,10 +43,18 @@ const useClasses = makeStyles((theme) => ({
   figureArea: {
     position: 'relative',
   },
+  locationInfo: {
+    fontSize: '2.5rem',
+    width: '100%',
+    lineHeight: 1.42,
+  },
   figureImageWrap: {
     padding: `0 ${theme.spacing(7)}px`,
     display: 'inline-block',
     position: 'relative',
+  },
+  button: {
+    fontSize: '2vmax',
   },
 }))
 
@@ -53,19 +66,33 @@ function AboutPage({ data }: AboutPage) {
         <SEO title={'About'} />
         <Container>
           <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <AnimatedInViewChildDiv>
+                <Typography
+                  color={'primary'}
+                  align={'center'}
+                  variant={'h1'}
+                >
+                  {data.sanitySiteSettings?.openGraph?.title}
+                </Typography>
+              </AnimatedInViewChildDiv>
+            </Grid>
             <Grid item xs={12} md={6}>
               <AnimatedInPlainViewParent key={'main-about-text'}>
                 <Grid container spacing={3} component={'section'}>
-                  <Grid item xs={12}>
-                    <AnimatedInViewChildDiv>
-                      <Typography
-                        gutterBottom
-                        align={'center'}
-                        variant={'h1'}
-                      >
-                        {data.sanitySiteSettings?.openGraph?.title}
-                      </Typography>
-                    </AnimatedInViewChildDiv>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.fullAndCenter}
+                  >
+                    <Typography
+                      className={classes.fullBlock}
+                      variant={'h2'}
+                      align={'left'}
+                      color={'textSecondary'}
+                    >
+                      About
+                    </Typography>
                   </Grid>
                   <Grid
                     item
@@ -86,6 +113,61 @@ function AboutPage({ data }: AboutPage) {
                             ?.description
                         }
                       </Typography>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.fullAndCenter}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.fullAndCenter}
+                    >
+                      <Typography
+                        className={classes.fullBlock}
+                        variant={'h2'}
+                        align={'left'}
+                        color={'textSecondary'}
+                      >
+                        Location
+                      </Typography>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.fullAndCenter}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.fullAndCenter}
+                    >
+                      <Typography
+                        className={classes.locationInfo}
+                        variant={'subtitle1'}
+                        component={'p'}
+                      >
+                        {data.sanitySiteSettings?.address}
+                      </Typography>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className={classes.fullAndCenter}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.fullAndCenter}
+                    >
+                      <Button
+                        href={`${data.staticMap?.mapUrl}`}
+                        rel={'noopener noreferrer'}
+                        target={'_blank'}
+                        variant={'outlined'}
+                        size={'large'}
+                        className={classes.button}
+                      >
+                        Open Maps
+                      </Button>
                     </AnimatedInViewChildDiv>
                   </Grid>
                 </Grid>
@@ -120,26 +202,6 @@ function AboutPage({ data }: AboutPage) {
                       )}
                     </AnimatedInViewChildDiv>
                   </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    component={'figcaption'}
-                    className={classes.fullAndCenter}
-                  >
-                    <AnimatedInViewChildDiv
-                      className={classes.fullAndCenter}
-                    >
-                      <Button
-                        href={`${data.staticMap?.mapUrl}`}
-                        rel={'noopener noreferrer'}
-                        target={'_blank'}
-                        variant={'outlined'}
-                        size={'large'}
-                      >
-                        Open Maps
-                      </Button>
-                    </AnimatedInViewChildDiv>
-                  </Grid>
                 </Grid>
               </AnimatedInPlainViewParent>
             </Grid>
@@ -154,6 +216,7 @@ function AboutPage({ data }: AboutPage) {
 export const query = graphql`
   query aboutPage {
     sanitySiteSettings {
+      address
       openGraph {
         title
         description

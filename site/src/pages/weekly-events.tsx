@@ -23,7 +23,7 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
   const classes = useStyles()
   return (
     <>
-      <SEO title={'Weekly Events'} />
+      <SEO title={'Specials'} />
       <Container maxWidth={'xl'} className={classes.pageContainer}>
         <WeeklyEvents
           allSanityWeeklyEvents={data.allSanityWeeklyEvents}

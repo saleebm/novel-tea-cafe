@@ -1,7 +1,7 @@
 export const ROUTES = Object.freeze([
   {
     path: '/',
-    name: 'Front',
+    name: 'Frontpage',
   },
   {
     path: '/menu',
@@ -9,7 +9,7 @@ export const ROUTES = Object.freeze([
   },
   {
     path: '/weekly-events',
-    name: 'Weekly Events',
+    name: 'Specials',
   },
   {
     path: '/about',
