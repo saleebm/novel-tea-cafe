@@ -43,7 +43,7 @@ export function MenuSection({
     {
       threshold: [0.05],
       once: false,
-      rootMargin: '0px 0px -50%',
+      rootMargin: '40px 0px -60%',
     },
   )
 

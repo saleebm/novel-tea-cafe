@@ -97,7 +97,7 @@ export function Menu({ menu }: Menu) {
               <Typography
                 className={classes.pageTitle}
                 variant={'h1'}
-                color={'primary'}
+                color={'textSecondary'}
               >
                 Menu
               </Typography>
