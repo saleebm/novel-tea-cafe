@@ -150,7 +150,6 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                   item
                   xs={12}
                   md={6}
-                  lg={4}
                 >
                   <AnimatedInPlainViewParent
                     className={classes.navHeaderArea}
@@ -179,7 +178,7 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                     </div>
                   </AnimatedInPlainViewParent>
                 </Grid>
-                <Grid item xs={12} md={6} lg={8}>
+                <Grid item xs={12} md={6}>
                   <AnimatedInPlainViewParent
                     className={classes.menuItemWrap}
                   >
