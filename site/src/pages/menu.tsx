@@ -30,6 +30,8 @@ function MenuPage({ data }: MenuPage) {
  "Kava Kava",
  "Kratom",
  "Superfoods"
+ _______________________
+ TODO: as part of dynamically setting these, will need to batch get all of them
  */
 export const query = graphql`
   query MENU_PAGE {

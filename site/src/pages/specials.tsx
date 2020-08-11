@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { SEO } from '@Components/elements/SEO/seo'
 import { WeeklyEventsQuery } from '@Graphql/gatsby-graphql'
-import { WeeklyEvents } from '@Components/views/WeeklyEvents/weekly-events'
+import { Specials } from '@Components/views/Specials/specials'
 
 interface WeeklyEventsPage {
   data: WeeklyEventsQuery
@@ -25,7 +25,7 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
     <>
       <SEO title={'Specials'} />
       <Container maxWidth={'xl'} className={classes.pageContainer}>
-        <WeeklyEvents
+        <Specials
           allSanityWeeklyEvents={data.allSanityWeeklyEvents}
           sanitySiteSettings={data.sanitySiteSettings}
         />
