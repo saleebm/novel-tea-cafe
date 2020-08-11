@@ -101,10 +101,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexFlow: 'column',
     alignItems: 'center',
-    justifyContent: 'stretch',
-    alignContent: 'space-evenly',
+    justifyContent: 'center',
+    alignContent: 'space-around',
     alignSelf: 'center',
-    height: 'fit-content',
+    height: '100%',
   },
   darkModeArea: {
     width: '100%',
