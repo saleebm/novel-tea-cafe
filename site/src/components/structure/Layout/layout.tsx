@@ -93,7 +93,7 @@ export function Layout({ children }: Layout) {
         type='CafeOrCoffeeShop'
         id='https://www.novelteaorlando.com'
         name='Novel Tea Cafe'
-        description='Join me for fresh kava and kratom tea, fresh brewed kombucha, and daily social events. What could be better? Answer: Nothing!'
+        description='Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events. What could be better? Answer: Nothing!'
         url='https://www.novelteaorlando.com'
         telephone='+14088717984'
         priceRange={'$'}

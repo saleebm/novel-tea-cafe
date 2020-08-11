@@ -13,11 +13,15 @@ import { Link } from 'gatsby'
 
 import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
 import { ROUTES } from '@Config/routes'
-import { AnimatedInViewChildDiv } from '@Components/elements/InView/in-view'
+import {
+  AnimatedInPlainViewParent,
+  AnimatedInViewChildDiv,
+} from '@Components/elements/InView/in-view'
 import { Logo } from '@Components/structure/Layout/logo'
 import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
 import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
+import { SocialIcons } from '@Components/structure/Layout/social-icons'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -38,29 +42,44 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     backgroundColor: fade(
       theme.palette.primary[theme.palette.type],
-      0.9,
+      0.95,
     ),
+    backgroundImage: `linear-gradient(90deg, ${theme.palette.background.paper} 42%, ${theme.palette.background.default} 100%)`,
     display: 'flex',
     flexFlow: 'column',
-    alignItems: 'center',
     justifyContent: 'center',
-    alignContent: 'space-evenly',
-    paddingRight: theme.spacing(5),
-    paddingLeft: theme.spacing(5),
-    [theme.breakpoints.down('md')]: {
-      paddingRight: theme.spacing(3),
-      paddingLeft: theme.spacing(3),
-    },
+    alignItems: 'center',
   },
   navGrid: {
-    display: 'flex',
-    alignItems: 'stretch',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    height: '100%',
+    width: '100%',
+  },
+  navHeader: {
+    position: 'relative',
+  },
+  navHeaderArea: {
+    'height': '100%',
+    'display': 'flex',
+    'alignItems': 'baseline',
+    'justifyContent': 'space-evenly',
+    'padding': theme.spacing(3),
+    'flexFlow': 'row wrap',
+    '& figure': {
+      justifyContent: 'center',
+    },
+  },
+  socialIconWrap: {
+    width: '100%',
+    display: 'inline-flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
     justifyContent: 'center',
-    paddingRight: theme.spacing(3),
-    paddingLeft: theme.spacing(3),
+    paddingTop: theme.spacing(3),
   },
   menuTitle: {
-    fontSize: '5.7vmax',
+    fontSize: '7vmax',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -76,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    textAlign: 'center',
     borderRadius: '12px',
   },
   menuItemWrap: {
@@ -85,9 +103,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'stretch',
     alignContent: 'space-evenly',
-    textAlign: 'left',
-    height: '100%',
-    overflowY: 'auto',
+    alignSelf: 'center',
+    height: 'fit-content',
   },
   darkModeArea: {
     width: '100%',
@@ -127,64 +144,72 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
               animate={navOpen ? 'show' : 'hidden'}
               className={classes.navigation}
             >
-              <Grid container spacing={4} className={classes.navGrid}>
-                <Grid item xs={12} md={6}>
-                  <Grid
-                    alignItems={'center'}
-                    justify={'center'}
-                    container
-                    spacing={0}
+              <Grid container spacing={3} className={classes.navGrid}>
+                <Grid
+                  className={classes.navHeader}
+                  item
+                  xs={12}
+                  md={6}
+                  lg={4}
+                >
+                  <AnimatedInPlainViewParent
+                    className={classes.navHeaderArea}
                   >
-                    <Grid item xs={12} md={6}>
-                      {logoSrc && (
+                    {logoSrc && (
+                      <AnimatedInViewChildDiv>
                         <Logo
                           onClick={() => setNavOpen(false)}
                           file={logoSrc}
                         />
-                      )}
-                    </Grid>
-                    <Grid item xs={12} md={6}>
+                      </AnimatedInViewChildDiv>
+                    )}
+                    <AnimatedInViewChildDiv>
                       <Typography
                         align={'center'}
                         className={classes.menuTitle}
                         id={'navigation-title'}
                         variant={'h1'}
+                        color={'textPrimary'}
                       >
-                        Novel Tea Cafe
+                        Novel Tea
                       </Typography>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={6}
-                  className={classes.menuItemWrap}
-                >
-                  {ROUTES.map((route) => (
-                    <AnimatedInViewChildDiv key={route.path}>
-                      <MouseTrap
-                        area={ActiveAreaTypes.anchor}
-                        additionalProps={{}}
-                      >
-                        <MenuItem
-                          alignItems={'center'}
-                          aria-label={route.name}
-                          to={route.path}
-                          component={Link}
-                          className={classes.menuItems}
-                          onClick={() => setNavOpen(false)}
-                        >
-                          {route.name}
-                        </MenuItem>
-                      </MouseTrap>
                     </AnimatedInViewChildDiv>
-                  ))}
-                  <AnimatedInViewChildDiv
-                    className={classes.darkModeArea}
+                    <div className={classes.socialIconWrap}>
+                      <SocialIcons />
+                    </div>
+                  </AnimatedInPlainViewParent>
+                </Grid>
+                <Grid item xs={12} md={6} lg={8}>
+                  <AnimatedInPlainViewParent
+                    className={classes.menuItemWrap}
                   >
-                    <DarkmodeToggle />
-                  </AnimatedInViewChildDiv>
+                    {ROUTES.map((route) => (
+                      <AnimatedInViewChildDiv key={route.path}>
+                        <MouseTrap
+                          area={ActiveAreaTypes.anchor}
+                          additionalProps={{}}
+                        >
+                          <MenuItem
+                            alignItems={'center'}
+                            aria-label={route.name}
+                            to={route.path}
+                            component={Link}
+                            className={classes.menuItems}
+                            onClick={() => setNavOpen(false)}
+                            color={'textSecondary'}
+                          >
+                            {route.name}
+                          </MenuItem>
+                        </MouseTrap>
+                      </AnimatedInViewChildDiv>
+                    ))}
+
+                    <AnimatedInViewChildDiv
+                      className={classes.darkModeArea}
+                    >
+                      <DarkmodeToggle />
+                    </AnimatedInViewChildDiv>
+                  </AnimatedInPlainViewParent>
                 </Grid>
               </Grid>
             </motion.nav>

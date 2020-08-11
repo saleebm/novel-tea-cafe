@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, Typography } from '@material-ui/core'
 import clsx from 'clsx'
 import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { makeStyles } from '@material-ui/core/styles'
@@ -28,6 +28,20 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     height: '100%',
     minHeight: 'fit-content',
+  },
+  pageTitle: {
+    fontSize: '7vmax',
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
+    width: '100%',
+  },
+  fullBlock: {
+    position: 'relative',
+    width: '100%',
+    display: 'block',
   },
   gridList: {
     position: 'relative',
@@ -70,72 +84,101 @@ export enum MenuPageKeys {
 
 export function Menu({ menu }: Menu) {
   const classes = useStyles()
+  //todo
+  // dynamically set menu page keys
+  // ex. set/unset from sanity and update here
+  // set page title dynamically
   return (
     <div className={classes.root}>
       <Container disableGutters maxWidth={'lg'}>
         <MenuNavContextProvider>
-          <Grid className={classes.rootTabs} container spacing={0}>
-            <Grid
-              className={clsx(classes.menuWrap, classes.menuColumn)}
-              item
-              xs={12}
-              md={8}
-            >
-              <MenuSection
-                id={MenuPageKeys.kavaKava}
-                pageTitle={'Kava Kava'}
-                edges={menu.kavaKava.edges}
-                index={0}
-              />
-              <MenuSection
-                id={MenuPageKeys.kratom}
-                pageTitle={'Kratom'}
-                edges={menu.kratom.edges}
-                index={1}
-              />
-              <MenuSection
-                id={MenuPageKeys.addIns}
-                pageTitle={'Add-ins: Make it Stronger'}
-                edges={menu.addIns.edges}
-                index={2}
-              />
-              <MenuSection
-                id={MenuPageKeys.herbalTea}
-                pageTitle={'Herbal Tea'}
-                edges={menu.herbalTea.edges}
-                index={3}
-              />
-              <MenuSection
-                id={MenuPageKeys.coffee}
-                pageTitle={'Coffee & Cold Brew'}
-                edges={menu.coffee.edges}
-                index={4}
-              />
-              <MenuSection
-                id={MenuPageKeys.superfoods}
-                pageTitle={'Superfoods'}
-                edges={menu.superfoods.edges}
-                index={5}
-              />
-              <MenuSection
-                id={MenuPageKeys.bulk}
-                pageTitle={'Bulk Kratom and Kava'}
-                edges={menu.bulk.edges}
-                index={6}
-              />
-            </Grid>
-            <Grid className={classes.menuColumn} item xs={12} md={4}>
-              <AnimatedInPlainViewParent
-                className={classes.menuNavWrap}
+          <AnimatedInPlainViewParent>
+            <AnimatedInViewChildDiv className={classes.fullBlock}>
+              <Typography
+                className={classes.pageTitle}
+                variant={'h1'}
+                color={'primary'}
               >
-                <AnimatedInViewChildDiv
-                  className={classes.menuNavWrap}
+                Menu
+              </Typography>
+            </AnimatedInViewChildDiv>
+            <AnimatedInViewChildDiv>
+              <Grid
+                className={classes.rootTabs}
+                container
+                spacing={0}
+              >
+                <Grid
+                  className={clsx(
+                    classes.menuWrap,
+                    classes.menuColumn,
+                  )}
+                  item
+                  xs={12}
+                  md={8}
                 >
-                  <MenuNav />
-                </AnimatedInViewChildDiv>
-              </AnimatedInPlainViewParent>
-            </Grid>
-          </Grid>
+                  <MenuSection
+                    id={MenuPageKeys.kavaKava}
+                    pageTitle={'Kava Kava'}
+                    edges={menu.kavaKava.edges}
+                    index={0}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.kratom}
+                    pageTitle={'Kratom'}
+                    edges={menu.kratom.edges}
+                    index={1}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.addIns}
+                    pageTitle={'Add-ins: Make it Stronger'}
+                    edges={menu.addIns.edges}
+                    index={2}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.herbalTea}
+                    pageTitle={'Herbal Tea'}
+                    edges={menu.herbalTea.edges}
+                    index={3}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.coffee}
+                    pageTitle={'Coffee & Cold Brew'}
+                    edges={menu.coffee.edges}
+                    index={4}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.superfoods}
+                    pageTitle={'Superfoods'}
+                    edges={menu.superfoods.edges}
+                    index={5}
+                  />
+                  <MenuSection
+                    id={MenuPageKeys.bulk}
+                    pageTitle={'Bulk Kratom and Kava'}
+                    edges={menu.bulk.edges}
+                    index={6}
+                  />
+                </Grid>
+                <Grid
+                  className={classes.menuColumn}
+                  item
+                  xs={12}
+                  md={4}
+                >
+                  <AnimatedInPlainViewParent
+                    className={classes.menuNavWrap}
+                  >
+                    <AnimatedInViewChildDiv
+                      className={classes.menuNavWrap}
+                    >
+                      <MenuNav />
+                    </AnimatedInViewChildDiv>
+                  </AnimatedInPlainViewParent>
+                </Grid>
+              </Grid>
+            </AnimatedInViewChildDiv>
+          </AnimatedInPlainViewParent>
         </MenuNavContextProvider>
       </Container>
     </div>

@@ -13,10 +13,6 @@ import { MenuItem } from '@Components/views/Menu/menu-item'
 import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
 import { useIntersectionObserver } from '@Utils/hooks/use-intersection-observer'
 import { MenuNavContext } from '@Components/context/MenuNav/menu-nav-context'
-import {
-  AnimatedInView,
-  AnimatedIOView,
-} from '@Components/elements/InView/in-view'
 import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
 interface MenuSection {
@@ -47,7 +43,7 @@ export function MenuSection({
     {
       threshold: [0.05],
       once: false,
-      rootMargin: '-50px 0px -55%',
+      rootMargin: '0px 0px -50%',
     },
   )
 
@@ -81,11 +77,7 @@ export function MenuSection({
         >
           <MenuTitle align={'center'} id={id} pageTitle={pageTitle} />
           {edges.map((addIn) => (
-            <AnimatedInView key={addIn.node.id}>
-              <AnimatedIOView>
-                <MenuItem theRealMenuItem={addIn} />
-              </AnimatedIOView>
-            </AnimatedInView>
+            <MenuItem key={addIn.node.id} theRealMenuItem={addIn} />
           ))}
         </Paper>
         <Divider variant={'inset'} orientation={'horizontal'} />

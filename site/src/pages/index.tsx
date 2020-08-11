@@ -9,6 +9,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles'
 import GatsbyLink from 'gatsby-link'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
+import clsx from 'clsx'
 import {
   AnimatedInPlainViewParent,
   AnimatedInViewChildDiv,
@@ -23,87 +24,105 @@ interface Index {
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '7vmax',
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: theme.spacing(3),
-      textAlign: 'center',
-    },
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    width: '100%',
+    paddingLeft: theme.spacing(3),
   },
   subTitle: {
     width: '100%',
     fontSize: '5vmax',
     zIndex: 1,
     whiteSpace: 'pre-wrap',
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: theme.spacing(3),
-      textAlign: 'center',
-    },
     wordWrap: 'normal',
     overflowWrap: 'normal',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '10ch',
+    },
   },
   tagLine: {
     width: '100%',
-    fontSize: '3.6vmax',
+    fontSize: '5vmax',
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    textAlign: 'left',
-    [theme.breakpoints.down('md')]: {
-      textAlign: 'center',
-    },
+    marginTop: theme.spacing(3),
   },
   pageContainer: {
     display: 'flex',
-    flexFlow: 'row wrap',
+    height: '100%',
+    width: '100%',
+    position: 'relative',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  //the page title
   firstSection: {
     maxWidth: theme.breakpoints.width('lg'),
-    height: '100%',
-  },
-  firstSectionWrap: {
+    width: '100%',
     position: 'relative',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    alignContent: 'space-around',
-    flex: '1 1 auto',
   },
   firstSectionItem: {
     position: 'relative',
-    flex: '0 1 fit-content',
+    flex: '1 1 auto',
     width: '100%',
     display: 'inline-flex',
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  bodyWrap: {
+    maxWidth: theme.breakpoints.width('lg'),
+    position: 'relative',
+    height: 'max-content',
+    minHeight: '100%',
+    display: 'flex',
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    alignContent: 'space-around',
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(3),
+  },
+  bodyItem: {
+    position: 'relative',
+    flex: '1 1 auto',
+    width: '100%',
+    display: 'inline-flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  fullBlock: {
+    width: '100%',
+    display: 'block',
+  },
   figureArea: {
-    padding: `0 ${theme.spacing(5)}px`,
+    padding: theme.spacing(3),
     position: 'relative',
   },
   image: {
     objectFit: 'contain',
     transform: 'skew(-12deg)',
-  },
-  weeklyEventsSection: {
-    width: '100%',
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
   },
   ctaButton: {
-    fontSize: '2rem',
+    fontSize: '2.5rem',
     marginTop: theme.spacing(3),
+  },
+  reverseMobileSection: {
+    [theme.breakpoints.down('sm')]: {
+      flexFlow: 'column-reverse nowrap',
+    },
   },
 }))
 
@@ -130,27 +149,89 @@ function IndexPage({ data }: Index) {
         disableGutters
         className={classes.pageContainer}
       >
-        <Grid
+        <AnimatedInPlainViewParent
           className={classes.firstSection}
-          container
-          spacing={3}
-          component={'section'}
+          key={'home-title'}
         >
-          <Grid item xs={12}>
-            <AnimatedInViewChildDiv
-              className={classes.firstSectionItem}
+          <AnimatedInViewChildDiv
+            className={classes.firstSectionItem}
+          >
+            <Typography
+              color={'primary'}
+              className={classes.title}
+              variant={'h1'}
             >
-              <Typography className={classes.title} variant={'h1'}>
-                {sanityPage?.hero?.label}
-              </Typography>
-            </AnimatedInViewChildDiv>
-          </Grid>
-          <Grid item xs={12} md={5}>
+              {sanityPage?.hero?.label}
+            </Typography>
+          </AnimatedInViewChildDiv>
+        </AnimatedInPlainViewParent>
+        <Grid
+          component={'section'}
+          container
+          className={clsx(
+            classes.bodyWrap,
+            classes.reverseMobileSection,
+          )}
+          spacing={3}
+        >
+          <Grid className={classes.bodyItem} item xs={12} md={5}>
             <AnimatedInPlainViewParent
-              className={classes.firstSectionWrap}
-              key={'home-title'}
+              className={classes.fullBlock}
+              key={'home-section'}
             >
-              <Grid container spacing={5}>
+              <AnimatedInViewChildDiv
+                className={classes.firstSectionItem}
+              >
+                <Typography
+                  className={classes.subTitle}
+                  variant={'h2'}
+                  color={'textPrimary'}
+                  align={'center'}
+                >
+                  {sanityPage?.hero?.heading}
+                </Typography>
+              </AnimatedInViewChildDiv>
+              <AnimatedInViewChildDiv
+                className={classes.firstSectionItem}
+              >
+                <Button
+                  size={'large'}
+                  to={`${sanityPage?.hero?.cta?.route}`}
+                  component={GatsbyLink}
+                  className={classes.ctaButton}
+                  variant={'outlined'}
+                >
+                  {sanityPage?.hero?.cta?.title}
+                </Button>
+              </AnimatedInViewChildDiv>
+            </AnimatedInPlainViewParent>
+          </Grid>
+          <Grid className={classes.bodyItem} item xs={12} md={7}>
+            <AnimatedInPlainViewParent
+              className={classes.fullBlock}
+              key={'home-hero-image'}
+            >
+              <Grid
+                container
+                className={classes.reverseMobileSection}
+                spacing={0}
+              >
+                <Grid item xs={12}>
+                  <AnimatedInViewChildDiv>
+                    <figure className={classes.figureArea}>
+                      {sanityPage?.hero?.illustration?.image?.asset
+                        ?.fluid && (
+                        <GatsbyImage
+                          className={classes.image}
+                          fluid={
+                            sanityPage?.hero?.illustration?.image
+                              ?.asset.fluid as FluidObject
+                          }
+                        />
+                      )}
+                    </figure>
+                  </AnimatedInViewChildDiv>
+                </Grid>
                 <Grid item xs={12}>
                   <AnimatedInViewChildDiv
                     className={classes.firstSectionItem}
@@ -163,7 +244,10 @@ function IndexPage({ data }: Index) {
                           <Typography
                             className={classes.tagLine}
                             variant={'h2'}
+                            component={'p'}
                             key={`${index}`}
+                            color={'textSecondary'}
+                            align={'center'}
                           >
                             {child?.text}
                           </Typography>
@@ -171,59 +255,7 @@ function IndexPage({ data }: Index) {
                     )}
                   </AnimatedInViewChildDiv>
                 </Grid>
-                <Grid item xs={12}>
-                  <AnimatedInViewChildDiv
-                    className={classes.firstSectionItem}
-                  >
-                    <Typography
-                      className={classes.subTitle}
-                      variant={'h2'}
-                    >
-                      {sanityPage?.hero?.heading}
-                    </Typography>
-                  </AnimatedInViewChildDiv>
-                </Grid>
-                <Grid item xs={12}>
-                  <AnimatedInViewChildDiv
-                    className={classes.firstSectionItem}
-                  >
-                    <Button
-                      size={'large'}
-                      to={`${sanityPage?.hero?.cta?.route}`}
-                      component={GatsbyLink}
-                      className={classes.ctaButton}
-                      variant={'outlined'}
-                    >
-                      {sanityPage?.hero?.cta?.title}
-                    </Button>
-                  </AnimatedInViewChildDiv>
-                </Grid>
               </Grid>
-            </AnimatedInPlainViewParent>
-          </Grid>
-          <Grid item xs={12} md={7}>
-            <AnimatedInPlainViewParent key={'home-hero-image'}>
-              <AnimatedInViewChildDiv>
-                <Grid
-                  container
-                  component={'figure'}
-                  spacing={7}
-                  className={classes.figureArea}
-                >
-                  <Grid item xs={12}>
-                    {sanityPage?.hero?.illustration?.image?.asset
-                      ?.fluid && (
-                      <GatsbyImage
-                        className={classes.image}
-                        fluid={
-                          sanityPage?.hero?.illustration?.image?.asset
-                            .fluid as FluidObject
-                        }
-                      />
-                    )}
-                  </Grid>
-                </Grid>
-              </AnimatedInViewChildDiv>
             </AnimatedInPlainViewParent>
           </Grid>
         </Grid>
