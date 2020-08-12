@@ -9,9 +9,9 @@ import classNames from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Button } from '@material-ui/core'
 
-import styles from './menutoggle.mod.scss'
 import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
 import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
+import styles from './menutoggle.mod.scss'
 
 interface ToggleIcon {
   isToggled: boolean
@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.text.primary,
   },
   button: {
-    width: '70px',
-    height: '70px',
+    width: '80px',
+    height: '80px',
     borderRadius: theme.shape.borderRadius,
   },
 }))

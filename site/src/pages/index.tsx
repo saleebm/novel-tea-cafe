@@ -54,7 +54,13 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
+  },
+  //the page title
+  firstSection: {
+    maxWidth: theme.breakpoints.width('lg'),
+    width: '100%',
+    position: 'relative',
   },
   pageContainer: {
     display: 'flex',
@@ -64,12 +70,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  //the page title
-  firstSection: {
-    maxWidth: theme.breakpoints.width('lg'),
-    width: '100%',
-    position: 'relative',
   },
   firstSectionItem: {
     position: 'relative',
@@ -89,8 +89,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'stretch',
     justifyContent: 'center',
     alignContent: 'space-around',
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(3),
+    paddingBottom: theme.spacing(1),
   },
   bodyItem: {
     position: 'relative',
@@ -106,18 +105,18 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
   },
   figureArea: {
-    padding: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
     position: 'relative',
   },
   image: {
     objectFit: 'contain',
     transform: 'skew(-12deg)',
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(1),
   },
   ctaButton: {
     fontSize: '2.5rem',
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
   },
   reverseMobileSection: {
     [theme.breakpoints.down('sm')]: {

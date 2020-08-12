@@ -2,15 +2,12 @@
     MENU TOGGLE
     */
 .mainMenuTriggerWrapper {
-  flex: 0 1 auto;
-  z-index: 12000000;
+  flex: 0 1 min-content;
+  z-index: 1200000;
   position: relative;
-  display: grid;
-  align-self: flex-end;
+  display: inline-grid;
   justify-content: flex-end;
   align-items: center;
-  width: min-content;
-  height: min-content;
   margin: 0;
   padding: 0;
   transform-origin: center;

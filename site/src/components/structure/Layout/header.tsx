@@ -7,6 +7,15 @@ import { Logo_Img_In_HeaderQuery } from '@Graphql/gatsby-graphql'
 import { Nav } from '@Components/structure/Layout/nav'
 import { Logo } from '@Components/structure/Layout/logo'
 import styles from './header.mod.scss'
+import makeStyles from '@material-ui/core/styles/makeStyles'
+
+const useStyles = makeStyles({
+  navArea: {
+    position: 'relative',
+    display: 'block',
+    flex: 1,
+  },
+})
 
 export function Header() {
   const { file } = useStaticQuery<Logo_Img_In_HeaderQuery>(graphql`
@@ -20,6 +29,7 @@ export function Header() {
       }
     }
   `)
+  const classes = useStyles()
 
   return (
     <Container maxWidth={false} className={styles.header}>
@@ -29,7 +39,7 @@ export function Header() {
             <Logo file={file.childImageSharp.fixed as FixedObject} />
           )}
         </Grid>
-        <Grid item xs={4} sm={6}>
+        <Grid className={classes.navArea} item xs={4} sm={6}>
           <Nav
             logoSrc={
               (file?.childImageSharp?.fixed as FixedObject) ??

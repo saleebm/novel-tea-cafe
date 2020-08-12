@@ -6,7 +6,10 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Link } from 'gatsby'
 import { MenuPageKeys } from '@Components/views/Menu/menu'
 import { MenuNavContext } from '@Components/context/MenuNav/menu-nav-context'
-import { AnimatedInPlainViewParent } from '@Components/elements/InView/in-view'
+import {
+  AnimatedInPlainViewParent,
+  AnimatedInViewChildDiv,
+} from '@Components/elements/InView/in-view'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -71,97 +74,99 @@ export function MenuNav() {
         className={classes.appBar}
       >
         <AnimatedInPlainViewParent>
-          <Tabs
-            value={menuLocation}
-            onChange={handleChange}
-            indicatorColor={'secondary'}
-            textColor={'primary'}
-            variant={isWideScreen ? 'fullWidth' : 'scrollable'}
-            scrollButtons={'on'}
-            aria-label={'auto tabs'}
-            orientation={isWideScreen ? 'vertical' : 'horizontal'}
-            TabScrollButtonProps={{
-              className: classes.scrollButton,
-            }}
-          >
-            <Tab
-              selected={getIfSelected(MenuPageKeys.kavaKava, 0)}
-              fullWidth
-              label={'Kava Kava'}
-              component={Link}
-              to={`#${MenuPageKeys.kavaKava}`}
-              className={classes.navigationButton}
+          <AnimatedInViewChildDiv>
+            <Tabs
+              value={menuLocation}
+              onChange={handleChange}
+              indicatorColor={'secondary'}
               textColor={'primary'}
-              id={`auto-tab-0`}
-              aria-controls={`auto-tabpanel-0`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.kratom, 1)}
-              fullWidth
-              label={'Kratom'}
-              component={Link}
-              to={`#${MenuPageKeys.kratom}`}
-              className={classes.navigationButton}
-              textColor={'primary'}
-              id={`auto-tab-1`}
-              aria-controls={`auto-tabpanel-1`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.addIns, 2)}
-              fullWidth
-              component={Link}
-              className={classes.navigationButton}
-              to={`#${MenuPageKeys.addIns}`}
-              label={'Add-ins: Make it Stronger'}
-              textColor={'primary'}
-              id={`auto-tab-2`}
-              aria-controls={`auto-tabpanel-2`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.herbalTea, 3)}
-              fullWidth
-              component={Link}
-              className={classes.navigationButton}
-              to={`#${MenuPageKeys.herbalTea}`}
-              label={'Herbal Tea'}
-              textColor={'primary'}
-              id={`auto-tab-3`}
-              aria-controls={`auto-tabpanel-3`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.coffee, 4)}
-              fullWidth
-              component={Link}
-              className={classes.navigationButton}
-              to={`#${MenuPageKeys.coffee}`}
-              label={'Coffee & Cold Brew'}
-              textColor={'primary'}
-              id={`auto-tab-4`}
-              aria-controls={`auto-tabpanel-4`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.superfoods, 5)}
-              fullWidth
-              component={Link}
-              className={classes.navigationButton}
-              to={`#${MenuPageKeys.superfoods}`}
-              label={'Superfoods'}
-              textColor={'primary'}
-              id={`auto-tab-5`}
-              aria-controls={`auto-tabpanel-5`}
-            />
-            <Tab
-              selected={getIfSelected(MenuPageKeys.bulk, 6)}
-              fullWidth
-              component={Link}
-              className={classes.navigationButton}
-              to={`#${MenuPageKeys.bulk}`}
-              label={'Bulk Kratom & KavaKava'}
-              textColor={'primary'}
-              id={`auto-tab-6`}
-              aria-controls={`auto-tabpanel-6`}
-            />
-          </Tabs>
+              variant={isWideScreen ? 'fullWidth' : 'scrollable'}
+              scrollButtons={'on'}
+              aria-label={'auto tabs'}
+              orientation={isWideScreen ? 'vertical' : 'horizontal'}
+              TabScrollButtonProps={{
+                className: classes.scrollButton,
+              }}
+            >
+              <Tab
+                selected={getIfSelected(MenuPageKeys.kavaKava, 0)}
+                fullWidth
+                label={'Kava Kava'}
+                component={Link}
+                to={`#${MenuPageKeys.kavaKava}`}
+                className={classes.navigationButton}
+                textColor={'primary'}
+                id={`auto-tab-0`}
+                aria-controls={`auto-tabpanel-0`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.kratom, 1)}
+                fullWidth
+                label={'Kratom'}
+                component={Link}
+                to={`#${MenuPageKeys.kratom}`}
+                className={classes.navigationButton}
+                textColor={'primary'}
+                id={`auto-tab-1`}
+                aria-controls={`auto-tabpanel-1`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.addIns, 2)}
+                fullWidth
+                component={Link}
+                className={classes.navigationButton}
+                to={`#${MenuPageKeys.addIns}`}
+                label={'Add-ins: Make it Stronger'}
+                textColor={'primary'}
+                id={`auto-tab-2`}
+                aria-controls={`auto-tabpanel-2`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.herbalTea, 3)}
+                fullWidth
+                component={Link}
+                className={classes.navigationButton}
+                to={`#${MenuPageKeys.herbalTea}`}
+                label={'Herbal Tea'}
+                textColor={'primary'}
+                id={`auto-tab-3`}
+                aria-controls={`auto-tabpanel-3`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.coffee, 4)}
+                fullWidth
+                component={Link}
+                className={classes.navigationButton}
+                to={`#${MenuPageKeys.coffee}`}
+                label={'Coffee & Cold Brew'}
+                textColor={'primary'}
+                id={`auto-tab-4`}
+                aria-controls={`auto-tabpanel-4`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.superfoods, 5)}
+                fullWidth
+                component={Link}
+                className={classes.navigationButton}
+                to={`#${MenuPageKeys.superfoods}`}
+                label={'Superfoods'}
+                textColor={'primary'}
+                id={`auto-tab-5`}
+                aria-controls={`auto-tabpanel-5`}
+              />
+              <Tab
+                selected={getIfSelected(MenuPageKeys.bulk, 6)}
+                fullWidth
+                component={Link}
+                className={classes.navigationButton}
+                to={`#${MenuPageKeys.bulk}`}
+                label={'Bulk Kratom & KavaKava'}
+                textColor={'primary'}
+                id={`auto-tab-6`}
+                aria-controls={`auto-tabpanel-6`}
+              />
+            </Tabs>
+          </AnimatedInViewChildDiv>
         </AnimatedInPlainViewParent>
       </AppBar>
     ),
