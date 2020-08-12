@@ -2,12 +2,13 @@ import React from 'react'
 import { FixedObject } from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Container, Grid } from '@material-ui/core'
+import { LogoJsonLd } from 'gatsby-plugin-next-seo'
+import { makeStyles } from '@material-ui/core/styles'
 
 import { Logo_Img_In_HeaderQuery } from '@Graphql/gatsby-graphql'
 import { Nav } from '@Components/structure/Layout/nav'
 import { Logo } from '@Components/structure/Layout/logo'
 import styles from './header.mod.scss'
-import makeStyles from '@material-ui/core/styles/makeStyles'
 
 const useStyles = makeStyles({
   navArea: {
@@ -36,7 +37,16 @@ export function Header() {
       <Grid component={'header'} container>
         <Grid item xs={8} sm={6}>
           {file?.childImageSharp?.fixed && (
-            <Logo file={file.childImageSharp.fixed as FixedObject} />
+            <>
+              <LogoJsonLd
+                url={'https://novelteaorlando.com'}
+                logo={file.childImageSharp.fixed.src}
+                defer
+              />
+              <Logo
+                file={file.childImageSharp.fixed as FixedObject}
+              />
+            </>
           )}
         </Grid>
         <Grid className={classes.navArea} item xs={4} sm={6}>

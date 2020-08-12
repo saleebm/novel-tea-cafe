@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
   },
   figureWrap: {
     margin: 0,
-    padding: '0 30px',
+    padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -194,7 +194,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   happyHour: {
-    paddingInline: `${theme.spacing(3)}px`,
+    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
     display: 'inline-flex',
     flexFlow: 'row nowrap',
     alignItems: 'center',
@@ -345,11 +345,9 @@ export function Specials({
                               tags &&
                               Array.isArray(tags.children) &&
                               tags.children.map((child, index) => (
-                                <Typography
-                                  className={classes.happyHour}
-                                  variant={'subtitle2'}
-                                  component={'p'}
+                                <div
                                   key={`${index}`}
+                                  className={classes.happyHour}
                                 >
                                   <AudiotrackIcon
                                     fontSize={'large'}
@@ -360,12 +358,20 @@ export function Specials({
                                         : 'primary'
                                     }
                                   />
-                                  <span
-                                    className={classes.happyHourText}
+                                  <Typography
+                                    variant={'subtitle2'}
+                                    component={'p'}
+                                    gutterBottom
                                   >
-                                    {child?.text}
-                                  </span>
-                                </Typography>
+                                    <span
+                                      className={
+                                        classes.happyHourText
+                                      }
+                                    >
+                                      {child?.text}
+                                    </span>
+                                  </Typography>
+                                </div>
                               )),
                           )}
                       </AnimatedInViewChildDiv>
@@ -476,7 +482,9 @@ export function Specials({
                                       tags.children.map((child) => (
                                         <Typography
                                           variant={'h3'}
+                                          component={'p'}
                                           key={`${index}`}
+                                          gutterBottom
                                         >
                                           {child?.text}
                                         </Typography>
@@ -486,6 +494,7 @@ export function Specials({
                                     <Typography
                                       variant={'h4'}
                                       component={'p'}
+                                      gutterBottom
                                     >
                                       {day.details}
                                     </Typography>

@@ -15,6 +15,7 @@ const useClasses = makeStyles((theme) => ({
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'baseline',
+    position: 'relative',
   },
   socialIcon: {
     'willChange': 'filter, transform',
