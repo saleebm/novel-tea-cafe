@@ -34,6 +34,7 @@ const useClasses = makeStyles((theme) => ({
     alignItems: 'center',
     height: '100%',
     maxWidth: '70px',
+    marginRight: theme.spacing(1),
   },
 }))
 
@@ -86,7 +87,7 @@ export function SocialIcons() {
       <AnimatedInPlainViewParent className={classes.socialArea}>
         <Grid
           container
-          spacing={2}
+          spacing={0}
           alignItems={'baseline'}
           justify={'flex-end'}
         >

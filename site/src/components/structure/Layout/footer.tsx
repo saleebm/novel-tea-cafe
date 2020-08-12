@@ -21,11 +21,11 @@ export function Footer() {
       maxWidth={'xl'}
       component={'footer'}
     >
-      <Grid container spacing={3} justify={'flex-end'}>
+      <Grid container spacing={1} justify={'flex-end'}>
         <Grid item xs={12}>
           <Divider variant={'inset'} />
         </Grid>
-        <Grid item xs={12} sm={4} md={3}>
+        <Grid item xs={12}>
           <SocialIcons />
         </Grid>
       </Grid>

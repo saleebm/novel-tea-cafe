@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    height: '100%',
+    maxHeight: 'max-content',
     whiteSpace: 'nowrap',
+    position: 'relative',
   },
   skipToMenu: {
     ...theme.mixins.visuallyHidden,
@@ -40,11 +41,14 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     position: 'relative',
-    backgroundColor: fade(
+    backgroundColor: theme.palette.background.paper,
+    backgroundImage: `linear-gradient(90deg, ${fade(
+      theme.palette.primary.main,
+      0.42,
+    )} 42%, ${fade(
       theme.palette.primary[theme.palette.type],
       0.95,
-    ),
-    backgroundImage: `linear-gradient(90deg, ${theme.palette.background.paper} 42%, ${theme.palette.background.default} 100%)`,
+    )} 100%)`,
     display: 'flex',
     flexFlow: 'column',
     justifyContent: 'center',
@@ -58,16 +62,23 @@ const useStyles = makeStyles((theme) => ({
   },
   navHeader: {
     position: 'relative',
+    display: 'flex',
+    flexFlow: 'column wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   navHeaderArea: {
-    'height': '100%',
     'display': 'flex',
-    'alignItems': 'baseline',
-    'justifyContent': 'space-evenly',
-    'padding': theme.spacing(3),
-    'flexFlow': 'row wrap',
+    'alignItems': 'center',
+    'justifyContent': 'center',
+    'flexFlow': 'column wrap',
+    'marginTop': theme.spacing(2),
     '& figure': {
       justifyContent: 'center',
+      alignItems: 'center',
+      padding: 0,
+      margin: 0,
     },
   },
   socialIconWrap: {
@@ -173,10 +184,10 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                         Novel Tea
                       </Typography>
                     </AnimatedInViewChildDiv>
-                    <div className={classes.socialIconWrap}>
-                      <SocialIcons />
-                    </div>
                   </AnimatedInPlainViewParent>
+                  <div className={classes.socialIconWrap}>
+                    <SocialIcons />
+                  </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                   <AnimatedInPlainViewParent

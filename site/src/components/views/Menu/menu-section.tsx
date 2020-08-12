@@ -43,13 +43,13 @@ export function MenuSection({
     {
       threshold: [0.05],
       once: false,
-      rootMargin: '40px 0px -60%',
+      rootMargin: '42px 0px -69%',
     },
   )
 
   const [setInViewDebounced] = useDebouncedCallback(
     (intersecting: boolean) => setInView(intersecting),
-    200,
+    420, // lol 420
   )
 
   useEffect(() => {
