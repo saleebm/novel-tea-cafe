@@ -19,9 +19,10 @@ import { useCursorPosition } from '@Utils/hooks/use-cursor-pos'
 import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 import { createMaterialTheme } from '@Config/material-theme'
+import { Footer } from '@Components/structure/Layout/footer'
+
 import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
-import { Footer } from '@Components/structure/Layout/footer'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -130,6 +131,10 @@ export function Layout({ children }: Layout) {
           //todo add more
           file.publicURL,
         ]}
+        overrides={{
+          '@type': 'CafeOrCoffeeShop',
+          'hasMenu': 'https://novelteaorlando.com/menu',
+        }}
       />
       <div ref={mainContainerRef}>
         <Container
@@ -141,8 +146,7 @@ export function Layout({ children }: Layout) {
           <Header />
           <main
             style={{
-              minHeight: '75vh',
-              height: '100%',
+              minHeight: '60vh',
               position: 'relative',
             }}
             id={'herb-main'}

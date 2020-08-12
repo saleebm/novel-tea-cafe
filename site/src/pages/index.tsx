@@ -184,8 +184,9 @@ function IndexPage({ data }: Index) {
                 <Typography
                   className={classes.subTitle}
                   variant={'h2'}
-                  color={'textPrimary'}
+                  color={'textSecondary'}
                   align={'center'}
+                  gutterBottom
                 >
                   {sanityPage?.hero?.heading}
                 </Typography>
@@ -245,8 +246,9 @@ function IndexPage({ data }: Index) {
                             variant={'h2'}
                             component={'p'}
                             key={`${index}`}
-                            color={'textSecondary'}
+                            color={'textPrimary'}
                             align={'center'}
+                            gutterBottom
                           >
                             {child?.text}
                           </Typography>
