@@ -36,7 +36,7 @@ function MenuPage({ data }: MenuPage) {
 export const query = graphql`
   query MENU_PAGE {
     addIns: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: { elemMatch: { title: { eq: "Add-ins" } } }
       }
@@ -46,7 +46,7 @@ export const query = graphql`
       }
     }
     bulk: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: {
           elemMatch: { title: { eq: "Bulk Kratom and Kava Kava" } }
@@ -58,7 +58,7 @@ export const query = graphql`
       }
     }
     coffee: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: {
           elemMatch: { title: { eq: "Coffee and Cold Brew" } }
@@ -70,7 +70,7 @@ export const query = graphql`
       }
     }
     herbalTea: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: {
           elemMatch: { title: { eq: "Custom Herbal Tea" } }
@@ -82,7 +82,7 @@ export const query = graphql`
       }
     }
     kavaKava: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: {
           elemMatch: { title: { eq: "Kava Kava" } }
@@ -94,7 +94,7 @@ export const query = graphql`
       }
     }
     kratom: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: { elemMatch: { title: { eq: "Kratom" } } }
       }
@@ -104,7 +104,7 @@ export const query = graphql`
       }
     }
     superfoods: allSanityMenuItem(
-      sort: { fields: [name] }
+      sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: {
           elemMatch: { title: { eq: "Superfoods" } }
