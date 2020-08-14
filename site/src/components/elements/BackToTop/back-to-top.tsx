@@ -23,6 +23,8 @@ const MotionButton = motion.custom(Button)
 
 const useStyles = makeStyles((theme: Theme) => ({
   anchor: {
+    'bottom': theme.spacing(2),
+    'right': theme.spacing(2),
     'position': 'fixed',
     'backgroundColor': theme.palette.text.primary,
     'color': theme.palette.background.default,
