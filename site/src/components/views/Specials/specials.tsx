@@ -175,8 +175,8 @@ const useStyles = makeStyles((theme) => ({
   },
   speedDial: {
     position: 'fixed',
-    bottom: theme.spacing(2),
-    left: theme.spacing(2),
+    bottom: theme.spacing(10),
+    right: theme.spacing(1),
   },
   speedDialIcon: {
     height: '50px',
@@ -184,7 +184,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
   },
   toolTip: {
-    fontSize: '2rem',
+    fontSize: '1.42rem',
+    backgroundColor: theme.palette.primary[theme.palette.type],
+    color: theme.palette.primary.contrastText,
   },
   happyHourDeetWrap: {
     width: '100%',
@@ -531,6 +533,7 @@ export function Specials({
           {days.weeklyEventSmallImgs.map((action) => (
             <SpeedDialAction
               key={action.dayName}
+              tooltipOpen
               icon={
                 <GatsbyImage
                   loading={'eager'}
