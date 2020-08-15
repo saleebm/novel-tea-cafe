@@ -14,7 +14,7 @@ module.exports = {
     title: `NovelTea Cafe`,
     description: `Gather for the freshest kava and kratom tea, fresh brewed kombucha, and daily social events. What could be better? Answer: Nothing!`,
     author: `@minasa1eeb`,
-    siteUrl: 'www',
+    siteUrl: 'https://www.novelteaorlando.com',
   },
   plugins: [
     {
