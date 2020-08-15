@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       top: 'auto',
       bottom: 0,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.primary[theme.palette.type],
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
       overflowX: 'auto',
+      color: theme.palette.primary.contrastText,
     },
   },
   navigationButton: {
@@ -70,7 +71,7 @@ export function MenuNav() {
         position={isWideScreen ? 'sticky' : 'fixed'}
         component={'aside'}
         variant={'elevation'}
-        elevation={isWideScreen ? 0 : 7}
+        elevation={isWideScreen ? 0 : 4}
         className={classes.appBar}
       >
         <AnimatedInPlainViewParent>
