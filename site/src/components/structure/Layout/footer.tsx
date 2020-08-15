@@ -21,7 +21,7 @@ export function Footer() {
       maxWidth={'lg'}
       component={'footer'}
     >
-      <Grid container spacing={3} justify={'flex-end'}>
+      <Grid container spacing={3}>
         <Grid item xs={12}>
           <Divider variant={'inset'} />
         </Grid>
