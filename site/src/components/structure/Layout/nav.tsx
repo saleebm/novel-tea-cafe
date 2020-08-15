@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     hyphens: 'auto',
   },
   menuItems: {
-    fontSize: '2.3rem',
+    fontSize: '3.2rem',
     fontVariant: 'petite-caps',
     marginTop: theme.spacing(1),
     wordWrap: 'normal',
