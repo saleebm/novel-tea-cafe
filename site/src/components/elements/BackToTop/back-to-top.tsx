@@ -20,6 +20,8 @@ const MotionButton = motion.custom(Button)
 
 const useStyles = makeStyles((theme: Theme) => ({
   anchor: {
+    'maxWidth': '48px',
+    'maxHeight': '48px',
     'bottom': theme.spacing(2),
     'right': theme.spacing(2),
     'position': 'fixed',
