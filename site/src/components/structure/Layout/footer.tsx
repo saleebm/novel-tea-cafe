@@ -18,10 +18,10 @@ export function Footer() {
   return (
     <Container
       className={classes.footerWrap}
-      maxWidth={'xl'}
+      maxWidth={'lg'}
       component={'footer'}
     >
-      <Grid container spacing={1} justify={'flex-end'}>
+      <Grid container spacing={3} justify={'flex-end'}>
         <Grid item xs={12}>
           <Divider variant={'inset'} />
         </Grid>

@@ -21,8 +21,8 @@ import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
 import { createMaterialTheme } from '@Config/material-theme'
 import { Footer } from '@Components/structure/Layout/footer'
 
-import '@Styles/index.global.scss'
 import styles from './layout.mod.scss'
+import '@Styles/index.global.scss'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -136,7 +136,7 @@ export function Layout({ children }: Layout) {
           'hasMenu': 'https://novelteaorlando.com/menu',
         }}
       />
-      <div ref={mainContainerRef}>
+      <div className={styles.wrapper} ref={mainContainerRef}>
         <Container
           className={styles.mainContainer}
           maxWidth={false}
