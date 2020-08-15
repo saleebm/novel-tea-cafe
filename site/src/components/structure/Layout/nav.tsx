@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     filter: 'brightness(0.88) contrast(1.3)',
   },
   menuTitle: {
-    fontSize: '7vmax',
+    fontSize: '4.2rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     hyphens: 'auto',
   },
   menuItems: {
-    fontSize: '5vmax',
+    fontSize: '2.3rem',
     fontVariant: 'petite-caps',
     marginTop: theme.spacing(1),
     wordWrap: 'normal',
