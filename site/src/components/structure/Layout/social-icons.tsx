@@ -29,7 +29,6 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
     flex: 1,
     padding: 0,
-    margin: 0,
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -90,7 +89,7 @@ export function SocialIcons() {
           container
           spacing={0}
           alignItems={'baseline'}
-          justify={'flex-end'}
+          justify={'flex-start'}
         >
           {facebookIcon?.childImageSharp?.fixed &&
             socialLinks?.facebookPage && (
