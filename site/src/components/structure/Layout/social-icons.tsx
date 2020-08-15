@@ -34,7 +34,7 @@ const useClasses = makeStyles((theme) => ({
     alignItems: 'center',
     height: '100%',
     maxWidth: '70px',
-    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(0.5),
   },
 }))
 
