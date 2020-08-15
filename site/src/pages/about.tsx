@@ -54,7 +54,7 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
   },
   button: {
-    fontSize: '2vmax',
+    fontSize: '1.69rem',
   },
 }))
 

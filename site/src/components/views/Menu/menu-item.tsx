@@ -27,7 +27,7 @@ const useStyles = makeStyles((_theme) => ({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: '2rem',
+    fontSize: '2.9rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',

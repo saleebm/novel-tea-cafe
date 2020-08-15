@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 'fit-content',
   },
   pageTitle: {
-    fontSize: '7vmax',
+    fontSize: '4.2rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',

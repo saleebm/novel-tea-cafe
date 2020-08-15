@@ -23,7 +23,7 @@ interface Index {
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontSize: '7vmax',
+    fontSize: '4.2rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   subTitle: {
     width: '100%',
-    fontSize: '5vmax',
+    fontSize: '3.2rem',
     zIndex: 1,
     whiteSpace: 'pre-wrap',
     wordWrap: 'normal',
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tagLine: {
     width: '100%',
-    fontSize: '5vmax',
+    fontSize: '2.2rem',
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     wordWrap: 'normal',
     overflowWrap: 'normal',

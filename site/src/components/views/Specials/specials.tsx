@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(1)}px auto`,
     textAlign: 'left',
     paddingLeft: '3vw',
-    fontSize: '7vmax',
+    fontSize: '4.2rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   weeklyTitleWrap: {
     width: '100%',
     margin: `${theme.spacing(1)}px auto`,
-    fontSize: '5vmax',
+    fontSize: '3.2rem',
     textAlign: 'center',
   },
   daysContainer: {
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   },
   taglineText: {
     textAlign: 'center',
-    fontSize: '4.2vmax',
+    fontSize: '4.2rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -209,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    fontSize: '2.7vmax',
+    fontSize: '2.7rem',
     lineHeight: 1.6,
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     color: theme.palette.text.primary,
