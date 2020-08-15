@@ -26,6 +26,7 @@ export const Logo = memo(
             area={ActiveAreaTypes.anchor}
           >
             <GatsbyImage
+              className={styles.logoImg}
               fixed={file}
               alt={
                 'bucket with two leaves, noveltea written with kava bar on second line'

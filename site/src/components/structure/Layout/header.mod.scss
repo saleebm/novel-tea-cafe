@@ -15,6 +15,22 @@
   cursor: none;
 }
 
+.logoImg {
+  will-change: filter, transform;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transform-origin: center center;
+  filter: drop-shadow(0 -3px 7px rgba(0, 0, 0, 0.3)) brightness(0.95) contrast(1.03);
+  transform-style: preserve-3d;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: 0.42ms filter, transform ease-in-out;
+  }
+
+  &:hover, &:focus {
+    filter: drop-shadow(0 -6px 3px rgba(0,0,0,0.5)) brightness(1) contrast(0.9);
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -3, 12, 1);
+  }
+}
 .navigation_area {
   display: flex;
   flex-flow: row wrap;

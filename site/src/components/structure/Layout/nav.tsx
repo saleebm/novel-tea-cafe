@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `linear-gradient(90deg, ${fade(
       theme.palette.primary.main,
       0.42,
-    )} 42%, ${fade(
+    )}, 42%, ${fade(
       theme.palette.primary[theme.palette.type],
       0.95,
     )} 100%)`,
@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: theme.spacing(3),
+    filter: 'brightness(0.88) contrast(1.3)',
   },
   menuTitle: {
     fontSize: '7vmax',
