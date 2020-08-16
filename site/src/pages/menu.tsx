@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby'
 import { Container } from '@material-ui/core'
 import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { Menu } from '@Components/views/Menu/menu'
-import { GatsbySeo } from 'gatsby-plugin-next-seo'
+import { SEO } from '@Components/elements/SEO/seo'
 
 interface MenuPage extends PageProps {
   data: Menu_PageQuery
@@ -12,7 +12,12 @@ interface MenuPage extends PageProps {
 function MenuPage({ data }: MenuPage) {
   return (
     <>
-      <GatsbySeo title={'Menu'} />
+      <SEO
+        title={'Menu'}
+        description={
+          'Kratom, kava kava, herbal tea, and more available fresh at Novel Tea Cafe.'
+        }
+      />
       <Container maxWidth={'xl'}>
         <Menu menu={data} />
       </Container>
