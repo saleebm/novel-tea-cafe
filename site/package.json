@@ -22,6 +22,7 @@
     "lint": "npm run lint:ts && npm run stylelint",
     "lint:ts": "eslint './src/**/*' --ext .tsx,.ts",
     "lint:ts:fix": "eslint './src/**/*' --ext .tsx,.ts --fix",
+    "prebuild": "npm run clean",
     "pretty": "prettier --write --config .prettierrc '*/**/*.{js,jsx,ts,tsx}'",
     "serve": "gatsby serve",
     "start": "GATSBY_HOT_LOADER=fast-refresh npm run develop",
