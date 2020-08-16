@@ -125,7 +125,7 @@ module.exports = {
     {
       resolve: `gatsby-source-googlemaps-static`,
       options: {
-        key: `AIzaSyDv6odPp-2SPWgD4-ulP8uRa6J7uBvOTMw`,
+        key: process.env.GOOGLE_MAPS_KEY,
         center: `NovelTea, Lake Howell Lane, Maitland, FL`,
         zoom: 14,
         scale: 2,

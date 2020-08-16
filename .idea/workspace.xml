@@ -24,8 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/site/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.8.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/site" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -101,16 +101,17 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/site/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/site" />
+      <recent name="$PROJECT_DIR$/studio/schemas/objects" />
+      <recent name="$PROJECT_DIR$/studio/schemas/documents" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/site" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/site/src/components/context" />
       <recent name="$PROJECT_DIR$/studio/schemas/documents" />
       <recent name="$PROJECT_DIR$/site/src/models/types" />
-      <recent name="$PROJECT_DIR$/site/src/components/elements" />
-      <recent name="$PROJECT_DIR$/site/src/utils/hooks" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/studio/schemas/objects" />
-      <recent name="$PROJECT_DIR$/studio/schemas/documents" />
     </key>
   </component>
   <component name="RunManager" selected="npm.develop">
@@ -238,7 +239,7 @@
       <workItem from="1597540159190" duration="398000" />
       <workItem from="1597552808229" duration="524000" />
       <workItem from="1597596934590" duration="179000" />
-      <workItem from="1597611508374" duration="228000" />
+      <workItem from="1597611508374" duration="623000" />
     </task>
     <servers />
   </component>
