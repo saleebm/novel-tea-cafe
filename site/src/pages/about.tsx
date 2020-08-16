@@ -63,7 +63,12 @@ function AboutPage({ data }: AboutPage) {
   return useMemo(
     () => (
       <>
-        <SEO title={'About'} />
+        <SEO
+          title={'About'}
+          description={
+            'Kava Kava and Kratom brewed fresh everyday, plus fresh herbal teas, cold brew and more here at Novel Tea located in Orlando, Florida.'
+          }
+        />
         <Container>
           <Grid container spacing={4}>
             <Grid item xs={12}>
