@@ -23,7 +23,12 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
   const classes = useStyles()
   return (
     <>
-      <SEO title={'Specials'} />
+      <SEO
+        title={'Specials'}
+        description={
+          'Come for our daily happy hour and stay for the daily events, different everyday of the week.'
+        }
+      />
       <Container maxWidth={'xl'} className={classes.pageContainer}>
         <Specials
           allSanityWeeklyEvents={data.allSanityWeeklyEvents}

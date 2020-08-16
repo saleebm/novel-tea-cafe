@@ -24,7 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/specials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/specials.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +235,8 @@
       <workItem from="1597527958382" duration="1759000" />
       <workItem from="1597531483711" duration="1617000" />
       <workItem from="1597533162543" duration="625000" />
-      <workItem from="1597540159190" duration="296000" />
+      <workItem from="1597540159190" duration="398000" />
+      <workItem from="1597552808229" duration="222000" />
     </task>
     <servers />
   </component>
@@ -386,12 +388,12 @@
     <state x="410" y="207" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1597261272433" />
     <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595876528637" />
     <state x="2149" y="213" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597469053529" />
-    <state width="572" height="412" key="SwitcherDM" timestamp="1597531721987">
+    <state width="572" height="412" key="SwitcherDM" timestamp="1597552871160">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state width="500" height="400" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1597510989956" />
     <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595885790837" />
-    <state width="572" height="412" key="SwitcherDM/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597531721987" />
+    <state width="572" height="412" key="SwitcherDM/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597552871160" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1595546494563">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
