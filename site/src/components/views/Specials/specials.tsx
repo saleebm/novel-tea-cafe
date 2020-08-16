@@ -439,7 +439,7 @@ export function Specials({
                               className={classes.figureWrap}
                               spacing={0}
                             >
-                              <Grid item xs={12} md={6}>
+                              <Grid item xs={12} md={6} lg={3}>
                                 {day.illustration?.image?.asset
                                   ?.fluid && (
                                   <AnimatedIOView
