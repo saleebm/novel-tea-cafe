@@ -82,6 +82,8 @@ html {
   max-width: 100%;
   scrollbar-width: thin;
   scrollbar-color: red white;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: contain;
 }
 
 body {
@@ -110,7 +112,7 @@ body {
   min-height: fit-content;
 
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 * {

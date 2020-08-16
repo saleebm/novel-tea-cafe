@@ -24,7 +24,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Specials/specials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Specials/specials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +241,8 @@
       <workItem from="1597540159190" duration="398000" />
       <workItem from="1597552808229" duration="524000" />
       <workItem from="1597596934590" duration="179000" />
-      <workItem from="1597611508374" duration="1957000" />
+      <workItem from="1597611508374" duration="2060000" />
+      <workItem from="1597619589091" duration="626000" />
     </task>
     <servers />
   </component>
@@ -246,17 +250,13 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-root-element.jsx" />
         <option value="$PROJECT_DIR$/site/src/components/structure/Layout/layout.jsx" />
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-page-element.jsx" />
         <option value="$PROJECT_DIR$/site/src/components/structure/Layout/index.js" />
-        <option value="$PROJECT_DIR$/site/.cache/__tests__/public-page-renderer-dev.jsx" />
+        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-page-element.jsx" />
+        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-root-element.jsx" />
         <option value="$PROJECT_DIR$/site/.cache/__tests__/ensure-resources.jsx" />
         <option value="$PROJECT_DIR$/site/.cache/__tests__/public-page-renderer-prod.jsx" />
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-root-element.jsx" />
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/utils/wrap-page-element.jsx" />
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/index.js" />
-        <option value="$PROJECT_DIR$/site/src/components/structure/Layout/layout.jsx" />
+        <option value="$PROJECT_DIR$/site/.cache/__tests__/public-page-renderer-dev.jsx" />
       </list>
     </option>
   </component>
@@ -309,31 +309,35 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="225" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597261135517" />
-    <state width="819" height="206" key="GridCell.Tab.0.bottom" timestamp="1597597064801">
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1597619987159">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="206" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597597064801" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597619987159" />
+    <state width="1638" height="283" key="GridCell.Tab.0.bottom" timestamp="1597620207506">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="283" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1597620207506" />
     <state width="1878" height="246" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1597090846934" />
     <state width="1638" height="210" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597468484913" />
     <state width="1878" height="236" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597533381201" />
-    <state width="819" height="206" key="GridCell.Tab.0.center" timestamp="1597597064800">
+    <state width="1638" height="283" key="GridCell.Tab.0.center" timestamp="1597620207506">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="206" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597597064800" />
+    <state width="1638" height="283" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1597620207506" />
     <state width="1878" height="246" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1597090846932" />
     <state width="1638" height="210" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597468484908" />
     <state width="1878" height="236" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597533381200" />
-    <state width="819" height="206" key="GridCell.Tab.0.left" timestamp="1597597064800">
+    <state width="1638" height="283" key="GridCell.Tab.0.left" timestamp="1597620207505">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="206" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597597064800" />
+    <state width="1638" height="283" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1597620207505" />
     <state width="1878" height="246" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1597090846931" />
     <state width="1638" height="210" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597468484906" />
     <state width="1878" height="236" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597533381199" />
-    <state width="819" height="206" key="GridCell.Tab.0.right" timestamp="1597597064801">
+    <state width="1638" height="283" key="GridCell.Tab.0.right" timestamp="1597620207506">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="819" height="206" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597597064801" />
+    <state width="1638" height="283" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1597620207506" />
     <state width="1878" height="246" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1597090846933" />
     <state width="1638" height="210" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1597468484909" />
     <state width="1878" height="236" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597533381201" />
@@ -391,10 +395,10 @@
     <state x="410" y="207" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1597261272433" />
     <state x="469" y="236" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1595876528637" />
     <state x="2149" y="213" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597553249447" />
-    <state width="500" height="400" key="SwitcherDM" timestamp="1597613484430">
+    <state width="500" height="400" key="SwitcherDM" timestamp="1597620163146">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="500" height="400" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1597613484430" />
+    <state width="500" height="400" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1597620163146" />
     <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1595885790837" />
     <state width="572" height="412" key="SwitcherDM/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597552871160" />
     <state x="560" y="337" key="Vcs.Push.Dialog.v2" timestamp="1595546494563">
@@ -405,14 +409,15 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="842" y="448" key="cloudConfig.SelfSettingsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595014928730" />
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1595197085707">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595197085707" />
-    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597261674547">
+    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1597619987160">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597261674547" />
+    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597619987160" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595197085707" />
+    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597620018166">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="88" y="88" width="1505" height="875" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1597620018166" />
     <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595880365876" />
     <state x="2446" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597529477482">
       <screen x="1680" y="0" width="1920" height="1080" />
@@ -428,10 +433,10 @@
     <state x="526" y="311" width="1154" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597260911721" />
     <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881837394" />
     <state x="2281" y="320" width="1319" height="504" key="find.popup/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597532696313" />
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1597510440393">
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup" timestamp="1597620002081">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597510440393" />
+    <state x="547" y="237" width="670" height="592" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597620002081" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881578643" />
     <state x="658" y="290" width="670" height="662" key="search.everywhere.popup/49.25.1871.1175@49.25.1871.1175" timestamp="1595118262504" />
   </component>
