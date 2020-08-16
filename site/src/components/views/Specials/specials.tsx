@@ -176,7 +176,7 @@ const useStyles = makeStyles((theme) => ({
   speedDial: {
     position: 'fixed',
     bottom: theme.spacing(10),
-    right: theme.spacing(2),
+    right: theme.spacing(1),
   },
   speedDialIcon: {
     height: '50px',
