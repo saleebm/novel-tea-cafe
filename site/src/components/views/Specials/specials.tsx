@@ -109,11 +109,11 @@ const useStyles = makeStyles((theme) => ({
   dayPaper: {
     maxWidth: '1280px',
     width: '100%',
-    paddingLeft: theme.spacing(5),
-    paddingRight: theme.spacing(5),
+    paddingLeft: theme.spacing(4.2),
+    paddingRight: theme.spacing(4.2),
     border: '10px solid',
     borderImageSource: `linear-gradient(60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
-    borderImageSlice: '33 12',
+    borderImageSlice: '42 24',
     borderImageRepeat: 'round',
     transform: 'skew(9deg)',
     borderTopLeftRadius: '7px',
@@ -176,7 +176,7 @@ const useStyles = makeStyles((theme) => ({
   speedDial: {
     position: 'fixed',
     bottom: theme.spacing(10),
-    right: theme.spacing(1),
+    right: theme.spacing(2),
   },
   speedDialIcon: {
     height: '50px',
@@ -209,8 +209,8 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    fontSize: '2.7rem',
-    lineHeight: 1.6,
+    fontSize: '2.2rem',
+    lineHeight: 1.1,
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     color: theme.palette.text.primary,
   },
@@ -223,7 +223,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   happyHourIcon: {
-    marginRight: theme.spacing(1.5),
+    marginRight: theme.spacing(1.25),
   },
 }))
 
@@ -363,7 +363,7 @@ export function Specials({
                                   <Typography
                                     variant={'subtitle2'}
                                     component={'p'}
-                                    gutterBottom
+                                    align={'center'}
                                   >
                                     <span
                                       className={
