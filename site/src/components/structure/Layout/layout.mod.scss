@@ -7,4 +7,9 @@
 
 .wrapper {
   position: relative;
+
+  @media (max-width: 900px) {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }

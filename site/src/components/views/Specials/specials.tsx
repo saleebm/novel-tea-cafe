@@ -131,6 +131,15 @@ const useStyles = makeStyles((theme) => ({
     wordBreak: 'keep-all',
     hyphens: 'auto',
   },
+  dayDetails: {
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
+    paddingRight: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+  },
   figureWrap: {
     margin: 0,
     padding: 0,
@@ -213,6 +222,8 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.1,
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     color: theme.palette.text.primary,
+    paddingRight: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
   },
   happyHourGridWrap: {
     paddingTop: theme.spacing(4),
@@ -364,6 +375,7 @@ export function Specials({
                                     variant={'subtitle2'}
                                     component={'p'}
                                     align={'center'}
+                                    gutterBottom
                                   >
                                     <span
                                       className={
@@ -484,7 +496,7 @@ export function Specials({
                                       tags.children.map((child) => (
                                         <Typography
                                           variant={'h3'}
-                                          component={'p'}
+                                          component={'h3'}
                                           key={`${index}`}
                                           gutterBottom
                                         >
@@ -497,6 +509,7 @@ export function Specials({
                                       variant={'h4'}
                                       component={'p'}
                                       gutterBottom
+                                      className={classes.dayDetails}
                                     >
                                       {day.details}
                                     </Typography>
