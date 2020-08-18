@@ -12,7 +12,6 @@ import React, {
   useMemo,
   Children,
 } from 'react'
-import { easeInOut } from '@popmotion/easing'
 import {
   IntersectionContext,
   IntersectionObserver,
@@ -32,6 +31,7 @@ export const wrapVariants: Variants = {
     },
   },
 }
+// simple float up animation
 export const childVariants: Variants = {
   hidden: {
     y: 100,
@@ -83,7 +83,6 @@ export const AnimatedIOView: FC<
       delay:
         Math.min(delayOrder, 0.15) /
         Math.min(Children.count(children) || 1, 3),
-      ease: easeInOut,
     }),
     [duration, delayOrder, children],
   )
@@ -91,17 +90,16 @@ export const AnimatedIOView: FC<
   const variants = {
     hidden: {
       scale: disableScale ? 1 : 0,
-      rotateX: '-70deg',
       opacity: 0,
       transition,
     },
     show: {
       scale: 1,
-      rotateX: '0deg',
       opacity: 1,
       transition,
     },
   }
+
   return (
     <motion.div
       initial={shouldReduceMotion ? 'show' : 'hidden'}
