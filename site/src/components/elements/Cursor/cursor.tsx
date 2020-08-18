@@ -1,9 +1,9 @@
 import { motion, useAnimation } from 'framer-motion'
 import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
+import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 import styled from 'styled-components'
 import styles from './cursor.mod.scss'
-import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 
 // import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
@@ -106,32 +106,28 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
   const RESET_CONTROLS = useCallback(
     (i: number) => ({
       boxShadow: INITIAL_BOX_SHADOW,
-      rotate: `${i * 360}deg`,
+      rotate: i * 360,
     }),
     [INITIAL_BOX_SHADOW],
   )
 
   const DO_FLOWER = useCallback(
     (i: number) => ({
-      rotate: `${i * 180}deg`,
+      rotate: i * 180,
       boxShadow: i === 0 ? SMALL_DOTS_SHADOW : BIG_DOTS_SHADOW,
     }),
     [BIG_DOTS_SHADOW, SMALL_DOTS_SHADOW],
   )
 
+  // on active area change, if set, scale up
   useEffect(() => {
     if (activeArea !== ActiveAreaTypes.notSet) {
       // const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
-      controlFlowerPower
-        .start({
-          scale: 1.33,
-        })
-        .then(() =>
-          controlFlowerPower.start({
-            scale: 1.25,
-          }),
-        )
-    } else {
+      controlFlowerPower.start({
+        scale: 1.2,
+      })
+    }
+    return () => {
       controlFlowerPower.start({
         scale: 1,
       })
@@ -141,7 +137,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
   useEffect(() => {
     controls.start(RESET_CONTROLS).then(async () => {
       await controls.start(DO_FLOWER)
-      return await controls.start(RESET_CONTROLS)
+      await controls.start(RESET_CONTROLS)
     })
   }, [mouseUp, controls, DO_FLOWER, RESET_CONTROLS])
 
@@ -174,18 +170,10 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           <div className='dots-container'>
             <motion.div
               custom={1}
-              transition={{
-                type: 'spring',
-                mass: 0.1,
-              }}
               animate={controls}
               className={'bigger-dot'}
             >
               <motion.div
-                transition={{
-                  type: 'spring',
-                  mass: 0.25,
-                }}
                 custom={0}
                 animate={controls}
                 className={'smaller-dot'}

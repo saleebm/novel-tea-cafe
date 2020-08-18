@@ -69,7 +69,6 @@ export function Layout({ children }: Layout) {
     handleMouseClick,
     mainContainerRef?.current ?? undefined,
   )
-
   const {
     themeMode: { isDarkMode },
   } = useDarkMode()
@@ -147,6 +146,7 @@ export function Layout({ children }: Layout) {
           <main
             style={{
               minHeight: '60vh',
+              position: 'relative',
             }}
             id={'herb-main'}
           >

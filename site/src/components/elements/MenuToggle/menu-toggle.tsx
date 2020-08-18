@@ -1,10 +1,5 @@
 import React, { useMemo } from 'react'
-import {
-  motion,
-  Transition,
-  useReducedMotion,
-  Variants,
-} from 'framer-motion'
+import { motion, Transition, useReducedMotion } from 'framer-motion'
 import classNames from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Button } from '@material-ui/core'
@@ -37,44 +32,12 @@ export const MenuToggle = ({
   const classes = useStyles()
   const shouldReduceMotion = useReducedMotion()
 
-  const transition: Transition = {
-    duration: shouldReduceMotion ? 0 : 0.15,
-  }
-  const spanOne: Variants = {
-    open: {
-      translateY: -4,
-      rotate: 0,
-      transition,
-    },
-    close: {
-      translateY: 0,
-      rotate: 225,
-      transition,
-    },
-    initial: {
-      translateY: -300,
-      transition,
-    },
-  }
-
-  const spanTwo: Variants = {
-    open: {
-      translateY: 4,
-      rotate: 0,
-      width: '23px',
-      transition,
-    },
-    close: {
-      translateY: 0,
-      rotate: 135,
-      width: '45px',
-      transition,
-    },
-    initial: {
-      translateY: -300,
-      transition,
-    },
-  }
+  const transition: Transition = useMemo(
+    () => ({
+      duration: shouldReduceMotion ? 0 : 0.15,
+    }),
+    [shouldReduceMotion],
+  )
 
   return useMemo(
     () => (
@@ -98,18 +61,50 @@ export const MenuToggle = ({
           >
             <MenuBarMotion
               component={'span'}
-              variants={spanOne}
+              variants={{
+                open: {
+                  translateY: -4,
+                  rotate: 0,
+                  transition,
+                },
+                close: {
+                  translateY: 0,
+                  rotate: 225,
+                  transition,
+                },
+                initial: {
+                  translateY: -300,
+                  transition,
+                },
+              }}
               className={classNames(styles.span, classes.root)}
             />
             <MenuBarMotion
               component={'span'}
-              variants={spanTwo}
+              variants={{
+                open: {
+                  translateY: 4,
+                  rotate: 0,
+                  width: '23px',
+                  transition,
+                },
+                close: {
+                  translateY: 0,
+                  rotate: 135,
+                  width: '45px',
+                  transition,
+                },
+                initial: {
+                  translateY: -300,
+                  transition,
+                },
+              }}
               className={classNames(styles.span, classes.root)}
             />
           </Button>
         </MouseTrap>
       </motion.div>
     ),
-    [isToggled, classes, onToggleClicked, spanOne, spanTwo],
+    [isToggled, classes, onToggleClicked, transition],
   )
 }
