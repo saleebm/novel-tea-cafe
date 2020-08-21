@@ -50,9 +50,6 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(1)}px 0`,
   },
   menuWrap: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gridTemplateRows: 'auto',
     rowGap: `${theme.spacing(4)}px`,
     height: '100%',
     padding: 0,
@@ -60,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
   },
   menuSectionWrap: {
     position: 'relative',
+    marginBottom: theme.spacing(3),
+    padding: 0,
+    marginBlock: theme.spacing(0.25),
   },
   navSection: {
     position: 'relative',

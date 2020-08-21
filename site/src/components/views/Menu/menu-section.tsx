@@ -1,10 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import React, { useContext, useEffect, useMemo, useRef } from 'react'
 import { Divider, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -36,7 +30,6 @@ export function MenuSection({
 }: MenuSection) {
   const classes = useStyles()
   const { setMenuNav } = useContext(MenuNavContext)
-  const [inView, setInView] = useState(false)
   const intersectionRef = useRef(null)
   const { intersecting: intersection } = useIntersectionObserver(
     intersectionRef,
@@ -47,20 +40,18 @@ export function MenuSection({
     },
   )
 
+  // debounced callback extraction
   const [setInViewDebounced] = useDebouncedCallback(
-    (intersecting: boolean) => setInView(intersecting),
+    (intersecting: boolean) => {
+      setMenuNav({ menuLocation: index })
+    },
     420, // lol 420
   )
 
+  // if intersection caught (true), then set menu nav location to the index,
   useEffect(() => {
-    setInViewDebounced(intersection)
+    if (intersection) setInViewDebounced(intersection)
   }, [intersection, setInViewDebounced])
-
-  useEffect(() => {
-    if (inView) {
-      setMenuNav({ menuLocation: index })
-    }
-  }, [id, inView, setMenuNav, index])
 
   return useMemo(
     () => (
