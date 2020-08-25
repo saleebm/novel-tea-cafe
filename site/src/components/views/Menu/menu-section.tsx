@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useMemo, useRef } from 'react'
+import React, {
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { Divider, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -32,28 +38,34 @@ export function MenuSection({
 }: MenuSection) {
   const classes = useStyles()
   const { setMenuNav } = useContext(MenuNavContext)
+  const [inView, setInView] = useState(false)
   const intersectionRef = useRef(null)
-  const { intersecting: intersection } = useIntersectionObserver(
-    intersectionRef,
-    {
-      threshold: [0.05],
-      once: false,
-      rootMargin: '42px 0px -69%',
-    },
-  )
+  const {
+    intersecting: intersectionCaught,
+  } = useIntersectionObserver(intersectionRef, {
+    threshold: [0.05],
+    once: false,
+    rootMargin: '42px 0px -69%',
+  })
 
   // debounced callback extraction
   const [setInViewDebounced] = useDebouncedCallback(
-    (intersecting: boolean) => {
-      setMenuNav({ menuLocation: index })
-    },
+    (intersecting: boolean) => setInView(intersecting),
     420, // lol 420
   )
 
-  // if intersection caught (true), then set menu nav location to the index,
+  // initial effect if intersecting
+  // calls debounced function
   useEffect(() => {
-    if (intersection) setInViewDebounced(intersection)
-  }, [intersection, setInViewDebounced])
+    setInViewDebounced(intersectionCaught)
+  }, [intersectionCaught, setInViewDebounced])
+
+  // inView = true after debounced function so that we don't see the jitter in nav location
+  useEffect(() => {
+    if (inView) {
+      setMenuNav({ menuLocation: index })
+    }
+  }, [id, inView, setMenuNav, index])
 
   return useMemo(
     () => (

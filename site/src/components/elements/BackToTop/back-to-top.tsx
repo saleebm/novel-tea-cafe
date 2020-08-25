@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { ArrowDropUp } from '@material-ui/icons'
+import { KeyboardArrowUp } from '@material-ui/icons'
 import { Fab as Button } from '@material-ui/core'
 import { motion, Variants } from 'framer-motion'
 import { useWindowScroll } from '@Utils/hooks/use-window-scroll'
@@ -64,10 +64,11 @@ export const BackToTop = () => {
         type={'button'}
         initial={'hide'}
         animate={scrollbarState.y > 150 ? 'show' : 'hide'}
+        exit={'hide'}
         role={'navigation'}
         title={'Back To Top'}
       >
-        <ArrowDropUp elevation={5} fontSize={'inherit'} />
+        <KeyboardArrowUp elevation={5} fontSize={'large'} />
       </MotionButton>
     ),
     [scrollbarState.y, anchor],
