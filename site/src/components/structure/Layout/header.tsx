@@ -34,7 +34,7 @@ export function Header() {
 
   return (
     <Container maxWidth={false} className={styles.header}>
-      <Grid component={'header'} container>
+      <Grid component={'header'} container id={'top'}>
         <Grid item xs={8} sm={6}>
           {file?.childImageSharp?.fixed && (
             <>

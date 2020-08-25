@@ -17,7 +17,7 @@
     "clean": "gatsby clean",
     "codegen": "graphql-codegen --config codegen.yml",
     "debug": "node --nolazy --inspect-brk node_modules/gatsby/dist/bin/gatsby develop",
-    "develop": "npm run start",
+    "develop": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "npm run lint:ts && npm run stylelint",
     "lint:ts": "eslint './src/**/*' --ext .tsx,.ts",
@@ -25,7 +25,7 @@
     "prebuild": "npm run clean",
     "pretty": "prettier --write --config .prettierrc '*/**/*.{js,jsx,ts,tsx}'",
     "serve": "gatsby serve",
-    "start": "GATSBY_HOT_LOADER=fast-refresh npm run develop",
+    "start": "npm run develop",
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "stylelint --fix \"src/**/*.scss\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

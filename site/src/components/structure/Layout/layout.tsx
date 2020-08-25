@@ -153,10 +153,10 @@ export function Layout({ children }: Layout) {
             {children}
           </main>
           <Footer />
+          <BackToTop />
           <GlobalStyles />
           <CssBaseline />
         </Container>
-        <BackToTop />
       </div>
     </ThemeProvider>
   )

@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(1)}px auto`,
     textAlign: 'left',
     paddingLeft: '3vw',
-    fontSize: '4.2rem',
+    fontSize: '3.4rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   weeklyTitleWrap: {
     width: '100%',
     margin: `${theme.spacing(1)}px auto`,
-    fontSize: '3.2rem',
+    fontSize: '2.25rem',
     textAlign: 'center',
   },
   daysContainer: {
@@ -89,8 +89,8 @@ const useStyles = makeStyles((theme) => ({
       // the daypaper
       '& article': {
         'alignSelf': 'flex-end',
-        'borderBottomRightRadius': '7px',
-        'borderTopRightRadius': '7px',
+        'borderBottomRightRadius': '3px',
+        'borderTopRightRadius': '3px',
         'borderTopLeftRadius': '0 !important',
         'borderBottomLeftRadius': '0 !important',
         'transform': 'skew(-9deg) !important',
@@ -109,11 +109,11 @@ const useStyles = makeStyles((theme) => ({
   dayPaper: {
     maxWidth: '1280px',
     width: '100%',
-    paddingLeft: theme.spacing(4.2),
-    paddingRight: theme.spacing(4.2),
-    border: '10px solid',
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    border: '9px solid',
     borderImageSource: `linear-gradient(60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
-    borderImageSlice: '42 24',
+    borderImageSlice: 12,
     borderImageRepeat: 'round',
     transform: 'skew(9deg)',
     borderTopLeftRadius: '7px',
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   },
   taglineText: {
     textAlign: 'center',
-    fontSize: '4.2rem',
+    fontSize: '2.3rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
@@ -184,7 +184,7 @@ const useStyles = makeStyles((theme) => ({
   },
   speedDial: {
     position: 'fixed',
-    bottom: theme.spacing(10),
+    bottom: theme.spacing(9),
     right: theme.spacing(1),
   },
   speedDialIcon: {
@@ -205,10 +205,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   happyHour: {
-    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
+    padding: `${theme.spacing(1)}px ${theme.spacing(1.5)}px`,
     display: 'inline-flex',
     flexFlow: 'row nowrap',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
   happyHourText: {
@@ -218,7 +218,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
-    fontSize: '2.2rem',
+    fontSize: '1.6rem',
     lineHeight: 1.1,
     fontVariationSettings: '"WGHT" 200, "SALT" 1, "CONT" 0',
     color: theme.palette.text.primary,

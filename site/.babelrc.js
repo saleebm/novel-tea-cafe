@@ -56,7 +56,12 @@ module.exports = {
       'babel-preset-gatsby',
       {
         targets: {
-          browsers: ['defaults'],
+          browsers: [
+            'last 2 versions',
+            'not ie <= 11',
+            'not android 4.4.3',
+          ],
+          node: 'current',
         },
       },
     ],

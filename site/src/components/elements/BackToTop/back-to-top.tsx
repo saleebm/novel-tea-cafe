@@ -20,6 +20,7 @@ const MotionButton = motion.custom(Button)
 
 const useStyles = makeStyles((theme: Theme) => ({
   anchor: {
+    'width': '48px !important',
     'maxWidth': '48px',
     'maxHeight': '48px',
     'bottom': theme.spacing(2),
@@ -59,6 +60,7 @@ export const BackToTop = () => {
             left: 0,
           })
         }
+        href={'#top'}
         variants={variants}
         size={'medium'}
         type={'button'}
