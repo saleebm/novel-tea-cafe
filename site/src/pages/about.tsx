@@ -66,7 +66,7 @@ function AboutPage({ data }: AboutPage) {
         <SEO
           title={'About'}
           description={
-            'Kava Kava and Kratom brewed fresh everyday, plus fresh herbal teas, cold brew and more here at Novel Tea located in Orlando, Florida.'
+            'Kava Kava and Kratom brewed fresh everyday, plus fresh herbal teas, cold brew and more here at NovelTea located in Orlando, Florida.'
           }
         />
         <Container>

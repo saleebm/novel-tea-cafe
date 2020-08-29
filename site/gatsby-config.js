@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     title: `NovelTea Cafe`,
-    description: `Gather for the freshest kava and kratom tea, fresh brewed kombucha, and daily social events. What could be better? Answer: Nothing!`,
+    description: `Gather for the freshest kava and kratom tea, fresh brewed kombucha, and daily social events here at NovelTea. What could be better? Answer: Nothing!`,
     author: `@minasa1eeb`,
     siteUrl: 'https://www.novelteaorlando.com',
   },
@@ -26,7 +26,7 @@ module.exports = {
           url: 'https://www.novelteaorlando.com/',
           site_name: 'NovelTea',
         },
-        titleTemplate: `%s 🍃 Novel Tea Cafe`,
+        titleTemplate: `%s 🍃 NovelTea Cafe`,
       },
     },
     {

@@ -182,7 +182,7 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
                         variant={'h1'}
                         color={'textPrimary'}
                       >
-                        Novel Tea
+                        NovelTea
                       </Typography>
                     </AnimatedInViewChildDiv>
                   </AnimatedInPlainViewParent>

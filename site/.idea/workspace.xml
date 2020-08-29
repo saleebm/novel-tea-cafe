@@ -10,16 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/elements/BackToTop/back-to-top.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/layout.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/layout.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/structure/Layout/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Specials/specials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Specials/specials.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +155,7 @@
       <workItem from="1596062888905" duration="6298000" />
       <workItem from="1596935635210" duration="365000" />
       <workItem from="1598335268967" duration="1116000" />
-      <workItem from="1598336557171" duration="869000" />
+      <workItem from="1598336557171" duration="1009000" />
     </task>
     <servers />
   </component>

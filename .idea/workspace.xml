@@ -22,7 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="" />
+    <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/site/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/menu.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,6 +246,7 @@
       <workItem from="1597611508374" duration="2060000" />
       <workItem from="1597619589091" duration="711000" />
       <workItem from="1597778872742" duration="360000" />
+      <workItem from="1598725802173" duration="176000" />
     </task>
     <servers />
   </component>
@@ -422,9 +431,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="754" height="1000" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" timestamp="1594992323451" />
-    <state x="2281" y="320" width="1319" height="504" key="find.popup" timestamp="1597778899302">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state x="450" y="267" width="990" height="490" key="find.popup" timestamp="1598726050943">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="450" y="267" width="990" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1598726050943" />
     <state x="526" y="311" width="1154" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1597260911721" />
     <state x="602" y="355" width="1318" height="490" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595881837394" />
     <state x="2281" y="320" width="1319" height="504" key="find.popup/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1597778899302" />

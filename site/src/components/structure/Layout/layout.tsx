@@ -92,7 +92,7 @@ export function Layout({ children }: Layout) {
       <LocalBusinessJsonLd
         type='CafeOrCoffeeShop'
         id='https://www.novelteaorlando.com'
-        name='Novel Tea Cafe'
+        name='NovelTea Cafe'
         description='Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!'
         url='https://www.novelteaorlando.com'
         telephone='+14088717984'
