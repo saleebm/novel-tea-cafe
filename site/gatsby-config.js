@@ -36,16 +36,6 @@ module.exports = {
         path: `${__dirname}/static/assets/images`,
       },
     },
-    `gatsby-plugin-svgr-svgo`,
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 80,
-      },
-    },
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -53,6 +43,15 @@ module.exports = {
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
         overlayDrafts: !isProd,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 90,
       },
     },
     {
@@ -123,7 +122,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-googlemaps-static`,
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
       options: {
         key: process.env.GOOGLE_MAPS_KEY,
         center: `NovelTea, Lake Howell Lane, Maitland, FL`,
@@ -141,6 +140,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-svgr-svgo`,
     'gatsby-plugin-sitemap',
     `gatsby-plugin-offline`,
   ],

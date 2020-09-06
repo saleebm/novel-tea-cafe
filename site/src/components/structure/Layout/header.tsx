@@ -23,7 +23,7 @@ export function Header() {
     query LOGO_IMG_IN_HEADER {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(quality: 100, height: 200) {
+          fixed(quality: 90, height: 200) {
             ...GatsbyImageSharpFixed
           }
         }

@@ -56,7 +56,7 @@ export function SocialIcons() {
         relativePath: { eq: "branding/f_logo_RGB-Blue_1024.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 50) {
+          fixed(fit: CONTAIN, width: 50, quality: 90) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -65,7 +65,7 @@ export function SocialIcons() {
         relativePath: { eq: "branding/Twitter_Logo_Blue.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 50) {
+          fixed(fit: CONTAIN, width: 50, quality: 90) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -74,7 +74,7 @@ export function SocialIcons() {
         relativePath: { eq: "branding/IG_Glyph_Fill.png" }
       ) {
         childImageSharp {
-          fixed(fit: CONTAIN, width: 50) {
+          fixed(fit: CONTAIN, width: 50, quality: 90) {
             ...GatsbyImageSharpFixed
           }
         }

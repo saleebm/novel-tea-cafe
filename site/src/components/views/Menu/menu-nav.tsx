@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   navigationButton: {
     fontSize: '1.5rem',
-    lineHeight: 1,
-    marginTop: theme.spacing(3),
+    lineHeight: 1.1,
+    marginTop: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
     },
