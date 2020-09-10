@@ -73,7 +73,7 @@ function AboutPage({ data }: AboutPage) {
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <AnimatedInViewChildDiv>
-                <Typography color={'primary'} variant={'h1'}>
+                <Typography color={'textPrimary'} variant={'h1'}>
                   {data.sanitySiteSettings?.openGraph?.title}
                 </Typography>
               </AnimatedInViewChildDiv>

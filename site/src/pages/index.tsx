@@ -156,7 +156,7 @@ function IndexPage({ data }: Index) {
             className={classes.firstSectionItem}
           >
             <Typography
-              color={'primary'}
+              color={'textPrimary'}
               className={classes.title}
               variant={'h1'}
             >
