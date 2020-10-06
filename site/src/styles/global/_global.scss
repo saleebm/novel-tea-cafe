@@ -74,14 +74,12 @@ html {
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Podkova', serif;
   @supports (font-variation-settings: normal) {
     //noinspection Stylelint
     font-family: 'Podkova Variable';
   }
   max-width: 100%;
-  scrollbar-width: thin;
-  scrollbar-color: red white;
   overscroll-behavior-x: contain;
   overscroll-behavior-y: contain;
 }
@@ -183,7 +181,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid green;
-  color: var(--copt-text-color, currentColor);
+  color: var(--herb-text-color, currentColor);
   -webkit-text-fill-color: green;
   -webkit-box-shadow: 0 0 0 12px #000 inset;
 }
