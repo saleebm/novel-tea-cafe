@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: theme.shape.borderRadius,
   },
 }))
+
 export const MenuToggle = ({
   onToggleClicked,
   isToggled,

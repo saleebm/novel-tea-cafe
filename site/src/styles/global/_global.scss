@@ -74,18 +74,14 @@ html {
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  font-family: 'Podkova', serif;
-  @supports (font-variation-settings: normal) {
-    //noinspection Stylelint
-    font-family: 'Podkova Variable';
-  }
+  font-family: 'Recursive', sans-serif;
   max-width: 100%;
   overscroll-behavior-x: contain;
   overscroll-behavior-y: contain;
 }
 
 body {
-  font-family: 'Podkova', serif;
+  font-family: 'Recursive', sans-serif;
   margin: unset !important;
   font-variation-settings: 'wght' 400, 'GRAD' 72;
   font-optical-sizing: auto;
@@ -185,4 +181,3 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: green;
   -webkit-box-shadow: 0 0 0 12px #000 inset;
 }
-

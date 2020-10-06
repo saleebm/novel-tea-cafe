@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
+import { Helmet } from 'react-helmet-async'
 import useEventListener from '@use-it/event-listener'
 import ThemeProvider from '@material-ui/styles/ThemeProvider'
 import withStyles from '@material-ui/core/styles/withStyles'
@@ -89,13 +90,23 @@ export function Layout({ children }: Layout) {
 
   return (
     <ThemeProvider theme={materialTheme}>
+      <Helmet>
+        <link
+          href={
+            'https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap'
+          }
+          rel={'stylesheet'}
+        />
+      </Helmet>
       <LocalBusinessJsonLd
-        type='CafeOrCoffeeShop'
-        id='https://www.novelteaorlando.com'
-        name='NovelTea Cafe'
-        description='Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!'
-        url='https://www.novelteaorlando.com'
-        telephone='+14088717984'
+        type={'CafeOrCoffeeShop'}
+        id={'https://www.novelteaorlando.com'}
+        name={'NovelTea Cafe'}
+        description={
+          'Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!'
+        }
+        url={'https://www.novelteaorlando.com'}
+        telephone={'+14088717984'}
         priceRange={'$'}
         defer={true}
         openingHours={{

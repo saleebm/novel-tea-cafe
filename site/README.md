@@ -13,3 +13,5 @@
     - expand to show details
 
 6. Happy hour details somewhere
+
+7. Use cdn for fonts
