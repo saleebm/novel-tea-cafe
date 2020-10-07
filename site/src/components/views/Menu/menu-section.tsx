@@ -25,6 +25,7 @@ interface MenuSection {
 const useStyles = makeStyles((theme) => ({
   menuPanelDupe: {
     paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(3),
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
   },

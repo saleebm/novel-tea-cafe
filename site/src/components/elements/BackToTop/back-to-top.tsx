@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     'width': '48px !important',
     'maxWidth': '48px',
     'maxHeight': '48px',
-    'bottom': theme.spacing(2),
+    'bottom': theme.spacing(8),
     'right': theme.spacing(2),
     'position': 'fixed',
     'zIndex': 2000020,

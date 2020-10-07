@@ -2,28 +2,25 @@ import React, {
   ReactNode,
   ReactNodeArray,
   useCallback,
-  useMemo,
   useRef,
   useState,
 } from 'react'
 import { Helmet } from 'react-helmet-async'
 import useEventListener from '@use-it/event-listener'
-import ThemeProvider from '@material-ui/styles/ThemeProvider'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { Container, CssBaseline, Theme } from '@material-ui/core'
+import { CssBaseline, Theme } from '@material-ui/core'
 import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { Header } from '@Components/structure/Layout/header'
 import { Cursor } from '@Components/elements/Cursor/cursor'
 import { useCursorPosition } from '@Utils/hooks/use-cursor-pos'
-import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 import { BackToTop } from '@Components/elements/BackToTop/back-to-top'
-import { createMaterialTheme } from '@Config/material-theme'
 import { Footer } from '@Components/structure/Layout/footer'
 
 import styles from './layout.mod.scss'
 import '@Styles/index.global.scss'
+import Container from '@material-ui/core/Container'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -70,14 +67,7 @@ export function Layout({ children }: Layout) {
     handleMouseClick,
     mainContainerRef?.current ?? undefined,
   )
-  const {
-    themeMode: { isDarkMode },
-  } = useDarkMode()
 
-  const materialTheme = useMemo(
-    () => createMaterialTheme(isDarkMode),
-    [isDarkMode],
-  )
   const { file } = useStaticQuery(graphql`
     query LOGO_IMG {
       file(relativePath: { eq: "logo.png" }) {
@@ -89,7 +79,7 @@ export function Layout({ children }: Layout) {
   const currentDate = new Date()
 
   return (
-    <ThemeProvider theme={materialTheme}>
+    <>
       <Helmet>
         <link
           href={
@@ -147,11 +137,7 @@ export function Layout({ children }: Layout) {
         }}
       />
       <div className={styles.wrapper} ref={mainContainerRef}>
-        <Container
-          className={styles.mainContainer}
-          maxWidth={false}
-          disableGutters
-        >
+        <Container maxWidth={false} disableGutters>
           <Cursor x={x} y={y} mouseUp={isCursorDown} />
           <Header />
           <main
@@ -169,6 +155,6 @@ export function Layout({ children }: Layout) {
           <CssBaseline />
         </Container>
       </div>
-    </ThemeProvider>
+    </>
   )
 }

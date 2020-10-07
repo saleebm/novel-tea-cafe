@@ -74,7 +74,7 @@ export function MenuNav() {
           value={menuLocation}
           onChange={handleChange}
           indicatorColor={'secondary'}
-          textColor={'primary'}
+          // textColor={'primary'}
           variant={isWideScreen ? 'fullWidth' : 'scrollable'}
           scrollButtons={'on'}
           aria-label={'auto tabs'}
@@ -90,7 +90,6 @@ export function MenuNav() {
             component={Link}
             to={`#${MenuPageKeys.kavaKava}`}
             className={classes.navigationButton}
-            textColor={'primary'}
             id={`auto-tab-0`}
             aria-controls={`auto-tabpanel-0`}
           />
@@ -101,7 +100,6 @@ export function MenuNav() {
             component={Link}
             to={`#${MenuPageKeys.kratom}`}
             className={classes.navigationButton}
-            textColor={'primary'}
             id={`auto-tab-1`}
             aria-controls={`auto-tabpanel-1`}
           />
@@ -112,7 +110,6 @@ export function MenuNav() {
             className={classes.navigationButton}
             to={`#${MenuPageKeys.addIns}`}
             label={'Add-ins: Make it Stronger'}
-            textColor={'primary'}
             id={`auto-tab-2`}
             aria-controls={`auto-tabpanel-2`}
           />
@@ -123,7 +120,6 @@ export function MenuNav() {
             className={classes.navigationButton}
             to={`#${MenuPageKeys.herbalTea}`}
             label={'Herbal Tea'}
-            textColor={'primary'}
             id={`auto-tab-3`}
             aria-controls={`auto-tabpanel-3`}
           />
@@ -145,7 +141,6 @@ export function MenuNav() {
             className={classes.navigationButton}
             to={`#${MenuPageKeys.superfoods}`}
             label={'Superfoods'}
-            textColor={'primary'}
             id={`auto-tab-5`}
             aria-controls={`auto-tabpanel-5`}
           />
@@ -156,7 +151,6 @@ export function MenuNav() {
             className={classes.navigationButton}
             to={`#${MenuPageKeys.bulk}`}
             label={'Bulk Kratom & KavaKava'}
-            textColor={'primary'}
             id={`auto-tab-6`}
             aria-controls={`auto-tabpanel-6`}
           />

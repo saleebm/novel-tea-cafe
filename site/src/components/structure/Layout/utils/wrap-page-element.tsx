@@ -1,4 +1,5 @@
 import React from 'react'
+import { ThemeProvider } from '@Components/context/ThemeProvider/theme-provider'
 
 import {
   PageProps,
@@ -11,5 +12,9 @@ export const wrapPageElement = ({
   element,
   props,
 }: WrapPageElementNodeArgs | WrapRootElementBrowserArgs) => {
-  return <Layout {...(props as PageProps)}>{element}</Layout>
+  return (
+    <ThemeProvider>
+      <Layout {...(props as PageProps)}>{element}</Layout>
+    </ThemeProvider>
+  )
 }

@@ -184,8 +184,8 @@ const useStyles = makeStyles((theme) => ({
   },
   speedDial: {
     position: 'fixed',
-    bottom: theme.spacing(9),
-    right: theme.spacing(1),
+    bottom: theme.spacing(8),
+    left: theme.spacing(2),
   },
   speedDialIcon: {
     height: '50px',
@@ -567,7 +567,7 @@ export function Specials({
               TooltipClasses={{
                 tooltip: classes.toolTip,
               }}
-              interactive
+              tooltipPlacement={'right'}
             />
           ))}
         </SpeedDial>
