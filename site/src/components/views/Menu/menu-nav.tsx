@@ -14,16 +14,17 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       top: 'auto',
       bottom: 0,
-      backgroundColor: theme.palette.primary[theme.palette.type],
+      backgroundColor: theme.palette.background.default,
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
       overflowX: 'auto',
       color: theme.palette.primary.contrastText,
+      boxShadow: theme.shadows['6'],
     },
   },
   navigationButton: {
-    fontSize: '1.5rem',
-    lineHeight: 1.1,
+    fontSize: '1.4rem',
+    lineHeight: 1,
     marginTop: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
@@ -74,7 +75,7 @@ export function MenuNav() {
           value={menuLocation}
           onChange={handleChange}
           indicatorColor={'secondary'}
-          // textColor={'primary'}
+          textColor={'primary'}
           variant={isWideScreen ? 'fullWidth' : 'scrollable'}
           scrollButtons={'on'}
           aria-label={'auto tabs'}

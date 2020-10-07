@@ -62,13 +62,17 @@ export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
           <CardContent className={classes.cardContent}>
             <Typography
               className={classes.title}
-              color='textSecondary'
+              color={'textSecondary'}
               variant={'h3'}
               component={'h2'}
             >
               {theRealMenuItem.node.name}
             </Typography>
-            <Typography variant={'h5'} component={'p'}>
+            <Typography
+              color={'textPrimary'}
+              variant={'h5'}
+              component={'p'}
+            >
               {theRealMenuItem.node.description}
             </Typography>
           </CardContent>

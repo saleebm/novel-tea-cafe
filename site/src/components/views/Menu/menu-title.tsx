@@ -7,7 +7,7 @@ export const MenuTitle = ({
 }: { pageTitle: string } & TypographyProps) => (
   <Typography
     variant={'h1'}
-    color='textSecondary'
+    color={'textSecondary'}
     gutterBottom
     {...props}
   >
