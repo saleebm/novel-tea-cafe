@@ -1,35 +1,21 @@
-import React, { useMemo, useState } from 'react'
-import { fade, makeStyles } from '@material-ui/core/styles'
-import {
-  Backdrop,
-  Grid,
-  MenuItem,
-  Modal,
-  Typography,
-} from '@material-ui/core'
-import { motion } from 'framer-motion'
+import React, { useMemo } from 'react'
+import { fade, makeStyles, useTheme } from '@material-ui/core/styles'
 import { FixedObject } from 'gatsby-image'
-import { Link } from 'gatsby'
+import { useMediaQuery } from '@material-ui/core'
+import { MobileNav } from '@Components/structure/Layout/mobile-nav'
+import { DesktopNav } from '@Components/structure/Layout/desktop-nav'
 
-import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
-import { ROUTES } from '@Config/routes'
-import {
-  AnimatedInPlainViewParent,
-  AnimatedInViewChildDiv,
-} from '@Components/elements/InView/in-view'
-import { Logo } from '@Components/structure/Layout/logo'
-import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
-import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
-import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
-import { SocialIcons } from '@Components/structure/Layout/social-icons'
-
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexFlow: 'column nowrap',
     maxHeight: 'max-content',
     whiteSpace: 'nowrap',
     position: 'relative',
+    [theme.breakpoints.up('sm')]: {
+      width: '100%',
+      flex: 1,
+    },
   },
   skipToMenu: {
     ...theme.mixins.visuallyHidden,
@@ -124,11 +110,41 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  darkModeAreaDesktop: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    maxHeight: '50px',
+  },
+  menuItemWrapDesktop: {
+    paddingTop: theme.spacing(3),
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  fullWidth: {
+    width: '100%',
+  },
+  menuItemDesktop: {
+    fontSize: '1.5rem',
+    fontVariant: 'petite-caps',
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2.5),
+    wordWrap: 'normal',
+    overflowWrap: 'normal',
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'keep-all',
+    hyphens: 'auto',
+    borderRadius: '12px',
+  },
 }))
 
 export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
   const classes = useStyles()
-  const [navOpen, setNavOpen] = useState(false)
+  const theme = useTheme()
+  const isSmallWidth = useMediaQuery(theme.breakpoints.down('sm'))
   return useMemo(
     () => (
       <div className={classes.container}>
@@ -139,95 +155,13 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
         >
           Skip to main content
         </a>
-        <MenuToggle
-          isToggled={navOpen}
-          onToggleClicked={() =>
-            setNavOpen((prevState) => !prevState)
-          }
-        />
-        <div className={classes.navigationWrap}>
-          <Modal
-            aria-labelledby={'navigation-title'}
-            onBackdropClick={() => setNavOpen(false)}
-            open={navOpen}
-            BackdropComponent={Backdrop}
-          >
-            <motion.nav
-              animate={navOpen ? 'show' : 'hidden'}
-              className={classes.navigation}
-            >
-              <Grid container spacing={3} className={classes.navGrid}>
-                <Grid
-                  className={classes.navHeader}
-                  item
-                  xs={12}
-                  md={6}
-                >
-                  <AnimatedInPlainViewParent
-                    className={classes.navHeaderArea}
-                  >
-                    {logoSrc && (
-                      <AnimatedInViewChildDiv>
-                        <Logo
-                          onClick={() => setNavOpen(false)}
-                          file={logoSrc}
-                        />
-                      </AnimatedInViewChildDiv>
-                    )}
-                    <AnimatedInViewChildDiv>
-                      <Typography
-                        align={'center'}
-                        className={classes.menuTitle}
-                        id={'navigation-title'}
-                        variant={'h1'}
-                        color={'textPrimary'}
-                      >
-                        NovelTea
-                      </Typography>
-                    </AnimatedInViewChildDiv>
-                  </AnimatedInPlainViewParent>
-                  <div className={classes.socialIconWrap}>
-                    <SocialIcons />
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <AnimatedInPlainViewParent
-                    className={classes.menuItemWrap}
-                  >
-                    {ROUTES.map((route) => (
-                      <AnimatedInViewChildDiv key={route.path}>
-                        <MouseTrap
-                          area={ActiveAreaTypes.anchor}
-                          additionalProps={{}}
-                        >
-                          <MenuItem
-                            alignItems={'center'}
-                            aria-label={route.name}
-                            to={route.path}
-                            component={Link}
-                            className={classes.menuItems}
-                            onClick={() => setNavOpen(false)}
-                            color={'textSecondary'}
-                          >
-                            {route.name}
-                          </MenuItem>
-                        </MouseTrap>
-                      </AnimatedInViewChildDiv>
-                    ))}
-
-                    <AnimatedInViewChildDiv
-                      className={classes.darkModeArea}
-                    >
-                      <DarkmodeToggle />
-                    </AnimatedInViewChildDiv>
-                  </AnimatedInPlainViewParent>
-                </Grid>
-              </Grid>
-            </motion.nav>
-          </Modal>
-        </div>
+        {isSmallWidth ? (
+          <MobileNav logoSrc={logoSrc} />
+        ) : (
+          <DesktopNav />
+        )}
       </div>
     ),
-    [classes, navOpen, setNavOpen, logoSrc],
+    [classes, logoSrc, isSmallWidth],
   )
 }

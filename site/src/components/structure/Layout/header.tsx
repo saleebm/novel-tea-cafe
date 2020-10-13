@@ -10,13 +10,19 @@ import { Nav } from '@Components/structure/Layout/nav'
 import { Logo } from '@Components/structure/Layout/logo'
 import styles from './header.mod.scss'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   navArea: {
     position: 'relative',
     display: 'block',
     flex: 1,
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex',
+      flexFlow: 'row wrap',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-end',
+    },
   },
-})
+}))
 
 export function Header() {
   const { file } = useStaticQuery<Logo_Img_In_HeaderQuery>(graphql`
@@ -33,7 +39,7 @@ export function Header() {
   const classes = useStyles()
 
   return (
-    <Container maxWidth={false} className={styles.header}>
+    <Container maxWidth={'lg'} className={styles.header}>
       <Grid component={'header'} container id={'top'}>
         <Grid item xs={8} sm={6}>
           {file?.childImageSharp?.fixed && (

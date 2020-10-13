@@ -3,6 +3,10 @@
   width: 10rem;
   height: 5rem;
   margin: 3rem;
+
+  @media screen and (min-width: 600px) {
+    width: 6rem;
+  }
 }
 
 .switch-enter .button {
