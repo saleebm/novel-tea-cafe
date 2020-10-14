@@ -29,9 +29,7 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
       'height': (props) => `${props.size}px`,
       'width': (props) => `${props.size}px`,
       'borderRadius': '49%',
-      'border': `1px solid ${
-        theme.palette.secondary[theme.palette.type]
-      }`,
+      'border': `1px solid ${theme.palette.secondary.main}`,
       'willChange': 'box-shadow',
       '& *': {
         boxSizing: 'border-box',
@@ -43,7 +41,7 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
     },
     smallerDot: {
       borderRadius: '49%',
-      backgroundColor: theme.palette.primary[theme.palette.type],
+      backgroundColor: theme.palette.primary.main,
       height: '100%',
       width: '100%',
       willChange: 'transform, box-shadow',
