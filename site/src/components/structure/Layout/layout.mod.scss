@@ -3,9 +3,17 @@
   width: 100%;
   min-height: 100%;
   min-width: 100%;
+  position: relative;
 
   @media (max-width: 600px) {
     overflow-y: auto;
     overflow-x: hidden;
   }
+}
+
+.main {
+  min-height: 60vh;
+  height: 100%;
+  position: relative;
+  display: block;
 }

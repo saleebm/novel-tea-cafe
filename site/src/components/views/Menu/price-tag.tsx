@@ -20,7 +20,7 @@ const useClasses = makeStyles((theme) => ({
   avatar: {
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
-    marginRight: '-3px', // gets rid of awkward green border to right of it.
+    marginRight: '-3px',
   },
 }))
 

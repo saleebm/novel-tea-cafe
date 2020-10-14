@@ -136,25 +136,22 @@ export function Layout({ children }: Layout) {
           'hasMenu': 'https://novelteaorlando.com/menu',
         }}
       />
-      <div className={styles.wrapper} ref={mainContainerRef}>
-        <Container maxWidth={false} disableGutters>
-          <Cursor x={x} y={y} mouseUp={isCursorDown} />
-          <Header />
-          <main
-            style={{
-              minHeight: '60vh',
-              position: 'relative',
-            }}
-            id={'herb-main'}
-          >
-            {children}
-          </main>
-          <Footer />
-          <BackToTop />
-          <GlobalStyles />
-          <CssBaseline />
-        </Container>
-      </div>
+      <Container
+        className={styles.wrapper}
+        ref={mainContainerRef}
+        maxWidth={false}
+        disableGutters
+      >
+        <BackToTop />
+        <Cursor x={x} y={y} mouseUp={isCursorDown} />
+        <Header />
+        <main className={styles.main} id={'herb-main'}>
+          {children}
+        </main>
+        <Footer />
+      </Container>
+      <GlobalStyles />
+      <CssBaseline />
     </>
   )
 }
