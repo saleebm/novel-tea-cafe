@@ -15,11 +15,12 @@ const useClasses = makeStyles((theme) => ({
     },
   },
   info: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(18),
   },
   avatar: {
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
+    marginRight: '-3px', // gets rid of awkward green border to right of it.
   },
 }))
 

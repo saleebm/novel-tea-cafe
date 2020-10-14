@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
 import {
   Backdrop,
@@ -246,10 +246,13 @@ export function Specials({
     themeMode: { isDarkMode },
   } = useDarkMode()
   const classes = useStyles()
-  const week =
-    (Array.isArray(allSanityWeeklyEvents.edges) &&
-      allSanityWeeklyEvents.edges[0].node) ??
-    null
+  const week = useMemo(
+    () =>
+      (Array.isArray(allSanityWeeklyEvents.edges) &&
+        allSanityWeeklyEvents.edges[0].node) ??
+      null,
+    [allSanityWeeklyEvents.edges],
+  )
 
   const days = useMemo(() => {
     const weeklyEventData = []
@@ -275,7 +278,7 @@ export function Specials({
     return { weeklyEventData, weeklyEventSmallImgs }
   }, [week])
 
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
     setOpen(true)
@@ -297,7 +300,7 @@ export function Specials({
       <Container
         className={classes.container}
         component={'section'}
-        maxWidth={false}
+        maxWidth={'lg'}
       >
         <AnimatedInPlainViewParent className={classes.fullWidthBlock}>
           <AnimatedInViewChildDiv>
@@ -309,10 +312,8 @@ export function Specials({
               Specials
             </Typography>
           </AnimatedInViewChildDiv>
-        </AnimatedInPlainViewParent>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <AnimatedInPlainViewParent>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
               <AnimatedInViewChildDiv
                 className={classes.fullWidthBlock}
               >
@@ -393,10 +394,8 @@ export function Specials({
                   </Grid>
                 </Paper>
               </AnimatedInViewChildDiv>
-            </AnimatedInPlainViewParent>
-          </Grid>
-          <Grid item xs={12}>
-            <AnimatedInPlainViewParent>
+            </Grid>
+            <Grid item xs={12}>
               <Grid
                 spacing={3}
                 container
@@ -524,9 +523,9 @@ export function Specials({
                   ),
                 )}
               </Grid>
-            </AnimatedInPlainViewParent>
+            </Grid>
           </Grid>
-        </Grid>
+        </AnimatedInPlainViewParent>
         <SpeedDial
           ariaLabel={'SpeedDial openIcon'}
           className={classes.speedDial}
@@ -574,6 +573,6 @@ export function Specials({
         <Backdrop open={open} />
       </Container>
     ),
-    [open, classes, days, isDarkMode, sanitySiteSettings?.happyHour],
+    [open, classes, days, isDarkMode, sanitySiteSettings],
   )
 }

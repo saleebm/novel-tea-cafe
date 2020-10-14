@@ -63,7 +63,7 @@ export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
             <Typography
               className={classes.title}
               color={'textSecondary'}
-              variant={'h3'}
+              variant={'h4'}
               component={'h2'}
             >
               {theRealMenuItem.node.name}
