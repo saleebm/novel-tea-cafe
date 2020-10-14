@@ -22,7 +22,6 @@ module.exports = {
     '@babel/plugin-proposal-nullish-coalescing-operator',
     '@babel/plugin-syntax-object-rest-spread',
     'babel-plugin-object-to-json-parse',
-    'babel-plugin-styled-components',
     [
       'import',
       {

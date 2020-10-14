@@ -2,8 +2,13 @@ import { motion, useAnimation } from 'framer-motion'
 import React, { useCallback, useEffect } from 'react'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
 import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
-import styled from 'styled-components'
+import clsx from 'clsx'
 import styles from './cursor.mod.scss'
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles'
 
 // import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
@@ -16,52 +21,52 @@ interface CursorProps {
 interface FlowerProps {
   size: number
   dotSize: number
-  animationDuration: number
 }
 
-const Flower = styled(motion.div)<FlowerProps>`
-  height: ${(props) => props.size}px;
-  width: ${(props) => props.size}px;
-
-  border-radius: 49%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: green;
-  will-change: box-shadow;
-
-  * {
-    box-sizing: border-box;
-  }
-
-  .dots-container {
-    height: ${(props) => props.dotSize}px;
-    width: ${(props) => props.dotSize}px;
-  }
-
-  .smaller-dot {
-    border-radius: 49%;
-    background-color: #15861a;
-    height: 100%;
-    width: 100%;
-    will-change: transform, box-shadow;
-  }
-  .bigger-dot {
-    background-color: #6498e6;
-    height: 100%;
-    width: 100%;
-    padding: 10%;
-    border-radius: 49%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(0, 128, 0);
-    will-change: transform, box-shadow;
-  }
-`
+const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
+  createStyles({
+    flowerRoot: {
+      'height': (props) => `${props.size}px`,
+      'width': (props) => `${props.size}px`,
+      'borderRadius': '49%',
+      'border': `1px solid ${
+        theme.palette.secondary[theme.palette.type]
+      }`,
+      'willChange': 'box-shadow',
+      '& *': {
+        boxSizing: 'border-box',
+      },
+    },
+    dotsContainer: {
+      height: (props) => `${props.dotSize}px`,
+      width: (props) => `${props.dotSize}px`,
+    },
+    smallerDot: {
+      borderRadius: '49%',
+      backgroundColor: theme.palette.primary[theme.palette.type],
+      height: '100%',
+      width: '100%',
+      willChange: 'transform, box-shadow',
+    },
+    biggerDot: {
+      backgroundColor:
+        theme.palette.primary[
+          theme.palette.type === 'dark' ? 'light' : 'dark'
+        ],
+      height: '100%',
+      width: '100%',
+      padding: '10%',
+      borderRadius: '49%',
+      border: `1px solid ${theme.palette.secondary.main}`,
+      willChange: 'transform, box-shadow',
+    },
+  }),
+)
 
 export function Cursor({ x, y, mouseUp }: CursorProps) {
   const SIZE = 50
   const DOT_SIZE = SIZE / 7
-
+  const classes = useStyles({ dotSize: DOT_SIZE, size: SIZE })
   const controls = useAnimation()
 
   const controlFlowerPower = useAnimation()
@@ -157,30 +162,27 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           damping: 20,
         }}
       >
-        <Flower
-          size={SIZE}
-          dotSize={DOT_SIZE}
-          animationDuration={1000}
-          className={styles.cursor}
+        <motion.div
+          className={clsx(styles.cursor, classes.flowerRoot)}
           animate={controlFlowerPower}
           initial={{
             scale: 1,
           }}
         >
-          <div className='dots-container'>
+          <div className={classes.dotsContainer}>
             <motion.div
               custom={1}
               animate={controls}
-              className={'bigger-dot'}
+              className={classes.biggerDot}
             >
               <motion.div
                 custom={0}
                 animate={controls}
-                className={'smaller-dot'}
+                className={classes.smallerDot}
               />
             </motion.div>
           </div>
-        </Flower>
+        </motion.div>
       </motion.div>
     </div>
   )
