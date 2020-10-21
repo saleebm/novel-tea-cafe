@@ -13,9 +13,8 @@ const useStyles = makeStyles((theme) => ({
   chipLabel: {
     color: theme.palette.text.primary,
     fontSize: theme.typography.button.fontSize,
-    fontVariant: 'small-caps',
     fontFamily: 'Jost',
-    fontWeight: 200,
+    fontVariationSettings: '"SALT" 1, "WGHT" 200, "WDTH" 69',
   },
 }))
 
