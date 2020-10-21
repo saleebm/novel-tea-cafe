@@ -1,7 +1,7 @@
 export const ROUTES = Object.freeze([
   {
     path: '/',
-    name: 'Frontpage',
+    name: 'Home',
     showOnDesktop: false,
   },
   {

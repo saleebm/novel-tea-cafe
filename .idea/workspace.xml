@@ -24,8 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +253,7 @@
       <workItem from="1602697624973" duration="1910000" />
       <workItem from="1602710424482" duration="2130000" />
       <workItem from="1603290851212" duration="1758000" />
-      <workItem from="1603295943676" duration="1064000" />
+      <workItem from="1603295943676" duration="1271000" />
     </task>
     <servers />
   </component>
