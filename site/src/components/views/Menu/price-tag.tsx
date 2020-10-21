@@ -15,7 +15,7 @@ const useClasses = makeStyles((theme) => ({
     },
   },
   info: {
-    fontSize: theme.typography.pxToRem(18),
+    fontSize: theme.typography.pxToRem(14),
   },
   avatar: {
     color: theme.palette.primary.contrastText,

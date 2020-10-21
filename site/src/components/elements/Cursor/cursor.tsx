@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import styles from './cursor.mod.scss'
 import {
   createStyles,
+  fade,
   makeStyles,
   Theme,
 } from '@material-ui/core/styles'
@@ -29,7 +30,10 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
       'height': (props) => `${props.size}px`,
       'width': (props) => `${props.size}px`,
       'borderRadius': '49%',
-      'border': `1px solid ${theme.palette.secondary.main}`,
+      'border': `1px solid ${fade(
+        theme.palette.secondary.light,
+        0.69,
+      )}`,
       'willChange': 'box-shadow',
       '& *': {
         boxSizing: 'border-box',
@@ -41,21 +45,25 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
     },
     smallerDot: {
       borderRadius: '49%',
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.secondary.main,
       height: '100%',
       width: '100%',
       willChange: 'transform, box-shadow',
     },
     biggerDot: {
       backgroundColor:
-        theme.palette.primary[
+        theme.palette.secondary[
           theme.palette.type === 'dark' ? 'light' : 'dark'
         ],
       height: '100%',
       width: '100%',
       padding: '10%',
       borderRadius: '49%',
-      border: `1px solid ${theme.palette.secondary.main}`,
+      border: `1px solid ${
+        theme.palette.secondary[
+          theme.palette.type === 'dark' ? 'light' : 'dark'
+        ]
+      }`,
       willChange: 'transform, box-shadow',
     },
   }),

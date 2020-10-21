@@ -23,8 +23,8 @@ const useClasses = makeStyles((theme) => ({
   bodyText: {
     maxWidth: '42ch',
     width: '100%',
-    lineHeight: 1.42,
-    fontSize: '2.5rem',
+    lineHeight: 1.2,
+    fontSize: '2rem',
   },
   fullBlock: {
     width: '100%',
@@ -44,12 +44,12 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
   },
   locationInfo: {
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     width: '100%',
-    lineHeight: 1.42,
+    lineHeight: 1.2,
   },
   figureImageWrap: {
-    padding: `0 ${theme.spacing(7)}px`,
+    padding: `0 ${theme.spacing(3)}px`,
     display: 'inline-block',
     position: 'relative',
   },
