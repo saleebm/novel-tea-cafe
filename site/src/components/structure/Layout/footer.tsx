@@ -11,12 +11,11 @@ const useClasses = makeStyles((theme) => ({
   },
   socialIconWrap: {
     width: '100%',
-    display: 'inline-flex',
+    display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: theme.spacing(3),
-    filter: 'brightness(0.88) contrast(1.3)',
+    paddingTop: theme.spacing(2),
   },
 }))
 
@@ -26,7 +25,7 @@ export function Footer() {
   return (
     <Container
       className={classes.footerWrap}
-      maxWidth={'lg'}
+      maxWidth={'md'}
       component={'footer'}
     >
       <Grid container spacing={3}>

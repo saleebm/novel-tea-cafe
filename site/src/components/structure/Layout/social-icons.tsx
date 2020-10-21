@@ -15,6 +15,7 @@ const useClasses = makeStyles((theme) => ({
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'baseline',
+    justifyContent: 'center',
     position: 'relative',
   },
   socialIcon: {
@@ -29,7 +30,7 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
     flex: 1,
     padding: 0,
-    display: 'inline-flex',
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
@@ -85,20 +86,10 @@ export function SocialIcons() {
   return (
     <>
       <AnimatedInPlainViewParent className={classes.socialArea}>
-        <Grid
-          container
-          spacing={0}
-          alignItems={'baseline'}
-          justify={'flex-start'}
-        >
+        <Grid container spacing={0}>
           {facebookIcon?.childImageSharp?.fixed &&
             socialLinks?.facebookPage && (
-              <Grid
-                item
-                xs={4}
-                className={classes.socialIconWrap}
-                sm={3}
-              >
+              <Grid item xs className={classes.socialIconWrap}>
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >
@@ -122,12 +113,7 @@ export function SocialIcons() {
             )}
           {twitterIcon?.childImageSharp?.fixed &&
             socialLinks?.twitterPage && (
-              <Grid
-                item
-                xs={4}
-                className={classes.socialIconWrap}
-                sm={3}
-              >
+              <Grid item xs className={classes.socialIconWrap}>
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >
@@ -151,12 +137,7 @@ export function SocialIcons() {
             )}
           {instagramIcon?.childImageSharp?.fixed &&
             socialLinks?.instagramPage && (
-              <Grid
-                item
-                xs={4}
-                className={classes.socialIconWrap}
-                sm={3}
-              >
+              <Grid item xs className={classes.socialIconWrap}>
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >
