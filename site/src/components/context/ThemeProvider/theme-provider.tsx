@@ -9,7 +9,7 @@ export function ThemeProvider({
   children: ReactNode | ReactNodeArray
 }) {
   const {
-    themeMode: { isDarkMode },
+    themeMode: { isDarkMode = true },
   } = useDarkMode()
 
   const materialTheme = useMemo(

@@ -6,11 +6,14 @@ import {
 } from 'gatsby'
 import { MousePositionProvider } from '@Components/context/MousePosition/mouse-position-provider'
 import { DarkModeContextProvider } from '@Components/context/DarkMode/dark-mode-context'
+import { ThemeProvider } from '@Components/context/ThemeProvider/theme-provider'
 
 export const wrapRootElement = ({
   element,
 }: WrapRootElementNodeArgs | WrapRootElementBrowserArgs) => (
   <MousePositionProvider>
-    <DarkModeContextProvider>{element}</DarkModeContextProvider>
+    <DarkModeContextProvider>
+      <ThemeProvider>{element}</ThemeProvider>
+    </DarkModeContextProvider>
   </MousePositionProvider>
 )
