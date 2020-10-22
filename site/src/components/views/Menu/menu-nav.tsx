@@ -3,6 +3,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { AppBar, Tab } from '@material-ui/core'
 import Tabs from '@material-ui/core/Tabs'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { Link } from 'gatsby'
 import { MenuPageKeys } from '@Components/views/Menu/menu'
 import { MenuNavContext } from '@Components/context/MenuNav/menu-nav-context'
 
@@ -76,7 +77,7 @@ export function MenuNav() {
           indicatorColor={'secondary'}
           textColor={'primary'}
           variant={isWideScreen ? 'fullWidth' : 'scrollable'}
-          scrollButtons={isWideScreen ? 'on' : 'off'}
+          scrollButtons={'on'}
           aria-label={'auto tabs'}
           orientation={isWideScreen ? 'vertical' : 'horizontal'}
           TabScrollButtonProps={{
@@ -87,7 +88,8 @@ export function MenuNav() {
             selected={getIfSelected(MenuPageKeys.kavaKava, 0)}
             fullWidth
             label={'Kava Kava'}
-            href={`#${MenuPageKeys.kavaKava}`}
+            component={Link}
+            to={`#${MenuPageKeys.kavaKava}`}
             className={classes.navigationButton}
             id={`auto-tab-0`}
             aria-controls={`auto-tabpanel-0`}
@@ -96,7 +98,8 @@ export function MenuNav() {
             selected={getIfSelected(MenuPageKeys.kratom, 1)}
             fullWidth
             label={'Kratom'}
-            href={`#${MenuPageKeys.kratom}`}
+            component={Link}
+            to={`#${MenuPageKeys.kratom}`}
             className={classes.navigationButton}
             id={`auto-tab-1`}
             aria-controls={`auto-tabpanel-1`}
@@ -104,8 +107,9 @@ export function MenuNav() {
           <Tab
             selected={getIfSelected(MenuPageKeys.addIns, 2)}
             fullWidth
+            component={Link}
             className={classes.navigationButton}
-            href={`#${MenuPageKeys.addIns}`}
+            to={`#${MenuPageKeys.addIns}`}
             label={'Add-ins: Make it Stronger'}
             id={`auto-tab-2`}
             aria-controls={`auto-tabpanel-2`}
@@ -113,8 +117,9 @@ export function MenuNav() {
           <Tab
             selected={getIfSelected(MenuPageKeys.herbalTea, 3)}
             fullWidth
+            component={Link}
             className={classes.navigationButton}
-            href={`#${MenuPageKeys.herbalTea}`}
+            to={`#${MenuPageKeys.herbalTea}`}
             label={'Herbal Tea'}
             id={`auto-tab-3`}
             aria-controls={`auto-tabpanel-3`}
@@ -122,8 +127,9 @@ export function MenuNav() {
           <Tab
             selected={getIfSelected(MenuPageKeys.coffee, 4)}
             fullWidth
+            component={Link}
             className={classes.navigationButton}
-            href={`#${MenuPageKeys.coffee}`}
+            to={`#${MenuPageKeys.coffee}`}
             label={'Coffee & Cold Brew'}
             textColor={'primary'}
             id={`auto-tab-4`}
@@ -132,8 +138,9 @@ export function MenuNav() {
           <Tab
             selected={getIfSelected(MenuPageKeys.superfoods, 5)}
             fullWidth
+            component={Link}
             className={classes.navigationButton}
-            href={`#${MenuPageKeys.superfoods}`}
+            to={`#${MenuPageKeys.superfoods}`}
             label={'Superfoods'}
             id={`auto-tab-5`}
             aria-controls={`auto-tabpanel-5`}
@@ -141,8 +148,9 @@ export function MenuNav() {
           <Tab
             selected={getIfSelected(MenuPageKeys.bulk, 6)}
             fullWidth
+            component={Link}
             className={classes.navigationButton}
-            href={`#${MenuPageKeys.bulk}`}
+            to={`#${MenuPageKeys.bulk}`}
             label={'Bulk Kratom & KavaKava'}
             id={`auto-tab-6`}
             aria-controls={`auto-tabpanel-6`}
