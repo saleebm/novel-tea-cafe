@@ -116,6 +116,8 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     position: 'relative',
     maxHeight: '50px',
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2.5),
   },
   menuItemWrapDesktop: {
     paddingTop: theme.spacing(3),
@@ -123,6 +125,7 @@ export const useStyles = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    rowGap: '1rem',
   },
   fullWidth: {
     width: '100%',

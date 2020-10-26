@@ -145,14 +145,17 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
+    placeContent: 'center',
   },
   imgContainer: {
     display: 'block',
+    position: 'relative',
     width: '100%',
     maxHeight: '300px',
+    maxWidth: '300px',
     margin: '0 auto',
     overflow: 'hidden',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       'textAlign': 'center',
       '& picture': {
         display: 'flex',
@@ -450,7 +453,7 @@ export function Specials({
                               className={classes.figureWrap}
                               spacing={0}
                             >
-                              <Grid item xs={12} md={6} lg={3}>
+                              <Grid item xs={12} md={4} lg={3}>
                                 {day.illustration?.image?.asset
                                   ?.fluid && (
                                   <AnimatedIOView
@@ -464,7 +467,8 @@ export function Specials({
                                         height: '300px',
                                         maxHeight: '300px',
                                         width: 'auto',
-                                        filter: `contrast(1.2) sepia(1) invert(${
+                                        margin: '0 auto',
+                                        filter: `contrast(1.04) sepia(1) invert(${
                                           isDarkMode ? 1 : 0
                                         }) brightness(${
                                           isDarkMode ? 0.9 : 1.1
