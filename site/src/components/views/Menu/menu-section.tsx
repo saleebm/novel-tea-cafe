@@ -2,16 +2,15 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { Divider, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import { useInView } from 'react-intersection-observer'
 
 import { MenuTitle } from '@Components/views/Menu/menu-title'
 import { MenuItem } from '@Components/views/Menu/menu-item'
 import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
-import { useIntersectionObserver } from '@Utils/hooks/use-intersection-observer'
 import { MenuNavContext } from '@Components/context/MenuNav/menu-nav-context'
 import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
@@ -40,12 +39,9 @@ export function MenuSection({
   const classes = useStyles()
   const { setMenuNav } = useContext(MenuNavContext)
   const [inView, setInView] = useState(false)
-  const intersectionRef = useRef(null)
-  const {
-    intersecting: intersectionCaught,
-  } = useIntersectionObserver(intersectionRef, {
+  const { ref, inView: intersectionCaught } = useInView({
     threshold: [0.05],
-    once: false,
+    triggerOnce: false,
     rootMargin: '42px 0px -69%',
   })
 
@@ -79,7 +75,7 @@ export function MenuSection({
           elevation={7}
           role={'tabpanel'}
           className={classes.menuPanelDupe}
-          innerRef={intersectionRef}
+          innerRef={ref}
         >
           <MenuTitle align={'center'} id={id} pageTitle={pageTitle} />
           {edges.map((addIn) => (
@@ -89,6 +85,6 @@ export function MenuSection({
         <Divider variant={'inset'} orientation={'horizontal'} />
       </>
     ),
-    [classes, edges, id, pageTitle, index],
+    [classes, edges, id, pageTitle, index, ref],
   )
 }

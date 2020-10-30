@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 
-import { MdMenu } from 'react-icons/lib/md'
-import { GoArchive as AllIcon, GoBeer, GoSquirrel, GoTag } from 'react-icons/lib/go'
+import { MdMenu } from 'react-icons/md'
+import { GoArchive as AllIcon, GoSquirrel, GoTag, GoPaintcan } from 'react-icons/go'
 
 export default S.listItem()
   .title('Menu')
@@ -13,7 +13,7 @@ export default S.listItem()
         S.listItem()
           .title('Menu Items')
           .schemaType('menuItem')
-          .icon(GoBeer)
+          .icon(GoPaintcan)
           .child(
             S.documentList('menuItem')
               .title('Published menu items')

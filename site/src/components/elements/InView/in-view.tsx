@@ -4,18 +4,8 @@ import {
   useReducedMotion,
   Variants,
 } from 'framer-motion'
-import React, {
-  ComponentProps,
-  FC,
-  memo,
-  useContext,
-  useMemo,
-  Children,
-} from 'react'
-import {
-  IntersectionContext,
-  IntersectionObserver,
-} from '@Components/context/IntersectionObserver'
+import { useInView } from 'react-intersection-observer'
+import React, { Children, ComponentProps, FC, useMemo } from 'react'
 
 export const wrapVariants: Variants = {
   hidden: {
@@ -31,32 +21,19 @@ export const wrapVariants: Variants = {
     },
   },
 }
-// simple float up animation
 export const childVariants: Variants = {
   hidden: {
-    y: 100,
+    rotateX: '-70deg',
     opacity: 0,
   },
   show: {
-    y: 0,
+    rotateX: '0deg',
     opacity: 1,
+    transition: {
+      duration: 0.2,
+    },
   },
 }
-
-/**
- * For intersection observer context wrap
- * https://shakuro.com/blog/framer-motion-tutorials-make-more-advanced-animations
- *
- * Requires a key on top, not as prop
- */
-export const AnimatedInView: FC<
-  ComponentProps<'div'> & {
-    reset?: boolean
-    threshold?: number
-  }
-> = ({ children, ...rest }) => (
-  <IntersectionObserver {...rest}>{children}</IntersectionObserver>
-)
 
 /**
  * The IO children, must be wrapped with AnimatedInView first
@@ -67,21 +44,27 @@ export const AnimatedIOView: FC<
     duration?: number
     delayOrder?: number
     disableScale?: boolean
+    once?: boolean
   }
 > = ({
   children,
   duration = 0.15,
   delayOrder = 0,
   disableScale = false,
+  once,
   ...rest
 }) => {
+  const { inView, ref } = useInView({
+    triggerOnce: once,
+  })
   const shouldReduceMotion = useReducedMotion()
-  const { inView } = useContext(IntersectionContext)
+  const offset = 0.4
+
   const transition = useMemo(
     () => ({
       duration,
       delay:
-        Math.min(delayOrder, 0.15) /
+        Math.min(delayOrder * offset, 0.15) /
         Math.min(Children.count(children) || 1, 3),
     }),
     [duration, delayOrder, children],
@@ -90,11 +73,13 @@ export const AnimatedIOView: FC<
   const variants = {
     hidden: {
       scale: disableScale ? 1 : 0,
+      rotateX: '-70deg',
       opacity: 0,
       transition,
     },
     show: {
       scale: 1,
+      rotateX: '0deg',
       opacity: 1,
       transition,
     },
@@ -102,6 +87,7 @@ export const AnimatedIOView: FC<
 
   return (
     <motion.div
+      ref={ref}
       initial={shouldReduceMotion ? 'show' : 'hidden'}
       animate={inView ? 'show' : 'hidden'}
       exit={shouldReduceMotion ? 'show' : 'hidden'}
@@ -115,24 +101,29 @@ export const AnimatedIOView: FC<
 
 // variant of above
 // without IO, uses AnimatePresence instead
-export const AnimatedInPlainViewParent: FC<ComponentProps<
-  typeof motion.div
->> = memo(({ children, ...rest }) => {
+// variant needs show and hidden keys
+export const AnimatedInPlainViewParent: FC<
+  ComponentProps<typeof motion.div> & { variant?: Variants }
+> = ({ children, variant = wrapVariants, ...rest }) => {
   const shouldReduceMotion = useReducedMotion()
-  return (
-    <AnimatePresence exitBeforeEnter>
-      <motion.div
-        initial={shouldReduceMotion ? 'show' : 'hidden'}
-        animate={'show'}
-        exit={shouldReduceMotion ? 'show' : 'hidden'}
-        variants={wrapVariants}
-        {...rest}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+  return useMemo(
+    () => (
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          initial={shouldReduceMotion ? 'show' : 'hidden'}
+          animate={'show'}
+          exit={shouldReduceMotion ? 'show' : 'hidden'}
+          variants={wrapVariants}
+          {...rest}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    ),
+    [shouldReduceMotion, children, rest],
   )
-})
+}
+
 // a child for the parent ^ that animates in accordion fashion
 export const AnimatedInViewChildDiv: FC<ComponentProps<
   typeof motion.div

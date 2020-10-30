@@ -17,7 +17,6 @@ import AudiotrackIcon from '@material-ui/icons/Audiotrack'
 import clsx from 'clsx'
 import {
   AnimatedInPlainViewParent,
-  AnimatedInView,
   AnimatedInViewChildDiv,
   AnimatedIOView,
 } from '@Components/elements/InView/in-view'
@@ -435,18 +434,16 @@ export function Specials({
                           elevation={3}
                           className={classes.dayPaper}
                         >
-                          <AnimatedInView
+                          <AnimatedIOView
                             className={classes.paperContent}
                           >
-                            <AnimatedIOView disableScale>
-                              <Typography
-                                className={classes.taglineText}
-                                variant={'h2'}
-                                color={'textSecondary'}
-                              >
-                                {day.heading}
-                              </Typography>
-                            </AnimatedIOView>
+                            <Typography
+                              className={classes.taglineText}
+                              variant={'h2'}
+                              color={'textSecondary'}
+                            >
+                              {day.heading}
+                            </Typography>
                             <Grid
                               container
                               component={'figure'}
@@ -455,9 +452,8 @@ export function Specials({
                             >
                               <Grid item xs={12} md={4} lg={3}>
                                 {day.illustration?.image?.asset
-                                  ?.fluid && (
-                                  <AnimatedIOView
-                                    disableScale
+                                  ?.fluid ? (
+                                  <div
                                     className={classes.imgContainer}
                                   >
                                     <GatsbyImage
@@ -479,8 +475,8 @@ export function Specials({
                                           .fluid as FluidObject
                                       }
                                     />
-                                  </AnimatedIOView>
-                                )}
+                                  </div>
+                                ) : null}
                               </Grid>
                               <Grid
                                 className={
@@ -491,36 +487,34 @@ export function Specials({
                                 md={6}
                                 component={'figcaption'}
                               >
-                                <AnimatedIOView disableScale>
-                                  {day.tagline?.map(
-                                    (tags, index) =>
-                                      tags &&
-                                      Array.isArray(tags.children) &&
-                                      tags.children.map((child) => (
-                                        <Typography
-                                          variant={'h3'}
-                                          component={'h3'}
-                                          key={`${index}`}
-                                          gutterBottom
-                                        >
-                                          {child?.text}
-                                        </Typography>
-                                      )),
-                                  )}
-                                  {day.details && (
-                                    <Typography
-                                      variant={'h4'}
-                                      component={'p'}
-                                      gutterBottom
-                                      className={classes.dayDetails}
-                                    >
-                                      {day.details}
-                                    </Typography>
-                                  )}
-                                </AnimatedIOView>
+                                {day.tagline?.map(
+                                  (tags, index) =>
+                                    tags &&
+                                    Array.isArray(tags.children) &&
+                                    tags.children.map((child) => (
+                                      <Typography
+                                        variant={'h3'}
+                                        component={'h3'}
+                                        key={`${index}`}
+                                        gutterBottom
+                                      >
+                                        {child?.text}
+                                      </Typography>
+                                    )),
+                                )}
+                                {day.details && (
+                                  <Typography
+                                    variant={'h4'}
+                                    component={'p'}
+                                    gutterBottom
+                                    className={classes.dayDetails}
+                                  >
+                                    {day.details}
+                                  </Typography>
+                                )}
                               </Grid>
                             </Grid>
-                          </AnimatedInView>
+                          </AnimatedIOView>
                         </Paper>
                       </AnimatedInViewChildDiv>
                     </Grid>
