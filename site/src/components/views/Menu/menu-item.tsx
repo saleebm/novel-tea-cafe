@@ -27,12 +27,15 @@ const useStyles = makeStyles((_theme) => ({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: '2.9rem',
+    fontSize: 'clamp(1.3rem, 8vw, 2.4rem)',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    fallback: {
+      fontSize: '2rem',
+    },
   },
   cardContent: {
     flex: '0 1 auto',
@@ -63,14 +66,14 @@ export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
             <Typography
               className={classes.title}
               color={'textSecondary'}
-              variant={'h4'}
-              component={'h2'}
+              variant={'h3'}
+              component={'h3'}
             >
               {theRealMenuItem.node.name}
             </Typography>
             <Typography
               color={'textPrimary'}
-              variant={'h5'}
+              variant={'body1'}
               component={'p'}
             >
               {theRealMenuItem.node.description}

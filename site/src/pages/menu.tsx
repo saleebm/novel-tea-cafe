@@ -18,7 +18,7 @@ function MenuPage({ data }: MenuPage) {
           'Kratom, kava kava, herbal tea, and more available fresh at NovelTea Cafe.'
         }
       />
-      <Container maxWidth={'xl'}>
+      <Container maxWidth={'lg'}>
         <Menu menu={data} />
       </Container>
     </>
