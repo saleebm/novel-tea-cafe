@@ -7,7 +7,6 @@ import React, {
 import { Divider, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { useInView } from 'react-intersection-observer'
-
 import { MenuTitle } from '@Components/views/Menu/menu-title'
 import { MenuItem } from '@Components/views/Menu/menu-item'
 import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
@@ -39,7 +38,7 @@ export function MenuSection({
   const classes = useStyles()
   const { setMenuNav } = useContext(MenuNavContext)
   const [inView, setInView] = useState(false)
-  const { ref, inView: intersectionCaught } = useInView({
+  const { inView: intersectionCaught, ref } = useInView({
     threshold: [0.05],
     triggerOnce: false,
     rootMargin: '42px 0px -69%',

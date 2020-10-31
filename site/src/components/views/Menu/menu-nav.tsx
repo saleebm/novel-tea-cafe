@@ -47,7 +47,6 @@ export function MenuNav() {
   const handleChange = useCallback(
     (event: React.ChangeEvent<{}>, newValue: number) => {
       setMenuNav({ menuLocation: newValue })
-      //  optionally go to `auto-tab-${newValue}` manually
     },
     [setMenuNav],
   )

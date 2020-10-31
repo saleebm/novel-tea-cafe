@@ -21,16 +21,17 @@ export const wrapVariants: Variants = {
     },
   },
 }
+// simple float up animation
 export const childVariants: Variants = {
   hidden: {
-    rotateX: '-70deg',
+    y: 100,
     opacity: 0,
   },
   show: {
-    rotateX: '0deg',
+    y: 0,
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: 0.35,
     },
   },
 }
