@@ -17,6 +17,7 @@ const useClasses = makeStyles((theme) => ({
     alignItems: 'baseline',
     justifyContent: 'center',
     position: 'relative',
+    width: '100%',
   },
   socialIcon: {
     'willChange': 'filter, transform',
@@ -86,7 +87,12 @@ export function SocialIcons() {
   return (
     <>
       <AnimatedInPlainViewParent className={classes.socialArea}>
-        <Grid container spacing={0}>
+        <Grid
+          container
+          spacing={0}
+          justify={'center'}
+          alignItems={'center'}
+        >
           {facebookIcon?.childImageSharp?.fixed &&
             socialLinks?.facebookPage && (
               <Grid item xs className={classes.socialIconWrap}>

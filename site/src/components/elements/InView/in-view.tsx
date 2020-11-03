@@ -59,7 +59,7 @@ export const AnimatedIOView: FC<
     triggerOnce: once,
   })
   const shouldReduceMotion = useReducedMotion()
-  const offset = 0.4
+  const offset = 0.04
 
   const transition = useMemo(
     () => ({
@@ -74,13 +74,13 @@ export const AnimatedIOView: FC<
   const variants = {
     hidden: {
       scale: disableScale ? 1 : 0,
-      rotateX: '-70deg',
+      translateY: -100,
       opacity: 0,
       transition,
     },
     show: {
       scale: 1,
-      rotateX: '0deg',
+      translateY: 0,
       opacity: 1,
       transition,
     },
@@ -114,14 +114,14 @@ export const AnimatedInPlainViewParent: FC<
           initial={shouldReduceMotion ? 'show' : 'hidden'}
           animate={'show'}
           exit={shouldReduceMotion ? 'show' : 'hidden'}
-          variants={wrapVariants}
+          variants={variant}
           {...rest}
         >
           {children}
         </motion.div>
       </AnimatePresence>
     ),
-    [shouldReduceMotion, children, rest],
+    [shouldReduceMotion, children, variant, rest],
   )
 }
 

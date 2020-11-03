@@ -426,6 +426,9 @@ export function Specials({
                       xs={12}
                     >
                       <AnimatedInViewChildDiv
+                        transition={{
+                          when: 'beforeChildren',
+                        }}
                         className={classes.dayAnimationContainer}
                       >
                         <Paper
