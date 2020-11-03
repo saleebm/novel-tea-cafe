@@ -5,14 +5,10 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { Helmet } from 'react-helmet-async'
 import useEventListener from '@use-it/event-listener'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { CssBaseline, Theme, Container } from '@material-ui/core'
-import {
-  GatsbySeo,
-  LocalBusinessJsonLd,
-} from 'gatsby-plugin-next-seo/lib'
+import { Container, CssBaseline, Theme } from '@material-ui/core'
+import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { Header } from '@Components/structure/Layout/header'
@@ -70,40 +66,29 @@ export function Layout({ children }: Layout) {
     mainContainerRef?.current ?? undefined,
   )
 
-  const { file } = useStaticQuery(graphql`
+  const { file, allFile } = useStaticQuery(graphql`
     query LOGO_IMG {
       file(relativePath: { eq: "logo.png" }) {
         publicURL
+      }
+
+      allFile(filter: { relativeDirectory: { eq: "nt" } }) {
+        totalCount
+        nodes {
+          publicURL
+        }
       }
     }
   `)
 
   const currentDate = new Date()
 
+  const images = allFile?.nodes?.map(
+    (node: { publicURL: string }) => node.publicURL,
+  )
+
   return (
     <>
-      <Helmet>
-        <link
-          href={
-            'https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap'
-          }
-          rel={'stylesheet'}
-        />
-      </Helmet>
-      <GatsbySeo
-        openGraph={{
-          url: 'https://www.novelteaorlando.com',
-          title: 'NovelTea Cafe Orlando',
-          description:
-            'Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!',
-          images: [
-            {
-              url: file.publicURL,
-              alt: 'Novel Tea bucket with leaves inside',
-            },
-          ],
-        }}
-      />
       <LocalBusinessJsonLd
         type={'CafeOrCoffeeShop'}
         id={'https://www.novelteaorlando.com'}
@@ -143,10 +128,7 @@ export function Layout({ children }: Layout) {
           latitude: '28.6329066',
           longitude: '-81.3230062',
         }}
-        images={[
-          //todo add more
-          file.publicURL,
-        ]}
+        images={[file.publicURL, ...images]}
         overrides={{
           '@type': 'CafeOrCoffeeShop',
           'hasMenu': 'https://novelteaorlando.com/menu',

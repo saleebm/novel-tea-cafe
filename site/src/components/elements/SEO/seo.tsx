@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {
   GatsbySeo,
@@ -11,8 +11,15 @@ interface Seo {
   image?: OpenGraphImages[]
 }
 
+/**
+ * manually added to every page to add seo.
+ * @param description
+ * @param title
+ * @param image
+ * @constructor
+ */
 export function SEO({ description, title, image }: Seo) {
-  const { site, file } = useStaticQuery(graphql`
+  const { site, file, allFile } = useStaticQuery(graphql`
     query SEO_DATA {
       site {
         siteMetadata {
@@ -24,8 +31,40 @@ export function SEO({ description, title, image }: Seo) {
         publicURL
         name
       }
+      allFile(filter: { relativeDirectory: { eq: "nt" } }) {
+        totalCount
+        nodes {
+          publicURL
+        }
+      }
     }
   `)
+
+  const imagesOpenGraph: OpenGraphImages[] = useMemo(
+    () => [
+      {
+        alt: 'Bucket of two leaves',
+        url: file.publicURL,
+        height: 300,
+        width: 200,
+      },
+    ],
+    [file.publicURL],
+  )
+
+  useEffect(() => {
+    if (Array.isArray(image)) {
+      imagesOpenGraph.concat(image)
+    }
+    if (Array.isArray(allFile.nodes)) {
+      allFile.nodes.forEach((node: { publicURL: string }) => {
+        imagesOpenGraph.push({
+          url: node.publicURL,
+        })
+      })
+    }
+  }, [image, imagesOpenGraph, allFile.nodes])
+
   return useMemo(
     () => (
       <>
@@ -37,16 +76,11 @@ export function SEO({ description, title, image }: Seo) {
           }
           title={title}
           openGraph={{
-            images: image
-              ? image
-              : [
-                  {
-                    alt: 'Bucket of two leaves',
-                    url: file.publicURL,
-                    height: 300,
-                    width: 200,
-                  },
-                ],
+            url: 'https://www.novelteaorlando.com',
+            title: 'NovelTea Cafe Orlando',
+            description:
+              'Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!',
+            images: imagesOpenGraph,
           }}
           metaTags={[
             {
@@ -111,10 +145,15 @@ export function SEO({ description, title, image }: Seo) {
               rel: 'shortcut icon',
               href: '/assets/images/favicons/favicon.ico',
             },
+            {
+              rel: 'stylesheet',
+              href:
+                'https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap',
+            },
           ]}
         />
       </>
     ),
-    [description, file, site, title, image],
+    [description, site, title, imagesOpenGraph],
   )
 }

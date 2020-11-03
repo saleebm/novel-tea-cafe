@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import {
   Button,
@@ -128,9 +128,7 @@ const useStyles = makeStyles((theme) => ({
 function IndexPage({ data }: Index) {
   const classes = useStyles()
   const { sanityPage, sanitySiteSettings } = data
-  useEffect(() => {
-    console.log(data)
-  })
+
   return (
     <>
       <SEO
