@@ -9,6 +9,7 @@ import {
 import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import { FixedObject } from 'gatsby-image'
+import { useLocation } from '@reach/router'
 
 import { MenuToggle } from '@Components/elements/MenuToggle/menu-toggle'
 import {
@@ -30,6 +31,7 @@ interface MobileNavProps {
 export function MobileNav({ logoSrc }: MobileNavProps) {
   const classes = useStyles()
   const [navOpen, setNavOpen] = useState(false)
+  const { pathname } = useLocation()
 
   return useMemo(
     () => (
@@ -102,7 +104,18 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                             component={Link}
                             className={classes.menuItems}
                             onClick={() => setNavOpen(false)}
-                            color={'textSecondary'}
+                            color={
+                              pathname.includes(route.path)
+                                ? 'textSecondary'
+                                : 'textPrimary'
+                            }
+                            style={{
+                              textDecoration: pathname.includes(
+                                route.path,
+                              )
+                                ? 'underline'
+                                : 'unset',
+                            }}
                           >
                             {route.name}
                           </MenuItem>
@@ -123,6 +136,6 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
         </div>
       </>
     ),
-    [classes, setNavOpen, navOpen, logoSrc],
+    [classes, setNavOpen, navOpen, logoSrc, pathname],
   )
 }

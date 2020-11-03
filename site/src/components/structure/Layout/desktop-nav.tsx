@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { useLocation } from '@reach/router'
 import { Link } from 'gatsby'
 import { MenuItem } from '@material-ui/core'
 import clsx from 'clsx'
@@ -14,6 +15,8 @@ import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
 
 export function DesktopNav() {
   const classes = useStyles()
+  const { pathname } = useLocation()
+
   return useMemo(
     () => (
       <AnimatedInPlainViewParent
@@ -36,7 +39,16 @@ export function DesktopNav() {
                     to={route.path}
                     component={Link}
                     className={classes.menuItemDesktop}
-                    color={'textSecondary'}
+                    color={
+                      pathname.includes(route.path)
+                        ? 'textPrimary'
+                        : 'textSecondary'
+                    }
+                    style={{
+                      textDecoration: pathname.includes(route.path)
+                        ? 'underline'
+                        : 'unset',
+                    }}
                   >
                     {route.name}
                   </MenuItem>
@@ -52,6 +64,6 @@ export function DesktopNav() {
         </nav>
       </AnimatedInPlainViewParent>
     ),
-    [classes],
+    [classes, pathname],
   )
 }

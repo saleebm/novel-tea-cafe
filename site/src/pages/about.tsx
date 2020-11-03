@@ -24,7 +24,10 @@ const useClasses = makeStyles((theme) => ({
     maxWidth: '42ch',
     width: '100%',
     lineHeight: 1.2,
-    fontSize: '2rem',
+    fontSize: 'clamp(1.3rem, 10vw, 1.7rem)',
+    fallback: {
+      fontSize: '18px',
+    },
   },
   fullBlock: {
     width: '100%',
@@ -44,9 +47,12 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
   },
   locationInfo: {
-    fontSize: '2rem',
+    fontSize: 'clamp(1.3rem, 10vw, 1.7rem)',
     width: '100%',
     lineHeight: 1.2,
+    fallback: {
+      fontSize: '18px',
+    },
   },
   figureImageWrap: {
     padding: `0 ${theme.spacing(3)}px`,

@@ -8,8 +8,11 @@ import React, {
 import { Helmet } from 'react-helmet-async'
 import useEventListener from '@use-it/event-listener'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { CssBaseline, Theme } from '@material-ui/core'
-import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
+import { CssBaseline, Theme, Container } from '@material-ui/core'
+import {
+  GatsbySeo,
+  LocalBusinessJsonLd,
+} from 'gatsby-plugin-next-seo/lib'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import { Header } from '@Components/structure/Layout/header'
@@ -20,7 +23,6 @@ import { Footer } from '@Components/structure/Layout/footer'
 
 import styles from './layout.mod.scss'
 import '@Styles/index.global.scss'
-import Container from '@material-ui/core/Container'
 
 interface Layout {
   children: ReactNode | ReactNodeArray
@@ -88,6 +90,20 @@ export function Layout({ children }: Layout) {
           rel={'stylesheet'}
         />
       </Helmet>
+      <GatsbySeo
+        openGraph={{
+          url: 'https://www.novelteaorlando.com',
+          title: 'NovelTea Cafe Orlando',
+          description:
+            'Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!',
+          images: [
+            {
+              url: file.publicURL,
+              alt: 'Novel Tea bucket with leaves inside',
+            },
+          ],
+        }}
+      />
       <LocalBusinessJsonLd
         type={'CafeOrCoffeeShop'}
         id={'https://www.novelteaorlando.com'}
