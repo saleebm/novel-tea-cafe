@@ -105,16 +105,23 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                             className={classes.menuItems}
                             onClick={() => setNavOpen(false)}
                             color={
-                              pathname.includes(route.path)
+                              (route.path === '/' &&
+                                (pathname === '' ||
+                                  pathname === '/')) ||
+                              (route.path !== '/' &&
+                                pathname.includes(route.path))
                                 ? 'textSecondary'
                                 : 'textPrimary'
                             }
                             style={{
-                              textDecoration: pathname.includes(
-                                route.path,
-                              )
-                                ? 'underline'
-                                : 'unset',
+                              textDecoration:
+                                (route.path === '/' &&
+                                  (pathname === '' ||
+                                    pathname === '/')) ||
+                                (route.path !== '/' &&
+                                  pathname.includes(route.path))
+                                  ? 'underline'
+                                  : 'unset',
                             }}
                           >
                             {route.name}
@@ -122,7 +129,6 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                         </MouseTrap>
                       </AnimatedInViewChildDiv>
                     ))}
-
                     <AnimatedInViewChildDiv
                       className={classes.darkModeArea}
                     >
