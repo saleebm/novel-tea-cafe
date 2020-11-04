@@ -87,16 +87,13 @@ const useStyles = makeStyles((theme) => ({
     '&:nth-child(2n)': {
       // the daypaper
       '& article': {
-        'alignSelf': 'flex-end',
-        'borderBottomRightRadius': '3px',
-        'borderTopRightRadius': '3px',
-        'borderTopLeftRadius': '0 !important',
-        'borderBottomLeftRadius': '0 !important',
-        'transform': 'skew(-9deg) !important',
-        'borderImageSource': `linear-gradient(-60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
-        '& > div': {
-          transform: 'skew(9deg) !important',
-        },
+        alignSelf: 'flex-end',
+        borderBottomRightRadius: '3px',
+        borderTopRightRadius: '3px',
+        borderTopLeftRadius: '0 !important',
+        borderBottomLeftRadius: '0 !important',
+        transform: 'skew(-9deg) !important',
+        borderImageSource: `linear-gradient(-60deg, #a0a0a0, #4e5969, #d19e04, #a166ab, #5073b8, #1098ad, #07b39b, #dba100)`,
       },
     },
   },

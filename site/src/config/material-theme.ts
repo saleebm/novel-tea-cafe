@@ -13,7 +13,7 @@ const typography: TypographyOptions = {
     textTransform: 'initial',
     fontVariant: 'small-caps',
     fontVariationSettings:
-      '"wght" 400, "CONT" 1000, "MIDL" 0, "SALT" 1',
+      '"MONO" 0, "CASL" 1, "wght" 400, "CRSV" 0.5',
   },
   h2: {
     fontSize: '4.2rem',
@@ -22,7 +22,8 @@ const typography: TypographyOptions = {
     fontFamily: "'Recursive', sans-serif",
     textTransform: 'initial',
     fontVariant: 'petite-caps',
-    fontVariationSettings: '"wght" 300, "CONT" 0, "MIDL" 0, "SALT" 1',
+    fontVariationSettings:
+      '"MONO" 0, "CASL" 1, "wght" 400, "CRSV" 0.5',
   },
   h3: {
     fontSize: '3.75rem',
@@ -30,7 +31,8 @@ const typography: TypographyOptions = {
     fontFamily: "'Recursive', sans-serif",
     textTransform: 'initial',
     fontVariant: 'small-caps',
-    fontVariationSettings: '"wght" 400, "CONT" 500, "MIDL" 0',
+    fontVariationSettings:
+      '"MONO" 0, "CASL" 1, "wght" 400, "CRSV" 0.5',
     fontStyle: 'oblique 2.25deg',
   },
   h4: {
@@ -62,7 +64,8 @@ const typography: TypographyOptions = {
     letterSpacing: '-0.018em',
     lineHeight: 1.23,
     whiteSpace: 'pre-wrap',
-    fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
+    fontVariationSettings:
+      '"MONO" 0, "CASL" 1, "wght" 400, "CRSV" 0.5',
   },
   body2: {
     fontFamily: "'Recursive', sans-serif",
@@ -76,7 +79,8 @@ const typography: TypographyOptions = {
     fontSize: '1.025rem',
     letterSpacing: '-0.042em',
     lineHeight: 1.3,
-    fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
+    fontVariationSettings:
+      '"MONO" 0, "CASL" 1, "wght" 400, "CRSV" 0.5',
   },
   subtitle2: {
     fontFamily: "'Recursive', sans-serif",

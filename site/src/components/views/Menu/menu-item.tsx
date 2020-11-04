@@ -48,6 +48,9 @@ const useStyles = makeStyles((_theme) => ({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
+  description: {
+    maxWidth: '50ch',
+  },
 }))
 
 export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
@@ -75,6 +78,7 @@ export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
               color={'textPrimary'}
               variant={'body1'}
               component={'p'}
+              className={classes.description}
             >
               {theRealMenuItem.node.description}
             </Typography>
