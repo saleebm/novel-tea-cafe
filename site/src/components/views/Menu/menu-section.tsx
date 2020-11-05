@@ -9,14 +9,13 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useInView } from 'react-intersection-observer'
 import { MenuTitle } from '@Components/views/Menu/menu-title'
 import { MenuItem } from '@Components/views/Menu/menu-item'
-import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
 import { MenuNavContext } from '@Components/context/MenuNav/menu-nav-context'
 import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
 interface MenuSection {
   id: string
   pageTitle: string
-  edges: Menu_Item_EdgeFragment[]
+  edges: Readonly<GatsbyTypes.MENU_ITEM_EDGEFragment[]>
   index: number
 }
 

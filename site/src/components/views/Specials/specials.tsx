@@ -1,12 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
-import {
-  Backdrop,
-  Container,
-  Grid,
-  Paper,
-  Typography,
-} from '@material-ui/core'
+import { Backdrop, Grid, Paper, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import TodayIcon from '@material-ui/icons/Today'
 import ViewDayIcon from '@material-ui/icons/ViewDay'
@@ -20,27 +14,25 @@ import {
   AnimatedInViewChildDiv,
   AnimatedIOView,
 } from '@Components/elements/InView/in-view'
-import {
-  DayFragment,
-  Maybe,
-  TaglineFragment,
-} from '@Graphql/gatsby-graphql'
 import { useDarkMode } from '@Utils/hooks/use-dark-mode'
 
 export interface Specials {
-  sanitySiteSettings?: Maybe<{
-    happyHour?: Maybe<Array<Maybe<TaglineFragment>>>
+  sanitySiteSettings: GatsbyTypes.Maybe<{
+    readonly happyHour: GatsbyTypes.Maybe<
+      ReadonlyArray<GatsbyTypes.Maybe<GatsbyTypes.TAGLINEFragment>>
+    >
   }>
+
   allSanityWeeklyEvents: {
-    edges: Array<{
-      node: {
-        monday?: Maybe<DayFragment>
-        tuesday?: Maybe<DayFragment>
-        wednesday?: Maybe<DayFragment>
-        thursday?: Maybe<DayFragment>
-        friday?: Maybe<DayFragment>
-        saturday?: Maybe<DayFragment>
-        sunday?: Maybe<DayFragment>
+    readonly edges: ReadonlyArray<{
+      readonly node: {
+        readonly monday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly tuesday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly wednesday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly thursday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly friday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly saturday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
+        readonly sunday: GatsbyTypes.Maybe<GatsbyTypes.DAYFragment>
       }
     }>
   }
@@ -48,6 +40,7 @@ export interface Specials {
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    padding: `${theme.spacing(1)}px ${theme.spacing(1.5)}px`,
     marginTop: theme.spacing(1),
     width: '100%',
     display: 'flex',
@@ -75,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   daysContainer: {
     width: '100%',
+    padding: theme.spacing(3),
   },
   fullWidthBlock: {
     width: '100%',
@@ -119,13 +113,16 @@ const useStyles = makeStyles((theme) => ({
     transform: 'skew(-9deg)',
   },
   taglineText: {
+    fontSize: 'clamp(1.2rem, 10vw, 2rem)',
     textAlign: 'center',
-    fontSize: '2.3rem',
     wordWrap: 'normal',
     overflowWrap: 'normal',
     whiteSpace: 'pre-wrap',
     wordBreak: 'keep-all',
     hyphens: 'auto',
+    fallback: {
+      fontSize: '1.7rem',
+    },
   },
   dayDetails: {
     wordWrap: 'normal',
@@ -147,8 +144,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     position: 'relative',
     width: '100%',
-    maxHeight: '300px',
-    maxWidth: '300px',
+    maxHeight: '250px',
+    maxWidth: '250px',
     margin: '0 auto',
     overflow: 'hidden',
     [theme.breakpoints.down('sm')]: {
@@ -296,11 +293,7 @@ export function Specials({
 
   return useMemo(
     () => (
-      <Container
-        className={classes.container}
-        component={'section'}
-        maxWidth={'lg'}
-      >
+      <section className={classes.container}>
         <AnimatedInPlainViewParent className={classes.fullWidthBlock}>
           <AnimatedInViewChildDiv>
             <Typography
@@ -311,7 +304,95 @@ export function Specials({
               Specials
             </Typography>
           </AnimatedInViewChildDiv>
-          <Grid container spacing={3}>
+          <AnimatedInViewChildDiv className={classes.fullWidthBlock}>
+            <Typography
+              className={classes.weeklyTitleWrap}
+              variant={'h2'}
+              color={'textPrimary'}
+            >
+              Happy Hour
+            </Typography>
+          </AnimatedInViewChildDiv>
+          <AnimatedInViewChildDiv>
+            <Paper
+              variant={'elevation'}
+              component={'article'}
+              elevation={3}
+              className={classes.dayPaper}
+            >
+              <Grid
+                container
+                spacing={2}
+                className={clsx(
+                  classes.paperContent,
+                  classes.happyHourGridWrap,
+                )}
+                alignItems={'center'}
+                justify={'center'}
+              >
+                <Grid
+                  className={classes.happyHourGridItem}
+                  item
+                  xs={12}
+                >
+                  <AnimatedInViewChildDiv
+                    className={classes.happyHourDeetWrap}
+                  >
+                    {sanitySiteSettings?.happyHour &&
+                      Array.isArray(sanitySiteSettings.happyHour) &&
+                      sanitySiteSettings.happyHour.map(
+                        (tags, _index) =>
+                          tags &&
+                          Array.isArray(tags.children) &&
+                          tags.children.map(
+                            (
+                              child:
+                                | Pick<
+                                    GatsbyTypes.SanitySpan,
+                                    'text' | 'marks'
+                                  >
+                                | undefined,
+                              index: number,
+                            ) => (
+                              <div
+                                key={`${index}`}
+                                className={classes.happyHour}
+                              >
+                                <AudiotrackIcon
+                                  fontSize={'large'}
+                                  className={classes.happyHourIcon}
+                                  color={
+                                    index % 2 === 0
+                                      ? 'secondary'
+                                      : 'primary'
+                                  }
+                                />
+                                <Typography
+                                  variant={'subtitle2'}
+                                  component={'p'}
+                                  align={'center'}
+                                  gutterBottom
+                                >
+                                  <span
+                                    className={classes.happyHourText}
+                                  >
+                                    {child?.text}
+                                  </span>
+                                </Typography>
+                              </div>
+                            ),
+                          ),
+                      )}
+                  </AnimatedInViewChildDiv>
+                </Grid>
+              </Grid>
+            </Paper>
+          </AnimatedInViewChildDiv>
+          <Grid
+            spacing={3}
+            container
+            className={classes.daysContainer}
+          >
             <Grid item xs={12}>
               <AnimatedInViewChildDiv
                 className={classes.fullWidthBlock}
@@ -321,207 +402,144 @@ export function Specials({
                   variant={'h2'}
                   color={'textPrimary'}
                 >
-                  Happy Hour
+                  Weekly Events
                 </Typography>
               </AnimatedInViewChildDiv>
-              <AnimatedInViewChildDiv>
-                <Paper
-                  variant={'elevation'}
-                  component={'article'}
-                  elevation={3}
-                  className={classes.dayPaper}
+            </Grid>
+            {days.weeklyEventData.map(
+              (
+                day: GatsbyTypes.DAYFragment & {
+                  dayName: string
+                },
+              ) => (
+                <Grid
+                  id={day.dayName}
+                  className={classes.dayWrap}
+                  item
+                  key={day.dayName}
+                  xs={12}
                 >
-                  <Grid
-                    container
-                    spacing={1}
-                    className={clsx(
-                      classes.paperContent,
-                      classes.happyHourGridWrap,
-                    )}
-                    alignItems={'center'}
-                    justify={'center'}
+                  <AnimatedInViewChildDiv
+                    transition={{
+                      when: 'beforeChildren',
+                    }}
+                    className={classes.dayAnimationContainer}
                   >
-                    <Grid
-                      className={classes.happyHourGridItem}
-                      item
-                      xs={12}
+                    <Paper
+                      variant={'elevation'}
+                      component={'article'}
+                      elevation={3}
+                      className={classes.dayPaper}
                     >
-                      <AnimatedInViewChildDiv
-                        className={classes.happyHourDeetWrap}
+                      <AnimatedIOView
+                        once
+                        className={classes.paperContent}
                       >
-                        {sanitySiteSettings?.happyHour &&
-                          Array.isArray(
-                            sanitySiteSettings.happyHour,
-                          ) &&
-                          sanitySiteSettings.happyHour.map(
-                            (tags, _index) =>
-                              tags &&
-                              Array.isArray(tags.children) &&
-                              tags.children.map((child, index) => (
-                                <div
-                                  key={`${index}`}
-                                  className={classes.happyHour}
-                                >
-                                  <AudiotrackIcon
-                                    fontSize={'large'}
-                                    className={classes.happyHourIcon}
-                                    color={
-                                      index % 2 === 0
-                                        ? 'secondary'
-                                        : 'primary'
-                                    }
-                                  />
-                                  <Typography
-                                    variant={'subtitle2'}
-                                    component={'p'}
-                                    align={'center'}
-                                    gutterBottom
-                                  >
-                                    <span
-                                      className={
-                                        classes.happyHourText
-                                      }
+                        <Typography
+                          className={classes.taglineText}
+                          variant={'h2'}
+                          color={'textSecondary'}
+                        >
+                          {day.heading}
+                        </Typography>
+                        <Grid
+                          container
+                          component={'figure'}
+                          className={classes.figureWrap}
+                          spacing={0}
+                        >
+                          <Grid item xs={12} md={4} lg={3}>
+                            {day.illustration?.image?.asset?.fluid ? (
+                              <div className={classes.imgContainer}>
+                                <GatsbyImage
+                                  imgStyle={{
+                                    objectFit: 'contain !important',
+                                    height: '300px',
+                                    maxHeight: '300px',
+                                    width: 'auto',
+                                    margin: '0 auto',
+                                    filter: `contrast(1.04) sepia(1) invert(${
+                                      isDarkMode ? 1 : 0
+                                    }) brightness(${
+                                      isDarkMode ? 0.9 : 1.1
+                                    })`,
+                                  }}
+                                  fluid={
+                                    day.illustration.image.asset
+                                      .fluid as FluidObject
+                                  }
+                                />
+                              </div>
+                            ) : null}
+                          </Grid>
+                          <Grid
+                            className={classes.taglineFigureCaption}
+                            item
+                            xs={12}
+                            md={6}
+                            component={'figcaption'}
+                          >
+                            {day.tagline?.map(
+                              (
+                                tags:
+                                  | (Pick<
+                                      GatsbyTypes.SanityBlock,
+                                      'style' | 'list'
+                                    > & {
+                                      readonly children: GatsbyTypes.Maybe<
+                                        ReadonlyArray<
+                                          GatsbyTypes.Maybe<
+                                            Pick<
+                                              GatsbyTypes.SanitySpan,
+                                              'text' | 'marks'
+                                            >
+                                          >
+                                        >
+                                      >
+                                    })
+                                  | undefined,
+                                index,
+                              ) =>
+                                tags &&
+                                Array.isArray(tags.children) &&
+                                tags.children.map(
+                                  (
+                                    child:
+                                      | Pick<
+                                          GatsbyTypes.SanitySpan,
+                                          'text' | 'marks'
+                                        >
+                                      | undefined,
+                                  ) => (
+                                    <Typography
+                                      variant={'h3'}
+                                      component={'h3'}
+                                      key={`${index}`}
+                                      gutterBottom
                                     >
                                       {child?.text}
-                                    </span>
-                                  </Typography>
-                                </div>
-                              )),
-                          )}
-                      </AnimatedInViewChildDiv>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </AnimatedInViewChildDiv>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid
-                spacing={3}
-                container
-                className={classes.daysContainer}
-              >
-                <Grid item xs={12}>
-                  <AnimatedInViewChildDiv
-                    className={classes.fullWidthBlock}
-                  >
-                    <Typography
-                      className={classes.weeklyTitleWrap}
-                      variant={'h2'}
-                      color={'textPrimary'}
-                    >
-                      Weekly Events
-                    </Typography>
+                                    </Typography>
+                                  ),
+                                ),
+                            )}
+                            {day.details && (
+                              <Typography
+                                variant={'h4'}
+                                component={'p'}
+                                gutterBottom
+                                className={classes.dayDetails}
+                              >
+                                {day.details}
+                              </Typography>
+                            )}
+                          </Grid>
+                        </Grid>
+                      </AnimatedIOView>
+                    </Paper>
                   </AnimatedInViewChildDiv>
                 </Grid>
-                {days.weeklyEventData.map(
-                  (day: DayFragment & { dayName: string }) => (
-                    <Grid
-                      id={day.dayName}
-                      className={classes.dayWrap}
-                      item
-                      key={day.dayName}
-                      xs={12}
-                    >
-                      <AnimatedInViewChildDiv
-                        transition={{
-                          when: 'beforeChildren',
-                        }}
-                        className={classes.dayAnimationContainer}
-                      >
-                        <Paper
-                          variant={'elevation'}
-                          component={'article'}
-                          elevation={3}
-                          className={classes.dayPaper}
-                        >
-                          <AnimatedIOView
-                            className={classes.paperContent}
-                          >
-                            <Typography
-                              className={classes.taglineText}
-                              variant={'h2'}
-                              color={'textSecondary'}
-                            >
-                              {day.heading}
-                            </Typography>
-                            <Grid
-                              container
-                              component={'figure'}
-                              className={classes.figureWrap}
-                              spacing={0}
-                            >
-                              <Grid item xs={12} md={4} lg={3}>
-                                {day.illustration?.image?.asset
-                                  ?.fluid ? (
-                                  <div
-                                    className={classes.imgContainer}
-                                  >
-                                    <GatsbyImage
-                                      imgStyle={{
-                                        objectFit:
-                                          'contain !important',
-                                        height: '300px',
-                                        maxHeight: '300px',
-                                        width: 'auto',
-                                        margin: '0 auto',
-                                        filter: `contrast(1.04) sepia(1) invert(${
-                                          isDarkMode ? 1 : 0
-                                        }) brightness(${
-                                          isDarkMode ? 0.9 : 1.1
-                                        })`,
-                                      }}
-                                      fluid={
-                                        day.illustration.image.asset
-                                          .fluid as FluidObject
-                                      }
-                                    />
-                                  </div>
-                                ) : null}
-                              </Grid>
-                              <Grid
-                                className={
-                                  classes.taglineFigureCaption
-                                }
-                                item
-                                xs={12}
-                                md={6}
-                                component={'figcaption'}
-                              >
-                                {day.tagline?.map(
-                                  (tags, index) =>
-                                    tags &&
-                                    Array.isArray(tags.children) &&
-                                    tags.children.map((child) => (
-                                      <Typography
-                                        variant={'h3'}
-                                        component={'h3'}
-                                        key={`${index}`}
-                                        gutterBottom
-                                      >
-                                        {child?.text}
-                                      </Typography>
-                                    )),
-                                )}
-                                {day.details && (
-                                  <Typography
-                                    variant={'h4'}
-                                    component={'p'}
-                                    gutterBottom
-                                    className={classes.dayDetails}
-                                  >
-                                    {day.details}
-                                  </Typography>
-                                )}
-                              </Grid>
-                            </Grid>
-                          </AnimatedIOView>
-                        </Paper>
-                      </AnimatedInViewChildDiv>
-                    </Grid>
-                  ),
-                )}
-              </Grid>
-            </Grid>
+              ),
+            )}
           </Grid>
         </AnimatedInPlainViewParent>
         <SpeedDial
@@ -569,7 +587,7 @@ export function Specials({
           ))}
         </SpeedDial>
         <Backdrop open={open} />
-      </Container>
+      </section>
     ),
     [open, classes, days, isDarkMode, sanitySiteSettings],
   )

@@ -104,12 +104,20 @@ export const AnimatedIOView: FC<
 // without IO, uses AnimatePresence instead
 // variant needs show and hidden keys
 export const AnimatedInPlainViewParent: FC<
-  ComponentProps<typeof motion.div> & { variant?: Variants }
-> = ({ children, variant = wrapVariants, ...rest }) => {
+  ComponentProps<typeof motion.div> & {
+    variant?: Variants
+    exitBeforeEnter?: boolean
+  }
+> = ({
+  children,
+  variant = wrapVariants,
+  exitBeforeEnter,
+  ...rest
+}) => {
   const shouldReduceMotion = useReducedMotion()
   return useMemo(
     () => (
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter={exitBeforeEnter}>
         <motion.div
           initial={shouldReduceMotion ? 'show' : 'hidden'}
           animate={'show'}
@@ -121,7 +129,7 @@ export const AnimatedInPlainViewParent: FC<
         </motion.div>
       </AnimatePresence>
     ),
-    [shouldReduceMotion, children, variant, rest],
+    [shouldReduceMotion, children, variant, exitBeforeEnter, rest],
   )
 }
 

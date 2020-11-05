@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {
   GatsbySeo,
+  GatsbySeoProps,
   OpenGraphImages,
 } from 'gatsby-plugin-next-seo/lib'
 
@@ -9,6 +10,7 @@ interface Seo {
   title: string
   description?: string
   image?: OpenGraphImages[]
+  gatsbySeoProps?: GatsbySeoProps
 }
 
 /**
@@ -16,10 +18,18 @@ interface Seo {
  * @param description
  * @param title
  * @param image
+ * @param gatsbySeoProps
  * @constructor
  */
-export function SEO({ description, title, image }: Seo) {
-  const { site, file, allFile } = useStaticQuery(graphql`
+export function SEO({
+  description,
+  title,
+  image,
+  gatsbySeoProps,
+}: Seo) {
+  const { site, file, allFile } = useStaticQuery<
+    GatsbyTypes.SEO_DATAQuery
+  >(graphql`
     query SEO_DATA {
       site {
         siteMetadata {
@@ -44,12 +54,12 @@ export function SEO({ description, title, image }: Seo) {
     () => [
       {
         alt: 'Bucket of two leaves',
-        url: file.publicURL,
+        url: file?.publicURL ?? '',
         height: 300,
         width: 200,
       },
     ],
-    [file.publicURL],
+    [file?.publicURL],
   )
 
   useEffect(() => {
@@ -69,10 +79,13 @@ export function SEO({ description, title, image }: Seo) {
     () => (
       <>
         <GatsbySeo
+          {...gatsbySeoProps}
           defer={false}
           language={'en'}
           description={
-            description ? description : site.siteMetadata.description
+            description
+              ? description
+              : site?.siteMetadata?.description
           }
           title={title}
           openGraph={{
@@ -154,6 +167,6 @@ export function SEO({ description, title, image }: Seo) {
         />
       </>
     ),
-    [description, site, title, imagesOpenGraph],
+    [description, site, title, imagesOpenGraph, gatsbySeoProps],
   )
 }

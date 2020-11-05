@@ -15,10 +15,9 @@ import {
   AnimatedInViewChildDiv,
 } from '@Components/elements/InView/in-view'
 import { SEO } from '@Components/elements/SEO/seo'
-import { HomepageQuery } from '@Graphql/gatsby-graphql'
 
 interface Index {
-  data: HomepageQuery
+  data: GatsbyTypes.homepageQuery
 }
 
 const useStyles = makeStyles((theme) => ({

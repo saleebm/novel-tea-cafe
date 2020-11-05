@@ -24,7 +24,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["node_modules/@types/", "src/typings/"],
+    "typeRoots": ["node_modules/@types/", "src/models/types/"],
     "resolveJsonModule": true,
     "paths": {
       "@Components/*": ["src/components/*"],
@@ -42,5 +42,11 @@
       "@Utils/*": ["src/utils/*"]
     }
   },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/graphql/gatsby-graphql.d.ts"
+  ],
   "exclude": ["node_modules", "public"]
 }

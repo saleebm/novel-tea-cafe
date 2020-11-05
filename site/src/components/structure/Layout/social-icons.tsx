@@ -4,7 +4,6 @@ import GatsbyImage, { FixedObject } from 'gatsby-image'
 import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import { Social_Site_LinksQuery } from '@Graphql/gatsby-graphql'
 import {
   AnimatedInPlainViewParent,
   AnimatedInViewChildDiv,
@@ -47,7 +46,7 @@ export function SocialIcons() {
     facebookIcon,
     instagramIcon,
     twitterIcon,
-  } = useStaticQuery<Social_Site_LinksQuery>(graphql`
+  } = useStaticQuery<GatsbyTypes.SOCIAL_SITE_LINKSQuery>(graphql`
     query SOCIAL_SITE_LINKS {
       sanitySiteSettings {
         facebookPage

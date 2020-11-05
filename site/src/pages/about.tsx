@@ -7,7 +7,6 @@ import {
   Button,
   Typography,
 } from '@material-ui/core'
-import { AboutPageQuery } from '@Graphql/gatsby-graphql'
 import { SEO } from '@Components/elements/SEO/seo'
 import { makeStyles } from '@material-ui/core/styles'
 import {
@@ -16,7 +15,7 @@ import {
 } from '@Components/elements/InView/in-view'
 
 interface AboutPage {
-  data: AboutPageQuery
+  data: GatsbyTypes.aboutPageQuery
 }
 
 const useClasses = makeStyles((theme) => ({

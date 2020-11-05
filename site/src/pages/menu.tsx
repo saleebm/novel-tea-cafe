@@ -1,12 +1,11 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { Container } from '@material-ui/core'
-import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { Menu } from '@Components/views/Menu/menu'
 import { SEO } from '@Components/elements/SEO/seo'
 
 interface MenuPage extends PageProps {
-  data: Menu_PageQuery
+  data: GatsbyTypes.MENU_PAGEQuery
 }
 
 function MenuPage({ data }: MenuPage) {

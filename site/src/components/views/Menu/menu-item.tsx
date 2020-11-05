@@ -8,14 +8,14 @@ import {
   Typography,
 } from '@material-ui/core'
 import { MenuPriceChip } from '@Components/views/Menu/menu-price-chip'
-import { Menu_Item_EdgeFragment } from '@Graphql/gatsby-graphql'
+
 import {
   AnimatedInPlainViewParent,
   AnimatedInViewChildDiv,
 } from '@Components/elements/InView/in-view'
 
 interface MenuItem extends CardProps {
-  theRealMenuItem: Menu_Item_EdgeFragment
+  theRealMenuItem: GatsbyTypes.MENU_ITEM_EDGEFragment
 }
 
 const useStyles = makeStyles((_theme) => ({

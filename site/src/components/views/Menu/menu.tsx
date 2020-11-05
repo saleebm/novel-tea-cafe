@@ -1,7 +1,6 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import clsx from 'clsx'
-import { Menu_PageQuery } from '@Graphql/gatsby-graphql'
 import { makeStyles } from '@material-ui/core/styles'
 import { MenuSection } from '@Components/views/Menu/menu-section'
 import { MenuNav } from '@Components/views/Menu/menu-nav'
@@ -12,7 +11,7 @@ import {
 } from '@Components/elements/InView/in-view'
 
 interface Menu {
-  menu: Menu_PageQuery
+  menu: GatsbyTypes.MENU_PAGEQuery
 }
 
 const useStyles = makeStyles((theme) => ({

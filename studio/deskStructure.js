@@ -14,6 +14,7 @@ const hiddenDocTypes = (listItem) =>
     'menuItem',
     'menuItemCategory',
     'menuItemPriceOption',
+    'galleryImages',
   ].includes(listItem.getId())
 
 export default () =>
@@ -37,6 +38,12 @@ export default () =>
         .schemaType('weeklyEvents')
         .child(
           S.document().schemaType('weeklyEvents').documentId('weeklyEvents').views([S.view.form()]),
+        ),
+      S.documentListItem()
+        .title('Galleries')
+        .schemaType('galleryImages')
+        .child(
+          S.document().schemaType('galleryImages').documentId('galleryImages').views([S.view.form()]),
         ),
       menu,
       blog,

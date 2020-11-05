@@ -6,6 +6,7 @@ import localeString from './objects/localeString'
 // document schemas
 import author from './documents/author'
 import category from './documents/category'
+import galleryImages from './documents/gallery-images'
 import post from './documents/post'
 import page from './documents/page'
 import siteSettings from './documents/siteSettings'
@@ -15,7 +16,6 @@ import menuItemPriceOption from './objects/menuItemPriceOption'
 import menuItemCategory from './documents/menuItemCategory'
 import experiment from './objects/experiment'
 import simpleBlockContent from './objects/simpleBlockContent'
-
 import * as plugs from './plugs'
 import plugDefaultFields from './plugs/_plugDefaultFields'
 // Object types
@@ -61,7 +61,8 @@ export default createSchema({
       instagram,
       videoEmbed,
       bodyPortableText,
-      excerptPortableText
+      excerptPortableText,
+      galleryImages
     ])
     .concat(allPlugs)
 })

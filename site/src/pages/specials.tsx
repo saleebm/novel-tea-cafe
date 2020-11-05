@@ -3,11 +3,10 @@ import { graphql } from 'gatsby'
 import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { SEO } from '@Components/elements/SEO/seo'
-import { WeeklyEventsQuery } from '@Graphql/gatsby-graphql'
 import { Specials } from '@Components/views/Specials/specials'
 
 interface WeeklyEventsPage {
-  data: WeeklyEventsQuery
+  data: GatsbyTypes.weeklyEventsQuery
 }
 
 const useStyles = makeStyles({
@@ -21,6 +20,10 @@ const useStyles = makeStyles({
 
 function WeeklyEventsPage({ data }: WeeklyEventsPage) {
   const classes = useStyles()
+  const {
+    allSanityWeeklyEvents,
+    sanitySiteSettings,
+  }: GatsbyTypes.weeklyEventsQuery = data
   return (
     <>
       <SEO
@@ -29,10 +32,10 @@ function WeeklyEventsPage({ data }: WeeklyEventsPage) {
           'Come for our daily happy hour and stay for the daily events, different everyday of the week.'
         }
       />
-      <Container maxWidth={'xl'} className={classes.pageContainer}>
+      <Container maxWidth={'lg'} className={classes.pageContainer}>
         <Specials
-          allSanityWeeklyEvents={data.allSanityWeeklyEvents}
-          sanitySiteSettings={data.sanitySiteSettings}
+          allSanityWeeklyEvents={allSanityWeeklyEvents}
+          sanitySiteSettings={sanitySiteSettings}
         />
       </Container>
     </>

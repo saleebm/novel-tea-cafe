@@ -5,7 +5,6 @@ import { Container, Grid } from '@material-ui/core'
 import { LogoJsonLd } from 'gatsby-plugin-next-seo'
 import { makeStyles } from '@material-ui/core/styles'
 
-import { Logo_Img_In_HeaderQuery } from '@Graphql/gatsby-graphql'
 import { Nav } from '@Components/structure/Layout/nav'
 import { Logo } from '@Components/structure/Layout/logo'
 import styles from './header.mod.scss'
@@ -25,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export function Header() {
-  const { file } = useStaticQuery<Logo_Img_In_HeaderQuery>(graphql`
+  const { file } = useStaticQuery<
+    GatsbyTypes.LOGO_IMG_IN_HEADERQuery
+  >(graphql`
     query LOGO_IMG_IN_HEADER {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {

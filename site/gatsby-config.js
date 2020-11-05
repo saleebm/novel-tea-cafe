@@ -1,4 +1,4 @@
-const autoprefixer = require(`autoprefixer`)
+const autoprefixer = require('autoprefix')
 // Load variables from `.env` as soon as possible
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
@@ -54,6 +54,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-typegen',
+      options: {
+        outputPath: `src/models/types/gatsby-graphql.d.ts`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         disableMinification: true,
@@ -68,13 +74,22 @@ module.exports = {
         // Override the file regex for CSS modules
         // ie x.mod.scss (modules)
         sassRuleModulesTest: /\.mod\.s([ac])ss$/,
-        postCssPlugins: [autoprefixer()],
+        postCssPlugins: [],
         implementation: require('sass'),
         useResolveUrlLoader: {
           options: {
             sourceMap: true, //default is false
           },
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          autoprefixer,
+        ],
       },
     },
     {

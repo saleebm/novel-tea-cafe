@@ -66,7 +66,9 @@ export function Layout({ children }: Layout) {
     mainContainerRef?.current ?? undefined,
   )
 
-  const { file, allFile } = useStaticQuery(graphql`
+  const { file, allFile } = useStaticQuery<
+    GatsbyTypes.LOGO_IMGQuery
+  >(graphql`
     query LOGO_IMG {
       file(relativePath: { eq: "logo.png" }) {
         publicURL
@@ -83,9 +85,7 @@ export function Layout({ children }: Layout) {
 
   const currentDate = new Date()
 
-  const images = allFile?.nodes?.map(
-    (node: { publicURL: string }) => node.publicURL,
-  )
+  const images = allFile?.nodes?.map((node) => node.publicURL ?? '')
 
   return (
     <>
@@ -128,7 +128,12 @@ export function Layout({ children }: Layout) {
           latitude: '28.6329066',
           longitude: '-81.3230062',
         }}
-        images={[file.publicURL, ...images]}
+        images={[
+          ...(file?.publicURL ? [file.publicURL] : []),
+          ...(Array.isArray(images)
+            ? images.filter((node) => node.length > 0)
+            : []),
+        ]}
         overrides={{
           '@type': 'CafeOrCoffeeShop',
           'hasMenu': 'https://novelteaorlando.com/menu',
