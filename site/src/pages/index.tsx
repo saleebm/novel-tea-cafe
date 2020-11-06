@@ -143,11 +143,7 @@ function IndexPage({ data }: Index) {
           },
         ]}
       />
-      <Container
-        maxWidth={false}
-        disableGutters
-        className={classes.pageContainer}
-      >
+      <Container maxWidth={false} className={classes.pageContainer}>
         <AnimatedInPlainViewParent
           className={classes.firstSection}
           key={'home-title'}

@@ -7,8 +7,6 @@ const useClasses = makeStyles((theme) => ({
   footerWrap: {
     position: 'relative',
     display: 'block',
-    minHeight: '100%',
-    padding: `${theme.spacing(5)}px 0 ${theme.spacing(10)}px`,
   },
   socialIconWrap: {
     width: '100%',
@@ -16,7 +14,7 @@ const useClasses = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: theme.spacing(2),
+    padding: theme.spacing(2),
   },
 }))
 
@@ -29,8 +27,8 @@ export function Footer() {
       maxWidth={'md'}
       component={'footer'}
     >
+      <Divider variant={'fullWidth'} />
       <div className={classes.socialIconWrap}>
-        <Divider variant={'inset'} />
         <SocialIcons />
       </div>
     </Container>

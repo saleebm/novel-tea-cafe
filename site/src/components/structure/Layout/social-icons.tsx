@@ -13,7 +13,7 @@ const useClasses = makeStyles((theme) => ({
   socialArea: {
     display: 'flex',
     flexFlow: 'row wrap',
-    alignItems: 'baseline',
+    alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
     width: '100%',
@@ -28,13 +28,14 @@ const useClasses = makeStyles((theme) => ({
   },
   socialIconWrap: {
     position: 'relative',
-    flex: 1,
+    flex: '0 0 auto',
     padding: 0,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
+    height: '100px',
     maxWidth: '70px',
+    width: '100%',
     marginLeft: theme.spacing(0.5),
   },
 }))
@@ -46,7 +47,7 @@ export function SocialIcons() {
     facebookIcon,
     instagramIcon,
     twitterIcon,
-  } = useStaticQuery<GatsbyTypes.SOCIAL_SITE_LINKSQuery>(graphql`
+  } = useStaticQuery(graphql`
     query SOCIAL_SITE_LINKS {
       sanitySiteSettings {
         facebookPage
@@ -88,13 +89,18 @@ export function SocialIcons() {
       <AnimatedInPlainViewParent className={classes.socialArea}>
         <Grid
           container
-          spacing={0}
+          spacing={1}
           justify={'center'}
           alignItems={'center'}
         >
           {facebookIcon?.childImageSharp?.fixed &&
             socialLinks?.facebookPage && (
-              <Grid item xs className={classes.socialIconWrap}>
+              <Grid
+                item
+                xs={6}
+                sm={4}
+                className={classes.socialIconWrap}
+              >
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >
@@ -118,7 +124,12 @@ export function SocialIcons() {
             )}
           {twitterIcon?.childImageSharp?.fixed &&
             socialLinks?.twitterPage && (
-              <Grid item xs className={classes.socialIconWrap}>
+              <Grid
+                item
+                xs={6}
+                sm={4}
+                className={classes.socialIconWrap}
+              >
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >
@@ -142,7 +153,12 @@ export function SocialIcons() {
             )}
           {instagramIcon?.childImageSharp?.fixed &&
             socialLinks?.instagramPage && (
-              <Grid item xs className={classes.socialIconWrap}>
+              <Grid
+                item
+                xs={6}
+                sm={4}
+                className={classes.socialIconWrap}
+              >
                 <AnimatedInViewChildDiv
                   className={classes.socialIconWrap}
                 >

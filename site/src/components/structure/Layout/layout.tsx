@@ -85,7 +85,9 @@ export function Layout({ children }: Layout) {
 
   const currentDate = new Date()
 
-  const images = allFile?.nodes?.map((node) => node.publicURL ?? '')
+  const images = allFile?.nodes?.map(
+    (node: { publicURL: string }) => node.publicURL ?? '',
+  )
 
   return (
     <>
