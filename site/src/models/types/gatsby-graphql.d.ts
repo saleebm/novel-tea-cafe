@@ -1425,6 +1425,8 @@ type Query = {
   readonly allSanityAuthor: SanityAuthorConnection;
   readonly sanityCategory: Maybe<SanityCategory>;
   readonly allSanityCategory: SanityCategoryConnection;
+  readonly sanityGalleryImages: Maybe<SanityGalleryImages>;
+  readonly allSanityGalleryImages: SanityGalleryImagesConnection;
   readonly sanityMenuItem: Maybe<SanityMenuItem>;
   readonly allSanityMenuItem: SanityMenuItemConnection;
   readonly sanityMenuItemCategory: Maybe<SanityMenuItemCategory>;
@@ -1449,8 +1451,6 @@ type Query = {
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly sitePlugin: Maybe<SitePlugin>;
   readonly allSitePlugin: SitePluginConnection;
-  readonly sanityGalleryImages: Maybe<SanityGalleryImages>;
-  readonly allSanityGalleryImages: SanityGalleryImagesConnection;
 };
 
 
@@ -1583,14 +1583,14 @@ type Query_sitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator: Maybe<SitePluginFilterInput>;
-  pluginCreatorId: Maybe<StringQueryOperatorInput>;
-  componentPath: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator: Maybe<SitePluginFilterInput>;
+  pluginCreatorId: Maybe<StringQueryOperatorInput>;
+  componentPath: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -1650,6 +1650,31 @@ type Query_sanityCategoryArgs = {
 type Query_allSanityCategoryArgs = {
   filter: Maybe<SanityCategoryFilterInput>;
   sort: Maybe<SanityCategorySortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+type Query_sanityGalleryImagesArgs = {
+  _id: Maybe<StringQueryOperatorInput>;
+  _type: Maybe<StringQueryOperatorInput>;
+  _createdAt: Maybe<DateQueryOperatorInput>;
+  _updatedAt: Maybe<DateQueryOperatorInput>;
+  _rev: Maybe<StringQueryOperatorInput>;
+  _key: Maybe<StringQueryOperatorInput>;
+  heading: Maybe<StringQueryOperatorInput>;
+  images: Maybe<SanityIllustrationFilterListInput>;
+  _rawImages: Maybe<JSONQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+
+type Query_allSanityGalleryImagesArgs = {
+  filter: Maybe<SanityGalleryImagesFilterInput>;
+  sort: Maybe<SanityGalleryImagesSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -2000,28 +2025,6 @@ type Query_sitePluginArgs = {
 type Query_allSitePluginArgs = {
   filter: Maybe<SitePluginFilterInput>;
   sort: Maybe<SitePluginSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-type Query_sanityGalleryImagesArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  _id: Maybe<StringQueryOperatorInput>;
-  _type: Maybe<StringQueryOperatorInput>;
-  _rev: Maybe<StringQueryOperatorInput>;
-  _createdAt: Maybe<DateQueryOperatorInput>;
-  _updatedAt: Maybe<DateQueryOperatorInput>;
-  images: Maybe<SanityGalleryImagesImagesFilterListInput>;
-};
-
-
-type Query_allSanityGalleryImagesArgs = {
-  filter: Maybe<SanityGalleryImagesFilterInput>;
-  sort: Maybe<SanityGalleryImagesSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -2989,17 +2992,20 @@ type SanityFileAssetSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type SanityGalleryImages = Node & {
+type SanityGalleryImages = SanityDocument & Node & {
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly heading: Maybe<Scalars['String']>;
+  readonly images: Maybe<ReadonlyArray<Maybe<SanityIllustration>>>;
+  readonly _rawImages: Maybe<Scalars['JSON']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
-  readonly _id: Maybe<Scalars['String']>;
-  readonly _type: Maybe<Scalars['String']>;
-  readonly _rev: Maybe<Scalars['String']>;
-  readonly _createdAt: Maybe<Scalars['Date']>;
-  readonly _updatedAt: Maybe<Scalars['Date']>;
-  readonly images: Maybe<ReadonlyArray<Maybe<SanityGalleryImagesImages>>>;
 };
 
 
@@ -3016,6 +3022,11 @@ type SanityGalleryImages__updatedAtArgs = {
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
   locale: Maybe<Scalars['String']>;
+};
+
+
+type SanityGalleryImages__rawImagesArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
 };
 
 type SanityGalleryImagesConnection = {
@@ -3046,6 +3057,59 @@ type SanityGalleryImagesEdge = {
 };
 
 enum SanityGalleryImagesFieldsEnum {
+  _id = '_id',
+  _type = '_type',
+  _createdAt = '_createdAt',
+  _updatedAt = '_updatedAt',
+  _rev = '_rev',
+  _key = '_key',
+  heading = 'heading',
+  images = 'images',
+  images____key = 'images._key',
+  images____type = 'images._type',
+  images___disabled = 'images.disabled',
+  images___image____key = 'images.image._key',
+  images___image____type = 'images.image._type',
+  images___image___caption = 'images.image.caption',
+  images___image___alt = 'images.image.alt',
+  images___image___asset____id = 'images.image.asset._id',
+  images___image___asset____type = 'images.image.asset._type',
+  images___image___asset____createdAt = 'images.image.asset._createdAt',
+  images___image___asset____updatedAt = 'images.image.asset._updatedAt',
+  images___image___asset____rev = 'images.image.asset._rev',
+  images___image___asset____key = 'images.image.asset._key',
+  images___image___asset___originalFilename = 'images.image.asset.originalFilename',
+  images___image___asset___label = 'images.image.asset.label',
+  images___image___asset___title = 'images.image.asset.title',
+  images___image___asset___description = 'images.image.asset.description',
+  images___image___asset___sha1hash = 'images.image.asset.sha1hash',
+  images___image___asset___extension = 'images.image.asset.extension',
+  images___image___asset___mimeType = 'images.image.asset.mimeType',
+  images___image___asset___size = 'images.image.asset.size',
+  images___image___asset___assetId = 'images.image.asset.assetId',
+  images___image___asset___path = 'images.image.asset.path',
+  images___image___asset___url = 'images.image.asset.url',
+  images___image___asset____rawMetadata = 'images.image.asset._rawMetadata',
+  images___image___asset____rawSource = 'images.image.asset._rawSource',
+  images___image___asset___id = 'images.image.asset.id',
+  images___image___asset___children = 'images.image.asset.children',
+  images___image___hotspot____key = 'images.image.hotspot._key',
+  images___image___hotspot____type = 'images.image.hotspot._type',
+  images___image___hotspot___x = 'images.image.hotspot.x',
+  images___image___hotspot___y = 'images.image.hotspot.y',
+  images___image___hotspot___height = 'images.image.hotspot.height',
+  images___image___hotspot___width = 'images.image.hotspot.width',
+  images___image___crop____key = 'images.image.crop._key',
+  images___image___crop____type = 'images.image.crop._type',
+  images___image___crop___top = 'images.image.crop.top',
+  images___image___crop___bottom = 'images.image.crop.bottom',
+  images___image___crop___left = 'images.image.crop.left',
+  images___image___crop___right = 'images.image.crop.right',
+  images___image____rawAsset = 'images.image._rawAsset',
+  images___image____rawHotspot = 'images.image._rawHotspot',
+  images___image____rawCrop = 'images.image._rawCrop',
+  images____rawImage = 'images._rawImage',
+  _rawImages = '_rawImages',
   id = 'id',
   parent___id = 'parent.id',
   parent___parent___id = 'parent.parent.id',
@@ -3131,32 +3195,23 @@ enum SanityGalleryImagesFieldsEnum {
   internal___ignoreType = 'internal.ignoreType',
   internal___mediaType = 'internal.mediaType',
   internal___owner = 'internal.owner',
-  internal___type = 'internal.type',
-  _id = '_id',
-  _type = '_type',
-  _rev = '_rev',
-  _createdAt = '_createdAt',
-  _updatedAt = '_updatedAt',
-  images = 'images',
-  images____key = 'images._key',
-  images____type = 'images._type',
-  images___alt = 'images.alt',
-  images___asset____ref = 'images.asset._ref',
-  images___asset____type = 'images.asset._type',
-  images___caption = 'images.caption'
+  internal___type = 'internal.type'
 }
 
 type SanityGalleryImagesFilterInput = {
+  readonly _id: Maybe<StringQueryOperatorInput>;
+  readonly _type: Maybe<StringQueryOperatorInput>;
+  readonly _createdAt: Maybe<DateQueryOperatorInput>;
+  readonly _updatedAt: Maybe<DateQueryOperatorInput>;
+  readonly _rev: Maybe<StringQueryOperatorInput>;
+  readonly _key: Maybe<StringQueryOperatorInput>;
+  readonly heading: Maybe<StringQueryOperatorInput>;
+  readonly images: Maybe<SanityIllustrationFilterListInput>;
+  readonly _rawImages: Maybe<JSONQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
-  readonly _id: Maybe<StringQueryOperatorInput>;
-  readonly _type: Maybe<StringQueryOperatorInput>;
-  readonly _rev: Maybe<StringQueryOperatorInput>;
-  readonly _createdAt: Maybe<DateQueryOperatorInput>;
-  readonly _updatedAt: Maybe<DateQueryOperatorInput>;
-  readonly images: Maybe<SanityGalleryImagesImagesFilterListInput>;
 };
 
 type SanityGalleryImagesGroupConnection = {
@@ -3166,36 +3221,6 @@ type SanityGalleryImagesGroupConnection = {
   readonly pageInfo: PageInfo;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
-};
-
-type SanityGalleryImagesImages = {
-  readonly _key: Maybe<Scalars['String']>;
-  readonly _type: Maybe<Scalars['String']>;
-  readonly alt: Maybe<Scalars['String']>;
-  readonly asset: Maybe<SanityGalleryImagesImagesAsset>;
-  readonly caption: Maybe<Scalars['String']>;
-};
-
-type SanityGalleryImagesImagesAsset = {
-  readonly _ref: Maybe<Scalars['String']>;
-  readonly _type: Maybe<Scalars['String']>;
-};
-
-type SanityGalleryImagesImagesAssetFilterInput = {
-  readonly _ref: Maybe<StringQueryOperatorInput>;
-  readonly _type: Maybe<StringQueryOperatorInput>;
-};
-
-type SanityGalleryImagesImagesFilterInput = {
-  readonly _key: Maybe<StringQueryOperatorInput>;
-  readonly _type: Maybe<StringQueryOperatorInput>;
-  readonly alt: Maybe<StringQueryOperatorInput>;
-  readonly asset: Maybe<SanityGalleryImagesImagesAssetFilterInput>;
-  readonly caption: Maybe<StringQueryOperatorInput>;
-};
-
-type SanityGalleryImagesImagesFilterListInput = {
-  readonly elemMatch: Maybe<SanityGalleryImagesImagesFilterInput>;
 };
 
 type SanityGalleryImagesSortInput = {
@@ -3317,6 +3342,10 @@ type SanityIllustrationFilterInput = {
   readonly disabled: Maybe<BooleanQueryOperatorInput>;
   readonly image: Maybe<SanityMainImageFilterInput>;
   readonly _rawImage: Maybe<JSONQueryOperatorInput>;
+};
+
+type SanityIllustrationFilterListInput = {
+  readonly elemMatch: Maybe<SanityIllustrationFilterInput>;
 };
 
 type SanityImage = {
@@ -6617,14 +6646,14 @@ type SitePage = Node & {
   readonly internalComponentName: Scalars['String'];
   readonly componentChunkName: Scalars['String'];
   readonly matchPath: Maybe<Scalars['String']>;
-  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
-  readonly pluginCreator: Maybe<SitePlugin>;
-  readonly pluginCreatorId: Maybe<Scalars['String']>;
-  readonly componentPath: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
+  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
+  readonly pluginCreator: Maybe<SitePlugin>;
+  readonly pluginCreatorId: Maybe<Scalars['String']>;
+  readonly componentPath: Maybe<Scalars['String']>;
 };
 
 type SitePageConnection = {
@@ -6660,6 +6689,92 @@ enum SitePageFieldsEnum {
   internalComponentName = 'internalComponentName',
   componentChunkName = 'componentChunkName',
   matchPath = 'matchPath',
+  id = 'id',
+  parent___id = 'parent.id',
+  parent___parent___id = 'parent.parent.id',
+  parent___parent___parent___id = 'parent.parent.parent.id',
+  parent___parent___parent___children = 'parent.parent.parent.children',
+  parent___parent___children = 'parent.parent.children',
+  parent___parent___children___id = 'parent.parent.children.id',
+  parent___parent___children___children = 'parent.parent.children.children',
+  parent___parent___internal___content = 'parent.parent.internal.content',
+  parent___parent___internal___contentDigest = 'parent.parent.internal.contentDigest',
+  parent___parent___internal___description = 'parent.parent.internal.description',
+  parent___parent___internal___fieldOwners = 'parent.parent.internal.fieldOwners',
+  parent___parent___internal___ignoreType = 'parent.parent.internal.ignoreType',
+  parent___parent___internal___mediaType = 'parent.parent.internal.mediaType',
+  parent___parent___internal___owner = 'parent.parent.internal.owner',
+  parent___parent___internal___type = 'parent.parent.internal.type',
+  parent___children = 'parent.children',
+  parent___children___id = 'parent.children.id',
+  parent___children___parent___id = 'parent.children.parent.id',
+  parent___children___parent___children = 'parent.children.parent.children',
+  parent___children___children = 'parent.children.children',
+  parent___children___children___id = 'parent.children.children.id',
+  parent___children___children___children = 'parent.children.children.children',
+  parent___children___internal___content = 'parent.children.internal.content',
+  parent___children___internal___contentDigest = 'parent.children.internal.contentDigest',
+  parent___children___internal___description = 'parent.children.internal.description',
+  parent___children___internal___fieldOwners = 'parent.children.internal.fieldOwners',
+  parent___children___internal___ignoreType = 'parent.children.internal.ignoreType',
+  parent___children___internal___mediaType = 'parent.children.internal.mediaType',
+  parent___children___internal___owner = 'parent.children.internal.owner',
+  parent___children___internal___type = 'parent.children.internal.type',
+  parent___internal___content = 'parent.internal.content',
+  parent___internal___contentDigest = 'parent.internal.contentDigest',
+  parent___internal___description = 'parent.internal.description',
+  parent___internal___fieldOwners = 'parent.internal.fieldOwners',
+  parent___internal___ignoreType = 'parent.internal.ignoreType',
+  parent___internal___mediaType = 'parent.internal.mediaType',
+  parent___internal___owner = 'parent.internal.owner',
+  parent___internal___type = 'parent.internal.type',
+  children = 'children',
+  children___id = 'children.id',
+  children___parent___id = 'children.parent.id',
+  children___parent___parent___id = 'children.parent.parent.id',
+  children___parent___parent___children = 'children.parent.parent.children',
+  children___parent___children = 'children.parent.children',
+  children___parent___children___id = 'children.parent.children.id',
+  children___parent___children___children = 'children.parent.children.children',
+  children___parent___internal___content = 'children.parent.internal.content',
+  children___parent___internal___contentDigest = 'children.parent.internal.contentDigest',
+  children___parent___internal___description = 'children.parent.internal.description',
+  children___parent___internal___fieldOwners = 'children.parent.internal.fieldOwners',
+  children___parent___internal___ignoreType = 'children.parent.internal.ignoreType',
+  children___parent___internal___mediaType = 'children.parent.internal.mediaType',
+  children___parent___internal___owner = 'children.parent.internal.owner',
+  children___parent___internal___type = 'children.parent.internal.type',
+  children___children = 'children.children',
+  children___children___id = 'children.children.id',
+  children___children___parent___id = 'children.children.parent.id',
+  children___children___parent___children = 'children.children.parent.children',
+  children___children___children = 'children.children.children',
+  children___children___children___id = 'children.children.children.id',
+  children___children___children___children = 'children.children.children.children',
+  children___children___internal___content = 'children.children.internal.content',
+  children___children___internal___contentDigest = 'children.children.internal.contentDigest',
+  children___children___internal___description = 'children.children.internal.description',
+  children___children___internal___fieldOwners = 'children.children.internal.fieldOwners',
+  children___children___internal___ignoreType = 'children.children.internal.ignoreType',
+  children___children___internal___mediaType = 'children.children.internal.mediaType',
+  children___children___internal___owner = 'children.children.internal.owner',
+  children___children___internal___type = 'children.children.internal.type',
+  children___internal___content = 'children.internal.content',
+  children___internal___contentDigest = 'children.internal.contentDigest',
+  children___internal___description = 'children.internal.description',
+  children___internal___fieldOwners = 'children.internal.fieldOwners',
+  children___internal___ignoreType = 'children.internal.ignoreType',
+  children___internal___mediaType = 'children.internal.mediaType',
+  children___internal___owner = 'children.internal.owner',
+  children___internal___type = 'children.internal.type',
+  internal___content = 'internal.content',
+  internal___contentDigest = 'internal.contentDigest',
+  internal___description = 'internal.description',
+  internal___fieldOwners = 'internal.fieldOwners',
+  internal___ignoreType = 'internal.ignoreType',
+  internal___mediaType = 'internal.mediaType',
+  internal___owner = 'internal.owner',
+  internal___type = 'internal.type',
   isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   pluginCreator___id = 'pluginCreator.id',
   pluginCreator___parent___id = 'pluginCreator.parent.id',
@@ -6779,93 +6894,7 @@ enum SitePageFieldsEnum {
   pluginCreator___packageJson___peerDependencies___version = 'pluginCreator.packageJson.peerDependencies.version',
   pluginCreator___packageJson___keywords = 'pluginCreator.packageJson.keywords',
   pluginCreatorId = 'pluginCreatorId',
-  componentPath = 'componentPath',
-  id = 'id',
-  parent___id = 'parent.id',
-  parent___parent___id = 'parent.parent.id',
-  parent___parent___parent___id = 'parent.parent.parent.id',
-  parent___parent___parent___children = 'parent.parent.parent.children',
-  parent___parent___children = 'parent.parent.children',
-  parent___parent___children___id = 'parent.parent.children.id',
-  parent___parent___children___children = 'parent.parent.children.children',
-  parent___parent___internal___content = 'parent.parent.internal.content',
-  parent___parent___internal___contentDigest = 'parent.parent.internal.contentDigest',
-  parent___parent___internal___description = 'parent.parent.internal.description',
-  parent___parent___internal___fieldOwners = 'parent.parent.internal.fieldOwners',
-  parent___parent___internal___ignoreType = 'parent.parent.internal.ignoreType',
-  parent___parent___internal___mediaType = 'parent.parent.internal.mediaType',
-  parent___parent___internal___owner = 'parent.parent.internal.owner',
-  parent___parent___internal___type = 'parent.parent.internal.type',
-  parent___children = 'parent.children',
-  parent___children___id = 'parent.children.id',
-  parent___children___parent___id = 'parent.children.parent.id',
-  parent___children___parent___children = 'parent.children.parent.children',
-  parent___children___children = 'parent.children.children',
-  parent___children___children___id = 'parent.children.children.id',
-  parent___children___children___children = 'parent.children.children.children',
-  parent___children___internal___content = 'parent.children.internal.content',
-  parent___children___internal___contentDigest = 'parent.children.internal.contentDigest',
-  parent___children___internal___description = 'parent.children.internal.description',
-  parent___children___internal___fieldOwners = 'parent.children.internal.fieldOwners',
-  parent___children___internal___ignoreType = 'parent.children.internal.ignoreType',
-  parent___children___internal___mediaType = 'parent.children.internal.mediaType',
-  parent___children___internal___owner = 'parent.children.internal.owner',
-  parent___children___internal___type = 'parent.children.internal.type',
-  parent___internal___content = 'parent.internal.content',
-  parent___internal___contentDigest = 'parent.internal.contentDigest',
-  parent___internal___description = 'parent.internal.description',
-  parent___internal___fieldOwners = 'parent.internal.fieldOwners',
-  parent___internal___ignoreType = 'parent.internal.ignoreType',
-  parent___internal___mediaType = 'parent.internal.mediaType',
-  parent___internal___owner = 'parent.internal.owner',
-  parent___internal___type = 'parent.internal.type',
-  children = 'children',
-  children___id = 'children.id',
-  children___parent___id = 'children.parent.id',
-  children___parent___parent___id = 'children.parent.parent.id',
-  children___parent___parent___children = 'children.parent.parent.children',
-  children___parent___children = 'children.parent.children',
-  children___parent___children___id = 'children.parent.children.id',
-  children___parent___children___children = 'children.parent.children.children',
-  children___parent___internal___content = 'children.parent.internal.content',
-  children___parent___internal___contentDigest = 'children.parent.internal.contentDigest',
-  children___parent___internal___description = 'children.parent.internal.description',
-  children___parent___internal___fieldOwners = 'children.parent.internal.fieldOwners',
-  children___parent___internal___ignoreType = 'children.parent.internal.ignoreType',
-  children___parent___internal___mediaType = 'children.parent.internal.mediaType',
-  children___parent___internal___owner = 'children.parent.internal.owner',
-  children___parent___internal___type = 'children.parent.internal.type',
-  children___children = 'children.children',
-  children___children___id = 'children.children.id',
-  children___children___parent___id = 'children.children.parent.id',
-  children___children___parent___children = 'children.children.parent.children',
-  children___children___children = 'children.children.children',
-  children___children___children___id = 'children.children.children.id',
-  children___children___children___children = 'children.children.children.children',
-  children___children___internal___content = 'children.children.internal.content',
-  children___children___internal___contentDigest = 'children.children.internal.contentDigest',
-  children___children___internal___description = 'children.children.internal.description',
-  children___children___internal___fieldOwners = 'children.children.internal.fieldOwners',
-  children___children___internal___ignoreType = 'children.children.internal.ignoreType',
-  children___children___internal___mediaType = 'children.children.internal.mediaType',
-  children___children___internal___owner = 'children.children.internal.owner',
-  children___children___internal___type = 'children.children.internal.type',
-  children___internal___content = 'children.internal.content',
-  children___internal___contentDigest = 'children.internal.contentDigest',
-  children___internal___description = 'children.internal.description',
-  children___internal___fieldOwners = 'children.internal.fieldOwners',
-  children___internal___ignoreType = 'children.internal.ignoreType',
-  children___internal___mediaType = 'children.internal.mediaType',
-  children___internal___owner = 'children.internal.owner',
-  children___internal___type = 'children.internal.type',
-  internal___content = 'internal.content',
-  internal___contentDigest = 'internal.contentDigest',
-  internal___description = 'internal.description',
-  internal___fieldOwners = 'internal.fieldOwners',
-  internal___ignoreType = 'internal.ignoreType',
-  internal___mediaType = 'internal.mediaType',
-  internal___owner = 'internal.owner',
-  internal___type = 'internal.type'
+  componentPath = 'componentPath'
 }
 
 type SitePageFilterInput = {
@@ -6874,14 +6903,14 @@ type SitePageFilterInput = {
   readonly internalComponentName: Maybe<StringQueryOperatorInput>;
   readonly componentChunkName: Maybe<StringQueryOperatorInput>;
   readonly matchPath: Maybe<StringQueryOperatorInput>;
-  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  readonly pluginCreator: Maybe<SitePluginFilterInput>;
-  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
-  readonly componentPath: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
+  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  readonly pluginCreator: Maybe<SitePluginFilterInput>;
+  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
+  readonly componentPath: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageGroupConnection = {
@@ -7816,13 +7845,13 @@ type MENU_PAGEQuery = { readonly addIns: { readonly edges: ReadonlyArray<MENU_IT
 type PictureShowImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PictureShowImagesQuery = { readonly allFile: (
-    Pick<FileConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<(
-      Pick<File, 'id' | 'publicURL'>
-      & { readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluidFragment> }> }
-    )> }
-  ) };
+type PictureShowImagesQuery = { readonly sanityGalleryImages: Maybe<(
+    Pick<SanityGalleryImages, 'id'>
+    & { readonly images: Maybe<ReadonlyArray<Maybe<{ readonly image: Maybe<(
+        Pick<SanityMainImage, '_key' | 'alt' | 'caption'>
+        & { readonly asset: Maybe<{ readonly fluid: Maybe<GatsbySanityImageFluidFragment> }> }
+      )> }>>> }
+  )> };
 
 type DAYFragment = (
   Pick<SanityEventDay, 'heading' | 'details'>

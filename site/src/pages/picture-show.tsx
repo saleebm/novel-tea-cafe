@@ -9,16 +9,17 @@ interface PictureShow {
 }
 
 function PictureShowPage({ data }: PictureShow) {
+  const { sanityGalleryImages } = data || {}
   return (
     <>
       <SEO
-        title={'The Kava is Fine-eee'}
+        title={'The Kava is Fine'}
         description={
           'Come for our daily happy hour and stay for the daily events, different everyday of the week. Come on in! The kava is fine.'
         }
       />
-      <Container maxWidth={'xl'}>
-        <ImageGallery allFile={data?.allFile} />
+      <Container maxWidth={'lg'}>
+        <ImageGallery sanityGalleryImages={sanityGalleryImages} />
       </Container>
     </>
   )
@@ -29,15 +30,18 @@ function PictureShowPage({ data }: PictureShow) {
  */
 export const query = graphql`
   query PictureShowImages {
-    allFile(filter: { relativeDirectory: { eq: "nt" } }) {
-      totalCount
-      nodes {
-        id
-        publicURL
-        childImageSharp {
-          fluid(maxWidth: 600, fit: CONTAIN) {
-            ...GatsbyImageSharpFluid
+    sanityGalleryImages(_id: { eq: "galleries" }) {
+      id
+      images {
+        image {
+          _key
+          alt
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
           }
+          caption
         }
       }
     }

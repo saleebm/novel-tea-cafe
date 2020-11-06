@@ -43,7 +43,7 @@ export default () =>
         .title('Galleries')
         .schemaType('galleryImages')
         .child(
-          S.document().schemaType('galleryImages').documentId('galleryImages').views([S.view.form()]),
+          S.document().schemaType('galleryImages').documentId('galleries').views([S.view.form()]),
         ),
       menu,
       blog,

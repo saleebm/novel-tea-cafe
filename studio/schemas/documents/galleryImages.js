@@ -4,12 +4,18 @@ export default {
   title: 'Gallery Images',
   fields: [
     {
+      name: 'heading',
+      type: 'string',
+      title: 'Heading',
+    },
+    {
       name: 'images',
       title: 'Images',
       type: 'array',
       of: [
         {
-          type: 'mainImage',
+          name: 'illustration',
+          type: 'illustration'
         },
       ],
     },
