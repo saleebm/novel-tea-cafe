@@ -15,7 +15,7 @@ function PictureShowPage({ data }: PictureShow) {
       <SEO
         title={'The Kava is Fine'}
         description={
-          'Come for our daily happy hour and stay for the daily events, different everyday of the week. Come on in! The kava is fine.'
+          'Come on in! The kava is fine. See the gallery of inside NovelTea.'
         }
       />
       <Container maxWidth={'lg'}>

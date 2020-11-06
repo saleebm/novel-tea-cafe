@@ -54,21 +54,9 @@ interface GalleryCardProps {
 
 // the props for the single image (opened up view)
 interface SingleImageProps {
-  imageFluid: GalleryImageObject
+  imageNode: GalleryImageObject
   setOpen: React.Dispatch<React.SetStateAction<false | string>>
   openImageKey: string
-}
-
-const openSpring = {
-  type: 'spring',
-  stiffness: 200,
-  damping: 30,
-}
-
-const closeSpring = {
-  type: 'spring',
-  stiffness: 300,
-  damping: 35,
 }
 
 /**
@@ -87,16 +75,14 @@ const GalleryCard = ({
     () => (
       <li onClick={onClick} className={styles.card}>
         <motion.div
-          transition={closeSpring}
           className={styles.cardContentContainer}
+          layoutId={`card-content-container-${layoutId}`}
         >
           <motion.div
-            transition={closeSpring}
             className={styles.cardContent}
             layoutId={`card-container-${layoutId}`}
           >
             <motion.div
-              transition={closeSpring}
               className={styles.cardImageContainer}
               layoutId={`card-image-container-${layoutId}`}
             >
@@ -140,7 +126,7 @@ const GalleryList = ({ images, setOpen }: GalleryListProps) => {
 }
 
 const SingleImage = ({
-  imageFluid,
+  imageNode,
   setOpen,
   openImageKey,
 }: SingleImageProps) => {
@@ -151,28 +137,29 @@ const SingleImage = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.15 } }}
-          transition={{ duration: 0.2, delay: 0.15 }}
+          transition={{
+            duration: 0.3,
+            delay: 0.15,
+            ease: 'anticipate',
+          }}
           className={styles.overlay}
           onClick={() => setOpen(false)}
         />
         <motion.div
-          transition={openSpring}
           className={clsx(styles.cardContentContainer, styles.open)}
           layoutId={`card-content-container-${openImageKey}`}
         >
           <motion.div
-            transition={openSpring}
             className={styles.cardContent}
             layoutId={`card-container-${openImageKey}`}
           >
             <motion.div
-              transition={openSpring}
               className={styles.cardImageContainer}
               layoutId={`card-image-container-${openImageKey}`}
             >
               <GatsbyImage
                 className={styles.gatsbyImageWrapper}
-                fluid={imageFluid?.image?.asset?.fluid!}
+                fluid={imageNode?.image?.asset?.fluid!}
                 imgStyle={{
                   objectFit: 'contain',
                 }}
@@ -182,7 +169,7 @@ const SingleImage = ({
         </motion.div>
       </>
     ),
-    [openImageKey, imageFluid, setOpen],
+    [openImageKey, imageNode, setOpen],
   )
 }
 
@@ -224,7 +211,7 @@ export function ImageGallery({
             {openImageKey && (
               <SingleImage
                 openImageKey={openImageKey}
-                imageFluid={selectedImageNode}
+                imageNode={selectedImageNode}
                 setOpen={setOpenImageIndex}
               />
             )}
