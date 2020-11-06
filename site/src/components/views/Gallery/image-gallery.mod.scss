@@ -3,7 +3,7 @@
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 45px 25px;
+  padding: 0;
   display: flex;
   justify-content: center;
 }
@@ -14,11 +14,13 @@
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
+  padding: 25px 0;
+  row-gap: 3rem;
 }
 
 .card {
   position: relative;
-  padding: 25px;
+  padding: 10px;
   height: 460px;
   flex: 0 0 40%;
   max-width: 40%;
@@ -38,8 +40,7 @@
   padding-right: 0;
 }
 
-
-.cardContent-container {
+.cardContentContainer {
   width: 100%;
   height: 100%;
   position: relative;
@@ -54,14 +55,13 @@
   position: fixed;
   z-index: 1;
   overflow: hidden;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .cardContent {
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: #1c1c1e;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -70,9 +70,8 @@
 .open .cardContent {
   height: auto;
   max-width: 700px;
-  overflow: hidden;
+  //overflow: hidden;
 }
-
 
 .cardImageContainer {
   position: absolute;
@@ -81,10 +80,57 @@
   overflow: hidden;
   height: 420px;
   width: 100%;
+  min-height: 100%;
+
+  @media screen and (max-width: 650px) {
+    height: 250px;
+    max-height: 250px;
+  }
 }
 
-.open .cardImageContainer{
+.open .cardImageContainer {
   z-index: 1;
+  height: 500px;
+
+  & > div {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+}
+
+.gatsbyImageWrapper {
+  height: 100%;
+  width: auto;
+
+  & img {
+    object-fit: contain !important;
+  }
+}
+
+.overlay {
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: opacity;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 100vw;
+  cursor: pointer;
+}
+
+.overlay a {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  left: 50%;
+
+  transform: translateX(-50%);
 }
 
 @media only screen and (max-width: 800px) {
@@ -100,18 +146,20 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .card {
     flex: 1 0 100%;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
+    height: 250px;
   }
 
   .card:nth-child(4n + 1),
   .card:nth-child(4n + 4) {
     flex: 1 0 100%;
     max-width: 100%;
+    height: 250px;
   }
 
   .cardContentContainer.open {

@@ -19,4 +19,9 @@ export const ROUTES = Object.freeze([
     name: 'About',
     showOnDesktop: true,
   },
+  {
+    path: '/picture-show',
+    name: 'Gallery',
+    showOnDesktop: true,
+  },
 ])

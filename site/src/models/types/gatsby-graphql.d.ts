@@ -7848,8 +7848,11 @@ type PictureShowImagesQueryVariables = Exact<{ [key: string]: never; }>;
 type PictureShowImagesQuery = { readonly sanityGalleryImages: Maybe<(
     Pick<SanityGalleryImages, 'id'>
     & { readonly images: Maybe<ReadonlyArray<Maybe<{ readonly image: Maybe<(
-        Pick<SanityMainImage, '_key' | 'alt' | 'caption'>
-        & { readonly asset: Maybe<{ readonly fluid: Maybe<GatsbySanityImageFluidFragment> }> }
+        Pick<SanityMainImage, 'alt' | 'caption'>
+        & { readonly asset: Maybe<(
+          Pick<SanityImageAsset, 'assetId'>
+          & { readonly fluid: Maybe<GatsbySanityImageFluidFragment> }
+        )> }
       )> }>>> }
   )> };
 

@@ -6,6 +6,7 @@ import {
 } from 'framer-motion'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
 import styles from './image-gallery.mod.scss'
+import clsx from 'clsx'
 
 /**
  * todo extract to separate files
@@ -22,12 +23,14 @@ interface GalleryImageObject {
 }
 
 type GalleryImage = GatsbyTypes.Maybe<
-  Pick<GatsbyTypes.SanityMainImage, '_key' | 'alt' | 'caption'> & {
-    readonly asset: GatsbyTypes.Maybe<{
-      readonly fluid: GatsbyTypes.Maybe<
-        GatsbyTypes.GatsbySanityImageFluidFragment
-      >
-    }>
+  Pick<GatsbyTypes.SanityMainImage, 'alt' | 'caption'> & {
+    readonly asset: GatsbyTypes.Maybe<
+      Pick<GatsbyTypes.SanityImageAsset, 'assetId'> & {
+        readonly fluid: GatsbyTypes.Maybe<
+          GatsbyTypes.GatsbySanityImageFluidFragment
+        >
+      }
+    >
   }
 >
 
@@ -43,16 +46,17 @@ interface GalleryListProps extends GalleryImages {
   keyOpen: string | false
 }
 
-// the props for the single image (opened up view)
-interface SingleImageProps {
-  image: GalleryImage
-  setOpen: React.Dispatch<React.SetStateAction<false | string>>
-}
-
 interface GalleryCardProps {
   imageFluid: FluidObject | FluidObject[]
   onClick: () => void
   layoutId: string
+}
+
+// the props for the single image (opened up view)
+interface SingleImageProps {
+  imageFluid: GalleryImageObject
+  setOpen: React.Dispatch<React.SetStateAction<false | string>>
+  openImageKey: string
 }
 
 const openSpring = {
@@ -67,6 +71,13 @@ const closeSpring = {
   damping: 35,
 }
 
+/**
+ * card in the gallery
+ * @param imageFluid
+ * @param onClick
+ * @param layoutId
+ * @constructor
+ */
 const GalleryCard = ({
   imageFluid,
   onClick,
@@ -75,21 +86,27 @@ const GalleryCard = ({
   return useMemo(
     () => (
       <li onClick={onClick} className={styles.card}>
-        <motion.div className={styles.cardContentContainer}>
+        <motion.div
+          transition={closeSpring}
+          className={styles.cardContentContainer}
+        >
           <motion.div
+            transition={closeSpring}
             className={styles.cardContent}
             layoutId={`card-container-${layoutId}`}
           >
             <motion.div
+              transition={closeSpring}
               className={styles.cardImageContainer}
               layoutId={`card-image-container-${layoutId}`}
             >
               <GatsbyImage
-                imgStyle={{
-                  objectFit: 'contain !important',
-                  margin: '0 auto',
-                }}
+                fadeIn
+                className={styles.gatsbyImageWrapper}
                 fluid={imageFluid}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
               />
             </motion.div>
           </motion.div>
@@ -104,26 +121,69 @@ const GalleryList = ({ images, setOpen }: GalleryListProps) => {
   return useMemo(
     () => (
       <ul className={styles.cardList}>
-        {images?.map((node, index) => (
-          <>
-            {node?.image?.asset?.fluid ? (
-              <GalleryCard
-                key={node?.image?._key ?? index}
-                layoutId={node.image._key ?? ''}
-                imageFluid={node?.image?.asset?.fluid}
-                onClick={() => setOpen(node?.image?._key as string)}
-              />
-            ) : null}
-          </>
-        ))}
+        {images?.map((node, index) =>
+          node?.image?.asset?.fluid ? (
+            <GalleryCard
+              key={node?.image?.asset?.assetId ?? index}
+              layoutId={node.image.asset?.assetId ?? ''}
+              imageFluid={node?.image?.asset?.fluid}
+              onClick={() =>
+                setOpen(node?.image?.asset?.assetId as string)
+              }
+            />
+          ) : null,
+        )}
       </ul>
     ),
     [images, setOpen],
   )
 }
 
-const SingleImage = ({ image, setOpen }: SingleImageProps) => {
-  return <></>
+const SingleImage = ({
+  imageFluid,
+  setOpen,
+  openImageKey,
+}: SingleImageProps) => {
+  return useMemo(
+    () => (
+      <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.15 } }}
+          transition={{ duration: 0.2, delay: 0.15 }}
+          className={styles.overlay}
+          onClick={() => setOpen(false)}
+        />
+        <motion.div
+          transition={openSpring}
+          className={clsx(styles.cardContentContainer, styles.open)}
+          layoutId={`card-content-container-${openImageKey}`}
+        >
+          <motion.div
+            transition={openSpring}
+            className={styles.cardContent}
+            layoutId={`card-container-${openImageKey}`}
+          >
+            <motion.div
+              transition={openSpring}
+              className={styles.cardImageContainer}
+              layoutId={`card-image-container-${openImageKey}`}
+            >
+              <GatsbyImage
+                className={styles.gatsbyImageWrapper}
+                fluid={imageFluid?.image?.asset?.fluid!}
+                imgStyle={{
+                  objectFit: 'contain',
+                }}
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </>
+    ),
+    [openImageKey, imageFluid, setOpen],
+  )
 }
 
 /**
@@ -137,15 +197,14 @@ export function ImageGallery({
     false,
   )
 
-  const selectedImageNode: GalleryImage | undefined = useMemo(
+  const selectedImageNode = useMemo(
     () =>
-      (openImageKey &&
-        Array.isArray(images) &&
-        images.find(
-          (node: GatsbyTypes.Maybe<GalleryImageObject>) =>
-            node?.image?._key === openImageKey,
-        )) ??
-      undefined,
+      openImageKey &&
+      Array.isArray(images) &&
+      images.find(
+        (node: GatsbyTypes.Maybe<GalleryImageObject>) =>
+          node?.image?.asset?.assetId === openImageKey,
+      ),
     [openImageKey, images],
   )
 
@@ -162,12 +221,13 @@ export function ImageGallery({
             setOpen={setOpenImageIndex}
           />
           <AnimatePresence>
-            {!!selectedImageNode ? (
+            {openImageKey && (
               <SingleImage
-                image={selectedImageNode}
+                openImageKey={openImageKey}
+                imageFluid={selectedImageNode}
                 setOpen={setOpenImageIndex}
               />
-            ) : null}
+            )}
           </AnimatePresence>
         </section>
       </AnimateSharedLayout>
