@@ -15,7 +15,7 @@
   flex-flow: row wrap;
   align-content: flex-start;
   padding: 25px 0;
-  row-gap: 3rem;
+  row-gap: 1.7rem;
 }
 
 .card {
@@ -26,7 +26,7 @@
   max-width: 40%;
   border-radius: 3px;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   @media screen and (max-width: 650px) {
     max-height: 300px;
@@ -63,7 +63,12 @@
   position: fixed;
   z-index: 1;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 15px 0;
+
+  // not landscape
+  @media screen and (min-height: 600px) {
+    top: 75px;
+  }
 }
 
 .cardContent {
@@ -77,9 +82,14 @@
 
 .open .cardContent {
   height: auto;
-  max-width: 700px;
-  top: 25%;
-  //overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+  top: 0;
+  //overflow: hidden;x
+  // portrait
+  @media screen and (min-height: 600px) {
+    max-width: 700px;
+  }
 }
 
 .cardImageContainer {
@@ -87,13 +97,13 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  height: 420px;
+  height: auto;
   width: 100%;
   min-height: 100%;
 
   @media screen and (max-width: 650px) {
-    height: 250px;
-    max-height: 250px;
+    height: 350px;
+    max-height: 350px;
   }
 }
 

@@ -87,7 +87,6 @@ const GalleryCard = ({
               layoutId={`card-image-container-${layoutId}`}
             >
               <GatsbyImage
-                fadeIn
                 className={styles.gatsbyImageWrapper}
                 fluid={imageFluid}
                 imgStyle={{
@@ -140,7 +139,7 @@ const SingleImage = ({
           transition={{
             duration: 0.3,
             delay: 0.15,
-            ease: 'anticipate',
+            ease: 'easeInOut',
           }}
           className={styles.overlay}
           onClick={() => setOpen(false)}

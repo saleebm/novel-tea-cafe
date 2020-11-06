@@ -69,7 +69,7 @@ export function Layout({ children }: Layout) {
   const { file, allFile } = useStaticQuery<
     GatsbyTypes.LOGO_IMGQuery
   >(graphql`
-    query LOGO_IMG {
+    query LogoImg {
       file(relativePath: { eq: "logo.png" }) {
         publicURL
       }

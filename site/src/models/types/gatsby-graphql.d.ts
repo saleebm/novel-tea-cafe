@@ -7871,11 +7871,12 @@ type weeklyEventsQueryVariables = Exact<{ [key: string]: never; }>;
 
 type weeklyEventsQuery = { readonly sanitySiteSettings: Maybe<{ readonly happyHour: Maybe<ReadonlyArray<Maybe<TAGLINEFragment>>> }>, readonly allSanityWeeklyEvents: { readonly edges: ReadonlyArray<{ readonly node: { readonly monday: Maybe<DAYFragment>, readonly tuesday: Maybe<DAYFragment>, readonly wednesday: Maybe<DAYFragment>, readonly thursday: Maybe<DAYFragment>, readonly friday: Maybe<DAYFragment>, readonly saturday: Maybe<DAYFragment>, readonly sunday: Maybe<DAYFragment> } }> } };
 
-type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
-
-type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
+type LogoImgQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+type LogoImgQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, readonly allFile: (
+    Pick<FileConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
+  ) };
 
 }
