@@ -263,7 +263,7 @@ function IndexPage({ data }: Index) {
 
 export const query = graphql`
   query homepage {
-    sanityPage(title: { eq: "Frontpage" }) {
+    sanityPage(_id: { eq: "frontpage" }) {
       hero {
         heading
         tagline {

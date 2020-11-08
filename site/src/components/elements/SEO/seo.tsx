@@ -28,9 +28,9 @@ export function SEO({
   gatsbySeoProps,
 }: Seo) {
   const { site, file, allFile } = useStaticQuery<
-    GatsbyTypes.SEO_DATAQuery
+    GatsbyTypes.SeoDataQuery
   >(graphql`
-    query SEO_DATA {
+    query SeoData {
       site {
         siteMetadata {
           title
