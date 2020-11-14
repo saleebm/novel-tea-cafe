@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import useEventListener from '@use-it/event-listener'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { Container, CssBaseline, Theme } from '@material-ui/core'
+import { CssBaseline, Theme } from '@material-ui/core'
 import { LocalBusinessJsonLd } from 'gatsby-plugin-next-seo/lib'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -67,9 +67,9 @@ export function Layout({ children }: Layout) {
   )
 
   const { file, allFile } = useStaticQuery<
-    GatsbyTypes.LOGO_IMGQuery
+    GatsbyTypes.LogoImageLayoutQuery
   >(graphql`
-    query LogoImg {
+    query LogoImageLayout {
       file(relativePath: { eq: "logo.png" }) {
         publicURL
       }
@@ -85,9 +85,7 @@ export function Layout({ children }: Layout) {
 
   const currentDate = new Date()
 
-  const images = allFile?.nodes?.map(
-    (node: { publicURL: string }) => node.publicURL ?? '',
-  )
+  const images = allFile?.nodes?.map((node) => node?.publicURL ?? '')
 
   return (
     <>
@@ -102,23 +100,26 @@ export function Layout({ children }: Layout) {
         telephone={'+14088717984'}
         priceRange={'$'}
         defer={true}
-        openingHours={{
-          dayOfWeek: [
-            'Mon',
-            'Tues',
-            'Wed',
-            'Thurs',
-            'Fri',
-            'Sat',
-            'Sun',
-          ],
-          closes: '12am',
-          opens: '12pm',
-          validFrom: currentDate.toLocaleString(),
-          validThrough: new Date(
-            currentDate.setMonth(currentDate.getMonth() + 4),
-          ).toLocaleString(),
-        }}
+        openingHours={[
+          {
+            dayOfWeek: ['Mon', 'Tues', 'Wed', 'Thurs'],
+            closes: '9am',
+            opens: '12pm',
+            validFrom: currentDate.toLocaleString(),
+            validThrough: new Date(
+              currentDate.setMonth(currentDate.getMonth() + 4),
+            ).toLocaleString(),
+          },
+          {
+            dayOfWeek: ['Fri', 'Sat', 'Sun'],
+            closes: '12am',
+            opens: '12pm',
+            validFrom: currentDate.toLocaleString(),
+            validThrough: new Date(
+              currentDate.setMonth(currentDate.getMonth() + 4),
+            ).toLocaleString(),
+          },
+        ]}
         address={{
           streetAddress: '157 Lake Howell Ln',
           addressLocality: 'Maitland',
@@ -141,12 +142,7 @@ export function Layout({ children }: Layout) {
           'hasMenu': 'https://novelteaorlando.com/menu',
         }}
       />
-      <Container
-        className={styles.wrapper}
-        ref={mainContainerRef}
-        maxWidth={false}
-        disableGutters
-      >
+      <div className={styles.wrapper} ref={mainContainerRef}>
         <BackToTop />
         <Cursor x={x} y={y} mouseUp={isCursorDown} />
         <Header />
@@ -154,7 +150,7 @@ export function Layout({ children }: Layout) {
           {children}
         </main>
         <Footer />
-      </Container>
+      </div>
       <GlobalStyles />
       <CssBaseline />
     </>

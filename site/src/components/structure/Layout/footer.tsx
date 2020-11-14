@@ -7,6 +7,7 @@ const useClasses = makeStyles((theme) => ({
   footerWrap: {
     position: 'relative',
     display: 'block',
+    zIndex: 2,
   },
   socialIconWrap: {
     width: '100%',

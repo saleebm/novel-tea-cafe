@@ -47,7 +47,7 @@ export function SocialIcons() {
     facebookIcon,
     instagramIcon,
     twitterIcon,
-  } = useStaticQuery(graphql`
+  } = useStaticQuery<GatsbyTypes.SOCIAL_SITE_LINKSQuery>(graphql`
     query SOCIAL_SITE_LINKS {
       sanitySiteSettings {
         facebookPage

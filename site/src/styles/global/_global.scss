@@ -76,13 +76,11 @@ html {
   scroll-behavior: smooth;
   font-family: 'Recursive', sans-serif;
   max-width: 100%;
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: contain;
 }
 
 body {
+  margin: 0;
   font-family: 'Recursive', sans-serif;
-  margin: unset !important;
   font-variation-settings: 'wght' 400, 'GRAD' 72;
   font-optical-sizing: auto;
   font-kerning: normal;
@@ -98,15 +96,9 @@ body {
     background-color: inherit;
   }
 
-  min-height: 100vh;
-  //noinspection CssInvalidPropertyValue
-  min-height: -webkit-fill-available;
-  //noinspection CssInvalidPropertyValue
-  min-height: -moz-available;
-  min-height: fit-content;
-
-  overflow-y: auto;
-  overflow-x: hidden !important;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: contain;
+  overflow-x: hidden;
 }
 
 * {
