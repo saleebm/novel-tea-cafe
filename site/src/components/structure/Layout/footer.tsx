@@ -6,8 +6,10 @@ import { SocialIcons } from '@Components/structure/Layout/social-icons'
 const useClasses = makeStyles((theme) => ({
   footerWrap: {
     position: 'relative',
-    display: 'block',
+    display: 'flex',
     zIndex: 2,
+    flexFLow: 'column nowrap',
+    height: '100%',
   },
   socialIconWrap: {
     width: '100%',
@@ -15,7 +17,8 @@ const useClasses = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing(2),
+    padding: 0,
+    margin: 0,
   },
 }))
 

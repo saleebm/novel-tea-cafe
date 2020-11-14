@@ -24,12 +24,12 @@ export const wrapVariants: Variants = {
 // simple float up animation
 export const childVariants: Variants = {
   hidden: {
-    y: 100,
+    translateY: -100,
     opacity: 0,
   },
   show: {
-    y: 0,
     opacity: 1,
+    translateY: 0,
     transition: {
       duration: 0.35,
     },

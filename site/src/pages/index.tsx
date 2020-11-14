@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: `${theme.spacing(3)}px 0`,
   },
   firstSectionItem: {
     position: 'relative',
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'stretch',
     justifyContent: 'center',
     alignContent: 'space-around',
-    paddingBottom: theme.spacing(1),
+    paddingBottom: theme.spacing(5),
   },
   bodyItem: {
     position: 'relative',
@@ -115,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ctaButton: {
     fontSize: '2.5rem',
-    marginTop: theme.spacing(1),
+    margin: `${theme.spacing(3)}px auto`,
   },
   reverseMobileSection: {
     [theme.breakpoints.down('sm')]: {

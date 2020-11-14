@@ -89,97 +89,96 @@ export function SocialIcons() {
       <AnimatedInPlainViewParent className={classes.socialArea}>
         <Grid
           container
-          spacing={1}
+          spacing={3}
           justify={'center'}
           alignItems={'center'}
         >
           {facebookIcon?.childImageSharp?.fixed &&
-            socialLinks?.facebookPage && (
-              <Grid
-                item
-                xs={6}
-                sm={4}
+          socialLinks?.facebookPage ? (
+            <Grid
+              item
+              xs={6}
+              sm={4}
+              className={classes.socialIconWrap}
+            >
+              <AnimatedInViewChildDiv
                 className={classes.socialIconWrap}
               >
-                <AnimatedInViewChildDiv
+                <a
                   className={classes.socialIconWrap}
+                  href={socialLinks.facebookPage}
+                  rel={'noopener noreferrer'}
+                  target={'_blank'}
                 >
-                  <a
-                    className={classes.socialIconWrap}
-                    href={socialLinks.facebookPage}
-                    rel={'noopener noreferrer'}
-                    target={'_blank'}
-                  >
-                    <GatsbyImage
-                      className={classes.socialIcon}
-                      Tag={'span'}
-                      fixed={
-                        facebookIcon.childImageSharp
-                          .fixed as FixedObject
-                      }
-                    />
-                  </a>
-                </AnimatedInViewChildDiv>
-              </Grid>
-            )}
+                  <GatsbyImage
+                    className={classes.socialIcon}
+                    Tag={'span'}
+                    fixed={
+                      facebookIcon.childImageSharp
+                        .fixed as FixedObject
+                    }
+                  />
+                </a>
+              </AnimatedInViewChildDiv>
+            </Grid>
+          ) : null}
           {twitterIcon?.childImageSharp?.fixed &&
-            socialLinks?.twitterPage && (
-              <Grid
-                item
-                xs={6}
-                sm={4}
+          socialLinks?.twitterPage ? (
+            <Grid
+              item
+              xs={6}
+              sm={4}
+              className={classes.socialIconWrap}
+            >
+              <AnimatedInViewChildDiv
                 className={classes.socialIconWrap}
               >
-                <AnimatedInViewChildDiv
+                <a
+                  href={socialLinks.twitterPage}
                   className={classes.socialIconWrap}
+                  rel={'noopener noreferrer'}
+                  target={'_blank'}
                 >
-                  <a
-                    href={socialLinks.twitterPage}
-                    className={classes.socialIconWrap}
-                    rel={'noopener noreferrer'}
-                    target={'_blank'}
-                  >
-                    <GatsbyImage
-                      Tag={'span'}
-                      className={classes.socialIcon}
-                      fixed={
-                        twitterIcon.childImageSharp
-                          .fixed as FixedObject
-                      }
-                    />
-                  </a>
-                </AnimatedInViewChildDiv>
-              </Grid>
-            )}
+                  <GatsbyImage
+                    Tag={'span'}
+                    className={classes.socialIcon}
+                    fixed={
+                      twitterIcon.childImageSharp.fixed as FixedObject
+                    }
+                  />
+                </a>
+              </AnimatedInViewChildDiv>
+            </Grid>
+          ) : null}
           {instagramIcon?.childImageSharp?.fixed &&
-            socialLinks?.instagramPage && (
-              <Grid
-                item
-                xs={6}
-                sm={4}
+          socialLinks?.instagramPage ? (
+            <Grid
+              item
+              xs={6}
+              sm={4}
+              className={classes.socialIconWrap}
+            >
+              <AnimatedInViewChildDiv
                 className={classes.socialIconWrap}
               >
-                <AnimatedInViewChildDiv
+                <a
                   className={classes.socialIconWrap}
+                  href={socialLinks.instagramPage}
+                  rel={'noopener noreferrer'}
+                  target={'_blank'}
                 >
-                  <a
-                    className={classes.socialIconWrap}
-                    href={socialLinks.instagramPage}
-                    rel={'noopener noreferrer'}
-                    target={'_blank'}
-                  >
-                    <GatsbyImage
-                      Tag={'span'}
-                      className={classes.socialIcon}
-                      fixed={
-                        instagramIcon.childImageSharp
-                          .fixed as FixedObject
-                      }
-                    />
-                  </a>
-                </AnimatedInViewChildDiv>
-              </Grid>
-            )}
+                  <GatsbyImage
+                    Tag={'span'}
+                    className={classes.socialIcon}
+                    fixed={
+                      instagramIcon.childImageSharp
+                        .fixed as FixedObject
+                    }
+                  />
+                </a>
+              </AnimatedInViewChildDiv>
+            </Grid>
+          ) : null}
         </Grid>
       </AnimatedInPlainViewParent>
     </>
