@@ -10,6 +10,7 @@ const useClasses = makeStyles((theme) => ({
     zIndex: 2,
     flexFLow: 'column nowrap',
     height: '100%',
+    rowGap: theme.spacing(3),
   },
   socialIconWrap: {
     width: '100%',
@@ -17,7 +18,7 @@ const useClasses = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 0,
+    padding: `${theme.spacing(3)}px 0`,
     margin: 0,
   },
 }))

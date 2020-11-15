@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import GatsbyImage, { FixedObject } from 'gatsby-image'
-import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 import {
@@ -17,18 +16,19 @@ const useClasses = makeStyles((theme) => ({
     justifyContent: 'center',
     position: 'relative',
     width: '100%',
+    height: '100%',
+    columnGap: theme.spacing(2),
   },
   socialIcon: {
-    'willChange': 'filter, transform',
-    'transition': theme.transitions.create(['filter', 'transform']),
+    'willChange': 'transform',
+    'transition': theme.transitions.create(['transform']),
     '&:hover, &:focus': {
-      filter: 'brightness(1.2) contrast(0.9)',
       transform: 'translateY(-3px)',
     },
   },
   socialIconWrap: {
     position: 'relative',
-    flex: '0 0 auto',
+    flex: 1,
     padding: 0,
     display: 'flex',
     justifyContent: 'center',
@@ -36,7 +36,6 @@ const useClasses = makeStyles((theme) => ({
     height: '100px',
     maxWidth: '70px',
     width: '100%',
-    marginLeft: theme.spacing(0.5),
   },
 }))
 
@@ -85,102 +84,70 @@ export function SocialIcons() {
   `)
 
   return (
-    <>
-      <AnimatedInPlainViewParent className={classes.socialArea}>
-        <Grid
-          container
-          spacing={3}
-          justify={'center'}
-          alignItems={'center'}
-        >
-          {facebookIcon?.childImageSharp?.fixed &&
-          socialLinks?.facebookPage ? (
-            <Grid
-              item
-              xs={6}
-              sm={4}
+    <AnimatedInPlainViewParent className={classes.socialArea}>
+      {facebookIcon?.childImageSharp?.fixed &&
+      socialLinks?.facebookPage ? (
+        <div className={classes.socialIconWrap}>
+          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
+            <a
               className={classes.socialIconWrap}
+              href={socialLinks.facebookPage}
+              rel={'noopener noreferrer'}
+              target={'_blank'}
             >
-              <AnimatedInViewChildDiv
-                className={classes.socialIconWrap}
-              >
-                <a
-                  className={classes.socialIconWrap}
-                  href={socialLinks.facebookPage}
-                  rel={'noopener noreferrer'}
-                  target={'_blank'}
-                >
-                  <GatsbyImage
-                    className={classes.socialIcon}
-                    Tag={'span'}
-                    fixed={
-                      facebookIcon.childImageSharp
-                        .fixed as FixedObject
-                    }
-                  />
-                </a>
-              </AnimatedInViewChildDiv>
-            </Grid>
-          ) : null}
-          {twitterIcon?.childImageSharp?.fixed &&
-          socialLinks?.twitterPage ? (
-            <Grid
-              item
-              xs={6}
-              sm={4}
+              <GatsbyImage
+                className={classes.socialIcon}
+                Tag={'span'}
+                fixed={
+                  facebookIcon.childImageSharp.fixed as FixedObject
+                }
+              />
+            </a>
+          </AnimatedInViewChildDiv>
+        </div>
+      ) : null}
+      {twitterIcon?.childImageSharp?.fixed &&
+      socialLinks?.twitterPage ? (
+        <div className={classes.socialIconWrap}>
+          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
+            <a
+              href={socialLinks.twitterPage}
               className={classes.socialIconWrap}
+              rel={'noopener noreferrer'}
+              target={'_blank'}
             >
-              <AnimatedInViewChildDiv
-                className={classes.socialIconWrap}
-              >
-                <a
-                  href={socialLinks.twitterPage}
-                  className={classes.socialIconWrap}
-                  rel={'noopener noreferrer'}
-                  target={'_blank'}
-                >
-                  <GatsbyImage
-                    Tag={'span'}
-                    className={classes.socialIcon}
-                    fixed={
-                      twitterIcon.childImageSharp.fixed as FixedObject
-                    }
-                  />
-                </a>
-              </AnimatedInViewChildDiv>
-            </Grid>
-          ) : null}
-          {instagramIcon?.childImageSharp?.fixed &&
-          socialLinks?.instagramPage ? (
-            <Grid
-              item
-              xs={6}
-              sm={4}
+              <GatsbyImage
+                Tag={'span'}
+                className={classes.socialIcon}
+                fixed={
+                  twitterIcon.childImageSharp.fixed as FixedObject
+                }
+              />
+            </a>
+          </AnimatedInViewChildDiv>
+        </div>
+      ) : null}
+      {instagramIcon?.childImageSharp?.fixed &&
+      socialLinks?.instagramPage ? (
+        <div className={classes.socialIconWrap}>
+          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
+            <a
               className={classes.socialIconWrap}
+              href={socialLinks.instagramPage}
+              rel={'noopener noreferrer'}
+              target={'_blank'}
             >
-              <AnimatedInViewChildDiv
-                className={classes.socialIconWrap}
-              >
-                <a
-                  className={classes.socialIconWrap}
-                  href={socialLinks.instagramPage}
-                  rel={'noopener noreferrer'}
-                  target={'_blank'}
-                >
-                  <GatsbyImage
-                    Tag={'span'}
-                    className={classes.socialIcon}
-                    fixed={
-                      instagramIcon.childImageSharp
-                        .fixed as FixedObject
-                    }
-                  />
-                </a>
-              </AnimatedInViewChildDiv>
-            </Grid>
-          ) : null}
-        </Grid>
-      </AnimatedInPlainViewParent>
-    </>
+              <GatsbyImage
+                Tag={'span'}
+                className={classes.socialIcon}
+                fixed={
+                  instagramIcon.childImageSharp.fixed as FixedObject
+                }
+              />
+            </a>
+          </AnimatedInViewChildDiv>
+        </div>
+      ) : null}
+    </AnimatedInPlainViewParent>
   )
 }
