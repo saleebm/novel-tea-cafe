@@ -7,7 +7,6 @@ const useClasses = makeStyles((theme) => ({
   footerWrap: {
     position: 'relative',
     display: 'flex',
-    zIndex: 2,
     flexFLow: 'column nowrap',
     height: '100%',
     rowGap: theme.spacing(3),
