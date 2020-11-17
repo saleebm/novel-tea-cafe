@@ -7786,4 +7786,32 @@ type weeklyEventsQueryVariables = Exact<{ [key: string]: never; }>;
 
 type weeklyEventsQuery = { readonly sanitySiteSettings: Maybe<{ readonly happyHour: Maybe<ReadonlyArray<Maybe<TAGLINEFragment>>> }>, readonly allSanityWeeklyEvents: { readonly edges: ReadonlyArray<{ readonly node: { readonly monday: Maybe<DAYFragment>, readonly tuesday: Maybe<DAYFragment>, readonly wednesday: Maybe<DAYFragment>, readonly thursday: Maybe<DAYFragment>, readonly friday: Maybe<DAYFragment>, readonly saturday: Maybe<DAYFragment>, readonly sunday: Maybe<DAYFragment> } }> } };
 
+type SeoDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SeoDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly file: Maybe<Pick<File, 'publicURL' | 'name'>>, readonly allFile: (
+    Pick<FileConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
+  ) };
+
+type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+type LogoImageLayoutQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImageLayoutQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, readonly allFile: (
+    Pick<FileConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
+  ) };
+
+type SOCIAL_SITE_LINKSQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SOCIAL_SITE_LINKSQuery = { readonly sanitySiteSettings: Maybe<Pick<SanitySiteSettings, 'facebookPage' | 'twitterPage' | 'instagramPage'>>, readonly facebookIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly twitterIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly instagramIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
 }
