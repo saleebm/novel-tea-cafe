@@ -11,10 +11,8 @@ type MenuPriceChipProps = Omit<ChipProps, 'icon' | 'variant'> & {
 
 const useStyles = makeStyles((theme) => ({
   chipLabel: {
+    ...theme.typography.body2,
     color: theme.palette.text.primary,
-    fontSize: theme.typography.button.fontSize,
-    fontFamily: 'Jost',
-    fontVariationSettings: '"SALT" 1, "WGHT" 200, "WDTH" 69',
   },
 }))
 

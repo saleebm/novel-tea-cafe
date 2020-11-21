@@ -67,9 +67,9 @@ export function SEO({
       imagesOpenGraph.concat(image)
     }
     if (Array.isArray(allFile.nodes)) {
-      allFile.nodes.forEach((node: { publicURL: string }) => {
+      allFile.nodes.forEach((node) => {
         imagesOpenGraph.push({
-          url: node.publicURL,
+          url: node?.publicURL ?? '',
         })
       })
     }

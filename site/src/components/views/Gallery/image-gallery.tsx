@@ -26,9 +26,7 @@ type GalleryImage = GatsbyTypes.Maybe<
   Pick<GatsbyTypes.SanityMainImage, 'alt' | 'caption'> & {
     readonly asset: GatsbyTypes.Maybe<
       Pick<GatsbyTypes.SanityImageAsset, 'assetId'> & {
-        readonly fluid: GatsbyTypes.Maybe<
-          GatsbyTypes.GatsbySanityImageFluidFragment
-        >
+        readonly fluid: GatsbyTypes.Maybe<GatsbyTypes.GatsbySanityImageFluidFragment>
       }
     >
   }

@@ -41,21 +41,21 @@ const typography: TypographyOptions = {
     textTransform: 'initial',
     fontFamily: "'Recursive', sans-serif",
     fontVariationSettings:
-      '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1',
+      '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1, "MONO" 0',
   },
   h5: {
     fontSize: '1.35rem',
     letterSpacing: '-0.018em',
     fontFamily: "'Recursive', sans-serif",
     fontVariationSettings:
-      '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1',
+      '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1, "MONO" 0',
   },
   h6: {
     fontSize: '1.15rem',
     letterSpacing: '-0.021em',
     fontFamily: "'Recursive', sans-serif",
     fontVariationSettings:
-      '"wght" 400, "CONT" 250, "MIDL" 0, "SALT" 1',
+      '"wght" 400, "CONT" 250, "MIDL" 0, "SALT" 1, "MONO" 0',
     lineHeight: 1.4,
   },
   body1: {
@@ -71,7 +71,8 @@ const typography: TypographyOptions = {
     fontFamily: "'Recursive', sans-serif",
     fontSize: '0.95rem',
     letterSpacing: 0,
-    fontVariationSettings: '"wght" 400, "CONT" 500, "SALT" 1',
+    fontVariationSettings:
+      '"wght" 400, "CONT" 500, "SALT" 1, "MONO" 0',
     lineHeight: 1.1,
   },
   subtitle1: {
@@ -88,7 +89,7 @@ const typography: TypographyOptions = {
     letterSpacing: '-0.004em',
     lineHeight: 1.1,
     whiteSpace: 'pre-wrap',
-    fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1',
+    fontVariationSettings: '"wght" 400, "CONT" 0, "SALT" 1, "MONO" 0',
   },
 }
 
