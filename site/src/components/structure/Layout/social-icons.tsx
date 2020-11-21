@@ -11,13 +11,15 @@ import {
 const useClasses = makeStyles((theme) => ({
   socialArea: {
     display: 'flex',
-    flexFlow: 'row wrap',
+    flexFlow: 'row nowrap',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
     width: '100%',
     height: '100%',
-    columnGap: theme.spacing(2),
+    columnGap: theme.spacing(1),
+    padding: theme.spacing(3),
+    margin: 0,
   },
   socialIcon: {
     'willChange': 'transform',
@@ -33,6 +35,7 @@ const useClasses = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    maxHeight: '100px',
     height: '100px',
     maxWidth: '70px',
     width: '100%',
@@ -87,66 +90,67 @@ export function SocialIcons() {
     <AnimatedInPlainViewParent className={classes.socialArea}>
       {facebookIcon?.childImageSharp?.fixed &&
       socialLinks?.facebookPage ? (
-        <div className={classes.socialIconWrap}>
-          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
-            <a
-              className={classes.socialIconWrap}
-              href={socialLinks.facebookPage}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            >
-              <GatsbyImage
-                className={classes.socialIcon}
-                Tag={'span'}
-                fixed={
-                  facebookIcon.childImageSharp.fixed as FixedObject
-                }
-              />
-            </a>
-          </AnimatedInViewChildDiv>
-        </div>
+        <AnimatedInViewChildDiv
+          key={'facebook'}
+          className={classes.socialIconWrap}
+        >
+          <a
+            className={classes.socialIconWrap}
+            href={socialLinks.facebookPage}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          >
+            <GatsbyImage
+              className={classes.socialIcon}
+              Tag={'span'}
+              fixed={
+                facebookIcon.childImageSharp.fixed as FixedObject
+              }
+            />
+          </a>
+        </AnimatedInViewChildDiv>
       ) : null}
       {twitterIcon?.childImageSharp?.fixed &&
       socialLinks?.twitterPage ? (
-        <div className={classes.socialIconWrap}>
-          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
-            <a
-              href={socialLinks.twitterPage}
-              className={classes.socialIconWrap}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            >
-              <GatsbyImage
-                Tag={'span'}
-                className={classes.socialIcon}
-                fixed={
-                  twitterIcon.childImageSharp.fixed as FixedObject
-                }
-              />
-            </a>
-          </AnimatedInViewChildDiv>
-        </div>
+        <AnimatedInViewChildDiv
+          key={'twitter'}
+          className={classes.socialIconWrap}
+        >
+          <a
+            href={socialLinks.twitterPage}
+            className={classes.socialIconWrap}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          >
+            <GatsbyImage
+              Tag={'span'}
+              className={classes.socialIcon}
+              fixed={twitterIcon.childImageSharp.fixed as FixedObject}
+            />
+          </a>
+        </AnimatedInViewChildDiv>
       ) : null}
       {instagramIcon?.childImageSharp?.fixed &&
       socialLinks?.instagramPage ? (
-        <div className={classes.socialIconWrap}>
-          <AnimatedInViewChildDiv className={classes.socialIconWrap}>
-            <a
-              className={classes.socialIconWrap}
-              href={socialLinks.instagramPage}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            >
-              <GatsbyImage
-                Tag={'span'}
-                className={classes.socialIcon}
-                fixed={
-                  instagramIcon.childImageSharp.fixed as FixedObject
-                }
-              />
-            </a>
-          </AnimatedInViewChildDiv>
-        </div>
+        <AnimatedInViewChildDiv
+          key={'instagram'}
+          className={classes.socialIconWrap}
+        >
+          <a
+            className={classes.socialIconWrap}
+            href={socialLinks.instagramPage}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          >
+            <GatsbyImage
+              Tag={'span'}
+              className={classes.socialIcon}
+              fixed={
+                instagramIcon.childImageSharp.fixed as FixedObject
+              }
+            />
+          </a>
+        </AnimatedInViewChildDiv>
       ) : null}
     </AnimatedInPlainViewParent>
   )
