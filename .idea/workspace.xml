@@ -24,20 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/site/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/InView/in-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/InView/in-view.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/SEO/seo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/material-theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/styles/global/__index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/__index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/schemas/documents/siteSettings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +118,7 @@
       <recent name="$PROJECT_DIR$/studio/schemas/documents" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.develop:fast-refresh">
     <configuration name="build-studio" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -187,8 +178,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.develop:fast-refresh" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.build-studio" />
@@ -299,7 +290,7 @@
       <workItem from="1605830882467" duration="655000" />
       <workItem from="1605925223602" duration="1084000" />
       <workItem from="1605996904516" duration="646000" />
-      <workItem from="1606852426329" duration="764000" />
+      <workItem from="1606852426329" duration="2971000" />
     </task>
     <servers />
   </component>
@@ -336,6 +327,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="867" y="548" key="#com.intellij.ide.util.TreeDirectoryChooserDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1604615149615" />
+    <state x="560" y="300" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606858303138">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="300" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1606858303138" />
     <state x="114" y="114" width="1692" height="972" key="DiffContextDialog" timestamp="1604171320129">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -344,30 +339,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="891" y="315" key="FileChooserDialogImpl/0.0.1680.1050@0.0.1680.1050" timestamp="1599415729956" />
-    <state width="1878" height="227" key="GridCell.Tab.0.bottom" timestamp="1606853086686">
+    <state width="1878" height="318" key="GridCell.Tab.0.bottom" timestamp="1606857938280">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1638" height="185" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1599418056194" />
     <state width="1878" height="104" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1440.180.1440.900@0.0.1920.1080" timestamp="1602094696932" />
-    <state width="1878" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1606853086686" />
-    <state width="1878" height="227" key="GridCell.Tab.0.center" timestamp="1606853086685">
+    <state width="1878" height="318" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1606857938280" />
+    <state width="1878" height="318" key="GridCell.Tab.0.center" timestamp="1606857938278">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1638" height="185" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1599418056193" />
     <state width="1878" height="104" key="GridCell.Tab.0.center/0.0.1920.1080/-1440.180.1440.900@0.0.1920.1080" timestamp="1602094696930" />
-    <state width="1878" height="227" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1606853086685" />
-    <state width="1878" height="227" key="GridCell.Tab.0.left" timestamp="1606853086684">
+    <state width="1878" height="318" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1606857938278" />
+    <state width="1878" height="318" key="GridCell.Tab.0.left" timestamp="1606857938278">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1638" height="185" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1599418056192" />
     <state width="1878" height="104" key="GridCell.Tab.0.left/0.0.1920.1080/-1440.180.1440.900@0.0.1920.1080" timestamp="1602094696930" />
-    <state width="1878" height="227" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1606853086684" />
-    <state width="1878" height="227" key="GridCell.Tab.0.right" timestamp="1606853086686">
+    <state width="1878" height="318" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1606857938278" />
+    <state width="1878" height="318" key="GridCell.Tab.0.right" timestamp="1606857938280">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1638" height="185" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1599418056193" />
     <state width="1878" height="104" key="GridCell.Tab.0.right/0.0.1920.1080/-1440.180.1440.900@0.0.1920.1080" timestamp="1602094696931" />
-    <state width="1878" height="227" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1606853086686" />
+    <state width="1878" height="318" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1606857938280" />
     <state width="1638" height="429" key="GridCell.Tab.1.bottom" timestamp="1599415661662">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -425,12 +420,12 @@
     </state>
     <state x="410" y="207" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1599414027207" />
     <state x="469" y="237" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1604644663994" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1605997256285">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1606858558423">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="500" height="400" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1599417822225" />
     <state width="572" height="412" key="SwitcherDM/0.0.1920.1080/-1440.180.1440.900@0.0.1920.1080" timestamp="1602094013924" />
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1605997256285" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1606858558423" />
     <state x="100" y="99" width="1720" height="1000" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604171678844">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

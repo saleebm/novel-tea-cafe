@@ -48,7 +48,7 @@ const typography: TypographyOptions = {
     letterSpacing: '-0.018em',
     fontFamily: "'Recursive', sans-serif",
     fontVariationSettings:
-      '"wght" 400, "CONT" 500, "MIDL" 0, "SALT" 1, "MONO" 0',
+      '"wght" 500, "CONT" 500, "MIDL" 0, "SALT" 1, "MONO" 0',
   },
   h6: {
     fontSize: '1.15rem',

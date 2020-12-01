@@ -1890,8 +1890,10 @@ type Query_sanitySiteSettingsArgs = {
   instagramPage: Maybe<StringQueryOperatorInput>;
   twitterPage: Maybe<StringQueryOperatorInput>;
   happyHour: Maybe<SanityBlockFilterListInput>;
+  hours: Maybe<SanityBlockFilterListInput>;
   _rawOpenGraph: Maybe<JSONQueryOperatorInput>;
   _rawHappyHour: Maybe<JSONQueryOperatorInput>;
+  _rawHours: Maybe<JSONQueryOperatorInput>;
   _rawPrimaryColor: Maybe<JSONQueryOperatorInput>;
   _rawSecondaryColor: Maybe<JSONQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -5369,8 +5371,10 @@ type SanitySiteSettings = SanityDocument & Node & {
   readonly instagramPage: Maybe<Scalars['String']>;
   readonly twitterPage: Maybe<Scalars['String']>;
   readonly happyHour: Maybe<ReadonlyArray<Maybe<SanityBlock>>>;
+  readonly hours: Maybe<ReadonlyArray<Maybe<SanityBlock>>>;
   readonly _rawOpenGraph: Maybe<Scalars['JSON']>;
   readonly _rawHappyHour: Maybe<Scalars['JSON']>;
+  readonly _rawHours: Maybe<Scalars['JSON']>;
   readonly _rawPrimaryColor: Maybe<Scalars['JSON']>;
   readonly _rawSecondaryColor: Maybe<Scalars['JSON']>;
   readonly id: Scalars['ID'];
@@ -5402,6 +5406,11 @@ type SanitySiteSettings__rawOpenGraphArgs = {
 
 
 type SanitySiteSettings__rawHappyHourArgs = {
+  resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanitySiteSettings__rawHoursArgs = {
   resolveReferences: Maybe<SanityResolveReferencesConfiguration>;
 };
 
@@ -5559,8 +5568,20 @@ enum SanitySiteSettingsFieldsEnum {
   happyHour___style = 'happyHour.style',
   happyHour___list = 'happyHour.list',
   happyHour____rawChildren = 'happyHour._rawChildren',
+  hours = 'hours',
+  hours____key = 'hours._key',
+  hours____type = 'hours._type',
+  hours___children = 'hours.children',
+  hours___children____key = 'hours.children._key',
+  hours___children____type = 'hours.children._type',
+  hours___children___marks = 'hours.children.marks',
+  hours___children___text = 'hours.children.text',
+  hours___style = 'hours.style',
+  hours___list = 'hours.list',
+  hours____rawChildren = 'hours._rawChildren',
   _rawOpenGraph = '_rawOpenGraph',
   _rawHappyHour = '_rawHappyHour',
+  _rawHours = '_rawHours',
   _rawPrimaryColor = '_rawPrimaryColor',
   _rawSecondaryColor = '_rawSecondaryColor',
   id = 'id',
@@ -5666,8 +5687,10 @@ type SanitySiteSettingsFilterInput = {
   readonly instagramPage: Maybe<StringQueryOperatorInput>;
   readonly twitterPage: Maybe<StringQueryOperatorInput>;
   readonly happyHour: Maybe<SanityBlockFilterListInput>;
+  readonly hours: Maybe<SanityBlockFilterListInput>;
   readonly _rawOpenGraph: Maybe<JSONQueryOperatorInput>;
   readonly _rawHappyHour: Maybe<JSONQueryOperatorInput>;
+  readonly _rawHours: Maybe<JSONQueryOperatorInput>;
   readonly _rawPrimaryColor: Maybe<JSONQueryOperatorInput>;
   readonly _rawSecondaryColor: Maybe<JSONQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -6676,10 +6699,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___scale = 'pluginCreator.pluginOptions.scale',
   pluginCreator___pluginOptions___format = 'pluginCreator.pluginOptions.format',
   pluginCreator___pluginOptions___nickname = 'pluginCreator.pluginOptions.nickname',
-  pluginCreator___pluginOptions___styles = 'pluginCreator.pluginOptions.styles',
-  pluginCreator___pluginOptions___styles___feature = 'pluginCreator.pluginOptions.styles.feature',
-  pluginCreator___pluginOptions___styles___element = 'pluginCreator.pluginOptions.styles.element',
-  pluginCreator___pluginOptions___styles___rules = 'pluginCreator.pluginOptions.styles.rules',
   pluginCreator___pluginOptions___markers = 'pluginCreator.pluginOptions.markers',
   pluginCreator___pluginOptions___markers___size = 'pluginCreator.pluginOptions.markers.size',
   pluginCreator___pluginOptions___markers___color = 'pluginCreator.pluginOptions.markers.color',
@@ -7006,14 +7025,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___scale = 'pluginOptions.scale',
   pluginOptions___format = 'pluginOptions.format',
   pluginOptions___nickname = 'pluginOptions.nickname',
-  pluginOptions___styles = 'pluginOptions.styles',
-  pluginOptions___styles___feature = 'pluginOptions.styles.feature',
-  pluginOptions___styles___element = 'pluginOptions.styles.element',
-  pluginOptions___styles___rules = 'pluginOptions.styles.rules',
-  pluginOptions___styles___rules___visibility = 'pluginOptions.styles.rules.visibility',
-  pluginOptions___styles___rules___hue = 'pluginOptions.styles.rules.hue',
-  pluginOptions___styles___rules___weight = 'pluginOptions.styles.rules.weight',
-  pluginOptions___styles___rules___color = 'pluginOptions.styles.rules.color',
   pluginOptions___markers = 'pluginOptions.markers',
   pluginOptions___markers___size = 'pluginOptions.markers.size',
   pluginOptions___markers___color = 'pluginOptions.markers.color',
@@ -7177,7 +7188,6 @@ type SitePluginPluginOptions = {
   readonly scale: Maybe<Scalars['Int']>;
   readonly format: Maybe<Scalars['String']>;
   readonly nickname: Maybe<Scalars['String']>;
-  readonly styles: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsStyles>>>;
   readonly markers: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsMarkers>>>;
   readonly output: Maybe<Scalars['String']>;
   readonly createLinkInHead: Maybe<Scalars['Boolean']>;
@@ -7228,7 +7238,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly scale: Maybe<IntQueryOperatorInput>;
   readonly format: Maybe<StringQueryOperatorInput>;
   readonly nickname: Maybe<StringQueryOperatorInput>;
-  readonly styles: Maybe<SitePluginPluginOptionsStylesFilterListInput>;
   readonly markers: Maybe<SitePluginPluginOptionsMarkersFilterListInput>;
   readonly output: Maybe<StringQueryOperatorInput>;
   readonly createLinkInHead: Maybe<BooleanQueryOperatorInput>;
@@ -7284,40 +7293,6 @@ type SitePluginPluginOptionsOptions = {
 type SitePluginPluginOptionsOptionsFilterInput = {
   readonly emitWarning: Maybe<BooleanQueryOperatorInput>;
   readonly failOnError: Maybe<BooleanQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsStyles = {
-  readonly feature: Maybe<Scalars['String']>;
-  readonly element: Maybe<Scalars['String']>;
-  readonly rules: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsStylesRules>>>;
-};
-
-type SitePluginPluginOptionsStylesFilterInput = {
-  readonly feature: Maybe<StringQueryOperatorInput>;
-  readonly element: Maybe<StringQueryOperatorInput>;
-  readonly rules: Maybe<SitePluginPluginOptionsStylesRulesFilterListInput>;
-};
-
-type SitePluginPluginOptionsStylesFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPluginOptionsStylesFilterInput>;
-};
-
-type SitePluginPluginOptionsStylesRules = {
-  readonly visibility: Maybe<Scalars['String']>;
-  readonly hue: Maybe<Scalars['String']>;
-  readonly weight: Maybe<Scalars['Float']>;
-  readonly color: Maybe<Scalars['String']>;
-};
-
-type SitePluginPluginOptionsStylesRulesFilterInput = {
-  readonly visibility: Maybe<StringQueryOperatorInput>;
-  readonly hue: Maybe<StringQueryOperatorInput>;
-  readonly weight: Maybe<FloatQueryOperatorInput>;
-  readonly color: Maybe<StringQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsStylesRulesFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPluginOptionsStylesRulesFilterInput>;
 };
 
 type SitePluginPluginOptionsUseResolveUrlLoader = {
@@ -7703,7 +7678,7 @@ type aboutPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 type aboutPageQuery = { readonly sanitySiteSettings: Maybe<(
     Pick<SanitySiteSettings, 'address'>
-    & { readonly openGraph: Maybe<(
+    & { readonly hours: Maybe<ReadonlyArray<Maybe<{ readonly children: Maybe<ReadonlyArray<Maybe<Pick<SanitySpan, 'text' | 'marks'>>>> }>>>, readonly openGraph: Maybe<(
       Pick<SanityOpenGraph, 'title' | 'description'>
       & { readonly image: Maybe<(
         Pick<SanityMainImage, 'alt'>
@@ -7794,6 +7769,13 @@ type SeoDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<S
     & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
   ) };
 
+type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
 type LogoImageLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -7802,16 +7784,9 @@ type LogoImageLayoutQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, rea
     & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
   ) };
 
-type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
-
 type SOCIAL_SITE_LINKSQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SOCIAL_SITE_LINKSQuery = { readonly sanitySiteSettings: Maybe<Pick<SanitySiteSettings, 'facebookPage' | 'twitterPage' | 'instagramPage'>>, readonly facebookIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly twitterIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly instagramIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 }

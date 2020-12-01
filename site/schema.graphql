@@ -569,9 +569,9 @@ type Query {
   sanityMenuItemCategory(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityMenuItemCategory
   sanityPage(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHero: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, hero: SanityHeroFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, title: StringQueryOperatorInput): SanityPage
   sanityPost(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawAuthors: JSONQueryOperatorInput, _rawBody: JSONQueryOperatorInput, _rawCategories: JSONQueryOperatorInput, _rawExcerpt: JSONQueryOperatorInput, _rawMainImage: JSONQueryOperatorInput, _rawSlug: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, authors: SanityAuthorReferenceFilterListInput, body: SanityBlockFilterListInput, categories: SanityCategoryFilterListInput, children: NodeFilterListInput, excerpt: SanityBlockFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isPublished: BooleanQueryOperatorInput, mainImage: SanityMainImageFilterInput, parent: NodeFilterInput, publishedAt: DateQueryOperatorInput, slug: SanitySlugFilterInput, title: StringQueryOperatorInput): SanityPost
-  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHappyHour: JSONQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, address: StringQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, happyHour: SanityBlockFilterListInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
+  sanitySiteSettings(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawHappyHour: JSONQueryOperatorInput, _rawHours: JSONQueryOperatorInput, _rawOpenGraph: JSONQueryOperatorInput, _rawPrimaryColor: JSONQueryOperatorInput, _rawSecondaryColor: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, address: StringQueryOperatorInput, children: NodeFilterListInput, facebookPage: StringQueryOperatorInput, happyHour: SanityBlockFilterListInput, hours: SanityBlockFilterListInput, id: StringQueryOperatorInput, instagramPage: StringQueryOperatorInput, internal: InternalFilterInput, openGraph: SanityOpenGraphFilterInput, parent: NodeFilterInput, primaryColor: SanityColorFilterInput, secondaryColor: SanityColorFilterInput, twitterPage: StringQueryOperatorInput): SanitySiteSettings
   sanityWeeklyEvents(_createdAt: DateQueryOperatorInput, _id: StringQueryOperatorInput, _key: StringQueryOperatorInput, _rawFriday: JSONQueryOperatorInput, _rawMonday: JSONQueryOperatorInput, _rawSaturday: JSONQueryOperatorInput, _rawSunday: JSONQueryOperatorInput, _rawThursday: JSONQueryOperatorInput, _rawTuesday: JSONQueryOperatorInput, _rawWednesday: JSONQueryOperatorInput, _rev: StringQueryOperatorInput, _type: StringQueryOperatorInput, _updatedAt: DateQueryOperatorInput, children: NodeFilterListInput, friday: SanityEventDayFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, monday: SanityEventDayFilterInput, parent: NodeFilterInput, saturday: SanityEventDayFilterInput, sunday: SanityEventDayFilterInput, thursday: SanityEventDayFilterInput, tuesday: SanityEventDayFilterInput, wednesday: SanityEventDayFilterInput): SanityWeeklyEvents
-  site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
+  site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, port: IntQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
   sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
   sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
@@ -1518,6 +1518,7 @@ type SanitySiteSettings implements Node & SanityDocument {
   _id: String
   _key: String
   _rawHappyHour(resolveReferences: SanityResolveReferencesConfiguration): JSON
+  _rawHours(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawOpenGraph(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawPrimaryColor(resolveReferences: SanityResolveReferencesConfiguration): JSON
   _rawSecondaryColor(resolveReferences: SanityResolveReferencesConfiguration): JSON
@@ -1537,6 +1538,7 @@ type SanitySiteSettings implements Node & SanityDocument {
   children: [Node!]!
   facebookPage: String
   happyHour: [SanityBlock]
+  hours: [SanityBlock]
   id: ID!
   instagramPage: String
   internal: Internal!
@@ -1702,8 +1704,6 @@ type Site implements Node {
   id: ID!
   internal: Internal!
   parent: Node
-  pathPrefix: String
-  polyfill: Boolean
   port: Int
   siteMetadata: SiteSiteMetadata
 }
@@ -1901,7 +1901,6 @@ type SitePluginPluginOptions {
   jsxPragma: String
   key: String
   linefeed: String
-  markers: [SitePluginPluginOptionsMarkers]
   name: String
   nickname: String
   omitSourceMapUrl: Boolean
@@ -1922,7 +1921,6 @@ type SitePluginPluginOptions {
   sourceMapEmbed: Boolean
   stages: [String]
   stripMetadata: Boolean
-  styles: [SitePluginPluginOptionsStyles]
   titleTemplate: String
   trackingId: String
   useMozJpeg: Boolean
@@ -1935,12 +1933,6 @@ type SitePluginPluginOptionsImplementation {
   info: String
 }
 
-type SitePluginPluginOptionsMarkers {
-  color: String
-  location: String
-  size: String
-}
-
 type SitePluginPluginOptionsOpenGraph {
   locale: String
   site_name: String
@@ -1951,19 +1943,6 @@ type SitePluginPluginOptionsOpenGraph {
 type SitePluginPluginOptionsOptions {
   emitWarning: Boolean
   failOnError: Boolean
-}
-
-type SitePluginPluginOptionsStyles {
-  element: String
-  feature: String
-  rules: [SitePluginPluginOptionsStylesRules]
-}
-
-type SitePluginPluginOptionsStylesRules {
-  color: String
-  hue: String
-  visibility: String
-  weight: Float
 }
 
 type SitePluginPluginOptionsUseResolveUrlLoader {
@@ -4065,6 +4044,7 @@ enum SanitySiteSettingsFieldsEnum {
   _id
   _key
   _rawHappyHour
+  _rawHours
   _rawOpenGraph
   _rawPrimaryColor
   _rawSecondaryColor
@@ -4123,6 +4103,17 @@ enum SanitySiteSettingsFieldsEnum {
   happyHour___children___text
   happyHour___list
   happyHour___style
+  hours
+  hours____key
+  hours____rawChildren
+  hours____type
+  hours___children
+  hours___children____key
+  hours___children____type
+  hours___children___marks
+  hours___children___text
+  hours___list
+  hours___style
   id
   instagramPage
   internal___content
@@ -4753,8 +4744,6 @@ enum SiteFieldsEnum {
   parent___parent___internal___type
   parent___parent___parent___children
   parent___parent___parent___id
-  pathPrefix
-  polyfill
   port
   siteMetadata___author
   siteMetadata___description
@@ -4934,10 +4923,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___jsxPragma
   pluginCreator___pluginOptions___key
   pluginCreator___pluginOptions___linefeed
-  pluginCreator___pluginOptions___markers
-  pluginCreator___pluginOptions___markers___color
-  pluginCreator___pluginOptions___markers___location
-  pluginCreator___pluginOptions___markers___size
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___nickname
   pluginCreator___pluginOptions___omitSourceMapUrl
@@ -4962,10 +4947,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___sourceMapEmbed
   pluginCreator___pluginOptions___stages
   pluginCreator___pluginOptions___stripMetadata
-  pluginCreator___pluginOptions___styles
-  pluginCreator___pluginOptions___styles___element
-  pluginCreator___pluginOptions___styles___feature
-  pluginCreator___pluginOptions___styles___rules
   pluginCreator___pluginOptions___titleTemplate
   pluginCreator___pluginOptions___trackingId
   pluginCreator___pluginOptions___useMozJpeg
@@ -5102,10 +5083,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___jsxPragma
   pluginOptions___key
   pluginOptions___linefeed
-  pluginOptions___markers
-  pluginOptions___markers___color
-  pluginOptions___markers___location
-  pluginOptions___markers___size
   pluginOptions___name
   pluginOptions___nickname
   pluginOptions___omitSourceMapUrl
@@ -5130,14 +5107,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___sourceMapEmbed
   pluginOptions___stages
   pluginOptions___stripMetadata
-  pluginOptions___styles
-  pluginOptions___styles___element
-  pluginOptions___styles___feature
-  pluginOptions___styles___rules
-  pluginOptions___styles___rules___color
-  pluginOptions___styles___rules___hue
-  pluginOptions___styles___rules___visibility
-  pluginOptions___styles___rules___weight
   pluginOptions___titleTemplate
   pluginOptions___trackingId
   pluginOptions___useMozJpeg
@@ -6189,6 +6158,7 @@ input SanitySiteSettingsFilterInput {
   _id: StringQueryOperatorInput
   _key: StringQueryOperatorInput
   _rawHappyHour: JSONQueryOperatorInput
+  _rawHours: JSONQueryOperatorInput
   _rawOpenGraph: JSONQueryOperatorInput
   _rawPrimaryColor: JSONQueryOperatorInput
   _rawSecondaryColor: JSONQueryOperatorInput
@@ -6199,6 +6169,7 @@ input SanitySiteSettingsFilterInput {
   children: NodeFilterListInput
   facebookPage: StringQueryOperatorInput
   happyHour: SanityBlockFilterListInput
+  hours: SanityBlockFilterListInput
   id: StringQueryOperatorInput
   instagramPage: StringQueryOperatorInput
   internal: InternalFilterInput
@@ -6283,8 +6254,6 @@ input SiteFilterInput {
   id: StringQueryOperatorInput
   internal: InternalFilterInput
   parent: NodeFilterInput
-  pathPrefix: StringQueryOperatorInput
-  polyfill: BooleanQueryOperatorInput
   port: IntQueryOperatorInput
   siteMetadata: SiteSiteMetadataFilterInput
 }
@@ -6386,7 +6355,6 @@ input SitePluginPluginOptionsFilterInput {
   jsxPragma: StringQueryOperatorInput
   key: StringQueryOperatorInput
   linefeed: StringQueryOperatorInput
-  markers: SitePluginPluginOptionsMarkersFilterListInput
   name: StringQueryOperatorInput
   nickname: StringQueryOperatorInput
   omitSourceMapUrl: BooleanQueryOperatorInput
@@ -6407,7 +6375,6 @@ input SitePluginPluginOptionsFilterInput {
   sourceMapEmbed: BooleanQueryOperatorInput
   stages: StringQueryOperatorInput
   stripMetadata: BooleanQueryOperatorInput
-  styles: SitePluginPluginOptionsStylesFilterListInput
   titleTemplate: StringQueryOperatorInput
   trackingId: StringQueryOperatorInput
   useMozJpeg: BooleanQueryOperatorInput
@@ -6420,16 +6387,6 @@ input SitePluginPluginOptionsImplementationFilterInput {
   info: StringQueryOperatorInput
 }
 
-input SitePluginPluginOptionsMarkersFilterInput {
-  color: StringQueryOperatorInput
-  location: StringQueryOperatorInput
-  size: StringQueryOperatorInput
-}
-
-input SitePluginPluginOptionsMarkersFilterListInput {
-  elemMatch: SitePluginPluginOptionsMarkersFilterInput
-}
-
 input SitePluginPluginOptionsOpenGraphFilterInput {
   locale: StringQueryOperatorInput
   site_name: StringQueryOperatorInput
@@ -6440,27 +6397,6 @@ input SitePluginPluginOptionsOpenGraphFilterInput {
 input SitePluginPluginOptionsOptionsFilterInput {
   emitWarning: BooleanQueryOperatorInput
   failOnError: BooleanQueryOperatorInput
-}
-
-input SitePluginPluginOptionsStylesFilterInput {
-  element: StringQueryOperatorInput
-  feature: StringQueryOperatorInput
-  rules: SitePluginPluginOptionsStylesRulesFilterListInput
-}
-
-input SitePluginPluginOptionsStylesFilterListInput {
-  elemMatch: SitePluginPluginOptionsStylesFilterInput
-}
-
-input SitePluginPluginOptionsStylesRulesFilterInput {
-  color: StringQueryOperatorInput
-  hue: StringQueryOperatorInput
-  visibility: StringQueryOperatorInput
-  weight: FloatQueryOperatorInput
-}
-
-input SitePluginPluginOptionsStylesRulesFilterListInput {
-  elemMatch: SitePluginPluginOptionsStylesRulesFilterInput
 }
 
 input SitePluginPluginOptionsUseResolveUrlLoaderFilterInput {

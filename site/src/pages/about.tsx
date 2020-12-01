@@ -61,6 +61,22 @@ const useClasses = makeStyles((theme) => ({
   button: {
     fontSize: '1.69rem',
   },
+  hoursArea: {
+    'position': 'relative',
+    'display': 'flex',
+    'flexFlow': 'column nowrap',
+    // the content
+    '& *:nth-child(even)': {
+      position: 'relative',
+      margin: theme.spacing(1, 0),
+    },
+    // the titles
+    '& *:nth-child(odd)': {
+      position: 'relative',
+      ...theme.typography.h5,
+      marginBottom: theme.spacing(1),
+    },
+  },
 }))
 
 function AboutPage({ data }: AboutPage) {
@@ -147,7 +163,6 @@ function AboutPage({ data }: AboutPage) {
                         target={'_blank'}
                         variant={'text'}
                         size={'large'}
-                        fullWidth
                         className={classes.button}
                         color={'default'}
                       >
@@ -171,6 +186,28 @@ function AboutPage({ data }: AboutPage) {
                       >
                         Hours
                       </Typography>
+                    </AnimatedInViewChildDiv>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <AnimatedInViewChildDiv
+                      className={classes.hoursArea}
+                    >
+                      {data?.sanitySiteSettings?.hours?.map(
+                        (tags, index) =>
+                          tags &&
+                          Array.isArray(tags.children) &&
+                          tags.children.map((child) =>
+                            !!child?.text ? (
+                              <Typography
+                                component={'p'}
+                                key={`${index}`}
+                                color={'textPrimary'}
+                              >
+                                {child?.text}
+                              </Typography>
+                            ) : null,
+                          ),
+                      )}
                     </AnimatedInViewChildDiv>
                   </Grid>
                 </Grid>
@@ -220,6 +257,12 @@ export const query = graphql`
   query aboutPage {
     sanitySiteSettings {
       address
+      hours {
+        children {
+          text
+          marks
+        }
+      }
       openGraph {
         title
         description
