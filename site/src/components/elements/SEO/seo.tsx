@@ -27,9 +27,11 @@ export function SEO({
   image,
   gatsbySeoProps,
 }: Seo) {
-  const { site, file, allFile } = useStaticQuery<
-    GatsbyTypes.SeoDataQuery
-  >(graphql`
+  const {
+    site,
+    file,
+    allFile,
+  } = useStaticQuery<GatsbyTypes.SeoDataQuery>(graphql`
     query SeoData {
       site {
         siteMetadata {

@@ -21,6 +21,11 @@ export default {
       type: 'excerptPortableText',
     },
     {
+      title: 'Hours',
+      name: 'hours',
+      type: 'excerptPortableText',
+    },
+    {
       type: 'color',
       name: 'primaryColor',
       title: 'Primary brand color',

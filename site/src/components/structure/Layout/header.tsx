@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export function Header() {
-  const { file } = useStaticQuery<
-    GatsbyTypes.LogoImgInHeaderQuery
-  >(graphql`
+  const {
+    file,
+  } = useStaticQuery<GatsbyTypes.LogoImgInHeaderQuery>(graphql`
     query LogoImgInHeader {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {

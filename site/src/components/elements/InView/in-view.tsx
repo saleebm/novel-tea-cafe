@@ -134,9 +134,9 @@ export const AnimatedInPlainViewParent: FC<
 }
 
 // a child for the parent ^ that animates in accordion fashion
-export const AnimatedInViewChildDiv: FC<ComponentProps<
-  typeof motion.div
->> = ({ children, variants = childVariants, ...rest }) => (
+export const AnimatedInViewChildDiv: FC<
+  ComponentProps<typeof motion.div>
+> = ({ children, variants = childVariants, ...rest }) => (
   <motion.div variants={variants} {...rest}>
     {children}
   </motion.div>

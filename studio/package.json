@@ -30,7 +30,7 @@
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
     "react-instagram-embed": "^1.5.0",
-    "react-player": "^2.6.2",
+    "react-player": "^2.7.0",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-google-analytics": "^0.2.6",

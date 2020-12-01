@@ -139,21 +139,20 @@ function AboutPage({ data }: AboutPage) {
                       </Typography>
                     </AnimatedInViewChildDiv>
                   </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    className={classes.fullAndCenter}
-                  >
-                    <AnimatedInViewChildDiv
-                      className={classes.fullAndCenter}
-                    >
-                      <Typography
-                        className={classes.locationInfo}
-                        variant={'subtitle1'}
-                        component={'p'}
+                  <Grid item xs={12}>
+                    <AnimatedInViewChildDiv>
+                      <Button
+                        href={`${data.staticMap?.mapUrl}`}
+                        rel={'noopener noreferrer'}
+                        target={'_blank'}
+                        variant={'text'}
+                        size={'large'}
+                        fullWidth
+                        className={classes.button}
+                        color={'default'}
                       >
                         {data.sanitySiteSettings?.address}
-                      </Typography>
+                      </Button>
                     </AnimatedInViewChildDiv>
                   </Grid>
                   <Grid
@@ -164,16 +163,14 @@ function AboutPage({ data }: AboutPage) {
                     <AnimatedInViewChildDiv
                       className={classes.fullAndCenter}
                     >
-                      <Button
-                        href={`${data.staticMap?.mapUrl}`}
-                        rel={'noopener noreferrer'}
-                        target={'_blank'}
-                        variant={'outlined'}
-                        size={'large'}
-                        className={classes.button}
+                      <Typography
+                        className={classes.fullBlock}
+                        variant={'h2'}
+                        align={'left'}
+                        color={'textSecondary'}
                       >
-                        Open Maps
-                      </Button>
+                        Hours
+                      </Typography>
                     </AnimatedInViewChildDiv>
                   </Grid>
                 </Grid>
