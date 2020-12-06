@@ -152,6 +152,6 @@ module.exports = {
     },
     `gatsby-plugin-svgr-svgo`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }
