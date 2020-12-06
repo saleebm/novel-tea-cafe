@@ -14,7 +14,7 @@ function MenuPage({ data }: MenuPage) {
       <SEO
         title={'Menu'}
         description={
-          'Kratom, kava kava, herbal tea, and more available fresh at NovelTea Cafe.'
+          'Kratom, kava kava, herbal tea, and more available fresh at NovelTea Cafe. Check out the full menu of available options here.'
         }
       />
       <Container maxWidth={'lg'}>

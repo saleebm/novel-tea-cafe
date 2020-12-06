@@ -94,8 +94,9 @@ export function SEO({
             url: 'https://www.novelteaorlando.com',
             title: 'NovelTea Cafe Orlando',
             description:
-              'Gather for fresh kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!',
+              'Gather for fresh kava kava and kratom tea, fresh brewed kombucha, and daily social events in Orlando, Florida. What could be better? Answer: Nothing!',
             images: imagesOpenGraph,
+            type: 'website',
           }}
           metaTags={[
             {
