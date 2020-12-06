@@ -14,20 +14,38 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       top: 'auto',
       bottom: 0,
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: theme.palette.background.paper,
       paddingTop: theme.spacing(1),
       paddingBottom: theme.spacing(1),
       overflowX: 'auto',
-      color: theme.palette.primary.contrastText,
       boxShadow: theme.shadows['6'],
     },
   },
   navigationButton: {
-    fontSize: '1.4rem',
-    lineHeight: 1,
-    marginTop: theme.spacing(2),
+    'color': theme.palette.text.primary,
+    'fontSize': 'clamp(1.3rem, 10vw, 1.6rem)',
+    'lineHeight': 1,
+    'marginTop': theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
+    },
+    'fallback': {
+      fontSize: '16px',
+    },
+    '& span': {
+      color: theme.palette.text.primary,
+    },
+  },
+  btnActive: {
+    'color':
+      theme.palette.primary[
+        theme.palette.type === 'dark' ? 'light' : 'dark'
+      ],
+    '& span': {
+      color:
+        theme.palette.primary[
+          theme.palette.type === 'dark' ? 'light' : 'dark'
+        ],
     },
   },
   scrollButton: {
@@ -93,6 +111,9 @@ export function MenuNav() {
             className={classes.navigationButton}
             id={`auto-tab-0`}
             aria-controls={`auto-tabpanel-0`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.kratom, 1)}
@@ -103,6 +124,9 @@ export function MenuNav() {
             className={classes.navigationButton}
             id={`auto-tab-1`}
             aria-controls={`auto-tabpanel-1`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.addIns, 2)}
@@ -113,6 +137,9 @@ export function MenuNav() {
             label={'Add-ins: Make it Stronger'}
             id={`auto-tab-2`}
             aria-controls={`auto-tabpanel-2`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.herbalTea, 3)}
@@ -134,6 +161,9 @@ export function MenuNav() {
             textColor={'primary'}
             id={`auto-tab-4`}
             aria-controls={`auto-tabpanel-4`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.superfoods, 5)}
@@ -144,6 +174,9 @@ export function MenuNav() {
             label={'Superfoods'}
             id={`auto-tab-5`}
             aria-controls={`auto-tabpanel-5`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.bulk, 6)}
@@ -154,6 +187,9 @@ export function MenuNav() {
             label={'Bulk Kratom & KavaKava'}
             id={`auto-tab-6`}
             aria-controls={`auto-tabpanel-6`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
         </Tabs>
       </AppBar>

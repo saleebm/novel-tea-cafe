@@ -1787,7 +1787,6 @@ type Query_sanityPostArgs = {
   _rawAuthors: Maybe<JSONQueryOperatorInput>;
   _rawCategories: Maybe<JSONQueryOperatorInput>;
   _rawBody: Maybe<JSONQueryOperatorInput>;
-  isPublished: Maybe<BooleanQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -4897,7 +4896,6 @@ type SanityPost = SanityDocument & Node & {
   readonly _rawAuthors: Maybe<Scalars['JSON']>;
   readonly _rawCategories: Maybe<Scalars['JSON']>;
   readonly _rawBody: Maybe<Scalars['JSON']>;
-  readonly isPublished: Scalars['Boolean'];
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -5196,7 +5194,6 @@ enum SanityPostFieldsEnum {
   _rawAuthors = '_rawAuthors',
   _rawCategories = '_rawCategories',
   _rawBody = '_rawBody',
-  isPublished = 'isPublished',
   id = 'id',
   parent___id = 'parent.id',
   parent___parent___id = 'parent.parent.id',
@@ -5306,7 +5303,6 @@ type SanityPostFilterInput = {
   readonly _rawAuthors: Maybe<JSONQueryOperatorInput>;
   readonly _rawCategories: Maybe<JSONQueryOperatorInput>;
   readonly _rawBody: Maybe<JSONQueryOperatorInput>;
-  readonly isPublished: Maybe<BooleanQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -6793,7 +6789,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___markers___location = 'pluginCreator.pluginOptions.markers.location',
   pluginCreator___pluginOptions___output = 'pluginCreator.pluginOptions.output',
   pluginCreator___pluginOptions___createLinkInHead = 'pluginCreator.pluginOptions.createLinkInHead',
-  pluginCreator___pluginOptions___workboxConfig___runtimeCaching = 'pluginCreator.pluginOptions.workboxConfig.runtimeCaching',
   pluginCreator___pluginOptions___pathCheck = 'pluginCreator.pluginOptions.pathCheck',
   pluginCreator___pluginOptions___allExtensions = 'pluginCreator.pluginOptions.allExtensions',
   pluginCreator___pluginOptions___isTSX = 'pluginCreator.pluginOptions.isTSX',
@@ -7034,8 +7029,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___markers___location = 'pluginOptions.markers.location',
   pluginOptions___output = 'pluginOptions.output',
   pluginOptions___createLinkInHead = 'pluginOptions.createLinkInHead',
-  pluginOptions___workboxConfig___runtimeCaching = 'pluginOptions.workboxConfig.runtimeCaching',
-  pluginOptions___workboxConfig___runtimeCaching___handler = 'pluginOptions.workboxConfig.runtimeCaching.handler',
   pluginOptions___pathCheck = 'pluginOptions.pathCheck',
   pluginOptions___allExtensions = 'pluginOptions.allExtensions',
   pluginOptions___isTSX = 'pluginOptions.isTSX',
@@ -7196,7 +7189,6 @@ type SitePluginPluginOptions = {
   readonly markers: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsMarkers>>>;
   readonly output: Maybe<Scalars['String']>;
   readonly createLinkInHead: Maybe<Scalars['Boolean']>;
-  readonly workboxConfig: Maybe<SitePluginPluginOptionsWorkboxConfig>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
@@ -7247,7 +7239,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly markers: Maybe<SitePluginPluginOptionsMarkersFilterListInput>;
   readonly output: Maybe<StringQueryOperatorInput>;
   readonly createLinkInHead: Maybe<BooleanQueryOperatorInput>;
-  readonly workboxConfig: Maybe<SitePluginPluginOptionsWorkboxConfigFilterInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
@@ -7316,26 +7307,6 @@ type SitePluginPluginOptionsUseResolveUrlLoaderOptions = {
 
 type SitePluginPluginOptionsUseResolveUrlLoaderOptionsFilterInput = {
   readonly sourceMap: Maybe<BooleanQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsWorkboxConfig = {
-  readonly runtimeCaching: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCaching>>>;
-};
-
-type SitePluginPluginOptionsWorkboxConfigFilterInput = {
-  readonly runtimeCaching: Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterListInput>;
-};
-
-type SitePluginPluginOptionsWorkboxConfigRuntimeCaching = {
-  readonly handler: Maybe<Scalars['String']>;
-};
-
-type SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterInput = {
-  readonly handler: Maybe<StringQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterListInput = {
-  readonly elemMatch: Maybe<SitePluginPluginOptionsWorkboxConfigRuntimeCachingFilterInput>;
 };
 
 type SitePluginSortInput = {
@@ -7796,13 +7767,6 @@ type SeoDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<S
     & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
   ) };
 
-type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
-
-type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
 type LogoImageLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -7811,9 +7775,16 @@ type LogoImageLayoutQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, rea
     & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
   ) };
 
+type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
 type SOCIAL_SITE_LINKSQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SOCIAL_SITE_LINKSQuery = { readonly sanitySiteSettings: Maybe<Pick<SanitySiteSettings, 'facebookPage' | 'twitterPage' | 'instagramPage'>>, readonly facebookIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly twitterIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly instagramIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+
+type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 }
