@@ -103,18 +103,17 @@ export function Layout({ children }: Layout) {
         defer={true}
         openingHours={[
           {
-            dayOfWeek: ['Mon', 'Tues', 'Wed', 'Thurs'],
-            closes: '9am',
-            opens: '12pm',
-            validFrom: currentDate.toLocaleString(),
-            validThrough: new Date(
-              currentDate.setMonth(currentDate.getMonth() + 4),
-            ).toLocaleString(),
-          },
-          {
-            dayOfWeek: ['Fri', 'Sat', 'Sun'],
+            dayOfWeek: [
+              'Mon',
+              'Tues',
+              'Wed',
+              'Thurs',
+              'Fri',
+              'Sat',
+              'Sun',
+            ],
             closes: '12am',
-            opens: '12pm',
+            opens: '9am',
             validFrom: currentDate.toLocaleString(),
             validThrough: new Date(
               currentDate.setMonth(currentDate.getMonth() + 4),
