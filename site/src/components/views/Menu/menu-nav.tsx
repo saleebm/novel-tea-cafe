@@ -150,6 +150,9 @@ export function MenuNav() {
             label={'Herbal Tea'}
             id={`auto-tab-3`}
             aria-controls={`auto-tabpanel-3`}
+            classes={{
+              selected: classes.btnActive,
+            }}
           />
           <Tab
             selected={getIfSelected(MenuPageKeys.coffee, 4)}
