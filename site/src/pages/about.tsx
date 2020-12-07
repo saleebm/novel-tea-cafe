@@ -53,9 +53,6 @@ const useClasses = makeStyles((theme) => ({
     display: 'inline-block',
     position: 'relative',
   },
-  button: {
-    fontSize: '1.69rem',
-  },
   hoursArea: {
     'position': 'relative',
     'display': 'flex',
@@ -121,8 +118,7 @@ function AboutPage({ data }: AboutPage) {
                     >
                       <Typography
                         gutterBottom
-                        variant={'h4'}
-                        component={'p'}
+                        variant={'body1'}
                         className={classes.bodyText}
                       >
                         {
@@ -156,7 +152,7 @@ function AboutPage({ data }: AboutPage) {
                         href={`${data.staticMap?.mapUrl}`}
                         rel={'noopener noreferrer'}
                         target={'_blank'}
-                        className={classes.button}
+                        className={classes.bodyText}
                         color={'textPrimary'}
                       >
                         {data.sanitySiteSettings?.address}
@@ -194,6 +190,7 @@ function AboutPage({ data }: AboutPage) {
                               <Typography
                                 component={'p'}
                                 key={`${index}`}
+                                className={classes.bodyText}
                                 color={'textPrimary'}
                               >
                                 {child?.text}
