@@ -1,12 +1,7 @@
 import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
-import {
-  Container,
-  Grid,
-  Button,
-  Typography,
-} from '@material-ui/core'
+import { Container, Grid, Link, Typography } from '@material-ui/core'
 import { SEO } from '@Components/elements/SEO/seo'
 import { makeStyles } from '@material-ui/core/styles'
 import {
@@ -157,17 +152,15 @@ function AboutPage({ data }: AboutPage) {
                   </Grid>
                   <Grid item xs={12}>
                     <AnimatedInViewChildDiv>
-                      <Button
+                      <Link
                         href={`${data.staticMap?.mapUrl}`}
                         rel={'noopener noreferrer'}
                         target={'_blank'}
-                        variant={'text'}
-                        size={'large'}
                         className={classes.button}
-                        color={'default'}
+                        color={'textPrimary'}
                       >
                         {data.sanitySiteSettings?.address}
-                      </Button>
+                      </Link>
                     </AnimatedInViewChildDiv>
                   </Grid>
                   <Grid

@@ -208,7 +208,7 @@ export function ImageGallery({
             {openImageKey && (
               <SingleImage
                 openImageKey={openImageKey}
-                imageNode={selectedImageNode}
+                imageNode={selectedImageNode as any}
                 setOpen={setOpenImageIndex}
               />
             )}
