@@ -111,7 +111,7 @@ const GalleryList = ({ images, setOpen }: GalleryListProps) => {
               layoutId={node.image.asset?.assetId ?? ''}
               imageFluid={node?.image?.asset?.fluid}
               onClick={() =>
-                setOpen(node?.image?.asset?.assetId as string)
+                setOpen(`${node?.image?.asset?.assetId}`)
               }
             />
           ) : null,
@@ -205,13 +205,13 @@ export function ImageGallery({
             setOpen={setOpenImageIndex}
           />
           <AnimatePresence>
-            {openImageKey && (
+            {openImageKey ? (
               <SingleImage
                 openImageKey={openImageKey}
                 imageNode={selectedImageNode as any}
                 setOpen={setOpenImageIndex}
               />
-            )}
+            ) : null}
           </AnimatePresence>
         </section>
       </AnimateSharedLayout>
