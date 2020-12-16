@@ -15,11 +15,7 @@ export const Logo = memo(
     'to' | 'className' | 'href' | 'ref'
   >) => (
     <figure className={styles.logo_wrap}>
-      <GatsbyLink
-        className={styles.logo_link}
-        to={'/'}
-        {...linkProps}
-      >
+      <GatsbyLink to={'/'} {...linkProps}>
         <AnimatedInViewChildDiv>
           <MouseTrap
             additionalProps={{}}

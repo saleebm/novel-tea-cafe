@@ -24,7 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/header.mod.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/styles/global/_darkmode.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +295,7 @@
       <workItem from="1607277554952" duration="429000" />
       <workItem from="1607302326782" duration="3129000" />
       <workItem from="1607799359062" duration="756000" />
-      <workItem from="1608083908426" duration="1102000" />
+      <workItem from="1608083908426" duration="1493000" />
     </task>
     <servers />
   </component>

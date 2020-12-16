@@ -54,20 +54,9 @@ const useClasses = makeStyles((theme) => ({
     position: 'relative',
   },
   hoursArea: {
-    'position': 'relative',
-    'display': 'flex',
-    'flexFlow': 'column nowrap',
-    // the content
-    '& *:nth-child(even)': {
-      position: 'relative',
-      margin: theme.spacing(1, 0),
-    },
-    // the titles
-    '& *:nth-child(odd)': {
-      position: 'relative',
-      ...theme.typography.h5,
-      marginBottom: theme.spacing(1),
-    },
+    position: 'relative',
+    display: 'flex',
+    flexFlow: 'column nowrap',
   },
 }))
 
