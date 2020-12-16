@@ -178,15 +178,24 @@ function IndexPage({ data }: Index) {
               <AnimatedInViewChildDiv
                 className={classes.firstSectionItem}
               >
-                <Typography
-                  className={classes.subTitle}
-                  variant={'h2'}
-                  color={'textSecondary'}
-                  align={'center'}
-                  gutterBottom
-                >
-                  {sanityPage?.hero?.heading}
-                </Typography>
+                {sanityPage?.hero?.tagline?.map(
+                  (tags, index) =>
+                    tags &&
+                    Array.isArray(tags.children) &&
+                    tags.children.map((child) => (
+                      <Typography
+                        className={classes.tagLine}
+                        variant={'h2'}
+                        component={'p'}
+                        key={`${index}`}
+                        color={'textPrimary'}
+                        align={'center'}
+                        gutterBottom
+                      >
+                        {child?.text}
+                      </Typography>
+                    )),
+                )}
               </AnimatedInViewChildDiv>
               <AnimatedInViewChildDiv
                 className={classes.firstSectionItem}
@@ -233,24 +242,15 @@ function IndexPage({ data }: Index) {
                   <AnimatedInViewChildDiv
                     className={classes.firstSectionItem}
                   >
-                    {sanityPage?.hero?.tagline?.map(
-                      (tags, index) =>
-                        tags &&
-                        Array.isArray(tags.children) &&
-                        tags.children.map((child) => (
-                          <Typography
-                            className={classes.tagLine}
-                            variant={'h2'}
-                            component={'p'}
-                            key={`${index}`}
-                            color={'textPrimary'}
-                            align={'center'}
-                            gutterBottom
-                          >
-                            {child?.text}
-                          </Typography>
-                        )),
-                    )}
+                    <Typography
+                      className={classes.subTitle}
+                      variant={'h2'}
+                      color={'textSecondary'}
+                      align={'center'}
+                      gutterBottom
+                    >
+                      {sanityPage?.hero?.heading}
+                    </Typography>
                   </AnimatedInViewChildDiv>
                 </Grid>
               </Grid>
