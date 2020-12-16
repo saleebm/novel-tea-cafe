@@ -104,11 +104,13 @@ export const useStyles = makeStyles((theme) => ({
     alignSelf: 'center',
     height: '100%',
   },
+  // for mobile
   darkModeArea: {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: theme.spacing(1),
   },
   darkModeAreaDesktop: {
     display: 'flex',
