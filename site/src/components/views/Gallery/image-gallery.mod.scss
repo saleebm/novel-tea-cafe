@@ -25,7 +25,9 @@
   flex: 0 0 40%;
   max-width: 40%;
   border-radius: 3px;
-  cursor: pointer;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
   margin-bottom: 1.5rem;
 
   @media screen and (max-width: 650px) {
