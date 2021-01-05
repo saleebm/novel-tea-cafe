@@ -69,28 +69,16 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
   }),
 )
 
-export function Cursor({ x, y, mouseUp }: CursorProps) {
-  const SIZE = 50
-  const DOT_SIZE = SIZE / 7
-  const classes = useStyles({ dotSize: DOT_SIZE, size: SIZE })
-  const controls = useAnimation()
+const SIZE = 50
+const DOT_SIZE = SIZE / 7
 
-  const controlFlowerPower = useAnimation()
-
-  const {
-    activeArea,
-    // activeContainer,
-    // todo perhaps for text
-    // additionalProps,
-  } = useMouseTrap()
-
-  const INITIAL_BOX_SHADOW = `0px 0px 0px rgba(0, 255, 0, 1),
+const INITIAL_BOX_SHADOW = `0px 0px 0px rgba(0, 255, 0, 1),
         0px 0px 0px rgba(0, 255, 0, 1), 0px 0px 0px rgba(0, 255, 0, 1),
         0px 0px 0px rgba(0, 255, 0, 1), 0px 0px 0px rgba(0, 255, 0, 1),
         0px 0px 0px rgba(0, 255, 0, 1), 0px 0px 0px rgba(0, 255, 0, 1),
         0px 0px 0px rgba(0, 255, 0, 1)`
 
-  const SMALL_DOTS_SHADOW = `${DOT_SIZE * 1.4}px 0 0
+const SMALL_DOTS_SHADOW = `${DOT_SIZE * 1.4}px 0 0
           rgba(0, 255, 0, 1),
         -${DOT_SIZE * 1.4}px 0 0 rgba(0, 255, 0, 1),
         0 ${DOT_SIZE * 1.4}px 0 rgba(0, 255, 0, 1),
@@ -104,7 +92,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
         -${DOT_SIZE}px ${DOT_SIZE}px 0
           rgba(0, 255, 0, 1)`
 
-  const BIG_DOTS_SHADOW = `${DOT_SIZE * 2.6}px 0 0 rgba(0, 255, 0, 1),
+const BIG_DOTS_SHADOW = `${DOT_SIZE * 2.6}px 0 0 rgba(0, 255, 0, 1),
         -${DOT_SIZE * 2.6}px 0 0 rgba(0, 255, 0, 1),
         0 ${DOT_SIZE * 2.6}px 0 rgba(0, 255, 0, 1),
         0 -${DOT_SIZE * 2.6}px 0 rgba(0, 255, 0, 1),
@@ -114,43 +102,66 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           rgba(0, 255, 0, 1),
         -${DOT_SIZE * 1.9}px ${DOT_SIZE * 1.9}px 0 rgba(0, 255, 0, 1)`
 
-  const RESET_CONTROLS = useCallback(
+export function Cursor({ x, y, mouseUp }: CursorProps) {
+  const classes = useStyles({ dotSize: DOT_SIZE, size: SIZE })
+  const flowerControls = useAnimation()
+
+  const activeAreaControls = useAnimation()
+
+  const {
+    activeArea,
+    // activeContainer,
+    // todo perhaps for text
+    // additionalProps,
+  } = useMouseTrap()
+
+  const resetControls = useCallback(
     (i: number) => ({
       boxShadow: INITIAL_BOX_SHADOW,
       rotate: i * 360,
     }),
-    [INITIAL_BOX_SHADOW],
+    [],
   )
 
-  const DO_FLOWER = useCallback(
+  const doFlower = useCallback(
     (i: number) => ({
       rotate: i * 180,
       boxShadow: i === 0 ? SMALL_DOTS_SHADOW : BIG_DOTS_SHADOW,
     }),
-    [BIG_DOTS_SHADOW, SMALL_DOTS_SHADOW],
+    [],
   )
 
   // on active area change, if set, scale up
   useEffect(() => {
     if (activeArea !== ActiveAreaTypes.notSet) {
       // const boundingBox2D = (activeContainer as HTMLElement).getBoundingClientRect()
-      controlFlowerPower.start({
+      activeAreaControls.start({
         scale: 1.2,
+      })
+      flowerControls.start(resetControls).then(async () => {
+        await flowerControls.start(doFlower)
+        await flowerControls.start(resetControls)
       })
     }
     return () => {
-      controlFlowerPower.start({
+      activeAreaControls.start({
         scale: 1,
       })
     }
-  }, [activeArea, controlFlowerPower])
+  }, [
+    activeArea,
+    activeAreaControls,
+    flowerControls,
+    doFlower,
+    resetControls,
+  ])
 
   useEffect(() => {
-    controls.start(RESET_CONTROLS).then(async () => {
-      await controls.start(DO_FLOWER)
-      await controls.start(RESET_CONTROLS)
+    flowerControls.start(resetControls).then(async () => {
+      await flowerControls.start(doFlower)
+      await flowerControls.start(resetControls)
     })
-  }, [mouseUp, controls, DO_FLOWER, RESET_CONTROLS])
+  }, [mouseUp, flowerControls, doFlower, resetControls])
 
   return (
     <div className={styles.cursorWrap}>
@@ -170,7 +181,7 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
       >
         <motion.div
           className={clsx(styles.cursor, classes.flowerRoot)}
-          animate={controlFlowerPower}
+          animate={activeAreaControls}
           initial={{
             scale: 1,
           }}
@@ -178,12 +189,12 @@ export function Cursor({ x, y, mouseUp }: CursorProps) {
           <div className={classes.dotsContainer}>
             <motion.div
               custom={1}
-              animate={controls}
+              animate={flowerControls}
               className={classes.biggerDot}
             >
               <motion.div
                 custom={0}
-                animate={controls}
+                animate={flowerControls}
                 className={classes.smallerDot}
               />
             </motion.div>

@@ -27,7 +27,7 @@ const useClasses = makeStyles((theme) => ({
 export function PriceTag({ price }: { price: number }) {
   const classes = useClasses()
   return (
-    <Avatar className={classes.avatar} variant={'circle'}>
+    <Avatar className={classes.avatar} variant={'circular'}>
       <Typography className={classes.info}>
         <span
           className={classes.priceTagSpan}

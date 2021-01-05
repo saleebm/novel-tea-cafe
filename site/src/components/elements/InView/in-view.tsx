@@ -7,20 +7,14 @@ import {
 import { useInView } from 'react-intersection-observer'
 import React, { Children, ComponentProps, FC, useMemo } from 'react'
 
-export const wrapVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    transition: { when: 'beforeChildren', staggerDirection: -1 },
-  },
+const wrapVariants: Variants = {
   show: {
-    opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delay: 0.03,
-      when: 'beforeChildren',
+      staggerChildren: 0.14,
     },
   },
 }
+
 // simple float up animation
 export const childVariants: Variants = {
   hidden: {
@@ -59,13 +53,12 @@ export const AnimatedIOView: FC<
     triggerOnce: once,
   })
   const shouldReduceMotion = useReducedMotion()
-  const offset = 0.04
 
   const transition = useMemo(
     () => ({
       duration,
       delay:
-        Math.min(delayOrder * offset, 0.15) /
+        Math.min(delayOrder * 0.04, 0.15) /
         Math.min(Children.count(children) || 1, 3),
     }),
     [duration, delayOrder, children],
@@ -105,15 +98,9 @@ export const AnimatedIOView: FC<
 // variant needs show and hidden keys
 export const AnimatedInPlainViewParent: FC<
   ComponentProps<typeof motion.div> & {
-    variant?: Variants
     exitBeforeEnter?: boolean
   }
-> = ({
-  children,
-  variant = wrapVariants,
-  exitBeforeEnter,
-  ...rest
-}) => {
+> = ({ children, exitBeforeEnter = false, ...rest }) => {
   const shouldReduceMotion = useReducedMotion()
   return useMemo(
     () => (
@@ -122,14 +109,14 @@ export const AnimatedInPlainViewParent: FC<
           initial={shouldReduceMotion ? 'show' : 'hidden'}
           animate={'show'}
           exit={shouldReduceMotion ? 'show' : 'hidden'}
-          variants={variant}
+          variants={wrapVariants}
           {...rest}
         >
           {children}
         </motion.div>
       </AnimatePresence>
     ),
-    [shouldReduceMotion, children, variant, exitBeforeEnter, rest],
+    [shouldReduceMotion, children, exitBeforeEnter, rest],
   )
 }
 

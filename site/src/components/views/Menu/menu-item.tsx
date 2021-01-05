@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   Card,
@@ -18,7 +18,7 @@ interface MenuItem extends CardProps {
   theRealMenuItem: GatsbyTypes.MENU_ITEM_EDGEFragment
 }
 
-const useStyles = makeStyles((_theme) => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
     display: 'flex',
@@ -47,45 +47,54 @@ const useStyles = makeStyles((_theme) => ({
     flexFlow: 'row wrap',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    marginBottom: theme.spacing(1.5),
   },
   description: {
     maxWidth: '50ch',
+    marginTop: '0.35rem',
   },
 }))
 
-export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
+export function MenuItem({ theRealMenuItem }: MenuItem) {
   const classes = useStyles()
-  return (
-    <AnimatedInPlainViewParent>
-      <AnimatedInViewChildDiv>
-        <Card
-          key={theRealMenuItem.node.id}
-          className={classes.root}
-          variant={'elevation'}
-          elevation={0}
-          {...rest}
-        >
-          <CardContent className={classes.cardContent}>
-            <Typography
-              className={classes.title}
-              color={'textSecondary'}
-              variant={'h3'}
-              component={'h3'}
-            >
-              {theRealMenuItem.node.name}
-            </Typography>
-            <Typography
-              color={'textPrimary'}
-              variant={'body1'}
-              component={'p'}
-              className={classes.description}
-            >
-              {theRealMenuItem.node.description}
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.cardPrice}>
-            {theRealMenuItem.node.menuItemPriceOption?.map(
-              (option, index) => (
+  const menuItemsSorted = Array.from(
+    theRealMenuItem.node?.menuItemPriceOption ?? [],
+  ).sort((a, b) =>
+    a?.variant && b?.variant && a.variant > b.variant ? 1 : -1,
+  )
+  return useMemo(
+    () => (
+      <AnimatedInPlainViewParent>
+        <AnimatedInViewChildDiv>
+          <Card
+            key={theRealMenuItem.node.id}
+            className={classes.root}
+            variant={'elevation'}
+            elevation={0}
+          >
+            <CardContent className={classes.cardContent}>
+              <Typography
+                className={classes.title}
+                color={'textSecondary'}
+                variant={'h3'}
+                component={'h3'}
+              >
+                {theRealMenuItem.node.name}
+              </Typography>
+              {theRealMenuItem.node.description && (
+                <Typography
+                  color={'textPrimary'}
+                  variant={'body1'}
+                  component={'p'}
+                  className={classes.description}
+                  gutterBottom
+                >
+                  {theRealMenuItem.node.description}
+                </Typography>
+              )}
+            </CardContent>
+            <CardActions className={classes.cardPrice}>
+              {menuItemsSorted.map((option, index) => (
                 <MenuPriceChip
                   size={'medium'}
                   key={option?.variant ?? index}
@@ -93,11 +102,18 @@ export function MenuItem({ theRealMenuItem, ...rest }: MenuItem) {
                   color={'secondary'}
                   price={option?.price ?? undefined}
                 />
-              ),
-            )}
-          </CardActions>
-        </Card>
-      </AnimatedInViewChildDiv>
-    </AnimatedInPlainViewParent>
+              ))}
+            </CardActions>
+          </Card>
+        </AnimatedInViewChildDiv>
+      </AnimatedInPlainViewParent>
+    ),
+    [
+      menuItemsSorted,
+      theRealMenuItem.node.description,
+      theRealMenuItem.node.name,
+      theRealMenuItem.node.id,
+      classes,
+    ],
   )
 }

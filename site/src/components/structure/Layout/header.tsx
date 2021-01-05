@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { Nav } from '@Components/structure/Layout/nav'
 import { Logo } from '@Components/structure/Layout/logo'
+import { AnimatedInPlainViewParent } from '@Components/elements/InView/in-view'
 import styles from './header.mod.scss'
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +43,12 @@ export function Header() {
   return (
     <Container maxWidth={'lg'} className={styles.header}>
       <Grid component={'header'} container id={'top'}>
-        <Grid item xs={8} sm={6}>
+        <Grid
+          component={AnimatedInPlainViewParent}
+          item
+          xs={8}
+          sm={6}
+        >
           {file?.childImageSharp?.fixed && (
             <>
               <LogoJsonLd

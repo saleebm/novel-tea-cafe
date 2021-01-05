@@ -64,12 +64,10 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                     className={classes.navHeaderArea}
                   >
                     {logoSrc && (
-                      <AnimatedInViewChildDiv>
-                        <Logo
-                          onClick={() => setNavOpen(false)}
-                          file={logoSrc}
-                        />
-                      </AnimatedInViewChildDiv>
+                      <Logo
+                        onClick={() => setNavOpen(false)}
+                        file={logoSrc}
+                      />
                     )}
                     <AnimatedInViewChildDiv>
                       <Typography
