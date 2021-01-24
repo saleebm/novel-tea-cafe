@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   chipLabel: {
     ...theme.typography.body2,
     color: theme.palette.text.primary,
-    overflow: 'visible',
   },
 }))
 

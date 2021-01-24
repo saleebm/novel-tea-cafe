@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
     alignItems: 'center',
     marginBottom: theme.spacing(1.5),
+    padding: `0 !important`,
   },
   description: {
     maxWidth: '50ch',

@@ -23,21 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/context/MousePosition/mouse-position-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/Cursor/cursor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/elements/MouseTrap/mouse-trap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/elements/MouseTrap/mouse-trap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/material-theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/utils/hooks/use-cursor-pos.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-cursor-pos.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/deskStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/studio/deskStructure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/studio/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +314,7 @@
       <workItem from="1611092546604" duration="91000" />
       <workItem from="1611353661860" duration="4679000" />
       <workItem from="1611428301516" duration="744000" />
-      <workItem from="1611513406482" duration="632000" />
+      <workItem from="1611513406482" duration="3098000" />
     </task>
     <servers />
   </component>

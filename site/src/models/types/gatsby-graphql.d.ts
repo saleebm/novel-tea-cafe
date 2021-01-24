@@ -6862,10 +6862,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___titleTemplate = 'pluginCreator.pluginOptions.titleTemplate',
   pluginCreator___pluginOptions___name = 'pluginCreator.pluginOptions.name',
   pluginCreator___pluginOptions___path = 'pluginCreator.pluginOptions.path',
-  pluginCreator___pluginOptions___projectId = 'pluginCreator.pluginOptions.projectId',
-  pluginCreator___pluginOptions___dataset = 'pluginCreator.pluginOptions.dataset',
-  pluginCreator___pluginOptions___watchMode = 'pluginCreator.pluginOptions.watchMode',
-  pluginCreator___pluginOptions___overlayDrafts = 'pluginCreator.pluginOptions.overlayDrafts',
   pluginCreator___pluginOptions___useMozJpeg = 'pluginCreator.pluginOptions.useMozJpeg',
   pluginCreator___pluginOptions___stripMetadata = 'pluginCreator.pluginOptions.stripMetadata',
   pluginCreator___pluginOptions___defaultQuality = 'pluginCreator.pluginOptions.defaultQuality',
@@ -6908,6 +6904,10 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___allExtensions = 'pluginCreator.pluginOptions.allExtensions',
   pluginCreator___pluginOptions___isTSX = 'pluginCreator.pluginOptions.isTSX',
   pluginCreator___pluginOptions___jsxPragma = 'pluginCreator.pluginOptions.jsxPragma',
+  pluginCreator___pluginOptions___projectId = 'pluginCreator.pluginOptions.projectId',
+  pluginCreator___pluginOptions___dataset = 'pluginCreator.pluginOptions.dataset',
+  pluginCreator___pluginOptions___watchMode = 'pluginCreator.pluginOptions.watchMode',
+  pluginCreator___pluginOptions___overlayDrafts = 'pluginCreator.pluginOptions.overlayDrafts',
   pluginCreator___nodeAPIs = 'pluginCreator.nodeAPIs',
   pluginCreator___browserAPIs = 'pluginCreator.browserAPIs',
   pluginCreator___ssrAPIs = 'pluginCreator.ssrAPIs',
@@ -7101,10 +7101,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___titleTemplate = 'pluginOptions.titleTemplate',
   pluginOptions___name = 'pluginOptions.name',
   pluginOptions___path = 'pluginOptions.path',
-  pluginOptions___projectId = 'pluginOptions.projectId',
-  pluginOptions___dataset = 'pluginOptions.dataset',
-  pluginOptions___watchMode = 'pluginOptions.watchMode',
-  pluginOptions___overlayDrafts = 'pluginOptions.overlayDrafts',
   pluginOptions___useMozJpeg = 'pluginOptions.useMozJpeg',
   pluginOptions___stripMetadata = 'pluginOptions.stripMetadata',
   pluginOptions___defaultQuality = 'pluginOptions.defaultQuality',
@@ -7148,6 +7144,10 @@ enum SitePluginFieldsEnum {
   pluginOptions___allExtensions = 'pluginOptions.allExtensions',
   pluginOptions___isTSX = 'pluginOptions.isTSX',
   pluginOptions___jsxPragma = 'pluginOptions.jsxPragma',
+  pluginOptions___projectId = 'pluginOptions.projectId',
+  pluginOptions___dataset = 'pluginOptions.dataset',
+  pluginOptions___watchMode = 'pluginOptions.watchMode',
+  pluginOptions___overlayDrafts = 'pluginOptions.overlayDrafts',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
   ssrAPIs = 'ssrAPIs',
@@ -7265,10 +7265,6 @@ type SitePluginPluginOptions = {
   readonly titleTemplate: Maybe<Scalars['String']>;
   readonly name: Maybe<Scalars['String']>;
   readonly path: Maybe<Scalars['String']>;
-  readonly projectId: Maybe<Scalars['String']>;
-  readonly dataset: Maybe<Scalars['String']>;
-  readonly watchMode: Maybe<Scalars['Boolean']>;
-  readonly overlayDrafts: Maybe<Scalars['Boolean']>;
   readonly useMozJpeg: Maybe<Scalars['Boolean']>;
   readonly stripMetadata: Maybe<Scalars['Boolean']>;
   readonly defaultQuality: Maybe<Scalars['Int']>;
@@ -7308,6 +7304,10 @@ type SitePluginPluginOptions = {
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
+  readonly projectId: Maybe<Scalars['String']>;
+  readonly dataset: Maybe<Scalars['String']>;
+  readonly watchMode: Maybe<Scalars['Boolean']>;
+  readonly overlayDrafts: Maybe<Scalars['Boolean']>;
 };
 
 type SitePluginPluginOptionsFilterInput = {
@@ -7315,10 +7315,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly titleTemplate: Maybe<StringQueryOperatorInput>;
   readonly name: Maybe<StringQueryOperatorInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
-  readonly projectId: Maybe<StringQueryOperatorInput>;
-  readonly dataset: Maybe<StringQueryOperatorInput>;
-  readonly watchMode: Maybe<BooleanQueryOperatorInput>;
-  readonly overlayDrafts: Maybe<BooleanQueryOperatorInput>;
   readonly useMozJpeg: Maybe<BooleanQueryOperatorInput>;
   readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
   readonly defaultQuality: Maybe<IntQueryOperatorInput>;
@@ -7358,6 +7354,10 @@ type SitePluginPluginOptionsFilterInput = {
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
+  readonly projectId: Maybe<StringQueryOperatorInput>;
+  readonly dataset: Maybe<StringQueryOperatorInput>;
+  readonly watchMode: Maybe<BooleanQueryOperatorInput>;
+  readonly overlayDrafts: Maybe<BooleanQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsImplementation = {
@@ -8061,11 +8061,6 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
 type GatsbySanityImageFixedFragment = Pick<SanityImageFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
 
 type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
@@ -8127,7 +8122,7 @@ type MENU_ITEM_EDGEFragment = { readonly node: (
 type MENU_PAGEQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type MENU_PAGEQuery = { readonly addIns: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly bulk: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly coffee: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly herbalTea: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly kavaKava: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly kratom: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly superfoods: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly cats: { readonly edges: ReadonlyArray<{ readonly node: Pick<SanityMenuItemCategory, 'title' | 'description' | 'id'> }> } };
+type MENU_PAGEQuery = { readonly addIns: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly bulk: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly coffee: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly herbalTea: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly kavaKava: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly kratom: { readonly edges: ReadonlyArray<MENU_ITEM_EDGEFragment> }, readonly cats: { readonly edges: ReadonlyArray<{ readonly node: Pick<SanityMenuItemCategory, 'title' | 'description' | 'id'> }> } };
 
 type PictureShowImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -8157,6 +8152,11 @@ type weeklyEventsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type weeklyEventsQuery = { readonly sanitySiteSettings: Maybe<{ readonly happyHour: Maybe<ReadonlyArray<Maybe<TAGLINEFragment>>> }>, readonly allSanityWeeklyEvents: { readonly edges: ReadonlyArray<{ readonly node: { readonly monday: Maybe<DAYFragment>, readonly tuesday: Maybe<DAYFragment>, readonly wednesday: Maybe<DAYFragment>, readonly thursday: Maybe<DAYFragment>, readonly friday: Maybe<DAYFragment>, readonly saturday: Maybe<DAYFragment>, readonly sunday: Maybe<DAYFragment> } }> } };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type SeoDataQueryVariables = Exact<{ [key: string]: never; }>;
 

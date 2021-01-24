@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
       overflowX: 'auto',
       boxShadow: theme.shadows['6'],
     },
+    zIndex: 10000,
   },
   navigationButton: {
     'color': theme.palette.text.primary,
@@ -92,8 +93,6 @@ export function MenuNav() {
         <Tabs
           value={menuLocation}
           onChange={handleChange}
-          indicatorColor={'secondary'}
-          textColor={'primary'}
           variant={isWideScreen ? 'fullWidth' : 'scrollable'}
           scrollButtons={'on'}
           aria-label={'auto tabs'}
@@ -169,20 +168,7 @@ export function MenuNav() {
             }}
           />
           <Tab
-            selected={getIfSelected(MenuPageKeys.superfoods, 5)}
-            fullWidth
-            component={Link}
-            className={classes.navigationButton}
-            to={`#${MenuPageKeys.superfoods}`}
-            label={'Superfoods'}
-            id={`auto-tab-5`}
-            aria-controls={`auto-tabpanel-5`}
-            classes={{
-              selected: classes.btnActive,
-            }}
-          />
-          <Tab
-            selected={getIfSelected(MenuPageKeys.bulk, 6)}
+            selected={getIfSelected(MenuPageKeys.bulk, 5)}
             fullWidth
             component={Link}
             className={classes.navigationButton}

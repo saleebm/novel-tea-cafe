@@ -76,7 +76,6 @@ export enum MenuPageKeys {
   addIns = 'addIns',
   coffee = 'coffee',
   herbalTea = 'herbalTea',
-  superfoods = 'superfoods',
   kavaKava = 'kavaKava',
   kratom = 'kratom',
 }
@@ -139,16 +138,10 @@ export function Menu({ menu }: Menu) {
                   index={4}
                 />
                 <MenuSection
-                  id={MenuPageKeys.superfoods}
-                  pageTitle={'Superfoods'}
-                  edges={menu.superfoods.edges}
-                  index={5}
-                />
-                <MenuSection
                   id={MenuPageKeys.bulk}
                   pageTitle={'Bulk Kratom and Kava'}
                   edges={menu.bulk.edges}
-                  index={6}
+                  index={5}
                 />
               </Grid>
               <Grid

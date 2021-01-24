@@ -33,7 +33,6 @@ function MenuPage({ data }: MenuPage) {
  "Custom Herbal Tea",
  "Kava Kava",
  "Kratom",
- "Superfoods"
  _______________________
  TODO: as part of dynamically setting these, will need to batch get all of them
  */
@@ -101,18 +100,6 @@ export const query = graphql`
       sort: { fields: [menuItemPriceOption___price] }
       filter: {
         menuItemCategory: { elemMatch: { title: { eq: "Kratom" } } }
-      }
-    ) {
-      edges {
-        ...MENU_ITEM_EDGE
-      }
-    }
-    superfoods: allSanityMenuItem(
-      sort: { fields: [menuItemPriceOption___price] }
-      filter: {
-        menuItemCategory: {
-          elemMatch: { title: { eq: "Superfoods" } }
-        }
       }
     ) {
       edges {

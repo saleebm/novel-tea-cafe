@@ -34,12 +34,23 @@ export function MenuSection({
   index,
 }: MenuSection) {
   const classes = useStyles()
+  const sortedEdges = useMemo(
+    () =>
+      Array.from(edges).sort((a, b) =>
+        Array.isArray(a.node.menuItemPriceOption) &&
+        Array.isArray(b.node.menuItemPriceOption)
+          ? a.node.menuItemPriceOption[0].price -
+            b.node.menuItemPriceOption[0].price
+          : -1,
+      ),
+    [edges],
+  )
   const { setMenuNav } = useContext(MenuNavContext)
   const [inView, setInView] = useState(false)
   const { inView: intersectionCaught, ref } = useInView({
     threshold: [0.05],
     triggerOnce: false,
-    rootMargin: '42px 0px -69%',
+    rootMargin: '42px 0px -80%',
   })
 
   // debounced callback extraction
@@ -75,13 +86,16 @@ export function MenuSection({
           innerRef={ref}
         >
           <MenuTitle align={'center'} id={id} pageTitle={pageTitle} />
-          {edges.map((addIn) => (
-            <MenuItem key={addIn.node.id} theRealMenuItem={addIn} />
+          {sortedEdges.map((menuItem) => (
+            <MenuItem
+              key={menuItem.node.id}
+              theRealMenuItem={menuItem}
+            />
           ))}
         </Paper>
         <Divider variant={'inset'} orientation={'horizontal'} />
       </>
     ),
-    [classes, edges, id, pageTitle, index, ref],
+    [classes, sortedEdges, id, pageTitle, index, ref],
   )
 }
