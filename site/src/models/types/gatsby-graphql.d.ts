@@ -26,6 +26,12 @@ type Scalars = {
 
 
 
+type AVIFOptions = {
+  readonly quality: Maybe<Scalars['Int']>;
+  readonly lossless: Maybe<Scalars['Boolean']>;
+  readonly speed: Maybe<Scalars['Int']>;
+};
+
 type BlurredOptions = {
   /** Width of the generated low-res preview. Default is 20px */
   readonly width: Maybe<Scalars['Int']>;
@@ -401,6 +407,9 @@ type File = Node & {
   readonly hash: Maybe<Scalars['String']>;
   /** Copy file to static directory and return public url to it */
   readonly publicURL: Maybe<Scalars['String']>;
+  /** Returns all children nodes filtered by type ImageSharp */
+  readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
+  /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
@@ -527,6 +536,99 @@ enum FileFieldsEnum {
   blocks = 'blocks',
   hash = 'hash',
   publicURL = 'publicURL',
+  childrenImageSharp = 'childrenImageSharp',
+  childrenImageSharp___fixed___base64 = 'childrenImageSharp.fixed.base64',
+  childrenImageSharp___fixed___tracedSVG = 'childrenImageSharp.fixed.tracedSVG',
+  childrenImageSharp___fixed___aspectRatio = 'childrenImageSharp.fixed.aspectRatio',
+  childrenImageSharp___fixed___width = 'childrenImageSharp.fixed.width',
+  childrenImageSharp___fixed___height = 'childrenImageSharp.fixed.height',
+  childrenImageSharp___fixed___src = 'childrenImageSharp.fixed.src',
+  childrenImageSharp___fixed___srcSet = 'childrenImageSharp.fixed.srcSet',
+  childrenImageSharp___fixed___srcWebp = 'childrenImageSharp.fixed.srcWebp',
+  childrenImageSharp___fixed___srcSetWebp = 'childrenImageSharp.fixed.srcSetWebp',
+  childrenImageSharp___fixed___originalName = 'childrenImageSharp.fixed.originalName',
+  childrenImageSharp___resolutions___base64 = 'childrenImageSharp.resolutions.base64',
+  childrenImageSharp___resolutions___tracedSVG = 'childrenImageSharp.resolutions.tracedSVG',
+  childrenImageSharp___resolutions___aspectRatio = 'childrenImageSharp.resolutions.aspectRatio',
+  childrenImageSharp___resolutions___width = 'childrenImageSharp.resolutions.width',
+  childrenImageSharp___resolutions___height = 'childrenImageSharp.resolutions.height',
+  childrenImageSharp___resolutions___src = 'childrenImageSharp.resolutions.src',
+  childrenImageSharp___resolutions___srcSet = 'childrenImageSharp.resolutions.srcSet',
+  childrenImageSharp___resolutions___srcWebp = 'childrenImageSharp.resolutions.srcWebp',
+  childrenImageSharp___resolutions___srcSetWebp = 'childrenImageSharp.resolutions.srcSetWebp',
+  childrenImageSharp___resolutions___originalName = 'childrenImageSharp.resolutions.originalName',
+  childrenImageSharp___fluid___base64 = 'childrenImageSharp.fluid.base64',
+  childrenImageSharp___fluid___tracedSVG = 'childrenImageSharp.fluid.tracedSVG',
+  childrenImageSharp___fluid___aspectRatio = 'childrenImageSharp.fluid.aspectRatio',
+  childrenImageSharp___fluid___src = 'childrenImageSharp.fluid.src',
+  childrenImageSharp___fluid___srcSet = 'childrenImageSharp.fluid.srcSet',
+  childrenImageSharp___fluid___srcWebp = 'childrenImageSharp.fluid.srcWebp',
+  childrenImageSharp___fluid___srcSetWebp = 'childrenImageSharp.fluid.srcSetWebp',
+  childrenImageSharp___fluid___sizes = 'childrenImageSharp.fluid.sizes',
+  childrenImageSharp___fluid___originalImg = 'childrenImageSharp.fluid.originalImg',
+  childrenImageSharp___fluid___originalName = 'childrenImageSharp.fluid.originalName',
+  childrenImageSharp___fluid___presentationWidth = 'childrenImageSharp.fluid.presentationWidth',
+  childrenImageSharp___fluid___presentationHeight = 'childrenImageSharp.fluid.presentationHeight',
+  childrenImageSharp___sizes___base64 = 'childrenImageSharp.sizes.base64',
+  childrenImageSharp___sizes___tracedSVG = 'childrenImageSharp.sizes.tracedSVG',
+  childrenImageSharp___sizes___aspectRatio = 'childrenImageSharp.sizes.aspectRatio',
+  childrenImageSharp___sizes___src = 'childrenImageSharp.sizes.src',
+  childrenImageSharp___sizes___srcSet = 'childrenImageSharp.sizes.srcSet',
+  childrenImageSharp___sizes___srcWebp = 'childrenImageSharp.sizes.srcWebp',
+  childrenImageSharp___sizes___srcSetWebp = 'childrenImageSharp.sizes.srcSetWebp',
+  childrenImageSharp___sizes___sizes = 'childrenImageSharp.sizes.sizes',
+  childrenImageSharp___sizes___originalImg = 'childrenImageSharp.sizes.originalImg',
+  childrenImageSharp___sizes___originalName = 'childrenImageSharp.sizes.originalName',
+  childrenImageSharp___sizes___presentationWidth = 'childrenImageSharp.sizes.presentationWidth',
+  childrenImageSharp___sizes___presentationHeight = 'childrenImageSharp.sizes.presentationHeight',
+  childrenImageSharp___gatsbyImageData = 'childrenImageSharp.gatsbyImageData',
+  childrenImageSharp___original___width = 'childrenImageSharp.original.width',
+  childrenImageSharp___original___height = 'childrenImageSharp.original.height',
+  childrenImageSharp___original___src = 'childrenImageSharp.original.src',
+  childrenImageSharp___resize___src = 'childrenImageSharp.resize.src',
+  childrenImageSharp___resize___tracedSVG = 'childrenImageSharp.resize.tracedSVG',
+  childrenImageSharp___resize___width = 'childrenImageSharp.resize.width',
+  childrenImageSharp___resize___height = 'childrenImageSharp.resize.height',
+  childrenImageSharp___resize___aspectRatio = 'childrenImageSharp.resize.aspectRatio',
+  childrenImageSharp___resize___originalName = 'childrenImageSharp.resize.originalName',
+  childrenImageSharp___id = 'childrenImageSharp.id',
+  childrenImageSharp___parent___id = 'childrenImageSharp.parent.id',
+  childrenImageSharp___parent___parent___id = 'childrenImageSharp.parent.parent.id',
+  childrenImageSharp___parent___parent___children = 'childrenImageSharp.parent.parent.children',
+  childrenImageSharp___parent___children = 'childrenImageSharp.parent.children',
+  childrenImageSharp___parent___children___id = 'childrenImageSharp.parent.children.id',
+  childrenImageSharp___parent___children___children = 'childrenImageSharp.parent.children.children',
+  childrenImageSharp___parent___internal___content = 'childrenImageSharp.parent.internal.content',
+  childrenImageSharp___parent___internal___contentDigest = 'childrenImageSharp.parent.internal.contentDigest',
+  childrenImageSharp___parent___internal___description = 'childrenImageSharp.parent.internal.description',
+  childrenImageSharp___parent___internal___fieldOwners = 'childrenImageSharp.parent.internal.fieldOwners',
+  childrenImageSharp___parent___internal___ignoreType = 'childrenImageSharp.parent.internal.ignoreType',
+  childrenImageSharp___parent___internal___mediaType = 'childrenImageSharp.parent.internal.mediaType',
+  childrenImageSharp___parent___internal___owner = 'childrenImageSharp.parent.internal.owner',
+  childrenImageSharp___parent___internal___type = 'childrenImageSharp.parent.internal.type',
+  childrenImageSharp___children = 'childrenImageSharp.children',
+  childrenImageSharp___children___id = 'childrenImageSharp.children.id',
+  childrenImageSharp___children___parent___id = 'childrenImageSharp.children.parent.id',
+  childrenImageSharp___children___parent___children = 'childrenImageSharp.children.parent.children',
+  childrenImageSharp___children___children = 'childrenImageSharp.children.children',
+  childrenImageSharp___children___children___id = 'childrenImageSharp.children.children.id',
+  childrenImageSharp___children___children___children = 'childrenImageSharp.children.children.children',
+  childrenImageSharp___children___internal___content = 'childrenImageSharp.children.internal.content',
+  childrenImageSharp___children___internal___contentDigest = 'childrenImageSharp.children.internal.contentDigest',
+  childrenImageSharp___children___internal___description = 'childrenImageSharp.children.internal.description',
+  childrenImageSharp___children___internal___fieldOwners = 'childrenImageSharp.children.internal.fieldOwners',
+  childrenImageSharp___children___internal___ignoreType = 'childrenImageSharp.children.internal.ignoreType',
+  childrenImageSharp___children___internal___mediaType = 'childrenImageSharp.children.internal.mediaType',
+  childrenImageSharp___children___internal___owner = 'childrenImageSharp.children.internal.owner',
+  childrenImageSharp___children___internal___type = 'childrenImageSharp.children.internal.type',
+  childrenImageSharp___internal___content = 'childrenImageSharp.internal.content',
+  childrenImageSharp___internal___contentDigest = 'childrenImageSharp.internal.contentDigest',
+  childrenImageSharp___internal___description = 'childrenImageSharp.internal.description',
+  childrenImageSharp___internal___fieldOwners = 'childrenImageSharp.internal.fieldOwners',
+  childrenImageSharp___internal___ignoreType = 'childrenImageSharp.internal.ignoreType',
+  childrenImageSharp___internal___mediaType = 'childrenImageSharp.internal.mediaType',
+  childrenImageSharp___internal___owner = 'childrenImageSharp.internal.owner',
+  childrenImageSharp___internal___type = 'childrenImageSharp.internal.type',
   childImageSharp___fixed___base64 = 'childImageSharp.fixed.base64',
   childImageSharp___fixed___tracedSVG = 'childImageSharp.fixed.tracedSVG',
   childImageSharp___fixed___aspectRatio = 'childImageSharp.fixed.aspectRatio',
@@ -743,11 +845,16 @@ type FileFilterInput = {
   readonly blocks: Maybe<IntQueryOperatorInput>;
   readonly hash: Maybe<StringQueryOperatorInput>;
   readonly publicURL: Maybe<StringQueryOperatorInput>;
+  readonly childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   readonly childImageSharp: Maybe<ImageSharpFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
+};
+
+type FileFilterListInput = {
+  readonly elemMatch: Maybe<FileFilterInput>;
 };
 
 type FileGroupConnection = {
@@ -802,12 +909,13 @@ enum ImageFormat {
   AUTO = '',
   JPG = 'jpg',
   PNG = 'png',
-  WEBP = 'webp'
+  WEBP = 'webp',
+  AVIF = 'avif'
 }
 
 enum ImageLayout {
   FIXED = 'fixed',
-  FLUID = 'fluid',
+  FULL_WIDTH = 'fullWidth',
   CONSTRAINED = 'constrained'
 }
 
@@ -933,20 +1041,21 @@ type ImageSharp_sizesArgs = {
 
 type ImageSharp_gatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
-  maxWidth: Maybe<Scalars['Int']>;
-  maxHeight: Maybe<Scalars['Int']>;
   width: Maybe<Scalars['Int']>;
   height: Maybe<Scalars['Int']>;
+  aspectRatio: Maybe<Scalars['Float']>;
   placeholder?: Maybe<ImagePlaceholder>;
   blurredOptions: Maybe<BlurredOptions>;
   tracedSVGOptions: Maybe<Potrace>;
   formats?: Maybe<ReadonlyArray<Maybe<ImageFormat>>>;
   outputPixelDensities: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>;
-  sizes?: Maybe<Scalars['String']>;
+  breakpoints: Maybe<ReadonlyArray<Maybe<Scalars['Int']>>>;
+  sizes: Maybe<Scalars['String']>;
   quality: Maybe<Scalars['Int']>;
   jpgOptions: Maybe<JPGOptions>;
   pngOptions: Maybe<PNGOptions>;
   webpOptions: Maybe<WebPOptions>;
+  avifOptions: Maybe<AVIFOptions>;
   transformOptions: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
 };
@@ -1156,6 +1265,10 @@ type ImageSharpFilterInput = {
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
+};
+
+type ImageSharpFilterListInput = {
+  readonly elemMatch: Maybe<ImageSharpFilterInput>;
 };
 
 type ImageSharpFixed = {
@@ -1495,6 +1608,7 @@ type Query_fileArgs = {
   blocks: Maybe<IntQueryOperatorInput>;
   hash: Maybe<StringQueryOperatorInput>;
   publicURL: Maybe<StringQueryOperatorInput>;
+  childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   childImageSharp: Maybe<ImageSharpFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -1981,6 +2095,7 @@ type Query_staticMapArgs = {
   hash: Maybe<StringQueryOperatorInput>;
   mapUrl: Maybe<StringQueryOperatorInput>;
   nickname: Maybe<StringQueryOperatorInput>;
+  childrenFile: Maybe<FileFilterListInput>;
   childFile: Maybe<FileFilterInput>;
 };
 
@@ -7348,6 +7463,9 @@ type StaticMap = Node & {
   readonly hash: Maybe<Scalars['String']>;
   readonly mapUrl: Maybe<Scalars['String']>;
   readonly nickname: Maybe<Scalars['String']>;
+  /** Returns all children nodes filtered by type File */
+  readonly childrenFile: Maybe<ReadonlyArray<Maybe<File>>>;
+  /** Returns the first child node of type File or null if there are no children of given type on this node */
   readonly childFile: Maybe<File>;
 };
 
@@ -7470,6 +7588,217 @@ enum StaticMapFieldsEnum {
   hash = 'hash',
   mapUrl = 'mapUrl',
   nickname = 'nickname',
+  childrenFile = 'childrenFile',
+  childrenFile___sourceInstanceName = 'childrenFile.sourceInstanceName',
+  childrenFile___absolutePath = 'childrenFile.absolutePath',
+  childrenFile___relativePath = 'childrenFile.relativePath',
+  childrenFile___extension = 'childrenFile.extension',
+  childrenFile___size = 'childrenFile.size',
+  childrenFile___prettySize = 'childrenFile.prettySize',
+  childrenFile___modifiedTime = 'childrenFile.modifiedTime',
+  childrenFile___accessTime = 'childrenFile.accessTime',
+  childrenFile___changeTime = 'childrenFile.changeTime',
+  childrenFile___birthTime = 'childrenFile.birthTime',
+  childrenFile___root = 'childrenFile.root',
+  childrenFile___dir = 'childrenFile.dir',
+  childrenFile___base = 'childrenFile.base',
+  childrenFile___ext = 'childrenFile.ext',
+  childrenFile___name = 'childrenFile.name',
+  childrenFile___relativeDirectory = 'childrenFile.relativeDirectory',
+  childrenFile___dev = 'childrenFile.dev',
+  childrenFile___mode = 'childrenFile.mode',
+  childrenFile___nlink = 'childrenFile.nlink',
+  childrenFile___uid = 'childrenFile.uid',
+  childrenFile___gid = 'childrenFile.gid',
+  childrenFile___rdev = 'childrenFile.rdev',
+  childrenFile___ino = 'childrenFile.ino',
+  childrenFile___atimeMs = 'childrenFile.atimeMs',
+  childrenFile___mtimeMs = 'childrenFile.mtimeMs',
+  childrenFile___ctimeMs = 'childrenFile.ctimeMs',
+  childrenFile___atime = 'childrenFile.atime',
+  childrenFile___mtime = 'childrenFile.mtime',
+  childrenFile___ctime = 'childrenFile.ctime',
+  childrenFile___birthtime = 'childrenFile.birthtime',
+  childrenFile___birthtimeMs = 'childrenFile.birthtimeMs',
+  childrenFile___blksize = 'childrenFile.blksize',
+  childrenFile___blocks = 'childrenFile.blocks',
+  childrenFile___hash = 'childrenFile.hash',
+  childrenFile___publicURL = 'childrenFile.publicURL',
+  childrenFile___childrenImageSharp = 'childrenFile.childrenImageSharp',
+  childrenFile___childrenImageSharp___fixed___base64 = 'childrenFile.childrenImageSharp.fixed.base64',
+  childrenFile___childrenImageSharp___fixed___tracedSVG = 'childrenFile.childrenImageSharp.fixed.tracedSVG',
+  childrenFile___childrenImageSharp___fixed___aspectRatio = 'childrenFile.childrenImageSharp.fixed.aspectRatio',
+  childrenFile___childrenImageSharp___fixed___width = 'childrenFile.childrenImageSharp.fixed.width',
+  childrenFile___childrenImageSharp___fixed___height = 'childrenFile.childrenImageSharp.fixed.height',
+  childrenFile___childrenImageSharp___fixed___src = 'childrenFile.childrenImageSharp.fixed.src',
+  childrenFile___childrenImageSharp___fixed___srcSet = 'childrenFile.childrenImageSharp.fixed.srcSet',
+  childrenFile___childrenImageSharp___fixed___srcWebp = 'childrenFile.childrenImageSharp.fixed.srcWebp',
+  childrenFile___childrenImageSharp___fixed___srcSetWebp = 'childrenFile.childrenImageSharp.fixed.srcSetWebp',
+  childrenFile___childrenImageSharp___fixed___originalName = 'childrenFile.childrenImageSharp.fixed.originalName',
+  childrenFile___childrenImageSharp___resolutions___base64 = 'childrenFile.childrenImageSharp.resolutions.base64',
+  childrenFile___childrenImageSharp___resolutions___tracedSVG = 'childrenFile.childrenImageSharp.resolutions.tracedSVG',
+  childrenFile___childrenImageSharp___resolutions___aspectRatio = 'childrenFile.childrenImageSharp.resolutions.aspectRatio',
+  childrenFile___childrenImageSharp___resolutions___width = 'childrenFile.childrenImageSharp.resolutions.width',
+  childrenFile___childrenImageSharp___resolutions___height = 'childrenFile.childrenImageSharp.resolutions.height',
+  childrenFile___childrenImageSharp___resolutions___src = 'childrenFile.childrenImageSharp.resolutions.src',
+  childrenFile___childrenImageSharp___resolutions___srcSet = 'childrenFile.childrenImageSharp.resolutions.srcSet',
+  childrenFile___childrenImageSharp___resolutions___srcWebp = 'childrenFile.childrenImageSharp.resolutions.srcWebp',
+  childrenFile___childrenImageSharp___resolutions___srcSetWebp = 'childrenFile.childrenImageSharp.resolutions.srcSetWebp',
+  childrenFile___childrenImageSharp___resolutions___originalName = 'childrenFile.childrenImageSharp.resolutions.originalName',
+  childrenFile___childrenImageSharp___fluid___base64 = 'childrenFile.childrenImageSharp.fluid.base64',
+  childrenFile___childrenImageSharp___fluid___tracedSVG = 'childrenFile.childrenImageSharp.fluid.tracedSVG',
+  childrenFile___childrenImageSharp___fluid___aspectRatio = 'childrenFile.childrenImageSharp.fluid.aspectRatio',
+  childrenFile___childrenImageSharp___fluid___src = 'childrenFile.childrenImageSharp.fluid.src',
+  childrenFile___childrenImageSharp___fluid___srcSet = 'childrenFile.childrenImageSharp.fluid.srcSet',
+  childrenFile___childrenImageSharp___fluid___srcWebp = 'childrenFile.childrenImageSharp.fluid.srcWebp',
+  childrenFile___childrenImageSharp___fluid___srcSetWebp = 'childrenFile.childrenImageSharp.fluid.srcSetWebp',
+  childrenFile___childrenImageSharp___fluid___sizes = 'childrenFile.childrenImageSharp.fluid.sizes',
+  childrenFile___childrenImageSharp___fluid___originalImg = 'childrenFile.childrenImageSharp.fluid.originalImg',
+  childrenFile___childrenImageSharp___fluid___originalName = 'childrenFile.childrenImageSharp.fluid.originalName',
+  childrenFile___childrenImageSharp___fluid___presentationWidth = 'childrenFile.childrenImageSharp.fluid.presentationWidth',
+  childrenFile___childrenImageSharp___fluid___presentationHeight = 'childrenFile.childrenImageSharp.fluid.presentationHeight',
+  childrenFile___childrenImageSharp___sizes___base64 = 'childrenFile.childrenImageSharp.sizes.base64',
+  childrenFile___childrenImageSharp___sizes___tracedSVG = 'childrenFile.childrenImageSharp.sizes.tracedSVG',
+  childrenFile___childrenImageSharp___sizes___aspectRatio = 'childrenFile.childrenImageSharp.sizes.aspectRatio',
+  childrenFile___childrenImageSharp___sizes___src = 'childrenFile.childrenImageSharp.sizes.src',
+  childrenFile___childrenImageSharp___sizes___srcSet = 'childrenFile.childrenImageSharp.sizes.srcSet',
+  childrenFile___childrenImageSharp___sizes___srcWebp = 'childrenFile.childrenImageSharp.sizes.srcWebp',
+  childrenFile___childrenImageSharp___sizes___srcSetWebp = 'childrenFile.childrenImageSharp.sizes.srcSetWebp',
+  childrenFile___childrenImageSharp___sizes___sizes = 'childrenFile.childrenImageSharp.sizes.sizes',
+  childrenFile___childrenImageSharp___sizes___originalImg = 'childrenFile.childrenImageSharp.sizes.originalImg',
+  childrenFile___childrenImageSharp___sizes___originalName = 'childrenFile.childrenImageSharp.sizes.originalName',
+  childrenFile___childrenImageSharp___sizes___presentationWidth = 'childrenFile.childrenImageSharp.sizes.presentationWidth',
+  childrenFile___childrenImageSharp___sizes___presentationHeight = 'childrenFile.childrenImageSharp.sizes.presentationHeight',
+  childrenFile___childrenImageSharp___gatsbyImageData = 'childrenFile.childrenImageSharp.gatsbyImageData',
+  childrenFile___childrenImageSharp___original___width = 'childrenFile.childrenImageSharp.original.width',
+  childrenFile___childrenImageSharp___original___height = 'childrenFile.childrenImageSharp.original.height',
+  childrenFile___childrenImageSharp___original___src = 'childrenFile.childrenImageSharp.original.src',
+  childrenFile___childrenImageSharp___resize___src = 'childrenFile.childrenImageSharp.resize.src',
+  childrenFile___childrenImageSharp___resize___tracedSVG = 'childrenFile.childrenImageSharp.resize.tracedSVG',
+  childrenFile___childrenImageSharp___resize___width = 'childrenFile.childrenImageSharp.resize.width',
+  childrenFile___childrenImageSharp___resize___height = 'childrenFile.childrenImageSharp.resize.height',
+  childrenFile___childrenImageSharp___resize___aspectRatio = 'childrenFile.childrenImageSharp.resize.aspectRatio',
+  childrenFile___childrenImageSharp___resize___originalName = 'childrenFile.childrenImageSharp.resize.originalName',
+  childrenFile___childrenImageSharp___id = 'childrenFile.childrenImageSharp.id',
+  childrenFile___childrenImageSharp___parent___id = 'childrenFile.childrenImageSharp.parent.id',
+  childrenFile___childrenImageSharp___parent___children = 'childrenFile.childrenImageSharp.parent.children',
+  childrenFile___childrenImageSharp___children = 'childrenFile.childrenImageSharp.children',
+  childrenFile___childrenImageSharp___children___id = 'childrenFile.childrenImageSharp.children.id',
+  childrenFile___childrenImageSharp___children___children = 'childrenFile.childrenImageSharp.children.children',
+  childrenFile___childrenImageSharp___internal___content = 'childrenFile.childrenImageSharp.internal.content',
+  childrenFile___childrenImageSharp___internal___contentDigest = 'childrenFile.childrenImageSharp.internal.contentDigest',
+  childrenFile___childrenImageSharp___internal___description = 'childrenFile.childrenImageSharp.internal.description',
+  childrenFile___childrenImageSharp___internal___fieldOwners = 'childrenFile.childrenImageSharp.internal.fieldOwners',
+  childrenFile___childrenImageSharp___internal___ignoreType = 'childrenFile.childrenImageSharp.internal.ignoreType',
+  childrenFile___childrenImageSharp___internal___mediaType = 'childrenFile.childrenImageSharp.internal.mediaType',
+  childrenFile___childrenImageSharp___internal___owner = 'childrenFile.childrenImageSharp.internal.owner',
+  childrenFile___childrenImageSharp___internal___type = 'childrenFile.childrenImageSharp.internal.type',
+  childrenFile___childImageSharp___fixed___base64 = 'childrenFile.childImageSharp.fixed.base64',
+  childrenFile___childImageSharp___fixed___tracedSVG = 'childrenFile.childImageSharp.fixed.tracedSVG',
+  childrenFile___childImageSharp___fixed___aspectRatio = 'childrenFile.childImageSharp.fixed.aspectRatio',
+  childrenFile___childImageSharp___fixed___width = 'childrenFile.childImageSharp.fixed.width',
+  childrenFile___childImageSharp___fixed___height = 'childrenFile.childImageSharp.fixed.height',
+  childrenFile___childImageSharp___fixed___src = 'childrenFile.childImageSharp.fixed.src',
+  childrenFile___childImageSharp___fixed___srcSet = 'childrenFile.childImageSharp.fixed.srcSet',
+  childrenFile___childImageSharp___fixed___srcWebp = 'childrenFile.childImageSharp.fixed.srcWebp',
+  childrenFile___childImageSharp___fixed___srcSetWebp = 'childrenFile.childImageSharp.fixed.srcSetWebp',
+  childrenFile___childImageSharp___fixed___originalName = 'childrenFile.childImageSharp.fixed.originalName',
+  childrenFile___childImageSharp___resolutions___base64 = 'childrenFile.childImageSharp.resolutions.base64',
+  childrenFile___childImageSharp___resolutions___tracedSVG = 'childrenFile.childImageSharp.resolutions.tracedSVG',
+  childrenFile___childImageSharp___resolutions___aspectRatio = 'childrenFile.childImageSharp.resolutions.aspectRatio',
+  childrenFile___childImageSharp___resolutions___width = 'childrenFile.childImageSharp.resolutions.width',
+  childrenFile___childImageSharp___resolutions___height = 'childrenFile.childImageSharp.resolutions.height',
+  childrenFile___childImageSharp___resolutions___src = 'childrenFile.childImageSharp.resolutions.src',
+  childrenFile___childImageSharp___resolutions___srcSet = 'childrenFile.childImageSharp.resolutions.srcSet',
+  childrenFile___childImageSharp___resolutions___srcWebp = 'childrenFile.childImageSharp.resolutions.srcWebp',
+  childrenFile___childImageSharp___resolutions___srcSetWebp = 'childrenFile.childImageSharp.resolutions.srcSetWebp',
+  childrenFile___childImageSharp___resolutions___originalName = 'childrenFile.childImageSharp.resolutions.originalName',
+  childrenFile___childImageSharp___fluid___base64 = 'childrenFile.childImageSharp.fluid.base64',
+  childrenFile___childImageSharp___fluid___tracedSVG = 'childrenFile.childImageSharp.fluid.tracedSVG',
+  childrenFile___childImageSharp___fluid___aspectRatio = 'childrenFile.childImageSharp.fluid.aspectRatio',
+  childrenFile___childImageSharp___fluid___src = 'childrenFile.childImageSharp.fluid.src',
+  childrenFile___childImageSharp___fluid___srcSet = 'childrenFile.childImageSharp.fluid.srcSet',
+  childrenFile___childImageSharp___fluid___srcWebp = 'childrenFile.childImageSharp.fluid.srcWebp',
+  childrenFile___childImageSharp___fluid___srcSetWebp = 'childrenFile.childImageSharp.fluid.srcSetWebp',
+  childrenFile___childImageSharp___fluid___sizes = 'childrenFile.childImageSharp.fluid.sizes',
+  childrenFile___childImageSharp___fluid___originalImg = 'childrenFile.childImageSharp.fluid.originalImg',
+  childrenFile___childImageSharp___fluid___originalName = 'childrenFile.childImageSharp.fluid.originalName',
+  childrenFile___childImageSharp___fluid___presentationWidth = 'childrenFile.childImageSharp.fluid.presentationWidth',
+  childrenFile___childImageSharp___fluid___presentationHeight = 'childrenFile.childImageSharp.fluid.presentationHeight',
+  childrenFile___childImageSharp___sizes___base64 = 'childrenFile.childImageSharp.sizes.base64',
+  childrenFile___childImageSharp___sizes___tracedSVG = 'childrenFile.childImageSharp.sizes.tracedSVG',
+  childrenFile___childImageSharp___sizes___aspectRatio = 'childrenFile.childImageSharp.sizes.aspectRatio',
+  childrenFile___childImageSharp___sizes___src = 'childrenFile.childImageSharp.sizes.src',
+  childrenFile___childImageSharp___sizes___srcSet = 'childrenFile.childImageSharp.sizes.srcSet',
+  childrenFile___childImageSharp___sizes___srcWebp = 'childrenFile.childImageSharp.sizes.srcWebp',
+  childrenFile___childImageSharp___sizes___srcSetWebp = 'childrenFile.childImageSharp.sizes.srcSetWebp',
+  childrenFile___childImageSharp___sizes___sizes = 'childrenFile.childImageSharp.sizes.sizes',
+  childrenFile___childImageSharp___sizes___originalImg = 'childrenFile.childImageSharp.sizes.originalImg',
+  childrenFile___childImageSharp___sizes___originalName = 'childrenFile.childImageSharp.sizes.originalName',
+  childrenFile___childImageSharp___sizes___presentationWidth = 'childrenFile.childImageSharp.sizes.presentationWidth',
+  childrenFile___childImageSharp___sizes___presentationHeight = 'childrenFile.childImageSharp.sizes.presentationHeight',
+  childrenFile___childImageSharp___gatsbyImageData = 'childrenFile.childImageSharp.gatsbyImageData',
+  childrenFile___childImageSharp___original___width = 'childrenFile.childImageSharp.original.width',
+  childrenFile___childImageSharp___original___height = 'childrenFile.childImageSharp.original.height',
+  childrenFile___childImageSharp___original___src = 'childrenFile.childImageSharp.original.src',
+  childrenFile___childImageSharp___resize___src = 'childrenFile.childImageSharp.resize.src',
+  childrenFile___childImageSharp___resize___tracedSVG = 'childrenFile.childImageSharp.resize.tracedSVG',
+  childrenFile___childImageSharp___resize___width = 'childrenFile.childImageSharp.resize.width',
+  childrenFile___childImageSharp___resize___height = 'childrenFile.childImageSharp.resize.height',
+  childrenFile___childImageSharp___resize___aspectRatio = 'childrenFile.childImageSharp.resize.aspectRatio',
+  childrenFile___childImageSharp___resize___originalName = 'childrenFile.childImageSharp.resize.originalName',
+  childrenFile___childImageSharp___id = 'childrenFile.childImageSharp.id',
+  childrenFile___childImageSharp___parent___id = 'childrenFile.childImageSharp.parent.id',
+  childrenFile___childImageSharp___parent___children = 'childrenFile.childImageSharp.parent.children',
+  childrenFile___childImageSharp___children = 'childrenFile.childImageSharp.children',
+  childrenFile___childImageSharp___children___id = 'childrenFile.childImageSharp.children.id',
+  childrenFile___childImageSharp___children___children = 'childrenFile.childImageSharp.children.children',
+  childrenFile___childImageSharp___internal___content = 'childrenFile.childImageSharp.internal.content',
+  childrenFile___childImageSharp___internal___contentDigest = 'childrenFile.childImageSharp.internal.contentDigest',
+  childrenFile___childImageSharp___internal___description = 'childrenFile.childImageSharp.internal.description',
+  childrenFile___childImageSharp___internal___fieldOwners = 'childrenFile.childImageSharp.internal.fieldOwners',
+  childrenFile___childImageSharp___internal___ignoreType = 'childrenFile.childImageSharp.internal.ignoreType',
+  childrenFile___childImageSharp___internal___mediaType = 'childrenFile.childImageSharp.internal.mediaType',
+  childrenFile___childImageSharp___internal___owner = 'childrenFile.childImageSharp.internal.owner',
+  childrenFile___childImageSharp___internal___type = 'childrenFile.childImageSharp.internal.type',
+  childrenFile___id = 'childrenFile.id',
+  childrenFile___parent___id = 'childrenFile.parent.id',
+  childrenFile___parent___parent___id = 'childrenFile.parent.parent.id',
+  childrenFile___parent___parent___children = 'childrenFile.parent.parent.children',
+  childrenFile___parent___children = 'childrenFile.parent.children',
+  childrenFile___parent___children___id = 'childrenFile.parent.children.id',
+  childrenFile___parent___children___children = 'childrenFile.parent.children.children',
+  childrenFile___parent___internal___content = 'childrenFile.parent.internal.content',
+  childrenFile___parent___internal___contentDigest = 'childrenFile.parent.internal.contentDigest',
+  childrenFile___parent___internal___description = 'childrenFile.parent.internal.description',
+  childrenFile___parent___internal___fieldOwners = 'childrenFile.parent.internal.fieldOwners',
+  childrenFile___parent___internal___ignoreType = 'childrenFile.parent.internal.ignoreType',
+  childrenFile___parent___internal___mediaType = 'childrenFile.parent.internal.mediaType',
+  childrenFile___parent___internal___owner = 'childrenFile.parent.internal.owner',
+  childrenFile___parent___internal___type = 'childrenFile.parent.internal.type',
+  childrenFile___children = 'childrenFile.children',
+  childrenFile___children___id = 'childrenFile.children.id',
+  childrenFile___children___parent___id = 'childrenFile.children.parent.id',
+  childrenFile___children___parent___children = 'childrenFile.children.parent.children',
+  childrenFile___children___children = 'childrenFile.children.children',
+  childrenFile___children___children___id = 'childrenFile.children.children.id',
+  childrenFile___children___children___children = 'childrenFile.children.children.children',
+  childrenFile___children___internal___content = 'childrenFile.children.internal.content',
+  childrenFile___children___internal___contentDigest = 'childrenFile.children.internal.contentDigest',
+  childrenFile___children___internal___description = 'childrenFile.children.internal.description',
+  childrenFile___children___internal___fieldOwners = 'childrenFile.children.internal.fieldOwners',
+  childrenFile___children___internal___ignoreType = 'childrenFile.children.internal.ignoreType',
+  childrenFile___children___internal___mediaType = 'childrenFile.children.internal.mediaType',
+  childrenFile___children___internal___owner = 'childrenFile.children.internal.owner',
+  childrenFile___children___internal___type = 'childrenFile.children.internal.type',
+  childrenFile___internal___content = 'childrenFile.internal.content',
+  childrenFile___internal___contentDigest = 'childrenFile.internal.contentDigest',
+  childrenFile___internal___description = 'childrenFile.internal.description',
+  childrenFile___internal___fieldOwners = 'childrenFile.internal.fieldOwners',
+  childrenFile___internal___ignoreType = 'childrenFile.internal.ignoreType',
+  childrenFile___internal___mediaType = 'childrenFile.internal.mediaType',
+  childrenFile___internal___owner = 'childrenFile.internal.owner',
+  childrenFile___internal___type = 'childrenFile.internal.type',
   childFile___sourceInstanceName = 'childFile.sourceInstanceName',
   childFile___absolutePath = 'childFile.absolutePath',
   childFile___relativePath = 'childFile.relativePath',
@@ -7505,6 +7834,75 @@ enum StaticMapFieldsEnum {
   childFile___blocks = 'childFile.blocks',
   childFile___hash = 'childFile.hash',
   childFile___publicURL = 'childFile.publicURL',
+  childFile___childrenImageSharp = 'childFile.childrenImageSharp',
+  childFile___childrenImageSharp___fixed___base64 = 'childFile.childrenImageSharp.fixed.base64',
+  childFile___childrenImageSharp___fixed___tracedSVG = 'childFile.childrenImageSharp.fixed.tracedSVG',
+  childFile___childrenImageSharp___fixed___aspectRatio = 'childFile.childrenImageSharp.fixed.aspectRatio',
+  childFile___childrenImageSharp___fixed___width = 'childFile.childrenImageSharp.fixed.width',
+  childFile___childrenImageSharp___fixed___height = 'childFile.childrenImageSharp.fixed.height',
+  childFile___childrenImageSharp___fixed___src = 'childFile.childrenImageSharp.fixed.src',
+  childFile___childrenImageSharp___fixed___srcSet = 'childFile.childrenImageSharp.fixed.srcSet',
+  childFile___childrenImageSharp___fixed___srcWebp = 'childFile.childrenImageSharp.fixed.srcWebp',
+  childFile___childrenImageSharp___fixed___srcSetWebp = 'childFile.childrenImageSharp.fixed.srcSetWebp',
+  childFile___childrenImageSharp___fixed___originalName = 'childFile.childrenImageSharp.fixed.originalName',
+  childFile___childrenImageSharp___resolutions___base64 = 'childFile.childrenImageSharp.resolutions.base64',
+  childFile___childrenImageSharp___resolutions___tracedSVG = 'childFile.childrenImageSharp.resolutions.tracedSVG',
+  childFile___childrenImageSharp___resolutions___aspectRatio = 'childFile.childrenImageSharp.resolutions.aspectRatio',
+  childFile___childrenImageSharp___resolutions___width = 'childFile.childrenImageSharp.resolutions.width',
+  childFile___childrenImageSharp___resolutions___height = 'childFile.childrenImageSharp.resolutions.height',
+  childFile___childrenImageSharp___resolutions___src = 'childFile.childrenImageSharp.resolutions.src',
+  childFile___childrenImageSharp___resolutions___srcSet = 'childFile.childrenImageSharp.resolutions.srcSet',
+  childFile___childrenImageSharp___resolutions___srcWebp = 'childFile.childrenImageSharp.resolutions.srcWebp',
+  childFile___childrenImageSharp___resolutions___srcSetWebp = 'childFile.childrenImageSharp.resolutions.srcSetWebp',
+  childFile___childrenImageSharp___resolutions___originalName = 'childFile.childrenImageSharp.resolutions.originalName',
+  childFile___childrenImageSharp___fluid___base64 = 'childFile.childrenImageSharp.fluid.base64',
+  childFile___childrenImageSharp___fluid___tracedSVG = 'childFile.childrenImageSharp.fluid.tracedSVG',
+  childFile___childrenImageSharp___fluid___aspectRatio = 'childFile.childrenImageSharp.fluid.aspectRatio',
+  childFile___childrenImageSharp___fluid___src = 'childFile.childrenImageSharp.fluid.src',
+  childFile___childrenImageSharp___fluid___srcSet = 'childFile.childrenImageSharp.fluid.srcSet',
+  childFile___childrenImageSharp___fluid___srcWebp = 'childFile.childrenImageSharp.fluid.srcWebp',
+  childFile___childrenImageSharp___fluid___srcSetWebp = 'childFile.childrenImageSharp.fluid.srcSetWebp',
+  childFile___childrenImageSharp___fluid___sizes = 'childFile.childrenImageSharp.fluid.sizes',
+  childFile___childrenImageSharp___fluid___originalImg = 'childFile.childrenImageSharp.fluid.originalImg',
+  childFile___childrenImageSharp___fluid___originalName = 'childFile.childrenImageSharp.fluid.originalName',
+  childFile___childrenImageSharp___fluid___presentationWidth = 'childFile.childrenImageSharp.fluid.presentationWidth',
+  childFile___childrenImageSharp___fluid___presentationHeight = 'childFile.childrenImageSharp.fluid.presentationHeight',
+  childFile___childrenImageSharp___sizes___base64 = 'childFile.childrenImageSharp.sizes.base64',
+  childFile___childrenImageSharp___sizes___tracedSVG = 'childFile.childrenImageSharp.sizes.tracedSVG',
+  childFile___childrenImageSharp___sizes___aspectRatio = 'childFile.childrenImageSharp.sizes.aspectRatio',
+  childFile___childrenImageSharp___sizes___src = 'childFile.childrenImageSharp.sizes.src',
+  childFile___childrenImageSharp___sizes___srcSet = 'childFile.childrenImageSharp.sizes.srcSet',
+  childFile___childrenImageSharp___sizes___srcWebp = 'childFile.childrenImageSharp.sizes.srcWebp',
+  childFile___childrenImageSharp___sizes___srcSetWebp = 'childFile.childrenImageSharp.sizes.srcSetWebp',
+  childFile___childrenImageSharp___sizes___sizes = 'childFile.childrenImageSharp.sizes.sizes',
+  childFile___childrenImageSharp___sizes___originalImg = 'childFile.childrenImageSharp.sizes.originalImg',
+  childFile___childrenImageSharp___sizes___originalName = 'childFile.childrenImageSharp.sizes.originalName',
+  childFile___childrenImageSharp___sizes___presentationWidth = 'childFile.childrenImageSharp.sizes.presentationWidth',
+  childFile___childrenImageSharp___sizes___presentationHeight = 'childFile.childrenImageSharp.sizes.presentationHeight',
+  childFile___childrenImageSharp___gatsbyImageData = 'childFile.childrenImageSharp.gatsbyImageData',
+  childFile___childrenImageSharp___original___width = 'childFile.childrenImageSharp.original.width',
+  childFile___childrenImageSharp___original___height = 'childFile.childrenImageSharp.original.height',
+  childFile___childrenImageSharp___original___src = 'childFile.childrenImageSharp.original.src',
+  childFile___childrenImageSharp___resize___src = 'childFile.childrenImageSharp.resize.src',
+  childFile___childrenImageSharp___resize___tracedSVG = 'childFile.childrenImageSharp.resize.tracedSVG',
+  childFile___childrenImageSharp___resize___width = 'childFile.childrenImageSharp.resize.width',
+  childFile___childrenImageSharp___resize___height = 'childFile.childrenImageSharp.resize.height',
+  childFile___childrenImageSharp___resize___aspectRatio = 'childFile.childrenImageSharp.resize.aspectRatio',
+  childFile___childrenImageSharp___resize___originalName = 'childFile.childrenImageSharp.resize.originalName',
+  childFile___childrenImageSharp___id = 'childFile.childrenImageSharp.id',
+  childFile___childrenImageSharp___parent___id = 'childFile.childrenImageSharp.parent.id',
+  childFile___childrenImageSharp___parent___children = 'childFile.childrenImageSharp.parent.children',
+  childFile___childrenImageSharp___children = 'childFile.childrenImageSharp.children',
+  childFile___childrenImageSharp___children___id = 'childFile.childrenImageSharp.children.id',
+  childFile___childrenImageSharp___children___children = 'childFile.childrenImageSharp.children.children',
+  childFile___childrenImageSharp___internal___content = 'childFile.childrenImageSharp.internal.content',
+  childFile___childrenImageSharp___internal___contentDigest = 'childFile.childrenImageSharp.internal.contentDigest',
+  childFile___childrenImageSharp___internal___description = 'childFile.childrenImageSharp.internal.description',
+  childFile___childrenImageSharp___internal___fieldOwners = 'childFile.childrenImageSharp.internal.fieldOwners',
+  childFile___childrenImageSharp___internal___ignoreType = 'childFile.childrenImageSharp.internal.ignoreType',
+  childFile___childrenImageSharp___internal___mediaType = 'childFile.childrenImageSharp.internal.mediaType',
+  childFile___childrenImageSharp___internal___owner = 'childFile.childrenImageSharp.internal.owner',
+  childFile___childrenImageSharp___internal___type = 'childFile.childrenImageSharp.internal.type',
   childFile___childImageSharp___fixed___base64 = 'childFile.childImageSharp.fixed.base64',
   childFile___childImageSharp___fixed___tracedSVG = 'childFile.childImageSharp.fixed.tracedSVG',
   childFile___childImageSharp___fixed___aspectRatio = 'childFile.childImageSharp.fixed.aspectRatio',
@@ -7623,6 +8021,7 @@ type StaticMapFilterInput = {
   readonly hash: Maybe<StringQueryOperatorInput>;
   readonly mapUrl: Maybe<StringQueryOperatorInput>;
   readonly nickname: Maybe<StringQueryOperatorInput>;
+  readonly childrenFile: Maybe<FileFilterListInput>;
   readonly childFile: Maybe<FileFilterInput>;
 };
 

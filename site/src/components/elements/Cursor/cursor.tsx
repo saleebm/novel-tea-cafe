@@ -1,15 +1,14 @@
 import { motion, useAnimation } from 'framer-motion'
 import React, { useCallback, useEffect } from 'react'
-import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
-import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 import clsx from 'clsx'
-import styles from './cursor.mod.scss'
 import {
   createStyles,
   fade,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles'
+import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
+import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
+import styles from './cursor.mod.scss'
 
 // import { useDebouncedCallback } from '@Utils/hooks/use-debounced-callback'
 
@@ -19,16 +18,14 @@ interface CursorProps {
   mouseUp: boolean
 }
 
-interface FlowerProps {
-  size: number
-  dotSize: number
-}
+const SIZE = 50
+const DOT_SIZE = SIZE / 7
 
-const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     flowerRoot: {
-      'height': (props) => `${props.size}px`,
-      'width': (props) => `${props.size}px`,
+      'height': `${SIZE}px`,
+      'width': `${SIZE}px`,
       'borderRadius': '49%',
       'border': `1px solid ${fade(
         theme.palette.secondary.light,
@@ -40,8 +37,8 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
       },
     },
     dotsContainer: {
-      height: (props) => `${props.dotSize}px`,
-      width: (props) => `${props.dotSize}px`,
+      height: `${DOT_SIZE}px`,
+      width: `${DOT_SIZE}px`,
     },
     smallerDot: {
       borderRadius: '49%',
@@ -68,9 +65,6 @@ const useStyles = makeStyles<Theme, FlowerProps>((theme) =>
     },
   }),
 )
-
-const SIZE = 50
-const DOT_SIZE = SIZE / 7
 
 const INITIAL_BOX_SHADOW = `0px 0px 0px rgba(0, 255, 0, 1),
         0px 0px 0px rgba(0, 255, 0, 1), 0px 0px 0px rgba(0, 255, 0, 1),
@@ -103,7 +97,7 @@ const BIG_DOTS_SHADOW = `${DOT_SIZE * 2.6}px 0 0 rgba(0, 255, 0, 1),
         -${DOT_SIZE * 1.9}px ${DOT_SIZE * 1.9}px 0 rgba(0, 255, 0, 1)`
 
 export function Cursor({ x, y, mouseUp }: CursorProps) {
-  const classes = useStyles({ dotSize: DOT_SIZE, size: SIZE })
+  const classes = useStyles()
   const flowerControls = useAnimation()
 
   const activeAreaControls = useAnimation()

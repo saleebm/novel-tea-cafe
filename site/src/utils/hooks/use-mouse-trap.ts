@@ -3,7 +3,8 @@ import {
   ActiveAreaType,
   ActiveAreaTypes,
   CursorActionTypes,
-  CursorContext,
+  CursorStateContext,
+  CursorDispatchContext,
 } from '@Components/context/MousePosition/mouse-position-provider'
 
 interface MouseEventInput {
@@ -15,14 +16,16 @@ interface MouseEventInput {
  * will require using event listener on exported mouseenter and mouseleave events
  */
 export function useMouseTrap() {
-  const { cursor, setCursor, setActiveContainer } = useContext(
-    CursorContext,
+  const { cursor } = useContext(CursorStateContext)
+  const { setCursor, setActiveContainer } = useContext(
+    CursorDispatchContext,
   )
   const handleMouseEnter = useCallback(
     (
       { area, additionalProps = {} }: MouseEventInput,
       event: MouseEvent,
     ) => {
+      console.log(area)
       // set the active container ref
       setActiveContainer(event.target)
       // set the area type

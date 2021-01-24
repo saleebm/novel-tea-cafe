@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { GoHome, GoSettings } from 'react-icons/go'
+import { GoHome, GoSettings, GoCalendar, GoCircuitBoard } from 'react-icons/go'
 import blog from './src/structure/blog'
 import menu from './src/structure/menu'
 
@@ -36,12 +36,14 @@ export default () =>
       S.documentListItem()
         .title('Weekly Events')
         .schemaType('weeklyEvents')
+        .icon(GoCalendar)
         .child(
           S.document().schemaType('weeklyEvents').documentId('weeklyEvents').views([S.view.form()]),
         ),
       S.documentListItem()
         .title('Galleries')
         .schemaType('galleryImages')
+        .icon(GoCircuitBoard)
         .child(
           S.document().schemaType('galleryImages').documentId('galleries').views([S.view.form()]),
         ),

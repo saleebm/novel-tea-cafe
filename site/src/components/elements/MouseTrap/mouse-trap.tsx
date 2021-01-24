@@ -4,9 +4,9 @@ import React, {
   ReactNodeArray,
   useRef,
 } from 'react'
+import useEventListener from '@use-it/event-listener'
 import { ActiveAreaType } from '@Components/context/MousePosition/mouse-position-provider'
 import { useMouseTrap } from '@Utils/hooks/use-mouse-trap'
-import useEventListener from '@use-it/event-listener'
 
 interface MouseTrap extends ComponentPropsWithoutRef<'div'> {
   area: ActiveAreaType
@@ -25,12 +25,16 @@ export function MouseTrap({
   useEventListener(
     'mouseenter',
     mouseenter({ area, additionalProps }),
-    (ref && ref.current) || undefined,
+    {
+      element: (ref && ref.current) || undefined,
+    },
   )
   useEventListener(
     'mouseleave',
     mouseleave({ area, additionalProps }),
-    (ref && ref.current) || undefined,
+    {
+      element: (ref && ref.current) || undefined,
+    },
   )
 
   return (
