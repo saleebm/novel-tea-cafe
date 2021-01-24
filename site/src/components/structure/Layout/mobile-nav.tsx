@@ -6,7 +6,6 @@ import {
   Modal,
   Typography,
 } from '@material-ui/core'
-import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import { FixedObject } from 'gatsby-image'
 import { useLocation } from '@reach/router'
@@ -49,10 +48,7 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
             open={navOpen}
             BackdropComponent={Backdrop}
           >
-            <motion.nav
-              animate={navOpen ? 'show' : 'hidden'}
-              className={classes.navigation}
-            >
+            <nav className={classes.navigation}>
               <Grid container spacing={3} className={classes.navGrid}>
                 <Grid
                   className={classes.navHeader}
@@ -135,7 +131,7 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                   </AnimatedInPlainViewParent>
                 </Grid>
               </Grid>
-            </motion.nav>
+            </nav>
           </Modal>
         </div>
       </>

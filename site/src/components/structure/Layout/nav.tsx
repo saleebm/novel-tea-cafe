@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme) => ({
     ...theme.mixins.visuallyHidden,
   },
   navigationWrap: {
-    zIndex: 11000000,
+    zIndex: 1000000,
   },
   navigation: {
     width: '100%',

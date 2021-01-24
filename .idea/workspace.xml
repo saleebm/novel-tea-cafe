@@ -24,14 +24,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/mobile-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/mobile-nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-price-chip.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-section.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/config/material-theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/config/material-theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/menu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,17 +127,6 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="build-studio" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -314,7 +301,8 @@
       <workItem from="1611092546604" duration="91000" />
       <workItem from="1611353661860" duration="4679000" />
       <workItem from="1611428301516" duration="744000" />
-      <workItem from="1611513406482" duration="3098000" />
+      <workItem from="1611513406482" duration="3312000" />
+      <workItem from="1611518694775" duration="337000" />
     </task>
     <servers />
   </component>

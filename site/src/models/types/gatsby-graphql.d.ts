@@ -8158,23 +8158,15 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type SeoDataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SeoDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly file: Maybe<Pick<File, 'publicURL' | 'name'>>, readonly allFile: (
-    Pick<FileConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
-  ) };
-
 type LogoImgInHeaderQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type LogoImgInHeaderQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
-type LogoImageLayoutQueryVariables = Exact<{ [key: string]: never; }>;
+type SeoDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type LogoImageLayoutQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, readonly allFile: (
+type SeoDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }>, readonly file: Maybe<Pick<File, 'publicURL' | 'name'>>, readonly allFile: (
     Pick<FileConnection, 'totalCount'>
     & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
   ) };
@@ -8184,19 +8176,15 @@ type SOCIAL_SITE_LINKSQueryVariables = Exact<{ [key: string]: never; }>;
 
 type SOCIAL_SITE_LINKSQuery = { readonly sanitySiteSettings: Maybe<Pick<SanitySiteSettings, 'facebookPage' | 'twitterPage' | 'instagramPage'>>, readonly facebookIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly twitterIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, readonly instagramIcon: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
+type LogoImageLayoutQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LogoImageLayoutQuery = { readonly file: Maybe<Pick<File, 'publicURL'>>, readonly allFile: (
+    Pick<FileConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<Pick<File, 'publicURL'>> }
+  ) };
+
 type FIXED_IMAGEFragment = { readonly image: Maybe<{ readonly asset: Maybe<{ readonly fixed: Maybe<GatsbySanityImageFixedFragment> }> }> };
-
-type GatsbySanityImageFixed_noBase64Fragment = Pick<SanityImageFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbySanityImageFixed_withWebpFragment = Pick<SanityImageFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbySanityImageFixed_withWebp_noBase64Fragment = Pick<SanityImageFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbySanityImageFluid_noBase64Fragment = Pick<SanityImageFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type GatsbySanityImageFluid_withWebpFragment = Pick<SanityImageFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type GatsbySanityImageFluid_withWebp_noBase64Fragment = Pick<SanityImageFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -8245,5 +8233,17 @@ type GatsbyImageSharpSizes_withWebp_tracedSVGFragment = Pick<ImageSharpSizes, 't
 type GatsbyImageSharpSizes_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpSizes_withWebp_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbySanityImageFixed_noBase64Fragment = Pick<SanityImageFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbySanityImageFixed_withWebpFragment = Pick<SanityImageFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbySanityImageFixed_withWebp_noBase64Fragment = Pick<SanityImageFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbySanityImageFluid_noBase64Fragment = Pick<SanityImageFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbySanityImageFluid_withWebpFragment = Pick<SanityImageFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbySanityImageFluid_withWebp_noBase64Fragment = Pick<SanityImageFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 }

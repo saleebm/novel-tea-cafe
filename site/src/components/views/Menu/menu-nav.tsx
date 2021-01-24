@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       overflowX: 'auto',
       boxShadow: theme.shadows['6'],
     },
-    zIndex: 10000,
+    zIndex: 1000,
   },
   navigationButton: {
     'color': theme.palette.text.primary,

@@ -60,11 +60,9 @@ export function Layout({ children }: Layout) {
     setCursorDown((prevState) => !prevState)
   }, [])
 
-  useEventListener(
-    'mouseup',
-    handleMouseClick,
-    mainContainerRef?.current ?? undefined,
-  )
+  useEventListener('mouseup', handleMouseClick, {
+    element: mainContainerRef?.current ?? undefined,
+  })
 
   const {
     file,
