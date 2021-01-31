@@ -24,12 +24,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/mobile-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/mobile-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/.babelrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/models/types/gatsby-graphql.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/src/pages/picture-show.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/picture-show.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +304,10 @@
       <workItem from="1611353661860" duration="4679000" />
       <workItem from="1611428301516" duration="744000" />
       <workItem from="1611513406482" duration="3312000" />
-      <workItem from="1611518694775" duration="337000" />
+      <workItem from="1611518694775" duration="622000" />
+      <workItem from="1612124087072" duration="33000" />
+      <workItem from="1612124138392" duration="1041000" />
+      <workItem from="1612126489736" duration="370000" />
     </task>
     <servers />
   </component>

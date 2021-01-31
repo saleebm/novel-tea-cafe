@@ -3,9 +3,20 @@
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 5rem 0;
+  padding: 0;
   display: flex;
   justify-content: center;
+}
+
+.pageTitle {
+  font-size: 4.2rem;
+  word-wrap: normal;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  width: 100%;
+  position: relative;
+  display: block;
 }
 
 .cardList {
@@ -54,6 +65,10 @@
   position: relative;
   display: block;
   pointer-events: none;
+  will-change: position;
+  overflow: hidden;
+  z-index: 1;
+  padding: 15px 0;
 }
 
 .cardContentContainer.open {
@@ -61,9 +76,7 @@
   left: 0;
   right: 0;
   position: fixed;
-  z-index: 1;
-  overflow: hidden;
-  padding: 15px 0;
+  z-index: 2;
   cursor: zoom-out;
 
   // not landscape
@@ -86,7 +99,6 @@
   max-width: 500px;
   width: 100%;
   top: 0;
-  //overflow: hidden;x
   // portrait
   @media screen and (min-height: 600px) {
     max-width: 700px;
@@ -148,6 +160,7 @@
   bottom: 0;
   width: 100vw;
   left: 50%;
+  cursor: zoom-out;
 
   transform: translateX(-50%);
 }

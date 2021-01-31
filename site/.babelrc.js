@@ -17,6 +17,7 @@ module.exports = {
         },
       },
     ],
+    "babel-plugin-optimize-clsx",
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-proposal-nullish-coalescing-operator',

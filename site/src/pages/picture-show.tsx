@@ -13,7 +13,7 @@ function PictureShowPage({ data }: PictureShow) {
   return (
     <>
       <SEO
-        title={'The Kava is Fine'}
+        title={'Gallery'}
         description={
           'Come on in! The kava is fine. See the gallery of inside NovelTea.'
         }
