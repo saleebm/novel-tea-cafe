@@ -54,12 +54,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-typegen',
-      options: {
-        outputPath: `src/models/types/gatsby-graphql.d.ts`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         disableMinification: true,

@@ -24,14 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/.babelrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/pages/picture-show.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/pages/picture-show.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +122,17 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="build-studio" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -307,7 +311,7 @@
       <workItem from="1611518694775" duration="622000" />
       <workItem from="1612124087072" duration="33000" />
       <workItem from="1612124138392" duration="1041000" />
-      <workItem from="1612126489736" duration="370000" />
+      <workItem from="1612126489736" duration="734000" />
     </task>
     <servers />
   </component>
