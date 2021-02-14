@@ -3,10 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-export {
-  wrapPageElement,
-  wrapRootElement,
-} from './src/components/structure/Layout'
+export { wrapPageElement } from './src/components/structure/Layout/utils/wrap-page-element'
+export { wrapRootElement } from './src/components/structure/Layout/utils/wrap-root-element'
 
 // https://www.gatsbyjs.org/docs/add-offline-support-with-a-service-worker/
 // export const onServiceWorkerUpdateReady = () => {

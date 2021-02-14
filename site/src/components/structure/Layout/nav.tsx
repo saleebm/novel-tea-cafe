@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles'
 import { FixedObject } from 'gatsby-image'
 import { useMediaQuery } from '@material-ui/core'
@@ -150,23 +150,20 @@ export function Nav({ logoSrc }: { logoSrc?: FixedObject }) {
   const classes = useStyles()
   const theme = useTheme()
   const isSmallWidth = useMediaQuery(theme.breakpoints.down('sm'))
-  return useMemo(
-    () => (
-      <div className={classes.container}>
-        <a
-          className={classes.skipToMenu}
-          title={'Skip to main content.'}
-          href={'#herb-main'}
-        >
-          Skip to main content
-        </a>
-        {isSmallWidth ? (
-          <MobileNav logoSrc={logoSrc} />
-        ) : (
-          <DesktopNav />
-        )}
-      </div>
-    ),
-    [classes, logoSrc, isSmallWidth],
+  return (
+    <div className={classes.container}>
+      <a
+        className={classes.skipToMenu}
+        title={'Skip to main content.'}
+        href={'#herb-main'}
+      >
+        Skip to main content
+      </a>
+      {isSmallWidth ? (
+        <MobileNav logoSrc={logoSrc} />
+      ) : (
+        <DesktopNav />
+      )}
+    </div>
   )
 }

@@ -25,7 +25,6 @@ export function useMouseTrap() {
       { area, additionalProps = {} }: MouseEventInput,
       event: MouseEvent,
     ) => {
-      console.log(area)
       // set the active container ref
       setActiveContainer(event.target)
       // set the area type

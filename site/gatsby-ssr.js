@@ -3,7 +3,5 @@
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
-export {
-  wrapPageElement,
-  wrapRootElement,
-} from './src/components/structure/Layout'
+export { wrapPageElement } from './src/components/structure/Layout/utils/wrap-page-element'
+export { wrapRootElement } from './src/components/structure/Layout/utils/wrap-root-element'

@@ -79,8 +79,6 @@ export function MenuNav() {
     [menuLocation],
   )
 
-  //todo consider using Object.keys
-  // dryyyyyy (DRY) off
   return useMemo(
     () => (
       <AppBar
