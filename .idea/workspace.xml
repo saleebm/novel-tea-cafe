@@ -22,18 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/gatsby-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/gatsby-ssr.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/gatsby-ssr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/site/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/structure/Layout/nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Gallery/image-gallery.mod.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/components/views/Menu/menu-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/site/src/utils/hooks/use-mouse-trap.ts" afterDir="false" />
-    </list>
+    <list default="true" id="1f73e3dc-99fe-4c5c-986f-8037ce238d25" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,7 +301,7 @@
       <workItem from="1612289260609" duration="40000" />
       <workItem from="1612383722745" duration="529000" />
       <workItem from="1612655884180" duration="21000" />
-      <workItem from="1613327998950" duration="517000" />
+      <workItem from="1613327998950" duration="551000" />
     </task>
     <servers />
   </component>
