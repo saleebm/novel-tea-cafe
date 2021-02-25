@@ -11,7 +11,7 @@ export const ROUTES = Object.freeze([
   },
   {
     path: '/specials',
-    name: 'Specials',
+    name: 'Specials & Events',
     showOnDesktop: true,
   },
   {
