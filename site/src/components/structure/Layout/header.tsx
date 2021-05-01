@@ -48,6 +48,7 @@ export function Header() {
           item
           xs={8}
           sm={6}
+          md={4}
         >
           {file?.childImageSharp?.fixed && (
             <>
@@ -62,7 +63,7 @@ export function Header() {
             </>
           )}
         </Grid>
-        <Grid className={classes.navArea} item xs={4} sm={6}>
+        <Grid className={classes.navArea} item xs={4} sm={6} md={8}>
           <Nav
             logoSrc={
               (file?.childImageSharp?.fixed as FixedObject) ??

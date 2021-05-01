@@ -18,7 +18,7 @@ const useClasses = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     columnGap: theme.spacing(1),
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
     margin: 0,
   },
   socialIcon: {

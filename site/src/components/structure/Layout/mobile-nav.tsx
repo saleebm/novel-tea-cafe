@@ -17,8 +17,6 @@ import {
 } from '@Components/elements/InView/in-view'
 import { Logo } from '@Components/structure/Layout/logo'
 import { SocialIcons } from '@Components/structure/Layout/social-icons'
-import { MouseTrap } from '@Components/elements/MouseTrap/mouse-trap'
-import { ActiveAreaTypes } from '@Components/context/MousePosition/mouse-position-provider'
 import { DarkmodeToggle } from '@Components/structure/Layout/darkmode-toggle'
 import { useStyles } from '@Components/structure/Layout/nav'
 import { ROUTES } from '@Config/routes'
@@ -87,40 +85,35 @@ export function MobileNav({ logoSrc }: MobileNavProps) {
                   >
                     {ROUTES.map((route) => (
                       <AnimatedInViewChildDiv key={route.path}>
-                        <MouseTrap
-                          area={ActiveAreaTypes.anchor}
-                          additionalProps={{}}
-                        >
-                          <MenuItem
-                            alignItems={'center'}
-                            aria-label={route.name}
-                            to={route.path}
-                            component={Link}
-                            className={classes.menuItems}
-                            onClick={() => setNavOpen(false)}
-                            color={
+                        <MenuItem
+                          alignItems={'center'}
+                          aria-label={route.name}
+                          to={route.path}
+                          component={Link}
+                          className={classes.menuItems}
+                          onClick={() => setNavOpen(false)}
+                          color={
+                            (route.path === '/' &&
+                              (pathname === '' ||
+                                pathname === '/')) ||
+                            (route.path !== '/' &&
+                              pathname.includes(route.path))
+                              ? 'textSecondary'
+                              : 'textPrimary'
+                          }
+                          style={{
+                            textDecoration:
                               (route.path === '/' &&
                                 (pathname === '' ||
                                   pathname === '/')) ||
                               (route.path !== '/' &&
                                 pathname.includes(route.path))
-                                ? 'textSecondary'
-                                : 'textPrimary'
-                            }
-                            style={{
-                              textDecoration:
-                                (route.path === '/' &&
-                                  (pathname === '' ||
-                                    pathname === '/')) ||
-                                (route.path !== '/' &&
-                                  pathname.includes(route.path))
-                                  ? 'underline'
-                                  : 'unset',
-                            }}
-                          >
-                            {route.name}
-                          </MenuItem>
-                        </MouseTrap>
+                                ? 'underline'
+                                : 'unset',
+                          }}
+                        >
+                          {route.name}
+                        </MenuItem>
                       </AnimatedInViewChildDiv>
                     ))}
                     <AnimatedInViewChildDiv

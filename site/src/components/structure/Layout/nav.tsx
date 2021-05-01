@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme) => ({
     'alignItems': 'center',
     'justifyContent': 'center',
     'flexFlow': 'column wrap',
-    'marginTop': theme.spacing(2),
+    'marginTop': theme.spacing(1),
     '& figure': {
       justifyContent: 'center',
       alignItems: 'center',
@@ -73,7 +73,7 @@ export const useStyles = makeStyles((theme) => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(1),
     filter: 'brightness(0.88) contrast(1.3)',
   },
   menuTitle: {
@@ -85,7 +85,7 @@ export const useStyles = makeStyles((theme) => ({
     hyphens: 'auto',
   },
   menuItems: {
-    fontSize: '3.2rem',
+    fontSize: '2rem',
     fontVariant: 'petite-caps',
     marginTop: theme.spacing(1),
     wordWrap: 'normal',
