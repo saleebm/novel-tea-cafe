@@ -181,9 +181,8 @@ export function ImageGallery({
   sanityGalleryImages,
 }: ImageGalleryProps) {
   const { images } = sanityGalleryImages || {}
-  const [openImageKey, setOpenImageIndex] = useState<false | string>(
-    false,
-  )
+  const [openImageKey, setOpenImageIndex] =
+    useState<false | string>(false)
 
   const selectedImageNode = useMemo(
     () =>

@@ -27,30 +27,27 @@ export function SEO({
   image,
   gatsbySeoProps,
 }: Seo) {
-  const {
-    site,
-    file,
-    allFile,
-  } = useStaticQuery<GatsbyTypes.SeoDataQuery>(graphql`
-    query SeoData {
-      site {
-        siteMetadata {
-          title
-          description
+  const { site, file, allFile } =
+    useStaticQuery<GatsbyTypes.SeoDataQuery>(graphql`
+      query SeoData {
+        site {
+          siteMetadata {
+            title
+            description
+          }
         }
-      }
-      file(relativePath: { eq: "logo.png" }) {
-        publicURL
-        name
-      }
-      allFile(filter: { relativeDirectory: { eq: "nt" } }) {
-        totalCount
-        nodes {
+        file(relativePath: { eq: "logo.png" }) {
           publicURL
+          name
+        }
+        allFile(filter: { relativeDirectory: { eq: "nt" } }) {
+          totalCount
+          nodes {
+            publicURL
+          }
         }
       }
-    }
-  `)
+    `)
 
   const imagesOpenGraph: OpenGraphImages[] = useMemo(
     () => [
@@ -139,8 +136,7 @@ export function SEO({
               rel: 'icon',
               type: 'image/png',
               sizes: '192x192',
-              href:
-                '/assets/images/favicons/android-chrome-192x192.png',
+              href: '/assets/images/favicons/android-chrome-192x192.png',
             },
             {
               rel: 'icon',
@@ -163,8 +159,7 @@ export function SEO({
             },
             {
               rel: 'stylesheet',
-              href:
-                'https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap',
+              href: 'https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap',
             },
           ]}
         />

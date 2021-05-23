@@ -2,7 +2,7 @@ import { useRef, useCallback, useEffect } from 'react'
 
 // https://github.com/xnimorz/use-debounce
 export function useDebouncedCallback<
-  T extends (...args: any[]) => any
+  T extends (...args: any[]) => any,
 >(
   callback: T,
   delay: number,

@@ -64,23 +64,21 @@ export function Layout({ children }: Layout) {
     element: mainContainerRef?.current ?? undefined,
   })
 
-  const {
-    file,
-    allFile,
-  } = useStaticQuery<GatsbyTypes.LogoImageLayoutQuery>(graphql`
-    query LogoImageLayout {
-      file(relativePath: { eq: "logo.png" }) {
-        publicURL
-      }
-
-      allFile(filter: { relativeDirectory: { eq: "nt" } }) {
-        totalCount
-        nodes {
+  const { file, allFile } =
+    useStaticQuery<GatsbyTypes.LogoImageLayoutQuery>(graphql`
+      query LogoImageLayout {
+        file(relativePath: { eq: "logo.png" }) {
           publicURL
         }
+
+        allFile(filter: { relativeDirectory: { eq: "nt" } }) {
+          totalCount
+          nodes {
+            publicURL
+          }
+        }
       }
-    }
-  `)
+    `)
 
   const currentDate = new Date()
 

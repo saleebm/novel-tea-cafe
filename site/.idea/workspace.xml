@@ -10,7 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="" />
+    <list default="true" id="0ff95afa-8cb4-453b-b8f9-92831b850601" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,9 +59,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/gatsby-transformer-sharp/src/fragments.js" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.6.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/assets/images/branding" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.0.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="15.0.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -92,7 +96,7 @@
       <recent name="$PROJECT_DIR$/src/svg" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.codegen">
+  <component name="RunManager" selected="npm.develop">
     <configuration name="codegen" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -115,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.codegen" />
         <item itemvalue="npm.develop" />
+        <item itemvalue="npm.codegen" />
       </list>
     </recent_temporary>
   </component>
@@ -156,6 +160,8 @@
       <workItem from="1596935635210" duration="365000" />
       <workItem from="1598335268967" duration="1116000" />
       <workItem from="1598336557171" duration="1009000" />
+      <workItem from="1619896221136" duration="1330000" />
+      <workItem from="1621803433939" duration="188000" />
     </task>
     <servers />
   </component>
@@ -173,67 +179,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="618" y="296" key="#Inspections" timestamp="1594695095846">
-      <screen x="49" y="25" width="1871" height="1175" />
-    </state>
-    <state x="618" y="296" key="#Inspections/49.25.1871.1175@49.25.1871.1175" timestamp="1594695095846" />
-    <state x="632" y="493" key="#Stylelint" timestamp="1594687792430">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="632" y="493" key="#Stylelint/0.0.1920.1200@0.0.1920.1200" timestamp="1594687792430" />
-    <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594717521443">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="698" y="351" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1594717521443" />
-    <state width="1878" height="222" key="GridCell.Tab.0.bottom" timestamp="1596073198298">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198298" />
-    <state width="1878" height="222" key="GridCell.Tab.0.center" timestamp="1596073198297">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
-    <state width="1878" height="222" key="GridCell.Tab.0.left" timestamp="1596073198297">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
-    <state width="1878" height="222" key="GridCell.Tab.0.right" timestamp="1596073198297">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1878" height="222" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1596073198297" />
-    <state x="656" y="108" key="SettingsEditor" timestamp="1598335274011">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="656" y="108" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1598335274011" />
-    <state x="750" y="123" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1596063370416" />
-    <state width="500" height="400" key="SwitcherDM" timestamp="1598337302515">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="500" height="400" key="SwitcherDM/0.0.1680.1050@0.0.1680.1050" timestamp="1598337302515" />
-    <state width="500" height="445" key="SwitcherDM/0.0.1920.1200@0.0.1920.1200" timestamp="1596073039421" />
-    <state width="500" height="445" key="SwitcherDM/49.25.1871.1175@49.25.1871.1175" timestamp="1594675002136" />
-    <state x="88" y="112" width="1505" height="851" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598335733102">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="88" y="112" width="1505" height="851" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1598335733102" />
-    <state x="100" y="128" width="1720" height="972" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595725667211" />
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1595725667212">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="100" y="100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1595725667212" />
-    <state x="751" y="518" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595712608215">
-      <screen x="49" y="25" width="1871" height="1175" />
-    </state>
-    <state x="751" y="518" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/49.25.1871.1175@49.25.1871.1175" timestamp="1595712608215" />
-    <state x="661" y="355" width="597" height="518" key="find.popup" timestamp="1595736007008">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="661" y="355" width="597" height="518" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595736007008" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1596072997467">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1596072997467" />
   </component>
 </project>

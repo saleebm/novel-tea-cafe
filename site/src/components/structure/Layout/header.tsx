@@ -25,19 +25,18 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export function Header() {
-  const {
-    file,
-  } = useStaticQuery<GatsbyTypes.LogoImgInHeaderQuery>(graphql`
-    query LogoImgInHeader {
-      file(relativePath: { eq: "logo.png" }) {
-        childImageSharp {
-          fixed(quality: 90, height: 200) {
-            ...GatsbyImageSharpFixed
+  const { file } =
+    useStaticQuery<GatsbyTypes.LogoImgInHeaderQuery>(graphql`
+      query LogoImgInHeader {
+        file(relativePath: { eq: "logo.png" }) {
+          childImageSharp {
+            fixed(quality: 90, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
-    }
-  `)
+    `)
   const classes = useStyles()
 
   return (
